@@ -7,8 +7,9 @@ const props = withDefaults(
   defineProps<{
     option: EChartsOption
     height?: string
+    ariaLabel?: string
   }>(),
-  { height: '360px' },
+  { height: '360px', ariaLabel: '数据图表' },
 )
 
 const chartRef = ref<HTMLDivElement | null>(null)
@@ -38,7 +39,13 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div ref="chartRef" class="base-chart" :style="{ height }" role="img" />
+  <div
+    ref="chartRef"
+    class="base-chart"
+    :style="{ height }"
+    role="img"
+    :aria-label="ariaLabel"
+  />
 </template>
 
 <style scoped>

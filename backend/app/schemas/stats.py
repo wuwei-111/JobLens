@@ -63,6 +63,12 @@ class SkillItem(BaseModel):
     ratio: float = Field(description="包含该技能的岗位数 / 总岗位数")
 
 
+class SkillCategoryItem(BaseModel):
+    category: str
+    count: int = Field(description="至少包含一项该类别技能的岗位数")
+    ratio: float = Field(description="岗位数 / 总岗位数；各类别可重叠，不可相加")
+
+
 class JobTypeSkillGroup(BaseModel):
     job_type: str
     total_jobs: int
@@ -73,6 +79,7 @@ class SkillsStatsOut(BaseModel):
     total_jobs: int
     total_skills: int
     items: list[SkillItem]
+    categories: list[SkillCategoryItem]
     by_job_type: list[JobTypeSkillGroup]
 
 

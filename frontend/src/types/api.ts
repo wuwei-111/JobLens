@@ -52,6 +52,12 @@ export interface SkillItem {
   ratio: number
 }
 
+export interface SkillCategoryItem {
+  category: string
+  count: number
+  ratio: number
+}
+
 export interface JobTypeSkillGroup {
   job_type: string
   total_jobs: number
@@ -62,6 +68,7 @@ export interface SkillsStats {
   total_jobs: number
   total_skills: number
   items: SkillItem[]
+  categories: SkillCategoryItem[]
   by_job_type: JobTypeSkillGroup[]
 }
 

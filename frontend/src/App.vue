@@ -2,26 +2,39 @@
 import { RouterLink, RouterView } from 'vue-router'
 
 const navItems = [
-  { to: '/', label: '首页' },
-  { to: '/education-experience', label: '学历与经验' },
-  { to: '/skills', label: '技能需求' },
-  { to: '/salary', label: '薪资待遇' },
-  { to: '/about-data', label: '数据说明' },
+  { to: '/', label: '首页', index: '01' },
+  { to: '/education-experience', label: '学历与经验', index: '02' },
+  { to: '/skills', label: '技能需求', index: '03' },
+  { to: '/salary', label: '薪资待遇', index: '04' },
+  { to: '/about-data', label: '数据说明', index: '05' },
 ]
 </script>
 
 <template>
   <div class="app-shell">
+    <p class="demo-strip">
+      <span class="demo-dot" aria-hidden="true" />
+      <span>演示数据 · 10 条虚构招聘记录，仅用于界面与流程展示</span>
+      <RouterLink to="/about-data">查看数据说明</RouterLink>
+    </p>
+
     <header class="site-header">
-      <RouterLink class="brand" to="/">
-        <span class="brand-mark">JL</span>
-        <span>JobLens</span>
-      </RouterLink>
-      <nav class="site-nav" aria-label="主导航">
-        <RouterLink v-for="item in navItems" :key="item.to" :to="item.to">
-          {{ item.label }}
+      <div class="header-inner">
+        <RouterLink class="brand" to="/">
+          <span class="brand-mark">JL</span>
+          <span class="brand-text">
+            <span class="brand-name">JobLens</span>
+            <span class="brand-sub">DATA JOURNALISM</span>
+          </span>
         </RouterLink>
-      </nav>
+
+        <nav class="site-nav" aria-label="主导航">
+          <RouterLink v-for="item in navItems" :key="item.to" :to="item.to">
+            <span class="nav-index" aria-hidden="true">{{ item.index }}</span>
+            {{ item.label }}
+          </RouterLink>
+        </nav>
+      </div>
     </header>
 
     <main class="site-main">
@@ -29,7 +42,19 @@ const navItems = [
     </main>
 
     <footer class="site-footer">
-      <p>数据新闻课程项目 · 样本数据不代表整体就业市场</p>
+      <div class="footer-inner">
+        <div>
+          <p class="footer-brand">JobLens · 招聘观察</p>
+          <p>
+            一个以数据分析和新闻叙事为核心的交互式数据新闻作品。样本数据不代表整体就业市场。
+          </p>
+        </div>
+        <div class="footer-meta">
+          <span>计算机类应届生招聘调查</span>
+          <span>演示样本 10 条 / 杭州</span>
+          <span>2026.11</span>
+        </div>
+      </div>
     </footer>
   </div>
 </template>

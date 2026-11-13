@@ -100,7 +100,7 @@ Base URL：`http://127.0.0.1:8000/api/v1`；交互式文档：`/docs`。
 | GET | `/stats/overview` | 总量、企业数、平均/中位薪资、应届生占比 |
 | GET | `/stats/education` | 学历分布、分岗位类别学历分布 |
 | GET | `/stats/experience` | 经验分布、分岗位类别分布、应届生专项 |
-| GET | `/stats/skills` | 技能排行、技能类别、分岗位类别 Top 技能 |
+| GET | `/stats/skills` | 技能排行、技能类别覆盖、分岗位类别 Top 技能 |
 | GET | `/stats/salary` | 薪资分布、分岗位/学历/经验汇总 |
 | GET | `/meta/filters` | 筛选下拉选项（岗位类别、学历、经验、城市、技能） |
 
@@ -181,6 +181,8 @@ FastAPI 标准格式：
 - 同一岗位同一技能只能出现一次（数据库唯一约束）。
 - 分岗位类别统计时，分母是该岗位类别的岗位数，不是总样本。
 - `category` 来自 `backend/app/services/skills.py` 词表，未收录技能归入“其他”。
+- `categories` 的 `count` 为“至少包含一项该类别技能的岗位数”；一条岗位可同时计入多个
+  类别，因此类别覆盖数**不可相加**，也不构成 100% 的构成比。
 
 ### 6.4 应届生
 

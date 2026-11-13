@@ -42,6 +42,11 @@ def test_skills_stats(seeded_client: TestClient) -> None:
     assert by_name["MySQL"]["category"] == "数据库"
     assert len(body["by_job_type"]) == 2
 
+    by_category = {item["category"]: item["count"] for item in body["categories"]}
+    assert by_category["编程语言"] == 3
+    assert by_category["数据库"] == 2
+    assert by_category["测试"] == 1
+
 
 def test_skills_stats_respects_filters(seeded_client: TestClient) -> None:
     body = seeded_client.get(

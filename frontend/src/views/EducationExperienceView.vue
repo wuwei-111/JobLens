@@ -1,24 +1,350 @@
-<template>
-  <section class="page-intro">
-    <p class="eyebrow">第二部分</p>
-    <h1>学历与经验：进入企业的第一道门槛</h1>
-    <p class="lead">
-      企业对应届生的学历要求如何分布？标注“接受应届生”的岗位，是否仍然要求实习或项目经验？
-    </p>
-  </section>
+<script setup lang="ts">
+import { computed, onMounted, ref, watch } from 'vue'
 
-  <section class="panel">
-    <h2>规划中的图表</h2>
-    <ul class="plan-list">
-      <li>学历要求分布环形图</li>
-      <li>不同岗位类别的学历要求对比柱状图</li>
-      <li>工作经验要求分布横向柱状图</li>
-      <li>应届生岗位的经验要求对比图</li>
-    </ul>
-    <p class="muted">
-      数据接口已就绪：<code>GET /api/v1/stats/education</code> 与
-      <code>GET /api/v1/stats/experience</code>，支持岗位类别、学历、经验、城市筛选。
-      页面图表与新闻解读待实现。
+import BaseChart from '@/components/charts/BaseChart.vue'
+import ChartCard from '@/components/ChartCard.vue'
+import EducationMatrix from '@/components/EducationMatrix.vue'
+import FilterBar from '@/components/FilterBar.vue'
+import SegmentedBar from '@/components/SegmentedBar.vue'
+import { fetchEducationStats, fetchExperienceStats } from '@/api/stats'
+import { useAsyncData } from '@/composables/useAsyncData'
+import { orderedEducation, rankedBarOption } from '@/lib/charts'
+import { formatPercent, ratioLabel } from '@/lib/format'
+
+const filter = ref('')
+
+const { data, loading, error, load } = useAsyncData(async () => {
+  const [education, experience] = await Promise.all([
+    fetchEducationStats({ job_type: filter.value || undefined }),
+    fetchExperienceStats({ job_type: filter.value || undefined }),
+  ])
+  return { education, experience }
+})
+
+onMounted(load)
+watch(filter, load)
+
+const education = computed(() => data.value?.education ?? null)
+const experience = computed(() => data.value?.experience ?? null)
+
+const educationItems = computed(() =>
+  orderedEducation(education.value?.breakdown ?? []),
+)
+
+const educationColumns = computed(() =>
+  educationItems.value.map((item) => item.name),
+)
+
+const experienceRows = computed(() => {
+  const stats = experience.value
+  if (!stats) return []
+  return stats.breakdown.map((item) => ({
+    name: item.name,
+    value: item.count,
+    display: ratioLabel(item.count, stats.total),
+    emphasis: item.name === '应届生',
+  }))
+})
+
+const experienceOption = computed(() =>
+  rankedBarOption(experienceRows.value, { labelWidth: 88, deEmphasise: true }),
+)
+
+const experienceHeight = computed(
+  () =>
+    `${Math.max(110, (experience.value?.breakdown.length ?? 0) * 44 + 24)}px`,
+)
+
+const educationInsight = computed(() => {
+  const stats = education.value
+  if (!stats || stats.total === 0) return '当前筛选条件下没有岗位。'
+  const items = stats.breakdown
+    .map((item) => `${item.name} ${item.count} 条（${formatPercent(item.ratio)}）`)
+    .join('，')
+
+  const core = stats.breakdown.filter(
+    (item) =>
+      (item.name === '本科' || item.name === '硕士') && item.count > 0,
+  )
+  const coreCount = core.reduce((sum, item) => sum + item.count, 0)
+  const coreText =
+    core.length > 1
+      ? `本科与硕士要求合计 ${coreCount} 条，占 ${formatPercent(coreCount / stats.total)}，学历门槛主要集中在这两档。`
+      : ''
+
+  return `在 ${stats.total} 条岗位中，${items}。${coreText}`
+})
+
+const matchInsight = computed(() => {
+  const stats = education.value
+  if (!stats || stats.by_job_type.length === 0) return ''
+
+  const allMaster = stats.by_job_type
+    .filter((group) => {
+      const items = group.distribution.filter((item) => item.count > 0)
+      return items.length > 0 && items.every((item) => item.name === '硕士')
+    })
+    .map((group) => group.group)
+
+  const masterGroups = stats.by_job_type
+    .filter((group) =>
+      group.distribution.some((item) => item.name === '硕士' && item.count > 0),
+    )
+    .map((group) => group.group)
+
+  const diversity = stats.by_job_type
+    .filter((group) => group.distribution.filter((item) => item.count > 0).length > 1)
+    .map((group) => group.group)
+
+  const masterText = allMaster.length
+    ? `${allMaster.join('、')}的岗位全部要求硕士`
+    : masterGroups.length
+      ? `硕士要求出现在${masterGroups.join('、')}`
+      : '没有岗位要求硕士'
+
+  const diversityText = diversity.length
+    ? `；${diversity.slice(0, 3).join('、')}等方向则出现了不止一种学历要求`
+    : ''
+
+  return `${masterText}${diversityText}。每个岗位类别只有 1–2 条样本，横向差异只能作为线索，不足以代表整个方向。`
+})
+
+const experienceInsight = computed(() => {
+  const stats = experience.value
+  if (!stats || stats.total === 0) return '当前筛选条件下没有岗位。'
+  const fresh = stats.breakdown.find((item) => item.name === '应届生')
+  const nonFresh = stats.by_job_type
+    .filter((group) =>
+      group.distribution.some(
+        (item) => item.name !== '应届生' && item.name !== '不限' && item.count > 0,
+      ),
+    )
+    .map((group) => group.group)
+
+  if (!fresh) {
+    return nonFresh.length
+      ? `当前筛选下没有标注“应届生”的岗位；现有岗位来自${nonFresh.join('、')}，均要求一定工作年限。`
+      : '当前筛选下没有可判断的经验要求。'
+  }
+
+  const freshText = `“应届生”要求 ${fresh.count} 条，占 ${formatPercent(fresh.ratio)}`
+  if (nonFresh.length === 0) {
+    return `${freshText}。当前筛选下所有岗位都面向应届生，没有出现要求工作年限的社招岗。`
+  }
+  return `${freshText}；未向应届生开放的岗位来自${nonFresh.join('、')}。经验分布把样本分成两类：面向校招的入口岗，以及少量要求工作年限的社招岗。`
+})
+
+const freshText = computed(() => {
+  const stats = experience.value
+  if (!stats) return ''
+  const fresh = stats.fresh_graduate
+  if (!fresh.count) return '当前筛选条件下没有标注“接受应届生”的岗位。'
+  const names = fresh.breakdown
+    .filter((item) => item.count > 0)
+    .map((item) => `${item.name}（${item.count} 条）`)
+    .join('、')
+  if (fresh.breakdown.length === 1 && fresh.breakdown[0].name === '应届生') {
+    return `${fresh.count} 条标注“接受应届生”的岗位，经验要求全部写为“应届生”。在这份演示样本里，没有出现“应届生岗位仍附加 1 年以上经验”的情况。`
+  }
+  return `${fresh.count} 条标注“接受应届生”的岗位，其经验要求分布为：${names}。`
+})
+</script>
+
+<template>
+  <div>
+    <section class="page-intro">
+      <p class="eyebrow">第二部分 / 02 · 学历与经验</p>
+      <h1>第一道门槛：<br />学历，还是经验？</h1>
+      <p class="lead">
+        招聘启事上的“本科”“硕士”“不限”与“应届生”，构成了求职者最先遇到的两道筛子。我们把它们拆开看。
+      </p>
+      <p class="intro-meta">
+        <span>研究问题 01 / 02</span>
+        <span>分母：当前筛选后的岗位数</span>
+        <span>演示样本 · 虚构数据</span>
+      </p>
+    </section>
+
+    <FilterBar v-model="filter" :total="education?.total ?? null" />
+
+    <p v-if="loading && !data" class="status">正在读取学历与经验数据…</p>
+    <p v-else-if="error" class="status status-error">
+      数据加载失败：{{ error }}
     </p>
-  </section>
+
+    <div v-else-if="data" class="stack" :class="{ refreshing: loading }">
+      <ChartCard
+        index="图 01"
+        title="学历要求构成"
+        question="企业写下的最低学历门槛，在样本中如何分配？"
+        note="分段条按岗位数占比绘制；学历为导入时规范化后的标准值。"
+      >
+        <SegmentedBar
+          :items="educationItems"
+          :total="education?.total ?? 0"
+        />
+        <template #table>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="sr-only">学历要求分布</caption>
+              <thead>
+                <tr>
+                  <th scope="col">学历</th>
+                  <th scope="col" class="num">岗位数</th>
+                  <th scope="col" class="num">占比</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="item in educationItems" :key="item.name">
+                  <th scope="row">{{ item.name }}</th>
+                  <td class="num">{{ item.count }}</td>
+                  <td class="num">{{ formatPercent(item.ratio) }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </template>
+        <template #insight>
+          <p>{{ educationInsight }}</p>
+        </template>
+      </ChartCard>
+
+      <ChartCard
+        index="图 02"
+        title="岗位类别 × 学历要求"
+        question="不同技术方向，对学历的偏好是否一致？"
+        note="单元格为岗位数；色深仅用于辅助阅读，数值以数字为准。n 为该岗位类别在当前筛选下的样本量。"
+      >
+        <EducationMatrix
+          v-if="education?.by_job_type.length"
+          :groups="education.by_job_type"
+          :columns="educationColumns"
+        />
+        <p v-else class="status">当前筛选下没有可展示的岗位类别。</p>
+        <template #insight>
+          <p>{{ matchInsight }}</p>
+        </template>
+      </ChartCard>
+
+      <ChartCard
+        index="图 03"
+        title="经验要求分布"
+        question="样本中的岗位，是校招入口还是社招岗位？"
+        note="高亮“应届生”，其余经验档位以灰色作背景对照。"
+      >
+        <BaseChart
+          :option="experienceOption"
+          :height="experienceHeight"
+          aria-label="经验要求分布条形图"
+        />
+        <template #table>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="sr-only">经验要求分布</caption>
+              <thead>
+                <tr>
+                  <th scope="col">经验要求</th>
+                  <th scope="col" class="num">岗位数</th>
+                  <th scope="col" class="num">占比</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  v-for="item in experience?.breakdown ?? []"
+                  :key="item.name"
+                >
+                  <th scope="row">{{ item.name }}</th>
+                  <td class="num">{{ item.count }}</td>
+                  <td class="num">{{ formatPercent(item.ratio) }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </template>
+        <template #insight>
+          <p>{{ experienceInsight }}</p>
+        </template>
+      </ChartCard>
+
+      <section v-if="experience" class="fresh-panel">
+        <div class="fresh-figure">
+          <span class="fresh-count">{{ experience.fresh_graduate.count }}</span>
+          <span class="fresh-total">/ {{ experience.total }} 条</span>
+          <span class="fresh-ratio">
+            {{ formatPercent(experience.fresh_graduate.ratio) }}
+          </span>
+        </div>
+        <div class="fresh-copy">
+          <p class="eyebrow">应届生专项</p>
+          <h2>“应届生岗位”还要经验吗？</h2>
+          <p>{{ freshText }}</p>
+        </div>
+      </section>
+    </div>
+  </div>
 </template>
+
+<style scoped>
+.fresh-panel {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.32fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--hairline);
+  padding: 2rem 0;
+}
+
+.fresh-figure {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: baseline;
+  justify-content: start;
+  gap: 0.2rem 0.4rem;
+}
+
+.fresh-count {
+  font-family: var(--sans);
+  font-size: clamp(3.6rem, 8vw, 5.6rem);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+  color: var(--accent-display);
+}
+
+.fresh-total {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.fresh-ratio {
+  grid-column: 1 / -1;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  padding-top: 0.5rem;
+}
+
+.fresh-copy {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.fresh-copy h2 {
+  font-size: clamp(1.35rem, 2.6vw, 1.8rem);
+}
+
+.fresh-copy p:last-child {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  max-width: 62ch;
+}
+
+@media (max-width: 760px) {
+  .fresh-panel {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+</style>

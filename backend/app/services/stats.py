@@ -30,6 +30,7 @@ from app.schemas.stats import (
     SalaryGroup,
     SalaryStatsOut,
     SalarySummary,
+    SkillCategoryItem,
     SkillItem,
     SkillsStatsOut,
 )
@@ -352,10 +353,36 @@ def get_skills_stats(
         )
     groups.sort(key=lambda item: item.total_jobs, reverse=True)
 
+    # Category coverage counts distinct jobs, not skill tags: a job that lists
+    # three databases still counts once under 数据库. Categories overlap, so
+    # their counts must not be added up to the total number of jobs.
+    category_jobs: dict[str, set[str]] = {}
+    pair_rows = db.execute(
+        select(JobSkill.job_id, JobSkill.skill_name)
+        .select_from(JobSkill)
+        .join(JobPosting, JobPosting.id == JobSkill.job_id)
+        .where(*conditions)
+        .distinct()
+    ).all()
+    for job_id, skill_name in pair_rows:
+        category_jobs.setdefault(categorize_skill(skill_name), set()).add(job_id)
+
+    categories = [
+        SkillCategoryItem(
+            category=category,
+            count=len(job_ids),
+            ratio=_ratio(len(job_ids), total_jobs),
+        )
+        for category, job_ids in sorted(
+            category_jobs.items(), key=lambda item: (-len(item[1]), item[0])
+        )
+    ]
+
     return SkillsStatsOut(
         total_jobs=total_jobs,
         total_skills=int(total_skills),
         items=items,
+        categories=categories,
         by_job_type=groups,
     )
 
