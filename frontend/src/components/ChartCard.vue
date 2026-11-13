@@ -59,10 +59,15 @@ const showTable = ref(false)
 <style scoped>
 .chart-card {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   border-top: 2px solid var(--ink);
   padding-top: 1rem;
   margin: 0;
   scroll-margin-top: 6rem;
+}
+
+.chart-card > * {
+  min-width: 0;
 }
 
 .chart-head {

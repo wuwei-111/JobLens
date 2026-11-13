@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from sqlalchemy import ColumnElement, or_
 
-from app.models import JobPosting
+from app.models import JobPosting, JobSkill
 
 
 def build_job_conditions(
@@ -13,6 +13,7 @@ def build_job_conditions(
     education: str | None = None,
     experience: str | None = None,
     city: str | None = None,
+    skill: str | None = None,
     salary_min: int | None = None,
     salary_max: int | None = None,
     q: str | None = None,
@@ -32,6 +33,10 @@ def build_job_conditions(
         conditions.append(JobPosting.experience == experience)
     if city:
         conditions.append(JobPosting.city == city)
+    if skill:
+        conditions.append(
+            JobPosting.skills.any(JobSkill.skill_name == skill)
+        )
     if salary_min is not None:
         conditions.append(JobPosting.salary_max.is_not(None))
         conditions.append(JobPosting.salary_max >= salary_min)

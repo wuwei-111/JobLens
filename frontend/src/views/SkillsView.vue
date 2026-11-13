@@ -4,26 +4,53 @@ import { computed, onMounted, ref, watch } from 'vue'
 import BaseChart from '@/components/charts/BaseChart.vue'
 import ChartCard from '@/components/ChartCard.vue'
 import FilterBar from '@/components/FilterBar.vue'
+import JobDrawer from '@/components/JobDrawer.vue'
 import KpiRow from '@/components/KpiRow.vue'
 import SkillMatrix from '@/components/SkillMatrix.vue'
 import { fetchSkillsStats } from '@/api/stats'
 import { useAsyncData } from '@/composables/useAsyncData'
+import { useDatasetStatus } from '@/composables/useDatasetStatus'
+import { useStatsFilters } from '@/composables/useStatsFilters'
 import { rankedBarOption } from '@/lib/charts'
 import { formatPercent, ratioLabel } from '@/lib/format'
 
-const filter = ref('')
+const { filters } = useStatsFilters()
+const {
+  datasetLabel,
+  isDemoDataset,
+  load: loadStatus,
+} = useDatasetStatus()
 
 const { data, loading, error, load } = useAsyncData(() =>
-  fetchSkillsStats(
-    { job_type: filter.value || undefined },
-    { limit: 12, perTypeLimit: 8 },
-  ),
+  fetchSkillsStats(filters.value, { limit: 12, perTypeLimit: 8 }),
 )
 
-onMounted(load)
-watch(filter, load)
+onMounted(() => {
+  void loadStatus()
+  void load()
+})
+watch(filters, load, { deep: true })
 
 const skills = computed(() => data.value)
+
+const drawerOpen = ref(false)
+const drawerSkill = ref('')
+const drawerTitle = computed(() =>
+  drawerSkill.value ? `包含「${drawerSkill.value}」的岗位` : '匹配岗位',
+)
+
+function openSkill(skill: string) {
+  drawerSkill.value = skill
+  drawerOpen.value = true
+}
+
+function onSkillClick(params: { name?: string }) {
+  if (params.name) openSkill(params.name)
+}
+
+function clearFilters() {
+  filters.value = {}
+}
 
 const kpis = computed(() => {
   const stats = skills.value
@@ -102,10 +129,13 @@ const topInsight = computed(() => {
       ? `${ties.map((item) => item.skill).join('、')}并列出现于 ${first.count} 条岗位`
       : `${first.skill}出现在 ${first.count} 条岗位`
   const nextText =
-    second && third
+    second && third && second.count < first.count
       ? `；紧随其后的是 ${second.skill}（${second.count} 条）与 ${third.skill}（${third.count} 条）`
       : ''
-  return `${tieText}，覆盖率为 ${formatPercent(first.ratio)}${nextText}。头部技能集中，长尾技能则大多只出现 1–2 次，说明不同技术方向的分工已经写进招聘要求。`
+  const tailText = isDemoDataset.value
+    ? '头部技能集中，长尾技能则大多只出现 1–2 次，说明不同技术方向的分工已经写进招聘要求。'
+    : '头部技能集中，长尾技能出现次数较少；不同技术方向的分工已经写进招聘要求。'
+  return `${tieText}，覆盖率为 ${formatPercent(first.ratio)}${nextText}。${tailText}`
 })
 
 const categoryInsight = computed(() => {
@@ -133,7 +163,9 @@ const matrixInsight = computed(() => {
     })
     .filter(Boolean)
   if (!shared.length) {
-    return '矩阵展示各岗位类别的高频技能。样本量很小时，单元格更多是方向差异的示意，而不是稳定的行业结论。'
+    return isDemoDataset.value
+      ? '矩阵展示各岗位类别的高频技能。样本量很小时，单元格更多是方向差异的示意，而不是稳定的行业结论。'
+      : '矩阵展示各岗位类别的高频技能。单元格数字应结合样本量阅读，不能当作行业普遍规律。'
   }
   return `${shared.slice(0, 2).join('；')}。矩阵用于观察方向差异，不能把单元格数字当作行业普遍规律。`
 })
@@ -150,11 +182,11 @@ const matrixInsight = computed(() => {
       <p class="intro-meta">
         <span>研究问题 03</span>
         <span>分母：当前筛选后的岗位数</span>
-        <span>演示样本 · 虚构数据</span>
+        <span>{{ datasetLabel }}</span>
       </p>
     </section>
 
-    <FilterBar v-model="filter" :total="skills?.total_jobs ?? null" />
+    <FilterBar v-model="filters" :total="skills?.total_jobs ?? null" />
 
     <p v-if="loading && !data" class="status">正在读取技能数据…</p>
     <p v-else-if="error" class="status status-error">
@@ -162,6 +194,7 @@ const matrixInsight = computed(() => {
     </p>
 
     <template v-else-if="skills">
+      <template v-if="skills.total_jobs > 0">
       <KpiRow :items="kpis" />
 
       <div class="stack" :class="{ refreshing: loading }">
@@ -169,12 +202,14 @@ const matrixInsight = computed(() => {
           index="图 01"
           title="高频技能排行"
           question="哪些技术词出现在最多的岗位里？"
-          note="技能频率 = 包含该技能的岗位数 / 当前筛选岗位数，同一岗位内重复技能已去重。"
+          note="技能频率 = 包含该技能的岗位数 / 当前筛选岗位数，同一岗位内重复技能已去重。点击条形或数据表中的技能名可查看岗位。"
         >
           <BaseChart
+            class="clickable-chart"
             :option="topOption"
             :height="topHeight"
-            aria-label="高频技能排行条形图"
+            aria-label="高频技能排行条形图，点击条形可查看包含该技能的岗位"
+            @chart-click="onSkillClick"
           />
           <template #table>
             <div class="data-table-wrap">
@@ -195,7 +230,15 @@ const matrixInsight = computed(() => {
                     :key="item.skill"
                   >
                     <td class="num">{{ index + 1 }}</td>
-                    <th scope="row">{{ item.skill }}</th>
+                    <th scope="row">
+                      <button
+                        type="button"
+                        class="skill-link"
+                        @click="openSkill(item.skill)"
+                      >
+                        {{ item.skill }}
+                      </button>
+                    </th>
                     <td>{{ item.category }}</td>
                     <td class="num">{{ item.count }}</td>
                     <td class="num">{{ formatPercent(item.ratio) }}</td>
@@ -274,6 +317,22 @@ const matrixInsight = computed(() => {
           </p>
         </section>
       </div>
+      </template>
+
+      <section v-else class="empty-state">
+        <p class="eyebrow">筛选结果为空</p>
+        <h2>当前条件下没有技能数据</h2>
+        <p>试试减少筛选条件，或清除筛选查看全部样本。</p>
+        <button type="button" class="empty-clear" @click="clearFilters">
+          清除筛选
+        </button>
+      </section>
+
+      <JobDrawer
+        v-model:open="drawerOpen"
+        :title="drawerTitle"
+        :query="{ ...filters, skill: drawerSkill }"
+      />
     </template>
   </div>
 </template>
@@ -294,5 +353,23 @@ const matrixInsight = computed(() => {
 .method-note p:last-child {
   color: var(--ink-soft);
   font-size: 0.92rem;
+}
+
+.clickable-chart {
+  cursor: pointer;
+}
+
+.skill-link {
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: var(--accent-ink);
+  cursor: pointer;
+  border-bottom: 1px solid rgba(231, 111, 81, 0.4);
+}
+
+.skill-link:hover {
+  color: var(--accent-deep);
 }
 </style>

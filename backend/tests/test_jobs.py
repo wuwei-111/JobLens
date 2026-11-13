@@ -26,6 +26,12 @@ def test_filter_jobs_by_salary_overlap(seeded_client: TestClient) -> None:
     assert body["items"][0]["id"] == "job_t2"
 
 
+def test_filter_jobs_by_skill(seeded_client: TestClient) -> None:
+    body = seeded_client.get("/api/v1/jobs", params={"skill": "Redis"}).json()
+    assert body["total"] == 1
+    assert body["items"][0]["id"] == "job_t2"
+
+
 def test_search_jobs_by_keyword(seeded_client: TestClient) -> None:
     body = seeded_client.get("/api/v1/jobs", params={"q": "Python"}).json()
     assert body["total"] == 1

@@ -3,6 +3,7 @@ import type {
   EducationStats,
   ExperienceStats,
   Overview,
+  QualityStats,
   SalaryStats,
   SkillsStats,
   StatsFilters,
@@ -10,6 +11,11 @@ import type {
 
 export async function fetchOverview(): Promise<Overview> {
   const { data } = await http.get<Overview>('/stats/overview')
+  return data
+}
+
+export async function fetchQualityStats(): Promise<QualityStats> {
+  const { data } = await http.get<QualityStats>('/stats/quality')
   return data
 }
 

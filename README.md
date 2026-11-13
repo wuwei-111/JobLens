@@ -4,7 +4,7 @@
 
 一个以**数据分析和新闻叙事**为核心的交互式数据新闻作品。系统将招聘信息整理为结构化数据集，通过 FastAPI 提供查询与统计接口，并由 Vue 3 + ECharts 完成交互式展示。
 
-> 当前状态：**演示版与「数字新闻杂志风」首页改版已完成，后端数据工具已补齐**。数据库、导入/预检/质量/交叉/导出接口可用；首页为单页长滚动专题，另有学历与经验 / 技能 / 薪资 / 数据说明四个详情页，全部由 **10 条虚构演示数据**驱动。真实招聘数据仍在采集中，进度见 [docs/TODO.md](docs/TODO.md)。
+> 当前状态：**前端已做到“只差真实数据”**。数据库、导入/预检/质量/交叉/导出接口可用；首页为单页长滚动专题，详情页支持四维筛选与 URL 状态、技能→岗位抽屉；数据说明页展示实时质量摘要与导入批次。演示模式会根据 `/stats/quality` 自动切换。真实招聘数据仍在采集中，进度见 [docs/TODO.md](docs/TODO.md)。
 
 ## 技术栈
 
@@ -126,6 +126,8 @@ python -m scripts.import_sample
 
 > `sample_jobs.json` 是**10 条虚构的演示数据**，仅用于开发调试与页面展示，不能用于新闻结论。页面顶部和“数据说明”页会持续显示演示状态提示。
 
+> **Git 数据边界**：SQLite 数据库 `backend/data/joblens.db` 不进入 Git（`.gitignore` 已忽略 `*.db`）。仓库只跟踪原始 JSON 与演示报告；数据库由 `scripts/reset_db.py` 或导入接口重建，避免把运行期数据库和真实采集数据混进版本库。
+
 ### 正式数据检查
 
 正式数据入库前，先跑离线检查和预检接口：
@@ -150,9 +152,10 @@ curl -X POST "http://127.0.0.1:8000/api/v1/imports/validate" \
 
 ```bash
 cd backend
+# 演示数据（默认读取 sample_jobs.json）
 python -m scripts.verify_stats
-# 输出完整 JSON 报告
-python -m scripts.verify_stats --json > verify.json
+# 正式数据必须传入同一份 JSON 文件
+python -m scripts.verify_stats data/raw/jobs_hangzhou_2026-11.json --json > verify.json
 ```
 
 演示数据当前 **359/359** 项一致；正式数据导入后应重跑并以 `verify.json` 作为交付材料。
@@ -163,7 +166,10 @@ python -m scripts.verify_stats --json > verify.json
 
 ```bash
 cd backend
+# 演示数据
 python -m scripts.reset_db --yes
+# 正式数据
+python -m scripts.reset_db data/raw/jobs_hangzhou_2026-11.json --yes
 ```
 
 500 条数据下的接口性能基准（使用临时数据库，不会改动现有数据）：
@@ -191,8 +197,13 @@ curl "http://127.0.0.1:8000/api/v1/exports/jobs.csv" -o jobs.csv
 ### 测试
 
 ```bash
+# 后端
 cd backend
 pytest
+
+# 前端（Vitest）
+cd frontend
+npm run test:unit
 ```
 
 ## 已实现 / 待实现
@@ -207,14 +218,17 @@ pytest
 - 一键启动脚本 `npm run dev`（自动准备环境、数据库为空时导入演示数据、同时启动前后端）
 - 首页单页长滚动专题：Hero、样本档案、数据概览、章节索引、学历 / 经验 / 技能 / 薪资四章叙事、结论与边界、阅读进度条
 - 四个详情页与 ECharts 图表：学历构成、学历 × 岗位类别矩阵、经验分布、技能排行、技能类别、技能矩阵、薪资直方图、岗位薪资区间、学历/经验薪资对照
-- 岗位类别筛选、图表 / 数据表切换、图表白底轻边框、加载与空数据状态、移动端适配
+- 四维筛选（岗位类别 / 学历 / 经验 / 城市）与 URL query 同步；无结果时提供清除入口；图表 / 数据表切换
+- 技能点击 → 岗位抽屉：技能条形、数据表技能名、首页技能词墙均可打开匹配岗位；抽屉支持键盘焦点与 Esc 关闭
+- 数据说明页：实时质量摘要、质量警告、最近导入批次、CSV 下载；演示模式根据 `/stats/quality` 自动切换，城市与样本量动态读取
 - 数据质量工具：离线检查脚本 `scripts/check_dataset.py`、只读预检 `POST /imports/validate`、导入批次 `GET /imports/batches`、质量摘要 `GET /stats/quality`
 - 统计交叉核对脚本 `scripts/verify_stats.py`：Pandas 独立重算并与 API 逐项比对
 - 交叉统计 `GET /stats/cross`、CSV 导出 `GET /exports/jobs.csv`、统一错误响应（`detail` + `code` + `errors`）
 - 数据库重建脚本 `scripts/reset_db.py`、500 条性能基准 `scripts/benchmark_api.py`、复合索引
-- 47 个后端测试与 GitHub Actions CI
+- ECharts 按需加载 + 路由懒加载：主包约 171KB，图表共享块约 493KB
+- 48 个后端测试、11 个前端 Vitest 测试与 GitHub Actions CI
 
-待实现：真实数据采集与全量导入、部分交互（点击技能查看岗位）、Vitest/Playwright 与完整无障碍检查、创作报告与部署。详见 [docs/TODO.md](docs/TODO.md)。
+待实现：真实数据采集与全量导入、真实数据文案最终复核、可选 Playwright 冒烟与 Firefox 复核、创作报告与部署。详见 [docs/TODO.md](docs/TODO.md)。
 
 ## 文档
 

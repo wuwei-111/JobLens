@@ -3,6 +3,7 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { RouterLink } from 'vue-router'
 
 import BaseChart from '@/components/charts/BaseChart.vue'
+import JobDrawer from '@/components/JobDrawer.vue'
 import KpiRow from '@/components/KpiRow.vue'
 import SegmentedBar from '@/components/SegmentedBar.vue'
 import {
@@ -12,6 +13,7 @@ import {
   fetchSalaryStats,
   fetchSkillsStats,
 } from '@/api/stats'
+import { useDatasetStatus } from '@/composables/useDatasetStatus'
 import {
   chart,
   orderedEducation,
@@ -32,6 +34,29 @@ const education = ref<EducationStats | null>(null)
 const experience = ref<ExperienceStats | null>(null)
 const skills = ref<SkillsStats | null>(null)
 const salary = ref<SalaryStats | null>(null)
+
+const {
+  isDemoDataset,
+  hasDemoRecords,
+  demoRecords,
+  cityLabel,
+  load: loadStatus,
+} = useDatasetStatus()
+
+const drawerOpen = ref(false)
+const drawerSkill = ref('')
+const drawerTitle = computed(() =>
+  drawerSkill.value ? `包含「${drawerSkill.value}」的岗位` : '匹配岗位',
+)
+
+function openSkill(skill: string) {
+  drawerSkill.value = skill
+  drawerOpen.value = true
+}
+
+const cityDisplay = computed(() =>
+  cityLabel.value === '—' ? '目标城市' : cityLabel.value,
+)
 
 const loading = ref(true)
 const error = ref('')
@@ -64,12 +89,17 @@ const chapterIndex = [
   },
 ]
 
-const limitations = [
-  '样本只覆盖杭州、特定时间与公开渠道，不能代表全国或整个计算机就业市场。',
-  '每个岗位类别只有 1–2 条样本，方向之间的差异只能作为线索，不足以形成稳定结论。',
-  '技能标签由人工归纳，词表之外的技术词会进入“其他”；覆盖率不等于企业真实的技术使用比例。',
-  '薪资取月薪区间中点，面议岗位被排除，13/14 薪与补贴未折算进月薪。',
-]
+const limitations = computed(() => {
+  const city = cityLabel.value === '—' ? '目标城市' : cityLabel.value
+  return [
+    `样本只覆盖${city}、特定时间与公开渠道，不能代表全国或整个计算机就业市场。`,
+    isDemoDataset.value
+      ? '演示数据的岗位类别样本量只有 1–2 条，任何类别之间的差异都只是线索，不是稳定结论。'
+      : '岗位类别之间的样本量差异会影响横向比较；请结合图表上的样本量阅读。',
+    '技能标签由人工归纳，词表之外的技术词会进入“其他”；覆盖率不等于企业真实的技术使用比例。',
+    '薪资取月薪区间中点，面议岗位被排除，13/14 薪与补贴未折算进月薪。',
+  ]
+})
 
 const takeaways = [
   {
@@ -121,6 +151,7 @@ function updateProgress() {
 onMounted(async () => {
   window.addEventListener('scroll', updateProgress, { passive: true })
   updateProgress()
+  void loadStatus()
 
   try {
     const [overviewData, educationData, experienceData, skillsData, salaryData] =
@@ -159,7 +190,7 @@ const dossier = computed(() => {
   const data = overview.value
   if (!data) return []
   return [
-    { term: '研究城市', value: `${data.total_cities} 个（杭州）` },
+    { term: '研究城市', value: `${data.total_cities} 个（${cityLabel.value}）` },
     { term: '岗位类别', value: `${data.total_job_types} 类` },
     { term: '覆盖企业', value: `${data.total_companies} 家` },
     { term: '有效薪资', value: `${data.salary_available} / ${data.total_jobs} 条` },
@@ -294,7 +325,7 @@ const experienceStory = computed(() => {
     }`,
     second: freshText,
     insight:
-      '经验分布把样本分成两类：面向校招的入口岗，以及少量要求工作年限的社招岗。样本量小，不能据此推断“市场上所有应届生岗位都不要求经验”。',
+      '经验分布把样本分成两类：面向校招的入口岗，以及少量要求工作年限的社招岗。样本量有限，不能据此推断“市场上所有应届生岗位都不要求经验”。',
   }
 })
 
@@ -327,7 +358,7 @@ const skillStory = computed(() => {
       ? `${first.skill} 出现在 ${first.count} / ${data.total_jobs} 条岗位中，覆盖率 ${formatPercent(first.ratio)}${second && third ? `；${second.skill} 与 ${third.skill} 各 ${second.count} 条` : ''}。`
       : '当前样本中没有技能数据。',
     second: first
-      ? `头部技能集中，长尾技能大多只出现 1–2 次。技能类别上，${categories}覆盖的岗位最多；类别之间可以重叠，不能相加。`
+      ? `${isDemoDataset.value ? '头部技能集中，长尾技能大多只出现 1–2 次。' : '头部技能集中，长尾技能出现次数较少。'}技能类别上，${categories}覆盖的岗位最多；类别之间可以重叠，不能相加。`
       : '',
     insight:
       '岗位覆盖率不是关键词词频：同一岗位列出三项数据库技能，在“数据库”类别下仍只计 1 条岗位。',
@@ -380,8 +411,9 @@ const salaryStory = computed(() => {
       highest && lowest
         ? `${highest.group}的中位月薪最高，为 ${formatMoney(highest.median)}${multiple ? `，约为整体中位的 ${multiple} 倍` : ''}；${lowest.group}最低，为 ${formatMoney(lowest.median)}。`
         : '',
-    insight:
-      '但多数类别只有 1 条有效薪资，区间会退化为一个点。这里的方向差异是线索，不是稳定的行业结论。',
+    insight: isDemoDataset.value
+      ? '但多数类别只有 1 条有效薪资，区间会退化为一个点。这里的方向差异是线索，不是稳定的行业结论。'
+      : '各类别的有效薪资样本量不同；样本较少的类别，区间会因个别岗位而波动。这里的方向差异是线索，不是稳定的行业结论。',
   }
 })
 
@@ -451,7 +483,7 @@ const conclusionFindings = computed(() => {
 
     <p v-if="loading" class="status">正在整理样本数据…</p>
     <p v-else-if="error" class="status status-error">
-      数据加载失败：{{ error }}。请确认后端已启动，并已导入演示数据。
+      数据加载失败：{{ error }}。请确认后端已启动，并已导入数据。
     </p>
 
     <template v-else>
@@ -468,7 +500,7 @@ const conclusionFindings = computed(() => {
             <em>企业还看重什么？</em>
           </h1>
           <p class="hero-dek">
-            透过招聘数据，观察计算机类应届生的求职竞争力。基于杭州
+            透过招聘数据，观察计算机类应届生的求职竞争力。基于{{ cityDisplay }}
             {{ overview?.total_jobs ?? 0 }} 条公开招聘岗位样本的调查分析。
           </p>
           <div class="hero-byline">
@@ -486,7 +518,7 @@ const conclusionFindings = computed(() => {
               <dd>{{ row.value }}</dd>
             </div>
           </dl>
-          <div class="stamp" aria-label="演示样本">
+          <div v-if="isDemoDataset" class="stamp" aria-label="演示样本">
             <span>DEMO</span>
             <span>演示样本</span>
           </div>
@@ -501,11 +533,17 @@ const conclusionFindings = computed(() => {
           <p class="preface-lead">
             如果把招聘启事当作一份公开的用人声明，学历、经验、技能与薪资，就是它最常写下的四项条件。
           </p>
-          <p>
-            我们把这四项条件拆开，放回杭州计算机类应届生岗位的样本里。样本很小，所以它更像一次结构演示：看看招聘要求如何被数据描述，也看看这些描述不能证明什么。
+          <p v-if="isDemoDataset">
+            我们把这四项条件拆开，放回{{ cityDisplay }}计算机类应届生岗位的样本里。样本很小，所以它更像一次结构演示：看看招聘要求如何被数据描述，也看看这些描述不能证明什么。
           </p>
-          <p class="demo-note">
-            当前版本使用 10 条虚构演示数据，企业名称均标注“（虚构）”。正式采集完成后，页面会直接读取真实样本。
+          <p v-else>
+            我们把这四项条件拆开，放回{{ cityDisplay }}计算机类应届生岗位的样本里，看看招聘要求如何被数据描述，也看看这些描述不能证明什么。
+          </p>
+          <p v-if="isDemoDataset" class="demo-note">
+            当前版本使用 {{ demoRecords }} 条虚构演示数据，企业名称均标注“（虚构）”。正式采集完成后，页面会直接读取真实样本。
+          </p>
+          <p v-else-if="hasDemoRecords" class="demo-note">
+            当前数据集含 {{ demoRecords }} 条演示记录；正式结论应以真实采集数据重新计算。
           </p>
         </div>
 
@@ -626,23 +664,26 @@ const conclusionFindings = computed(() => {
         </div>
 
         <div class="skill-wall">
-          <div
+          <button
             v-for="(skill, index) in topSkills"
             :key="skill.skill"
+            type="button"
             class="skill-row"
+            :aria-label="`查看包含 ${skill.skill} 的岗位`"
+            @click="openSkill(skill.skill)"
           >
-            <div class="skill-meta">
+            <span class="skill-meta">
               <span class="skill-rank">{{ String(index + 1).padStart(2, '0') }}</span>
               <span class="skill-name">{{ skill.skill }}</span>
               <span class="skill-category">{{ skill.category }}</span>
-            </div>
+            </span>
             <span class="skill-meter" aria-hidden="true">
               <i :style="{ width: formatPercent(skill.ratio) }" />
             </span>
             <span class="skill-value">
               {{ skill.count }} / {{ totalJobs }} · {{ formatPercent(skill.ratio) }}
             </span>
-          </div>
+          </button>
         </div>
 
         <div class="skill-summary">
@@ -733,7 +774,7 @@ const conclusionFindings = computed(() => {
               <li v-for="item in limitations" :key="item">{{ item }}</li>
             </ul>
             <p class="conclusion-note">
-              以上结论仅描述这 10 条演示样本；正式数据导入后需要重新计算。
+              以上结论仅描述这 {{ totalJobs }} 条{{ isDemoDataset ? '演示' : '' }}样本；{{ isDemoDataset ? '正式数据导入后需要重新计算。' : '不代表整体就业市场。' }}
             </p>
           </div>
         </div>
@@ -748,7 +789,7 @@ const conclusionFindings = computed(() => {
             </div>
           </div>
           <p class="takeaway-note">
-            这些是基于样本的阅读提示，不是因果结论；样本量很小，请谨慎使用。
+            {{ isDemoDataset ? '这些是基于样本的阅读提示，不是因果结论；样本量很小，请谨慎使用。' : '这些是基于样本的阅读提示，不是因果结论；请结合样本量谨慎使用。' }}
           </p>
         </div>
 
@@ -768,11 +809,17 @@ const conclusionFindings = computed(() => {
           </p>
         </div>
         <div class="colophon-meta">
-          <span>样本 {{ totalJobs }} 条 · 杭州</span>
+          <span>{{ isDemoDataset ? '演示样本' : '样本' }} {{ totalJobs }} 条 · {{ cityLabel }}</span>
           <span>2026.11</span>
           <RouterLink to="/about-data">数据说明 →</RouterLink>
         </div>
       </footer>
+
+      <JobDrawer
+        v-model:open="drawerOpen"
+        :title="drawerTitle"
+        :query="{ skill: drawerSkill }"
+      />
     </template>
   </div>
 </template>
@@ -1264,8 +1311,15 @@ const conclusionFindings = computed(() => {
   grid-template-columns: minmax(12rem, 0.9fr) minmax(0, 1.4fr) 9rem;
   gap: 1.5rem;
   align-items: center;
+  width: 100%;
   padding: 0.85rem 0.2rem;
+  border: 0;
   border-bottom: 1px solid var(--hairline);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
   transition: background 160ms ease;
 }
 

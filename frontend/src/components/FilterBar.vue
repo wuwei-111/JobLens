@@ -1,62 +1,118 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 
-import { fetchFilterMeta } from '@/api/meta'
-import type { FilterMeta } from '@/types/api'
+import { useDatasetStatus } from '@/composables/useDatasetStatus'
+import { hasFilters, type FilterKey } from '@/lib/filters'
+import type { StatsFilters } from '@/types/api'
 
 const props = withDefaults(
   defineProps<{
-    modelValue: string
+    modelValue: StatsFilters
     total?: number | null
   }>(),
   { total: null },
 )
 
 const emit = defineEmits<{
-  'update:modelValue': [value: string]
+  'update:modelValue': [value: StatsFilters]
 }>()
 
-const meta = ref<FilterMeta | null>(null)
+const { meta, load } = useDatasetStatus()
 
-onMounted(async () => {
-  try {
-    meta.value = await fetchFilterMeta()
-  } catch {
-    // A missing meta endpoint should not block the charts; keep “全部岗位”.
-    meta.value = null
-  }
+onMounted(() => {
+  void load()
 })
 
-function onChange(event: Event) {
-  emit('update:modelValue', (event.target as HTMLSelectElement).value)
+// Keep a local draft so two rapid select changes merge instead of overwriting
+// each other with a stale prop object.
+const draft = ref<StatsFilters>({ ...props.modelValue })
+
+watch(
+  () => props.modelValue,
+  (value) => {
+    draft.value = { ...value }
+  },
+  { deep: true },
+)
+
+const controls = computed<
+  { key: FilterKey; label: string; all: string; options: string[] }[]
+>(() => [
+  {
+    key: 'job_type',
+    label: '岗位类别',
+    all: '全部岗位',
+    options: meta.value?.job_types ?? [],
+  },
+  {
+    key: 'education',
+    label: '学历',
+    all: '全部学历',
+    options: meta.value?.educations ?? [],
+  },
+  {
+    key: 'experience',
+    label: '经验',
+    all: '全部经验',
+    options: meta.value?.experiences ?? [],
+  },
+  {
+    key: 'city',
+    label: '城市',
+    all: '全部城市',
+    options: meta.value?.cities ?? [],
+  },
+])
+
+function update(key: FilterKey, event: Event) {
+  const value = (event.target as HTMLSelectElement).value
+  const next = { ...draft.value } as StatsFilters
+  const mutable = next as Record<string, string | undefined>
+  if (value) mutable[key] = value
+  else delete mutable[key]
+  draft.value = next
+  emit('update:modelValue', next)
+}
+
+function clear() {
+  draft.value = {}
+  emit('update:modelValue', {})
 }
 </script>
 
 <template>
   <div class="filter-bar">
-    <div class="filter-control">
-      <label for="job-type-filter">岗位类别</label>
-      <select id="job-type-filter" :value="props.modelValue" @change="onChange">
-        <option value="">全部岗位</option>
+    <div
+      v-for="control in controls"
+      :key="control.key"
+      class="filter-control"
+    >
+      <label :for="`filter-${control.key}`">{{ control.label }}</label>
+      <select
+        :id="`filter-${control.key}`"
+        :value="draft[control.key] ?? ''"
+        @change="update(control.key, $event)"
+      >
+        <option value="">{{ control.all }}</option>
         <option
-          v-for="jobType in meta?.job_types ?? []"
-          :key="jobType"
-          :value="jobType"
+          v-for="option in control.options"
+          :key="option"
+          :value="option"
         >
-          {{ jobType }}
+          {{ option }}
         </option>
       </select>
     </div>
 
-    <p class="filter-sample">
+    <p class="filter-sample" aria-live="polite">
       当前样本 <strong>{{ props.total ?? '—' }}</strong> 条
     </p>
 
     <button
-      v-if="props.modelValue"
+      v-if="hasFilters(draft)"
       type="button"
       class="filter-reset"
-      @click="emit('update:modelValue', '')"
+      @click="clear"
     >
       清除筛选
     </button>

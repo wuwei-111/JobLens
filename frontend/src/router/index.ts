@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import AboutDataView from '@/views/AboutDataView.vue'
-import EducationExperienceView from '@/views/EducationExperienceView.vue'
-import HomeView from '@/views/HomeView.vue'
-import NotFoundView from '@/views/NotFoundView.vue'
-import SalaryView from '@/views/SalaryView.vue'
-import SkillsView from '@/views/SkillsView.vue'
+const AboutDataView = () => import('@/views/AboutDataView.vue')
+const EducationExperienceView = () =>
+  import('@/views/EducationExperienceView.vue')
+const HomeView = () => import('@/views/HomeView.vue')
+const NotFoundView = () => import('@/views/NotFoundView.vue')
+const SalaryView = () => import('@/views/SalaryView.vue')
+const SkillsView = () => import('@/views/SkillsView.vue')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

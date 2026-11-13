@@ -142,6 +142,7 @@ export interface JobQuery {
   education?: string
   experience?: string
   city?: string
+  skill?: string
   salary_min?: number
   salary_max?: number
   q?: string

@@ -139,6 +139,7 @@ Base URL：`http://127.0.0.1:8000/api/v1`；交互式文档：`/docs`。
 | education | string | 精确匹配学历 |
 | experience | string | 精确匹配经验 |
 | city | string | 精确匹配城市 |
+| skill | string | 精确匹配技能名（关联表查询，技能点击抽屉使用） |
 | salary_min | int ≥ 0 | 期望月薪下限，按区间重叠匹配 |
 | salary_max | int ≥ 0 | 期望月薪上限，按区间重叠匹配 |
 | q | string | 岗位名称或企业名称模糊搜索 |
@@ -194,6 +195,18 @@ Base URL：`http://127.0.0.1:8000/api/v1`；交互式文档：`/docs`。
 - 单次事务提交；数据库写入异常时回滚并返回 500。
 - 导入时执行：字符串 trim、学历/经验别名归一、技能去空格与大小写去重、`应届生` 标记校正、
   记录级 `collected_at` 为空时继承数据集日期。
+
+### 5.6 前端数据状态与交互
+
+- **演示模式**：前端读取 `GET /stats/quality`；当 `demo_records == total_jobs` 时显示
+  演示条、印章与演示说明。`VITE_DEMO_MODE=true/false` 可强制开关。真实数据导入后
+  演示提示自动消失；混合数据会显示“含 N 条演示记录”的提醒。
+- **筛选与 URL**：学历/经验/技能/薪资页的四个筛选条件写入 URL query（`job_type`、
+  `education`、`experience`、`city`），刷新与分享后保持；筛选后退化到 0 条时显示清除入口。
+- **技能 → 岗位**：点击技能条形、数据表技能名或首页技能词墙，调用 `GET /jobs?skill=`
+  在抽屉中展示匹配岗位；抽屉支持焦点陷阱、Esc 关闭与页面滚动锁定。
+- **数据说明页**：消费 `/stats/quality`、`/imports/batches` 与 `/exports/jobs.csv`，
+  展示质量检查、批次摘要与下载入口。
 
 ## 6. 统计口径
 
@@ -305,8 +318,8 @@ curl -X POST "http://127.0.0.1:8000/api/v1/imports/json?on_conflict=skip" \
 curl "http://127.0.0.1:8000/api/v1/imports/batches"
 curl "http://127.0.0.1:8000/api/v1/stats/quality"
 
-# 5. 独立重算统计并与 API 逐项核对（需服务已启动且已导入同一数据集）
-python -m scripts.verify_stats --json > verify.json
+# 5. 独立重算统计并与 API 逐项核对（必须传入已导入的同一份 JSON）
+python -m scripts.verify_stats data/raw/jobs_hangzhou_2026-11.json --json > verify.json
 ```
 
 `verify_stats.py` 用 Pandas 从原始 JSON 重算学历、经验、技能、薪资（含分岗位类别、

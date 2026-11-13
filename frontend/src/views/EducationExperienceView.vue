@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue'
+import { computed, onMounted, watch } from 'vue'
 
 import BaseChart from '@/components/charts/BaseChart.vue'
 import ChartCard from '@/components/ChartCard.vue'
@@ -8,21 +8,31 @@ import FilterBar from '@/components/FilterBar.vue'
 import SegmentedBar from '@/components/SegmentedBar.vue'
 import { fetchEducationStats, fetchExperienceStats } from '@/api/stats'
 import { useAsyncData } from '@/composables/useAsyncData'
+import { useDatasetStatus } from '@/composables/useDatasetStatus'
+import { useStatsFilters } from '@/composables/useStatsFilters'
 import { orderedEducation, rankedBarOption } from '@/lib/charts'
 import { formatPercent, ratioLabel } from '@/lib/format'
 
-const filter = ref('')
+const { filters } = useStatsFilters()
+const {
+  datasetLabel,
+  isDemoDataset,
+  load: loadStatus,
+} = useDatasetStatus()
 
 const { data, loading, error, load } = useAsyncData(async () => {
   const [education, experience] = await Promise.all([
-    fetchEducationStats({ job_type: filter.value || undefined }),
-    fetchExperienceStats({ job_type: filter.value || undefined }),
+    fetchEducationStats(filters.value),
+    fetchExperienceStats(filters.value),
   ])
   return { education, experience }
 })
 
-onMounted(load)
-watch(filter, load)
+onMounted(() => {
+  void loadStatus()
+  void load()
+})
+watch(filters, load, { deep: true })
 
 const education = computed(() => data.value?.education ?? null)
 const experience = computed(() => data.value?.experience ?? null)
@@ -105,8 +115,11 @@ const matchInsight = computed(() => {
   const diversityText = diversity.length
     ? `；${diversity.slice(0, 3).join('、')}等方向则出现了不止一种学历要求`
     : ''
+  const caveat = isDemoDataset.value
+    ? '每个岗位类别只有 1–2 条样本，横向差异只能作为线索，不足以代表整个方向。'
+    : '不同岗位类别的样本量不同，横向差异只能作为线索，不足以代表整个方向。'
 
-  return `${masterText}${diversityText}。每个岗位类别只有 1–2 条样本，横向差异只能作为线索，不足以代表整个方向。`
+  return `${masterText}${diversityText}。${caveat}`
 })
 
 const experienceInsight = computed(() => {
@@ -144,10 +157,15 @@ const freshText = computed(() => {
     .map((item) => `${item.name}（${item.count} 条）`)
     .join('、')
   if (fresh.breakdown.length === 1 && fresh.breakdown[0].name === '应届生') {
-    return `${fresh.count} 条标注“接受应届生”的岗位，经验要求全部写为“应届生”。在这份演示样本里，没有出现“应届生岗位仍附加 1 年以上经验”的情况。`
+    const scope = isDemoDataset.value ? '在这份演示样本里' : '在这份样本里'
+    return `${fresh.count} 条标注“接受应届生”的岗位，经验要求全部写为“应届生”。${scope}，没有出现“应届生岗位仍附加 1 年以上经验”的情况。`
   }
   return `${fresh.count} 条标注“接受应届生”的岗位，其经验要求分布为：${names}。`
 })
+
+function clearFilters() {
+  filters.value = {}
+}
 </script>
 
 <template>
@@ -161,11 +179,11 @@ const freshText = computed(() => {
       <p class="intro-meta">
         <span>研究问题 01 / 02</span>
         <span>分母：当前筛选后的岗位数</span>
-        <span>演示样本 · 虚构数据</span>
+        <span>{{ datasetLabel }}</span>
       </p>
     </section>
 
-    <FilterBar v-model="filter" :total="education?.total ?? null" />
+    <FilterBar v-model="filters" :total="education?.total ?? null" />
 
     <p v-if="loading && !data" class="status">正在读取学历与经验数据…</p>
     <p v-else-if="error" class="status status-error">
@@ -173,6 +191,16 @@ const freshText = computed(() => {
     </p>
 
     <div v-else-if="data" class="stack" :class="{ refreshing: loading }">
+      <section v-if="education && education.total === 0" class="empty-state">
+        <p class="eyebrow">筛选结果为空</p>
+        <h2>当前条件下没有岗位</h2>
+        <p>试试减少筛选条件，或清除筛选查看全部样本。</p>
+        <button type="button" class="empty-clear" @click="clearFilters">
+          清除筛选
+        </button>
+      </section>
+
+      <template v-else>
       <ChartCard
         index="图 01"
         title="学历要求构成"
@@ -280,6 +308,7 @@ const freshText = computed(() => {
           <p>{{ freshText }}</p>
         </div>
       </section>
+      </template>
     </div>
   </div>
 </template>

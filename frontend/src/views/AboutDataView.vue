@@ -1,49 +1,96 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 
-import { fetchOverview } from '@/api/stats'
-import { formatPercent } from '@/lib/format'
-import type { Overview } from '@/types/api'
+import DataQualityPanel from '@/components/DataQualityPanel.vue'
+import { fetchImportBatches } from '@/api/imports'
+import { useDatasetStatus } from '@/composables/useDatasetStatus'
+import { formatDate } from '@/lib/format'
+import type { ImportBatch } from '@/types/api'
 
-const overview = ref<Overview | null>(null)
+const batches = ref<ImportBatch[]>([])
+const loading = ref(true)
 const error = ref('')
+
+const {
+  quality,
+  meta,
+  isDemoDataset,
+  hasDemoRecords,
+  demoRecords,
+  cityLabel,
+  totalJobs,
+  datasetLabel,
+  error: statusError,
+  load: loadStatus,
+} = useDatasetStatus()
 
 onMounted(async () => {
   try {
-    overview.value = await fetchOverview()
+    await Promise.all([
+      loadStatus(),
+      (async () => {
+        batches.value = await fetchImportBatches(5)
+      })(),
+    ])
   } catch (caught) {
     error.value = caught instanceof Error ? caught.message : '未知错误'
+  } finally {
+    loading.value = false
   }
 })
 
-const qualityRows = computed(() => {
-  const data = overview.value
-  if (!data) return []
-  return [
-    {
-      label: '岗位记录',
-      value: `${data.total_jobs} 条`,
-      note: '当前导入演示数据集',
-    },
-    {
-      label: '薪资有效',
-      value: `${data.salary_available} 条`,
-      note: `占 ${formatPercent(
-        data.total_jobs ? data.salary_available / data.total_jobs : 0,
-      )}；面议 ${data.total_jobs - data.salary_available} 条`,
-    },
-    {
-      label: '技能标签',
-      value: `${data.total_skills} 项`,
-      note: '规范化、去重后的技能词',
-    },
-    {
-      label: '岗位类别',
-      value: `${data.total_job_types} 类`,
-      note: `覆盖 ${data.total_companies} 家企业`,
-    },
-  ]
+const ready = computed(() => !loading.value && quality.value !== null)
+
+const apiBase = import.meta.env.VITE_API_BASE_URL ?? '/api/v1'
+const csvHref = computed(() => `${apiBase}/exports/jobs.csv`)
+
+const cityText = computed(() =>
+  cityLabel.value === '—' ? '—' : cityLabel.value,
+)
+const dateRange = computed(() => {
+  const from = quality.value?.collected_from
+  const to = quality.value?.collected_to
+  if (!from) return '—'
+  const start = formatDate(from)
+  const end = to ? formatDate(to) : ''
+  return end && end !== start ? `${start} – ${end}` : start
 })
+const sourceText = computed(() =>
+  isDemoDataset.value ? '演示数据（虚构）' : '公开招聘信息',
+)
+const sampleText = computed(() =>
+  isDemoDataset.value
+    ? `${totalJobs.value} 条演示记录；正式目标为 200～500 条可核验岗位`
+    : `${totalJobs.value} 条记录；结论仅适用于当前样本`,
+)
+const jobTypesText = computed(() =>
+  meta.value?.job_types.length ? meta.value.job_types.join('、') : '—',
+)
+const dataLead = computed(() =>
+  isDemoDataset.value
+    ? '这一页说明当前演示样本的状态、统计口径，以及它明确不能回答的问题。'
+    : '这一页说明当前数据集的状态、统计口径，以及它明确不能回答的问题。',
+)
+const demoBannerText = computed(
+  () =>
+    `仓库当前包含 ${totalJobs.value} 条手工构造的招聘记录，企业名称均标注“（虚构）”，来源链接指向 example.com。它们用于验证导入、统计、图表与页面流程；正式数据采集完成后会替换为真实、可核验的样本。`,
+)
+const mixedBannerText = computed(
+  () =>
+    `当前数据集含 ${demoRecords.value} 条演示记录。它们不能用于新闻结论；正式数据导入前请清理演示数据，或确认页面已明确标注。`,
+)
+const datasetBannerText = computed(
+  () =>
+    `当前数据集共 ${totalJobs.value} 条记录，覆盖 ${cityText.value}，采集时间 ${dateRange.value}。质量摘要与导入批次见下方。`,
+)
+const limitations = computed(() => [
+  '样本只代表特定城市、特定招聘渠道与特定时间段的公开信息，不能推断全国就业市场，也不能推断未出现在样本中的企业。',
+  isDemoDataset.value
+    ? '演示数据的岗位类别样本量只有 1–2 条，任何类别之间的差异都只是线索，不是稳定结论。正式采集后需要重新计算，并做人工抽样核验。'
+    : '岗位类别之间的样本量差异会影响横向比较；请结合图表上的样本量与质量摘要阅读。',
+  '招聘启事中的技能标签由人工归纳，可能受词表规模影响；词表之外的技术词会进入“其他”类别。技能覆盖率不等于企业真实的技术使用比例。',
+  '本项目不采集个人联系方式，不绕过登录或反爬限制；数据仅用于课程数据分析与可视化展示。',
+])
 
 const fields = [
   ['id', '招聘记录唯一标识', '必填'],
@@ -65,41 +112,66 @@ const fields = [
     <section class="page-intro">
       <p class="eyebrow">第五部分 / 05 · 数据说明</p>
       <h1>数据从哪来，<br />结论站得住吗？</h1>
-      <p class="lead">
-        数据新闻的可信度来自透明的采集与方法。这一页说明当前演示样本的状态、统计口径，以及它明确不能回答的问题。
-      </p>
+      <p class="lead">{{ dataLead }}</p>
       <p class="intro-meta">
-        <span>最后更新 2026-11-13</span>
-        <span>演示数据集 v0.2.0</span>
+        <span>时间范围 {{ dateRange }}</span>
+        <span>{{ datasetLabel }}</span>
         <span>JobLens 数据小组</span>
       </p>
     </section>
 
-    <section class="demo-banner">
-      <div class="demo-number">
-        <span class="demo-figure">{{ overview?.total_jobs ?? '—' }}</span>
-        <span class="demo-unit">条</span>
-      </div>
-      <div class="demo-copy">
-        <p class="eyebrow">当前数据状态 / Demo</p>
-        <h2>这是虚构演示数据，不是新闻结论</h2>
-        <p>
-          仓库当前包含 10 条手工构造的招聘记录，企业名称均标注“（虚构）”，来源链接指向 example.com。它们用于验证导入、统计、图表与页面流程；正式数据采集完成后会替换为真实、可核验的样本。
-        </p>
-      </div>
-    </section>
+    <p v-if="!ready && !error && !statusError" class="status">
+      正在读取数据说明…
+    </p>
+    <p v-if="error || statusError" class="status status-error">
+      数据加载失败：{{ error || statusError }}
+    </p>
 
-    <p v-if="error" class="status status-error">数据加载失败：{{ error }}</p>
+    <template v-if="ready">
+      <section v-if="isDemoDataset" class="demo-banner">
+        <div class="demo-number">
+          <span class="demo-figure">{{ totalJobs }}</span>
+          <span class="demo-unit">条</span>
+        </div>
+        <div class="demo-copy">
+          <p class="eyebrow">当前数据状态 / Demo</p>
+          <h2>这是虚构演示数据，不是新闻结论</h2>
+          <p>{{ demoBannerText }}</p>
+        </div>
+      </section>
 
-    <section v-if="qualityRows.length" class="quality-band">
-      <div v-for="row in qualityRows" :key="row.label" class="quality-item">
-        <p class="quality-label">{{ row.label }}</p>
-        <p class="quality-value">{{ row.value }}</p>
-        <p class="quality-note">{{ row.note }}</p>
-      </div>
-    </section>
+      <section v-else-if="hasDemoRecords" class="demo-banner mixed">
+        <div class="demo-number">
+          <span class="demo-figure">{{ demoRecords }}</span>
+          <span class="demo-unit">条</span>
+        </div>
+        <div class="demo-copy">
+          <p class="eyebrow">数据提醒 / Mixed</p>
+          <h2>当前数据集含演示记录</h2>
+          <p>{{ mixedBannerText }}</p>
+        </div>
+      </section>
 
-    <section class="method-section">
+      <section v-else class="demo-banner is-real">
+        <div class="demo-number">
+          <span class="demo-figure">{{ totalJobs }}</span>
+          <span class="demo-unit">条</span>
+        </div>
+        <div class="demo-copy">
+          <p class="eyebrow">当前数据状态 / Dataset</p>
+          <h2>{{ totalJobs ? '当前数据集已接入' : '尚未导入数据' }}</h2>
+          <p>{{ datasetBannerText }}</p>
+        </div>
+      </section>
+
+      <DataQualityPanel
+        :quality="quality"
+        :batches="batches"
+        :csv-href="csvHref"
+      />
+    </template>
+
+    <section v-if="ready" class="method-section">
       <div class="section-side">
         <span class="section-no">01</span>
         <h2>数据范围</h2>
@@ -108,15 +180,15 @@ const fields = [
         <dt>研究对象</dt>
         <dd>计算机类应届毕业生岗位，以及明确接受应届生投递的岗位</dd>
         <dt>地域范围</dt>
-        <dd>杭州（单城市）</dd>
+        <dd>{{ cityText }}</dd>
         <dt>时间范围</dt>
-        <dd>演示数据采集日期 2026-11-13</dd>
+        <dd>{{ dateRange }}</dd>
         <dt>样本规模</dt>
-        <dd>10 条演示记录；正式目标为 200～500 条可核验岗位</dd>
+        <dd>{{ sampleText }}</dd>
         <dt>来源</dt>
-        <dd>演示数据（虚构）；正式采集优先使用公开招聘信息，逐条保留来源链接与采集时间</dd>
+        <dd>{{ sourceText }}；正式采集优先使用公开招聘信息，逐条保留来源链接与采集时间</dd>
         <dt>岗位类别</dt>
-        <dd>后端开发、前端开发、算法工程、数据分析、测试开发、大数据开发、运维开发、嵌入式开发</dd>
+        <dd>{{ jobTypesText }}</dd>
       </dl>
     </section>
 
@@ -184,24 +256,13 @@ const fields = [
       </div>
     </section>
 
-    <section class="method-section">
+    <section v-if="ready" class="method-section">
       <div class="section-side">
         <span class="section-no">04</span>
         <h2>局限与边界</h2>
       </div>
       <div class="limits">
-        <p>
-          样本只代表特定城市、特定招聘渠道与特定时间段的公开信息，不能推断全国就业市场，也不能推断未出现在样本中的企业。
-        </p>
-        <p>
-          演示数据的岗位类别样本量只有 1–2 条，任何类别之间的差异都只是线索，不是稳定结论。正式采集后需要重新计算，并做人工抽样核验。
-        </p>
-        <p>
-          招聘启事中的技能标签由人工归纳，可能受词表规模影响；词表之外的技术词会进入“其他”类别。技能覆盖率不等于企业真实的技术使用比例。
-        </p>
-        <p>
-          本项目不采集个人联系方式，不绕过登录或反爬限制；数据仅用于课程数据分析与可视化展示。
-        </p>
+        <p v-for="item in limitations" :key="item">{{ item }}</p>
       </div>
     </section>
 
@@ -213,8 +274,13 @@ const fields = [
       <div class="reproduce">
         <p>在项目根目录执行一键启动，首次运行会自动准备 Python 与前端依赖：</p>
         <pre><code>npm run dev</code></pre>
-        <p>重新导入演示数据（在 <code>backend/</code> 目录）：</p>
-        <pre><code>python -m scripts.import_sample --on-conflict update</code></pre>
+        <p>
+          以正式数据文件为例（在 <code>backend/</code> 目录，先停止 API）。演示数据可省略文件路径：
+        </p>
+        <pre><code>python -m scripts.reset_db data/raw/jobs_hangzhou_2026-11.json --yes</code></pre>
+        <p>导入前检查数据，导入后核对统计（必须传入同一份 JSON）：</p>
+        <pre><code>python -m scripts.check_dataset data/raw/jobs_hangzhou_2026-11.json --json &gt; quality.json
+python -m scripts.verify_stats data/raw/jobs_hangzhou_2026-11.json --json &gt; verify.json</code></pre>
         <p class="section-note">
           更完整的架构、接口与统计定义见仓库 <code>docs/architecture.md</code> 与 <code>docs/data-dictionary.md</code>。
         </p>
@@ -233,6 +299,18 @@ const fields = [
   border-bottom: 1px solid var(--hairline);
   padding: 1.75rem 0;
   margin-bottom: 1.5rem;
+}
+
+.demo-banner.is-real {
+  border-top-color: var(--green-ink);
+}
+
+.demo-banner.is-real .demo-number {
+  color: var(--green-ink);
+}
+
+.demo-banner.mixed {
+  border-top-color: var(--accent-ink);
 }
 
 .demo-number {
@@ -318,6 +396,10 @@ const fields = [
   border-top: 1px solid var(--hairline);
 }
 
+.method-section > :last-child {
+  min-width: 0;
+}
+
 .section-side {
   display: grid;
   gap: 0.35rem;
@@ -393,7 +475,8 @@ const fields = [
 .reproduce {
   display: grid;
   gap: 0.65rem;
-  max-width: 66ch;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .reproduce p {
@@ -403,6 +486,7 @@ const fields = [
 
 .reproduce pre {
   margin: 0;
+  max-width: 100%;
   background: var(--ink);
   color: var(--paper);
   padding: 0.8rem 1rem;

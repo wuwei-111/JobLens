@@ -1,7 +1,23 @@
 <script setup lang="ts">
-import * as echarts from 'echarts'
-import type { ECharts, EChartsOption } from 'echarts'
+import { BarChart, ScatterChart } from 'echarts/charts'
+import {
+  GridComponent,
+  LegendComponent,
+  TooltipComponent,
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import type { EChartsOption } from 'echarts'
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
+
+echarts.use([
+  BarChart,
+  ScatterChart,
+  GridComponent,
+  LegendComponent,
+  TooltipComponent,
+  CanvasRenderer,
+])
 
 const props = withDefaults(
   defineProps<{
@@ -12,8 +28,14 @@ const props = withDefaults(
   { height: '360px', ariaLabel: '数据图表' },
 )
 
+const emit = defineEmits<{
+  'chart-click': [
+    params: { name?: string; seriesName?: string; dataIndex?: number },
+  ]
+}>()
+
 const chartRef = ref<HTMLDivElement | null>(null)
-let chart: ECharts | null = null
+let chart: ReturnType<typeof echarts.init> | null = null
 let resizeObserver: ResizeObserver | null = null
 
 function render() {
@@ -22,7 +44,16 @@ function render() {
 
 onMounted(() => {
   if (!chartRef.value) return
-  chart = echarts.init(chartRef.value)
+  const instance = echarts.init(chartRef.value)
+  chart = instance
+  instance.on('click', (params) => {
+    const event = params as {
+      name?: string
+      seriesName?: string
+      dataIndex?: number
+    }
+    emit('chart-click', event)
+  })
   render()
   resizeObserver = new ResizeObserver(() => chart?.resize())
   resizeObserver.observe(chartRef.value)

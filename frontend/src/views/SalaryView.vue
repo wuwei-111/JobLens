@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue'
+import { computed, onMounted, watch } from 'vue'
 
 import BaseChart from '@/components/charts/BaseChart.vue'
 import ChartCard from '@/components/ChartCard.vue'
@@ -8,6 +8,8 @@ import KpiRow from '@/components/KpiRow.vue'
 import SalaryTable from '@/components/SalaryTable.vue'
 import { fetchSalaryStats } from '@/api/stats'
 import { useAsyncData } from '@/composables/useAsyncData'
+import { useDatasetStatus } from '@/composables/useDatasetStatus'
+import { useStatsFilters } from '@/composables/useStatsFilters'
 import { salaryHistogramOption, salaryRangeOption } from '@/lib/charts'
 import {
   formatCompactMoney,
@@ -16,16 +18,28 @@ import {
 } from '@/lib/format'
 import type { SalaryGroup } from '@/types/api'
 
-const filter = ref('')
+const { filters } = useStatsFilters()
+const {
+  datasetLabel,
+  isDemoDataset,
+  load: loadStatus,
+} = useDatasetStatus()
 
 const { data, loading, error, load } = useAsyncData(() =>
-  fetchSalaryStats({ job_type: filter.value || undefined }),
+  fetchSalaryStats(filters.value),
 )
 
-onMounted(load)
-watch(filter, load)
+onMounted(() => {
+  void loadStatus()
+  void load()
+})
+watch(filters, load, { deep: true })
 
 const salary = computed(() => data.value)
+
+function clearFilters() {
+  filters.value = {}
+}
 
 const educationOrder = ['不限', '大专', '本科', '本科及以上', '硕士', '硕士及以上', '博士', '其他', '未知']
 const experienceOrder = ['不限', '应届生', '1年以内', '1-3年', '3-5年', '5年以上', '其他', '未知']
@@ -118,7 +132,10 @@ const rangeInsight = computed(() => {
     highest.median && lowest.median
       ? (highest.median / lowest.median).toFixed(1)
       : null
-  return `${highest.group}的中位月薪最高，为 ${formatMoney(highest.median)}；${lowest.group}最低，为 ${formatMoney(lowest.median)}${ratio ? `，相差约 ${ratio} 倍` : ''}。多数类别只有 1 条有效薪资，区间会退化为一个点，比较时应同时看样本量。`
+  const caveat = isDemoDataset.value
+    ? '多数类别只有 1 条有效薪资，区间会退化为一个点，比较时应同时看样本量。'
+    : '各类别的有效薪资样本量不同；样本较少的类别，区间会因个别岗位而波动，比较时应同时看样本量。'
+  return `${highest.group}的中位月薪最高，为 ${formatMoney(highest.median)}；${lowest.group}最低，为 ${formatMoney(lowest.median)}${ratio ? `，相差约 ${ratio} 倍` : ''}。${caveat}`
 })
 
 const educationInsight = computed(() => {
@@ -134,7 +151,10 @@ const educationInsight = computed(() => {
     return `当前筛选下可比较的学历组为${groups.map((group) => group.group).join('、')}，但样本结构不足以做本科与硕士的对照。`
   }
   const gap = (master.median ?? 0) - (bachelor.median ?? 0)
-  return `硕士组的中位月薪为 ${formatMoney(master.median)}，本科组为 ${formatMoney(bachelor.median)}，相差 ${formatMoney(gap)}。但硕士组只有 ${master.count} 条样本，且集中在算法方向，学历与方向的影响在这份样本里纠缠在一起。`
+  const caveat = isDemoDataset.value
+    ? `但硕士组只有 ${master.count} 条样本，且集中在算法方向，学历与方向的影响在这份样本里纠缠在一起。`
+    : `但硕士组只有 ${master.count} 条样本，样本量有限，学历与方向的影响仍可能纠缠在一起。`
+  return `硕士组的中位月薪为 ${formatMoney(master.median)}，本科组为 ${formatMoney(bachelor.median)}，相差 ${formatMoney(gap)}。${caveat}`
 })
 
 const experienceInsight = computed(() => {
@@ -151,7 +171,11 @@ const experienceInsight = computed(() => {
   if (others.length === 0) {
     return `应届生组的中位月薪为 ${formatMoney(fresh.median)}，共 ${fresh.count} 条有效薪资；当前筛选下没有非应届岗位可供对比。`
   }
-  return `应届生组的中位月薪为 ${formatMoney(fresh.median)}，共 ${fresh.count} 条有效薪资；${rest}。非应届组每条经验档位只有 1 条样本，这里的差异不能解释为“工作年限的回报”。`
+  const allSingle = others.every((group) => group.count === 1)
+  const caveat = isDemoDataset.value || allSingle
+    ? '非应届组每条经验档位只有 1 条样本，这里的差异不能解释为“工作年限的回报”。'
+    : '非应届组的样本量也有限，这里的差异不能直接解释为“工作年限的回报”。'
+  return `应届生组的中位月薪为 ${formatMoney(fresh.median)}，共 ${fresh.count} 条有效薪资；${rest}。${caveat}`
 })
 </script>
 
@@ -167,10 +191,11 @@ const experienceInsight = computed(() => {
         <span>研究问题 04</span>
         <span>口径：月薪区间中点</span>
         <span>面议岗位不参与薪资统计</span>
+        <span>{{ datasetLabel }}</span>
       </p>
     </section>
 
-    <FilterBar v-model="filter" :total="salary?.total_jobs ?? null" />
+    <FilterBar v-model="filters" :total="salary?.total_jobs ?? null" />
 
     <p v-if="loading && !data" class="status">正在读取薪资数据…</p>
     <p v-else-if="error" class="status status-error">
@@ -178,6 +203,7 @@ const experienceInsight = computed(() => {
     </p>
 
     <template v-else-if="salary">
+      <template v-if="salary.total_jobs > 0">
       <KpiRow :items="kpis" />
 
       <div class="stack" :class="{ refreshing: loading }">
@@ -301,6 +327,16 @@ const experienceInsight = computed(() => {
           </p>
         </section>
       </div>
+      </template>
+
+      <section v-else class="empty-state">
+        <p class="eyebrow">筛选结果为空</p>
+        <h2>当前条件下没有薪资数据</h2>
+        <p>试试减少筛选条件，或清除筛选查看全部样本。</p>
+        <button type="button" class="empty-clear" @click="clearFilters">
+          清除筛选
+        </button>
+      </section>
     </template>
   </div>
 </template>

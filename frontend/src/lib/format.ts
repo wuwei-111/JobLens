@@ -20,6 +20,29 @@ export function formatCompactMoney(value: number | null | undefined): string {
   return `¥${display}K`
 }
 
+/** Salary range for job cards: 面议 / ¥10,000–15,000 / ¥10,000 起. */
+export function formatSalaryRange(
+  min: number | null | undefined,
+  max: number | null | undefined,
+): string {
+  if (min == null && max == null) return '面议'
+  if (min != null && max != null) {
+    return `¥${formatNumber(min)}–${formatNumber(max)}`
+  }
+  if (min != null) return `¥${formatNumber(min)} 起`
+  return `¥${formatNumber(max)} 以内`
+}
+
+export function formatDate(value: string | null | undefined): string {
+  if (!value) return '—'
+  return value.slice(0, 10)
+}
+
+export function formatDateTime(value: string | null | undefined): string {
+  if (!value) return '—'
+  return value.replace('T', ' ').slice(0, 16)
+}
+
 /** Percent with one decimal, as required by the project's data notes. */
 export function formatPercent(ratio: number, digits = 1): string {
   return `${(ratio * 100).toFixed(digits)}%`
