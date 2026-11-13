@@ -37,7 +37,7 @@ class JobPosting(Base):
     salary_min: Mapped[int | None] = mapped_column(Integer, nullable=True)
     salary_max: Mapped[int | None] = mapped_column(Integer, nullable=True)
     education: Mapped[str] = mapped_column(String(30), nullable=False, default="不限", index=True)
-    experience: Mapped[str] = mapped_column(String(30), nullable=False, default="不限", index=True)
+    experience: Mapped[str] = mapped_column(String(200), nullable=False, default="不限", index=True)
     is_fresh_graduate: Mapped[bool] = mapped_column(
         Boolean, nullable=False, default=False, index=True
     )

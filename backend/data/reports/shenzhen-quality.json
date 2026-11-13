@@ -1,0 +1,193 @@
+{
+  "dataset_name": "深圳计算机类应届生招聘岗位数据（扩充版）",
+  "total_records": 157,
+  "valid_records": 157,
+  "invalid_records": 0,
+  "duplicate_ids": 0,
+  "existing_in_database": 0,
+  "missing_fields": {
+    "id": 0,
+    "company": 0,
+    "position": 0,
+    "job_type": 0,
+    "city": 0,
+    "education": 0,
+    "experience": 0,
+    "source": 0,
+    "source_url": 0,
+    "collected_at": 0
+  },
+  "salary_missing": 51,
+  "salary_single_bound": 0,
+  "salary_outliers": 0,
+  "unknown_education": [],
+  "unknown_experience": [
+    {
+      "value": "2. 1年以上桌面运维或现场网管服务等工作经验，具备制造业企业经验优先",
+      "count": 1
+    },
+    {
+      "value": "6.负责相关技术文档的发放及整理归类 任职要求 1.本科学历，机电一体化、机械自动化等相关专业的优秀应届毕业生，或有SMT自动化操作***工作经验",
+      "count": 1
+    }
+  ],
+  "empty_skills": 9,
+  "over_limit_skills": 18,
+  "duplicate_skill_entries": 0,
+  "duplicate_source_urls": [],
+  "demo_records": 0,
+  "errors": [],
+  "warnings": [
+    {
+      "row": 2,
+      "record_id": "sz_nowcoder_468515",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 4,
+      "record_id": "sz_nowcoder_474030",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 10,
+      "record_id": "sz_nowcoder_468692",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 12,
+      "record_id": "sz_nowcoder_464487",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 15,
+      "record_id": "sz_nowcoder_474921",
+      "message": "技能数 14 超过规范上限 10 项"
+    },
+    {
+      "row": 19,
+      "record_id": "sz_nowcoder_459732",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 22,
+      "record_id": "sz_nowcoder_466567",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 29,
+      "record_id": "sz_nowcoder_468394",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 32,
+      "record_id": "sz_nowcoder_470259",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 41,
+      "record_id": "sz_nowcoder_465146",
+      "message": "技能数 15 超过规范上限 10 项"
+    },
+    {
+      "row": 53,
+      "record_id": "sz_nowcoder_471169",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 60,
+      "record_id": "sz_nowcoder_460670",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 72,
+      "record_id": "sz_nowcoder_474222",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 81,
+      "record_id": "sz_nowcoder_465346",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 87,
+      "record_id": "sz_nowcoder_460802",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 97,
+      "record_id": "sz_nowcoder_464490",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 100,
+      "record_id": "sz_nowcoder_467961",
+      "message": "技能数 17 超过规范上限 10 项"
+    },
+    {
+      "row": 112,
+      "record_id": "sz_nowcoder_456512",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 120,
+      "record_id": "sz_ncss_3o5em8FfLmaR11gN5u3QeH",
+      "message": "技能数 18 超过规范上限 10 项"
+    },
+    {
+      "row": 121,
+      "record_id": "sz_ncss_Mccn1E4cZq7XV7e3ukp39J",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 134,
+      "record_id": "sz_ncss_MvzttLj3KYS33Hi3i91ECz",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 135,
+      "record_id": "sz_ncss_FPjJNNizFE5AA7Eh1jc3T5",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 139,
+      "record_id": "sz_ncss_XxxCqLPrcNEhdZEn3Pjt2f",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 140,
+      "record_id": "sz_ncss_31UNgxjhDQCmU2i9Q5dcGd",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 147,
+      "record_id": "sz_ncss_HP7vJ5djXF32woayyiYbgu",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 154,
+      "record_id": "sz_ncss_7D5YK9x2oaqcBgARb7JeMi",
+      "message": "技能数 16 超过规范上限 10 项"
+    },
+    {
+      "row": 155,
+      "record_id": "sz_ncss_SyQzz2vTzKLNcMyvQxmawu",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "薪资面议（两端为空）：51 条"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "未知经验值「2. 1年以上桌面运维或现场网管服务等工作经验，具备制造业企业经验优先」：1 条，导入后原样保留"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "未知经验值「6.负责相关技术文档的发放及整理归类 任职要求 1.本科学历，机电一体化、机械自动化等相关专业的优秀应届毕业生，或有SMT自动化操作***工作经验」：1 条，导入后原样保留"
+    }
+  ],
+  "warning_count": 30
+}

@@ -87,17 +87,23 @@ def get_quality_stats(db: Session) -> QualityStatsOut:
         or 0
     )
 
+    # The same posting may legitimately appear in several city datasets (a
+    # multi-city campus posting). Only flag duplicates within the same city.
     duplicate_url_rows = db.execute(
         select(JobPosting.source_url, func.count(JobPosting.id))
         .where(JobPosting.source_url != "")
-        .group_by(JobPosting.source_url)
+        .group_by(JobPosting.source_url, JobPosting.city)
         .having(func.count(JobPosting.id) > 1)
-        .order_by(func.count(JobPosting.id).desc())
-        .limit(20)
     ).all()
+    duplicate_counts: dict[str, int] = {}
+    for url, count in duplicate_url_rows:
+        key = str(url)
+        duplicate_counts[key] = max(duplicate_counts.get(key, 0), int(count))
     duplicate_source_urls = [
-        ValueCount(value=str(url), count=int(count))
-        for url, count in duplicate_url_rows
+        ValueCount(value=url, count=count)
+        for url, count in sorted(
+            duplicate_counts.items(), key=lambda item: (-item[1], item[0])
+        )[:20]
     ]
 
     demo_records = int(
@@ -148,7 +154,9 @@ def get_quality_stats(db: Session) -> QualityStatsOut:
     if jobs_without_skills:
         warnings.append(f"没有任何技能标签的岗位：{jobs_without_skills} 条")
     if duplicate_source_urls:
-        warnings.append(f"来源链接重复：{len(duplicate_source_urls)} 个链接")
+        warnings.append(
+            f"同一城市内来源链接重复：{len(duplicate_source_urls)} 个链接"
+        )
     if demo_records:
         warnings.append(
             f"演示/虚构记录 {demo_records} 条；这些数据不能用于新闻结论"

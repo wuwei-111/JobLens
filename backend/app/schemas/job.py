@@ -17,7 +17,7 @@ class JobBase(BaseModel):
     salary_min: int | None = Field(default=None, ge=0, le=1_000_000)
     salary_max: int | None = Field(default=None, ge=0, le=1_000_000)
     education: str = Field(default="不限", max_length=30)
-    experience: str = Field(default="不限", max_length=30)
+    experience: str = Field(default="不限", max_length=200)
     is_fresh_graduate: bool = False
     description: str = ""
     source: str = Field(default="", max_length=100)

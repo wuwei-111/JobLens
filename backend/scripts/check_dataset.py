@@ -3,7 +3,7 @@
 Usage (run from ``backend/``)::
 
     python -m scripts.check_dataset
-    python -m scripts.check_dataset data/raw/jobs_hangzhou_2026-11.json --json
+    python -m scripts.check_dataset data/raw/hangzhou_graduate_jobs_2026-11-13_expanded.json --json
     python -m scripts.check_dataset data/raw/jobs.json --strict
 
 Exit codes: 0 = usable, 1 = invalid records (or warnings with --strict),

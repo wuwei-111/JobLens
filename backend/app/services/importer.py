@@ -19,6 +19,7 @@ from app.services.normalization import (
     FRESH_GRADUATE_EXPERIENCE,
     normalize_education,
     normalize_experience,
+    normalize_job_type,
     normalize_skills,
 )
 
@@ -76,6 +77,7 @@ def format_validation_error(exc: ValidationError) -> str:
 
 def _normalized_payload(record: JobRecordIn, dataset_collected_at: date | None) -> dict[str, Any]:
     payload = record.model_dump(exclude={"id", "skills"})
+    payload["job_type"] = normalize_job_type(payload["job_type"])
     payload["education"] = normalize_education(payload["education"])
     payload["experience"] = normalize_experience(payload["experience"])
     if payload["experience"] == FRESH_GRADUATE_EXPERIENCE:

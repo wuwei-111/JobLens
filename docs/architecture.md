@@ -45,7 +45,7 @@ backend/app/
 ├── schemas/          API 请求/响应与校验
 ├── api/v1/           路由层：只做参数绑定、调用 service
 ├── services/         业务：导入、规范化、筛选条件、统计
-└── data/raw/         原始 JSON（上海真实数据已入库；演示数据仅用于开发）
+└── data/raw/         原始 JSON（五城真实数据已入库；演示数据仅用于开发）
 ```
 
 路由层不写统计逻辑；统计逻辑不直接依赖 HTTP。这样便于测试与后续加入 CLI 脚本。
@@ -303,33 +303,33 @@ npm run dev
 cd backend
 
 # 1. 离线检查（不启动服务、不写库）
-python -m scripts.check_dataset data/raw/jobs_hangzhou_2026-11.json
-python -m scripts.check_dataset data/raw/jobs_hangzhou_2026-11.json --json > quality.json
+python -m scripts.check_dataset data/raw/hangzhou_graduate_jobs_2026-11-13_expanded.json
+python -m scripts.check_dataset data/raw/hangzhou_graduate_jobs_2026-11-13_expanded.json --json > quality.json
 
 # 2. 服务启动后预检（不写库，额外报告数据库中已有 id）
 curl -X POST "http://127.0.0.1:8000/api/v1/imports/validate" \
-  -F "file=@data/raw/jobs_hangzhou_2026-11.json"
+  -F "file=@data/raw/hangzhou_graduate_jobs_2026-11-13_expanded.json"
 
 # 3. 确认后正式导入
 curl -X POST "http://127.0.0.1:8000/api/v1/imports/json?on_conflict=skip" \
-  -F "file=@data/raw/jobs_hangzhou_2026-11.json"
+  -F "file=@data/raw/hangzhou_graduate_jobs_2026-11-13_expanded.json"
 
 # 4. 查看批次与质量摘要
 curl "http://127.0.0.1:8000/api/v1/imports/batches"
 curl "http://127.0.0.1:8000/api/v1/stats/quality"
 
-# 5. 独立重算统计并与 API 逐项核对（必须传入已导入的同一份 JSON）
-python -m scripts.verify_stats data/raw/shanghai_graduate_jobs_2026-11-13.json --json > data/reports/shanghai-verify.json
+# 5. 独立重算统计并与 API 逐项核对（默认合并 data/raw/ 下全部真实数据）
+python -m scripts.verify_stats --json > data/reports/all-cities-verify.json
 ```
 
 `verify_stats.py` 用 Pandas 从原始 JSON 重算学历、经验、技能、薪资（含分岗位类别、
-学历、经验的分组），逐项对比 API；上海真实数据当前 825/825 项一致，演示数据 359/359 项一致。
+学历、经验的分组），逐项对比 API；五城 1021 条当前 1218/1218 项一致，演示数据 359/359 项一致。
 
 ### 8.2 重建与性能基准
 
 ```bash
-# 字段/索引变化后：先停止 API，再重建并重新导入
-python -m scripts.reset_db data/raw/shanghai_graduate_jobs_2026-11-13.json --yes
+# 字段/索引变化后：先停止 API，再重建并重新导入全部真实数据
+python -m scripts.reset_db --yes
 
 # 500 条临时数据下的接口延迟（临时 DB，不影响现有数据）
 python -m scripts.benchmark_api
@@ -346,4 +346,4 @@ python -m scripts.benchmark_api
 - 技能分类是人工词表，不做 NLP 自动抽取；词表质量直接决定“其他”占比。
 - 统计在 Pandas 中完成，适用于数百条数据；数据量显著增长时应下推到 SQL。
 - 演示数据为虚构，正式结论必须使用真实采集数据；当前 `/stats/quality` 的 `demo_records` 为 0。
-- 上海数据 146/280 条薪资为“面议”，薪资统计的分母是 134 条有效薪资，不把面议算作 0 或估算值。
+- 五城数据 448/1021 条薪资为“面议”，薪资统计的分母是 573 条有效薪资，不把面议算作 0 或估算值。

@@ -1,0 +1,344 @@
+{
+  "dataset_name": "杭州计算机类应届生招聘岗位数据（扩充版）",
+  "total_records": 228,
+  "valid_records": 228,
+  "invalid_records": 0,
+  "duplicate_ids": 0,
+  "existing_in_database": 0,
+  "missing_fields": {
+    "id": 0,
+    "company": 0,
+    "position": 0,
+    "job_type": 0,
+    "city": 0,
+    "education": 0,
+    "experience": 0,
+    "source": 0,
+    "source_url": 0,
+    "collected_at": 0
+  },
+  "salary_missing": 80,
+  "salary_single_bound": 0,
+  "salary_outliers": 2,
+  "unknown_education": [],
+  "unknown_experience": [
+    {
+      "value": "1. 本科及以上学历，计算机、软件工程等相关专业，3年以上后端开发经验",
+      "count": 1
+    },
+    {
+      "value": "2. 掌握软件测试流程，熟悉服务器硬件，如CPU、内存、硬盘、RAID卡、网卡、GPU等，以及BIOS和BMC固件，有服务器测试实习工作经验者优先",
+      "count": 1
+    },
+    {
+      "value": "2.工作经验***，优秀应届生可放宽条件",
+      "count": 1
+    },
+    {
+      "value": "3、熟悉软件发布、版本管理以及编写测试报告4、服从公司安排各项工作 任职资格：1、计算机相关专业硕士学历，***测试工作经验2、熟练使用Linux操作系统、Oracle数据库3、了解性能测试工具LoadRound4、有开发或自动化测试经验者优先5、特别优秀应届毕业生可适当放宽工作经验",
+      "count": 1
+    },
+    {
+      "value": "三、工作经验1. 至少 ***的 Java 后端开发经验，有实际项目开发和维护经验",
+      "count": 1
+    },
+    {
+      "value": "三、工作经验1. 至少 1-2 年的前端开发经验，有实际项目开发和维护经验",
+      "count": 1
+    }
+  ],
+  "empty_skills": 4,
+  "over_limit_skills": 44,
+  "duplicate_skill_entries": 0,
+  "duplicate_source_urls": [],
+  "demo_records": 0,
+  "errors": [],
+  "warnings": [
+    {
+      "row": 3,
+      "record_id": "hz_nowcoder_459025",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 4,
+      "record_id": "hz_nowcoder_461871",
+      "message": "技能数 15 超过规范上限 10 项"
+    },
+    {
+      "row": 7,
+      "record_id": "hz_nowcoder_470974",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 26,
+      "record_id": "hz_nowcoder_474917",
+      "message": "技能数 14 超过规范上限 10 项"
+    },
+    {
+      "row": 27,
+      "record_id": "hz_nowcoder_474918",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 29,
+      "record_id": "hz_nowcoder_474950",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 33,
+      "record_id": "hz_nowcoder_475036",
+      "message": "技能数 14 超过规范上限 10 项"
+    },
+    {
+      "row": 40,
+      "record_id": "hz_nowcoder_458717",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 46,
+      "record_id": "hz_nowcoder_470515",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 57,
+      "record_id": "hz_nowcoder_469431",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 59,
+      "record_id": "hz_nowcoder_461329",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 61,
+      "record_id": "hz_nowcoder_460534",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 69,
+      "record_id": "hz_nowcoder_460585",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 72,
+      "record_id": "hz_nowcoder_460615",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 74,
+      "record_id": "hz_nowcoder_460621",
+      "message": "技能数 16 超过规范上限 10 项"
+    },
+    {
+      "row": 82,
+      "record_id": "hz_nowcoder_460752",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 93,
+      "record_id": "hz_nowcoder_464360",
+      "message": "薪资疑似异常：100000–150000 元/月"
+    },
+    {
+      "row": 94,
+      "record_id": "hz_nowcoder_464362",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 96,
+      "record_id": "hz_nowcoder_467977",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 97,
+      "record_id": "hz_nowcoder_471736",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 99,
+      "record_id": "hz_nowcoder_460031",
+      "message": "技能数 15 超过规范上限 10 项"
+    },
+    {
+      "row": 102,
+      "record_id": "hz_nowcoder_463477",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 106,
+      "record_id": "hz_nowcoder_459323",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 108,
+      "record_id": "hz_nowcoder_470464",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 112,
+      "record_id": "hz_nowcoder_466479",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 114,
+      "record_id": "hz_nowcoder_462277",
+      "message": "薪资疑似异常：1000–2000 元/月"
+    },
+    {
+      "row": 118,
+      "record_id": "hz_nowcoder_461863",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 119,
+      "record_id": "hz_nowcoder_458056",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 120,
+      "record_id": "hz_nowcoder_461375",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 129,
+      "record_id": "hz_nowcoder_461054",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 135,
+      "record_id": "hz_nowcoder_461053",
+      "message": "技能数 14 超过规范上限 10 项"
+    },
+    {
+      "row": 137,
+      "record_id": "hz_nowcoder_462592",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 138,
+      "record_id": "hz_nowcoder_464004",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 146,
+      "record_id": "hz_nowcoder_464418",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 150,
+      "record_id": "hz_nowcoder_458053",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 152,
+      "record_id": "hz_nowcoder_460554",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 154,
+      "record_id": "hz_nowcoder_460203",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 157,
+      "record_id": "hz_nowcoder_456513",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 158,
+      "record_id": "hz_nowcoder_464146",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 164,
+      "record_id": "hz_ncss_PAciai5AqAadAe4MN6T2Tn",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 169,
+      "record_id": "hz_ncss_2YRHiufTM9wVVhVaq1FZXU",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 173,
+      "record_id": "hz_ncss_VUFwKmgBLY3bNhBVYMFNmo",
+      "message": "技能数 17 超过规范上限 10 项"
+    },
+    {
+      "row": 175,
+      "record_id": "hz_ncss_L16EZQ1kUSAYvEScHicHfm",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 192,
+      "record_id": "hz_ncss_C3Eh2ajXPXMe4xjVg5n4WX",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 193,
+      "record_id": "hz_ncss_HjCpZUM7P4x7cdkWDPBX5Q",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 203,
+      "record_id": "hz_ncss_DMTHA4LQxWqEucHer6aJyH",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 204,
+      "record_id": "hz_ncss_DLKYzJforstMXQBafKFPc",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 207,
+      "record_id": "hz_ncss_79zwcaUEM6snvsDxPw1foQ",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 213,
+      "record_id": "hz_ncss_QF2pUJAcktNe5J1gmbgtTW",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 227,
+      "record_id": "hz_ncss_MXbyH5NCMfW2BHCQ7Dwjd8",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "薪资面议（两端为空）：80 条"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "未知经验值「1. 本科及以上学历，计算机、软件工程等相关专业，3年以上后端开发经验」：1 条，导入后原样保留"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "未知经验值「2. 掌握软件测试流程，熟悉服务器硬件，如CPU、内存、硬盘、RAID卡、网卡、GPU等，以及BIOS和BMC固件，有服务器测试实习工作经验者优先」：1 条，导入后原样保留"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "未知经验值「2.工作经验***，优秀应届生可放宽条件」：1 条，导入后原样保留"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "未知经验值「3、熟悉软件发布、版本管理以及编写测试报告4、服从公司安排各项工作 任职资格：1、计算机相关专业硕士学历，***测试工作经验2、熟练使用Linux操作系统、Oracle数据库3、了解性能测试工具LoadRound4、有开发或自动化测试经验者优先5、特别优秀应届毕业生可适当放宽工作经验」：1 条，导入后原样保留"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "未知经验值「三、工作经验1. 至少 ***的 Java 后端开发经验，有实际项目开发和维护经验」：1 条，导入后原样保留"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "未知经验值「三、工作经验1. 至少 1-2 年的前端开发经验，有实际项目开发和维护经验」：1 条，导入后原样保留"
+    }
+  ],
+  "warning_count": 57
+}

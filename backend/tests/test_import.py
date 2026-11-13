@@ -32,6 +32,36 @@ def test_import_normalizes_campus_experience_labels(client: TestClient) -> None:
         assert client.get(f"/api/v1/jobs/{job_id}").json()["experience"] == expected
 
 
+def test_import_normalizes_job_type_aliases(client: TestClient) -> None:
+    payload = sample_payload()
+    labels = {
+        "job_t1": ("算法与人工智能", "人工智能与算法"),
+        "job_t2": ("其他软件与系统研发", "软件开发"),
+        "job_t3": ("网络与信息安全", "网络安全"),
+    }
+    for record in payload["records"]:
+        record["job_type"] = labels[record["id"]][0]
+
+    response = import_payload(client, payload)
+    assert response.status_code == 200, response.text
+
+    for job_id, (_, expected) in labels.items():
+        assert client.get(f"/api/v1/jobs/{job_id}").json()["job_type"] == expected
+
+
+def test_import_accepts_long_experience_text(client: TestClient) -> None:
+    payload = sample_payload()
+    long_text = "1. 本科及以上学历，计算机、软件工程等相关专业，3年以上后端开发经验"
+    payload["records"][0]["experience"] = long_text
+
+    response = import_payload(client, payload)
+    assert response.status_code == 200, response.text
+    assert response.json()["imported"] == 3
+
+    job = client.get("/api/v1/jobs/job_t1").json()
+    assert job["experience"] == long_text
+
+
 def test_import_accepts_timestamp_collected_at(client: TestClient) -> None:
     payload = sample_payload()
     payload["collected_at"] = "2026-11-13T09:30:00+08:00"

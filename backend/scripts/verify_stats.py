@@ -8,8 +8,13 @@ so a change in the API is caught instead of inherited.
 Usage (run from ``backend/``, with the API running)::
 
     python -m scripts.verify_stats
-    python -m scripts.verify_stats data/raw/jobs_hangzhou_2026-11.json --json > verify.json
+    python -m scripts.verify_stats data/raw/hangzhou_graduate_jobs_2026-11-13_expanded.json --json > verify.json
+    python -m scripts.verify_stats data/raw/a.json data/raw/b.json --json > verify.json
     python -m scripts.verify_stats --base-url http://127.0.0.1:8000/api/v1
+
+With no paths it checks every real dataset under ``data/raw/``
+(``*_graduate_jobs_*.json``) merged in filename order, matching the seed and
+reset scripts. Duplicate ids across files are counted and skipped.
 
 Exit codes: 0 = all checks pass, 1 = at least one mismatch, 2 = cannot load or
 reach the data/API.
@@ -34,9 +39,14 @@ from app.services.importer import parse_dataset
 from app.services.normalization import (
     normalize_education,
     normalize_experience,
+    normalize_job_type,
     normalize_skills,
 )
 from app.services.skills import categorize_skill
+
+DATA_RAW = Path(__file__).resolve().parents[1] / "data" / "raw"
+REAL_GLOB = "*_graduate_jobs_*.json"
+SAMPLE_PATH = DATA_RAW / "sample_jobs.json"
 
 # Deliberately duplicated from app.services.stats: the cross-check must notice
 # if the API changes its bins or ordering.
@@ -201,7 +211,7 @@ def load_records(payload: Any) -> tuple[str, list[dict[str, Any]], int, int]:
                 "id": record.id,
                 "company": record.company,
                 "position": record.position,
-                "job_type": record.job_type,
+                "job_type": normalize_job_type(record.job_type),
                 "city": record.city,
                 "education": normalize_education(record.education),
                 "experience": experience,
@@ -592,10 +602,12 @@ def compare(expected: dict[str, Any], api: dict[str, Any]) -> Checker:
 def main() -> None:
     parser = argparse.ArgumentParser(description="JobLens 统计口径交叉核对")
     parser.add_argument(
-        "path",
-        nargs="?",
-        default="data/raw/sample_jobs.json",
-        help="原始 JSON 数据集路径",
+        "paths",
+        nargs="*",
+        help=(
+            "原始 JSON 数据集路径，可传多个；默认合并 data/raw/ 下全部 "
+            "*_graduate_jobs_*.json，没有真实数据时使用演示数据"
+        ),
     )
     parser.add_argument(
         "--base-url",
@@ -606,15 +618,34 @@ def main() -> None:
     parser.add_argument("--verbose", action="store_true", help="打印每一条检查")
     args = parser.parse_args()
 
-    file_path = Path(args.path)
-    if not file_path.is_file():
-        raise SystemExit(f"文件不存在：{file_path}")
+    file_paths = [Path(item) for item in args.paths]
+    if not file_paths:
+        file_paths = sorted(DATA_RAW.glob(REAL_GLOB)) or [SAMPLE_PATH]
+    for file_path in file_paths:
+        if not file_path.is_file():
+            raise SystemExit(f"文件不存在：{file_path}")
 
-    payload = json.loads(file_path.read_text(encoding="utf-8-sig"))
-    try:
-        dataset_name, records, invalid, duplicates = load_records(payload)
-    except ValueError as exc:
-        raise SystemExit(f"数据集结构错误：{exc}") from exc
+    dataset_names: list[str] = []
+    records: list[dict[str, Any]] = []
+    invalid = duplicates = 0
+    seen_ids: set[str] = set()
+    for file_path in file_paths:
+        payload = json.loads(file_path.read_text(encoding="utf-8-sig"))
+        try:
+            dataset_name, file_records, file_invalid, file_duplicates = load_records(
+                payload
+            )
+        except ValueError as exc:
+            raise SystemExit(f"数据集结构错误（{file_path}）：{exc}") from exc
+        dataset_names.append(dataset_name or file_path.name)
+        invalid += file_invalid
+        duplicates += file_duplicates
+        for record in file_records:
+            if record["id"] in seen_ids:
+                duplicates += 1
+                continue
+            seen_ids.add(record["id"])
+            records.append(record)
 
     expected = compute_expected(records)
     expected["dataset"] = {
@@ -634,11 +665,12 @@ def main() -> None:
     total = len(checker.checks)
     passed = sum(1 for check in checker.checks if check["passed"])
     failed = total - passed
+    dataset_label = " / ".join(dataset_names)
 
     if args.json:
         report = {
-            "dataset_name": dataset_name,
-            "source_file": str(file_path),
+            "dataset_name": dataset_label,
+            "source_files": [str(file_path) for file_path in file_paths],
             "api": args.base_url,
             "dataset": expected["dataset"],
             "summary": {"total": total, "passed": passed, "failed": failed},
@@ -646,7 +678,7 @@ def main() -> None:
         }
         print(json.dumps(report, ensure_ascii=False, indent=2))
     else:
-        print(f"数据集：{dataset_name}")
+        print(f"数据集：{dataset_label}")
         print(f"API：{args.base_url}")
         print(
             f"JSON：{len(records)} 条有效记录｜不可导入 {invalid}｜重复 id {duplicates}"

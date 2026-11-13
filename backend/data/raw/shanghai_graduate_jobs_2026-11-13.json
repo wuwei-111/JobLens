@@ -4,6 +4,7 @@
   "collected_at": "2026-11-13",
   "timezone": "Asia/Shanghai",
   "record_count": 280,
+  "id_policy": "记录 id 由城市前缀与原始平台 id 组成（sh_/bj_/sz_/hz_/cd_），原始平台 id 保留在 source_job_id 字段；同一岗位在多个城市发布时，每个城市各保留一条。",
   "scope": {
     "city": "上海",
     "snapshot_date": "2026-11-13",
@@ -22,7 +23,7 @@
   ],
   "records": [
     {
-      "id": "nowcoder_469642",
+      "id": "sh_nowcoder_469642",
       "company": "上海银行",
       "position": "总行金融科技岗位（数据分析）",
       "job_type": "数据开发与分析",
@@ -43,7 +44,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469642",
       "collected_at": "2026-11-13T11:14:45+08:00",
-      "source_job_id": "469642",
+      "source_job_id": "nowcoder_469642",
       "company_legal_name": "上海银行",
       "source_company_id": 1151,
       "source_job_category": "Python",
@@ -147,7 +148,7 @@
       ]
     },
     {
-      "id": "nowcoder_469634",
+      "id": "sh_nowcoder_469634",
       "company": "上海银行",
       "position": "总行金融科技岗位（软件测试）",
       "job_type": "软件测试与测试开发",
@@ -164,7 +165,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469634",
       "collected_at": "2026-11-13T11:14:44+08:00",
-      "source_job_id": "469634",
+      "source_job_id": "nowcoder_469634",
       "company_legal_name": "上海银行",
       "source_company_id": 1151,
       "source_job_category": "软件测试",
@@ -234,7 +235,7 @@
       ]
     },
     {
-      "id": "nowcoder_463597",
+      "id": "sh_nowcoder_463597",
       "company": "携程",
       "position": "云原生研发工程师（AI Agent方向）（2027届秋招）",
       "job_type": "人工智能与算法",
@@ -258,7 +259,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463597",
       "collected_at": "2026-11-13T11:13:55+08:00",
-      "source_job_id": "463597",
+      "source_job_id": "nowcoder_463597",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "Python",
@@ -403,7 +404,7 @@
       ]
     },
     {
-      "id": "nowcoder_474951",
+      "id": "sh_nowcoder_474951",
       "company": "中金所技术公司",
       "position": "软件开发工程师-Java开发(J10463)",
       "job_type": "软件开发",
@@ -431,7 +432,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/474951",
       "collected_at": "2026-11-13T11:14:59+08:00",
-      "source_job_id": "474951",
+      "source_job_id": "nowcoder_474951",
       "company_legal_name": "中金所技术公司",
       "source_company_id": 2746,
       "source_job_category": "Java",
@@ -604,7 +605,7 @@
       ]
     },
     {
-      "id": "nowcoder_474942",
+      "id": "sh_nowcoder_474942",
       "company": "中金所技术公司",
       "position": "运维工程师-网络建设(J10468)",
       "job_type": "运维与基础设施",
@@ -622,7 +623,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/474942",
       "collected_at": "2026-11-13T11:14:58+08:00",
-      "source_job_id": "474942",
+      "source_job_id": "nowcoder_474942",
       "company_legal_name": "中金所技术公司",
       "source_company_id": 2746,
       "source_job_category": "网络工程师",
@@ -698,7 +699,7 @@
       ]
     },
     {
-      "id": "nowcoder_465013",
+      "id": "sh_nowcoder_465013",
       "company": "兴证全球基金",
       "position": "Java 后端",
       "job_type": "软件开发",
@@ -724,7 +725,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/465013",
       "collected_at": "2026-11-13T11:14:12+08:00",
-      "source_job_id": "465013",
+      "source_job_id": "nowcoder_465013",
       "company_legal_name": "兴证全球基金",
       "source_company_id": 12563,
       "source_job_category": "Java",
@@ -879,7 +880,7 @@
       ]
     },
     {
-      "id": "nowcoder_467510",
+      "id": "sh_nowcoder_467510",
       "company": "智慧芽",
       "position": "AI 应用开发工程师（Agent方向）(J12741)",
       "job_type": "人工智能与算法",
@@ -903,7 +904,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467510",
       "collected_at": "2026-11-13T11:14:34+08:00",
-      "source_job_id": "467510",
+      "source_job_id": "nowcoder_467510",
       "company_legal_name": "智慧芽",
       "source_company_id": 13404,
       "source_job_category": "人工智能",
@@ -1058,7 +1059,7 @@
       ]
     },
     {
-      "id": "nowcoder_467284",
+      "id": "sh_nowcoder_467284",
       "company": "FUNPLUS",
       "position": "27校招-AI Agent 工程师-数据",
       "job_type": "人工智能与算法",
@@ -1079,7 +1080,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467284",
       "collected_at": "2026-11-13T11:14:31+08:00",
-      "source_job_id": "467284",
+      "source_job_id": "nowcoder_467284",
       "company_legal_name": "FUNPLUS",
       "source_company_id": 1950,
       "source_job_category": "Python",
@@ -1196,7 +1197,7 @@
       ]
     },
     {
-      "id": "nowcoder_467271",
+      "id": "sh_nowcoder_467271",
       "company": "FUNPLUS",
       "position": "27校招-AI Agent 工程师-多模态",
       "job_type": "人工智能与算法",
@@ -1219,7 +1220,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467271",
       "collected_at": "2026-11-13T11:14:30+08:00",
-      "source_job_id": "467271",
+      "source_job_id": "nowcoder_467271",
       "company_legal_name": "FUNPLUS",
       "source_company_id": 1950,
       "source_job_category": "Python",
@@ -1353,7 +1354,7 @@
       ]
     },
     {
-      "id": "nowcoder_467270",
+      "id": "sh_nowcoder_467270",
       "company": "FUNPLUS",
       "position": "27校招-AI Agent 工程师-发行",
       "job_type": "人工智能与算法",
@@ -1376,7 +1377,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467270",
       "collected_at": "2026-11-13T11:14:30+08:00",
-      "source_job_id": "467270",
+      "source_job_id": "nowcoder_467270",
       "company_legal_name": "FUNPLUS",
       "source_company_id": 1950,
       "source_job_category": "Python",
@@ -1510,7 +1511,7 @@
       ]
     },
     {
-      "id": "nowcoder_474772",
+      "id": "sh_nowcoder_474772",
       "company": "携程",
       "position": "LLM 应用工程师（信息安全方向）（2027届秋招）",
       "job_type": "网络安全",
@@ -1531,7 +1532,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/474772",
       "collected_at": "2026-11-13T11:10:49+08:00",
-      "source_job_id": "474772",
+      "source_job_id": "nowcoder_474772",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "网络安全",
@@ -1653,7 +1654,7 @@
       ]
     },
     {
-      "id": "nowcoder_470939",
+      "id": "sh_nowcoder_470939",
       "company": "商米集团",
       "position": "<27届校招>软件开发工程师",
       "job_type": "软件开发",
@@ -1684,7 +1685,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/470939",
       "collected_at": "2026-11-13T11:10:04+08:00",
-      "source_job_id": "470939",
+      "source_job_id": "nowcoder_470939",
       "company_legal_name": "商米集团",
       "source_company_id": 1166,
       "source_job_category": "后端工程师",
@@ -1878,7 +1879,7 @@
       ]
     },
     {
-      "id": "nowcoder_474948",
+      "id": "sh_nowcoder_474948",
       "company": "中金所技术公司",
       "position": "软件开发工程师-Agent研发(J10464)",
       "job_type": "软件开发",
@@ -1904,7 +1905,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/474948",
       "collected_at": "2026-11-13T11:10:54+08:00",
-      "source_job_id": "474948",
+      "source_job_id": "nowcoder_474948",
       "company_legal_name": "中金所技术公司",
       "source_company_id": 2746,
       "source_job_category": "人工智能",
@@ -2059,7 +2060,7 @@
       ]
     },
     {
-      "id": "nowcoder_474941",
+      "id": "sh_nowcoder_474941",
       "company": "中金所技术公司",
       "position": "运维工程师-一线运维(J10469)",
       "job_type": "运维与基础设施",
@@ -2074,7 +2075,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/474941",
       "collected_at": "2026-11-13T11:10:50+08:00",
-      "source_job_id": "474941",
+      "source_job_id": "nowcoder_474941",
       "company_legal_name": "中金所技术公司",
       "source_company_id": 2746,
       "source_job_category": "运维工程师",
@@ -2128,7 +2129,7 @@
       ]
     },
     {
-      "id": "nowcoder_458248",
+      "id": "sh_nowcoder_458248",
       "company": "华芯程（杭州）科技",
       "position": "EDA软件研发工程师",
       "job_type": "软件开发",
@@ -2147,7 +2148,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/458248",
       "collected_at": "2026-11-13T11:12:30+08:00",
-      "source_job_id": "458248",
+      "source_job_id": "nowcoder_458248",
       "company_legal_name": "华芯程（杭州）科技",
       "source_company_id": 260985,
       "source_job_category": "C++",
@@ -2227,7 +2228,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_463557",
+      "id": "sh_nowcoder_463557",
       "company": "碧桂园生活服务集团股份有限公司",
       "position": "数据开发岗",
       "job_type": "数据开发与分析",
@@ -2251,7 +2252,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463557",
       "collected_at": "2026-11-13T11:13:43+08:00",
-      "source_job_id": "463557",
+      "source_job_id": "nowcoder_463557",
       "company_legal_name": "碧桂园生活服务集团股份有限公司",
       "source_company_id": 29503,
       "source_job_category": "大数据开发工程师",
@@ -2385,7 +2386,7 @@
       ]
     },
     {
-      "id": "nowcoder_471224",
+      "id": "sh_nowcoder_471224",
       "company": "新毅东",
       "position": "嵌入式研发应用工程师（上海 校招）(J10536)",
       "job_type": "嵌入式与系统软件",
@@ -2403,7 +2404,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/471224",
       "collected_at": "2026-11-13T11:10:26+08:00",
-      "source_job_id": "471224",
+      "source_job_id": "nowcoder_471224",
       "company_legal_name": "新毅东",
       "source_company_id": 25610,
       "source_job_category": "嵌入式工程师",
@@ -2479,7 +2480,7 @@
       ]
     },
     {
-      "id": "nowcoder_475273",
+      "id": "sh_nowcoder_475273",
       "company": "上海砺星工业",
       "position": "嵌入式软件工程师(J10619)",
       "job_type": "嵌入式与系统软件",
@@ -2500,7 +2501,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/475273",
       "collected_at": "2026-11-13T11:11:08+08:00",
-      "source_job_id": "475273",
+      "source_job_id": "nowcoder_475273",
       "company_legal_name": "上海砺星工业",
       "source_company_id": 160906,
       "source_job_category": "嵌入式软件开发",
@@ -2604,7 +2605,7 @@
       ]
     },
     {
-      "id": "nowcoder_448773",
+      "id": "sh_nowcoder_448773",
       "company": "声网",
       "position": "校招-自动化测试工程师",
       "job_type": "软件测试与测试开发",
@@ -2631,7 +2632,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/448773",
       "collected_at": "2026-11-13T11:08:01+08:00",
-      "source_job_id": "448773",
+      "source_job_id": "nowcoder_448773",
       "company_legal_name": "声网",
       "source_company_id": 2562,
       "source_job_category": "通信测试工程师",
@@ -2795,7 +2796,7 @@
       ]
     },
     {
-      "id": "nowcoder_448771",
+      "id": "sh_nowcoder_448771",
       "company": "声网",
       "position": "校招-技术支持工程师(对话式AI方向)",
       "job_type": "软件技术支持",
@@ -2816,7 +2817,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/448771",
       "collected_at": "2026-11-13T11:12:07+08:00",
-      "source_job_id": "448771",
+      "source_job_id": "nowcoder_448771",
       "company_legal_name": "声网",
       "source_company_id": 2562,
       "source_job_category": "技术支持工程师",
@@ -2924,7 +2925,7 @@
       "review_note": "职责为软件SDK集成和代码排障；与算法研发岗位分开归类。"
     },
     {
-      "id": "nowcoder_399711",
+      "id": "sh_nowcoder_399711",
       "company": "声网",
       "position": "校招-C++开发工程师",
       "job_type": "软件开发",
@@ -2947,7 +2948,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/399711",
       "collected_at": "2026-11-13T11:07:55+08:00",
-      "source_job_id": "399711",
+      "source_job_id": "nowcoder_399711",
       "company_legal_name": "声网",
       "source_company_id": 2562,
       "source_job_category": "通信研发工程师",
@@ -3079,7 +3080,7 @@
       ]
     },
     {
-      "id": "nowcoder_396494",
+      "id": "sh_nowcoder_396494",
       "company": "声网",
       "position": "校招-云平台开发工程师",
       "job_type": "嵌入式与系统软件",
@@ -3102,7 +3103,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/396494",
       "collected_at": "2026-11-13T11:11:52+08:00",
-      "source_job_id": "396494",
+      "source_job_id": "nowcoder_396494",
       "company_legal_name": "声网",
       "source_company_id": 2562,
       "source_job_category": "通信研发工程师",
@@ -3220,7 +3221,7 @@
       ]
     },
     {
-      "id": "nowcoder_468665",
+      "id": "sh_nowcoder_468665",
       "company": "UCloud",
       "position": "2027校招-SRE",
       "job_type": "运维与基础设施",
@@ -3241,7 +3242,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/468665",
       "collected_at": "2026-11-13T11:14:40+08:00",
-      "source_job_id": "468665",
+      "source_job_id": "nowcoder_468665",
       "company_legal_name": "Ucloud",
       "source_company_id": 743,
       "source_job_category": "运维工程师",
@@ -3346,7 +3347,7 @@
       ]
     },
     {
-      "id": "nowcoder_467251",
+      "id": "sh_nowcoder_467251",
       "company": "上海华为技术有限公司",
       "position": "AI模型工程师-Agent技术",
       "job_type": "人工智能与算法",
@@ -3365,7 +3366,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467251",
       "collected_at": "2026-11-13T11:14:29+08:00",
-      "source_job_id": "467251",
+      "source_job_id": "nowcoder_467251",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "算法工程师",
@@ -3459,7 +3460,7 @@
       ]
     },
     {
-      "id": "nowcoder_474372",
+      "id": "sh_nowcoder_474372",
       "company": "哈啰",
       "position": "【量天尺计划】智驾模型开发-造父Robotaxi(J21698)",
       "job_type": "人工智能与算法",
@@ -3481,7 +3482,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/474372",
       "collected_at": "2026-11-13T11:10:47+08:00",
-      "source_job_id": "474372",
+      "source_job_id": "nowcoder_474372",
       "company_legal_name": "哈啰出行",
       "source_company_id": 1235,
       "source_job_category": "算法工程师",
@@ -3596,7 +3597,7 @@
       ]
     },
     {
-      "id": "nowcoder_474369",
+      "id": "sh_nowcoder_474369",
       "company": "哈啰",
       "position": "【量天尺计划】智驾仿真算法-造父Robotaxi(J21699)",
       "job_type": "人工智能与算法",
@@ -3622,7 +3623,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/474369",
       "collected_at": "2026-11-13T11:10:46+08:00",
-      "source_job_id": "474369",
+      "source_job_id": "nowcoder_474369",
       "company_legal_name": "哈啰出行",
       "source_company_id": 1235,
       "source_job_category": "算法工程师",
@@ -3773,7 +3774,7 @@
       ]
     },
     {
-      "id": "nowcoder_474366",
+      "id": "sh_nowcoder_474366",
       "company": "哈啰",
       "position": "【量天尺计划】智驾Efficient AI 前沿预研-造父Robotaxi(J21702)",
       "job_type": "人工智能与算法",
@@ -3799,7 +3800,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/474366",
       "collected_at": "2026-11-13T11:14:56+08:00",
-      "source_job_id": "474366",
+      "source_job_id": "nowcoder_474366",
       "company_legal_name": "哈啰出行",
       "source_company_id": 1235,
       "source_job_category": "算法工程师",
@@ -3965,7 +3966,7 @@
       ]
     },
     {
-      "id": "nowcoder_465017",
+      "id": "sh_nowcoder_465017",
       "company": "途虎",
       "position": "数据开发工程师（2027届校招）-上海",
       "job_type": "数据开发与分析",
@@ -3990,7 +3991,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/465017",
       "collected_at": "2026-11-13T11:14:13+08:00",
-      "source_job_id": "465017",
+      "source_job_id": "nowcoder_465017",
       "company_legal_name": "途虎",
       "source_company_id": 1513,
       "source_job_category": "大数据开发工程师",
@@ -4150,7 +4151,7 @@
       ]
     },
     {
-      "id": "nowcoder_434500",
+      "id": "sh_nowcoder_434500",
       "company": "北京微财科技有限公司",
       "position": "风险数据分析师（国际化业务校招）",
       "job_type": "数据开发与分析",
@@ -4168,7 +4169,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/434500",
       "collected_at": "2026-11-13T11:11:57+08:00",
-      "source_job_id": "434500",
+      "source_job_id": "nowcoder_434500",
       "company_legal_name": "北京微财科技有限公司",
       "source_company_id": 7522,
       "source_job_category": "数据分析师",
@@ -4264,7 +4265,7 @@
       ]
     },
     {
-      "id": "nowcoder_401290",
+      "id": "sh_nowcoder_401290",
       "company": "拼多多集团-PDD",
       "position": "2027届-服务端研发工程师",
       "job_type": "软件开发",
@@ -4283,7 +4284,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/401290",
       "collected_at": "2026-11-13T11:07:56+08:00",
-      "source_job_id": "401290",
+      "source_job_id": "nowcoder_401290",
       "company_legal_name": "拼多多",
       "source_company_id": 732,
       "source_job_category": "Java",
@@ -4364,7 +4365,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_457011",
+      "id": "sh_nowcoder_457011",
       "company": "上海砺星工业",
       "position": "嵌入式软件工程师",
       "job_type": "嵌入式与系统软件",
@@ -4384,7 +4385,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/457011",
       "collected_at": "2026-11-13T11:12:23+08:00",
-      "source_job_id": "457011",
+      "source_job_id": "nowcoder_457011",
       "company_legal_name": "上海砺星工业",
       "source_company_id": 160906,
       "source_job_category": "嵌入式软件工程师",
@@ -4477,7 +4478,7 @@
       ]
     },
     {
-      "id": "nowcoder_468465",
+      "id": "sh_nowcoder_468465",
       "company": "途虎",
       "position": "飞控算法工程师（2027届校招）",
       "job_type": "人工智能与算法",
@@ -4501,7 +4502,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/468465",
       "collected_at": "2026-11-13T11:09:01+08:00",
-      "source_job_id": "468465",
+      "source_job_id": "nowcoder_468465",
       "company_legal_name": "途虎",
       "source_company_id": 1513,
       "source_job_category": "算法工程师",
@@ -4655,7 +4656,7 @@
       ]
     },
     {
-      "id": "nowcoder_431205",
+      "id": "sh_nowcoder_431205",
       "company": "中欧基金",
       "position": "27届校招-量化风控（AI应用方向）",
       "job_type": "人工智能与算法",
@@ -4681,7 +4682,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/431205",
       "collected_at": "2026-11-13T11:11:55+08:00",
-      "source_job_id": "431205",
+      "source_job_id": "nowcoder_431205",
       "company_legal_name": "中欧基金管理有限公司",
       "source_company_id": 21759,
       "source_job_category": "风控",
@@ -4835,7 +4836,7 @@
       ]
     },
     {
-      "id": "nowcoder_474719",
+      "id": "sh_nowcoder_474719",
       "company": "携程",
       "position": "安全攻防工程师（AI 蓝军方向 ）（2027届秋招）",
       "job_type": "网络安全",
@@ -4862,7 +4863,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/474719",
       "collected_at": "2026-11-13T11:14:58+08:00",
-      "source_job_id": "474719",
+      "source_job_id": "nowcoder_474719",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "网络安全",
@@ -5031,7 +5032,7 @@
       ]
     },
     {
-      "id": "nowcoder_467165",
+      "id": "sh_nowcoder_467165",
       "company": "众安保险",
       "position": "[2027届秋招-上海]数据开发工程师",
       "job_type": "数据开发与分析",
@@ -5055,7 +5056,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467165",
       "collected_at": "2026-11-13T11:14:26+08:00",
-      "source_job_id": "467165",
+      "source_job_id": "nowcoder_467165",
       "company_legal_name": "众安保险",
       "source_company_id": 2101,
       "source_job_category": "数据库工程师",
@@ -5190,7 +5191,7 @@
       ]
     },
     {
-      "id": "nowcoder_463591",
+      "id": "sh_nowcoder_463591",
       "company": "携程",
       "position": "Java开发工程师（2027届秋招）",
       "job_type": "软件开发",
@@ -5211,7 +5212,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463591",
       "collected_at": "2026-11-13T11:13:54+08:00",
-      "source_job_id": "463591",
+      "source_job_id": "nowcoder_463591",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "Java",
@@ -5321,7 +5322,7 @@
       ]
     },
     {
-      "id": "nowcoder_463589",
+      "id": "sh_nowcoder_463589",
       "company": "携程",
       "position": "全栈开发工程师（2027届秋招）",
       "job_type": "软件开发",
@@ -5354,7 +5355,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463589",
       "collected_at": "2026-11-13T11:13:54+08:00",
-      "source_job_id": "463589",
+      "source_job_id": "nowcoder_463589",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "全栈开发",
@@ -5567,7 +5568,7 @@
       ]
     },
     {
-      "id": "nowcoder_463586",
+      "id": "sh_nowcoder_463586",
       "company": "携程",
       "position": "前端开发工程师（2027届秋招）",
       "job_type": "软件开发",
@@ -5592,7 +5593,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463586",
       "collected_at": "2026-11-13T11:13:53+08:00",
-      "source_job_id": "463586",
+      "source_job_id": "nowcoder_463586",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "前端工程师",
@@ -5740,7 +5741,7 @@
       ]
     },
     {
-      "id": "nowcoder_463581",
+      "id": "sh_nowcoder_463581",
       "company": "携程",
       "position": "LLM算法工程师（2027届秋招）",
       "job_type": "人工智能与算法",
@@ -5766,7 +5767,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463581",
       "collected_at": "2026-11-13T11:13:50+08:00",
-      "source_job_id": "463581",
+      "source_job_id": "nowcoder_463581",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "算法工程师",
@@ -5922,7 +5923,7 @@
       ]
     },
     {
-      "id": "nowcoder_463578",
+      "id": "sh_nowcoder_463578",
       "company": "携程",
       "position": "测试开发工程师（2027届秋招）",
       "job_type": "软件测试与测试开发",
@@ -5947,7 +5948,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463578",
       "collected_at": "2026-11-13T11:13:49+08:00",
-      "source_job_id": "463578",
+      "source_job_id": "nowcoder_463578",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "测试开发",
@@ -6087,7 +6088,7 @@
       ]
     },
     {
-      "id": "nowcoder_463574",
+      "id": "sh_nowcoder_463574",
       "company": "携程",
       "position": "SRE工程师（2027届秋招）",
       "job_type": "运维与基础设施",
@@ -6113,7 +6114,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463574",
       "collected_at": "2026-11-13T11:13:47+08:00",
-      "source_job_id": "463574",
+      "source_job_id": "nowcoder_463574",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "运维工程师",
@@ -6265,7 +6266,7 @@
       ]
     },
     {
-      "id": "nowcoder_463573",
+      "id": "sh_nowcoder_463573",
       "company": "携程",
       "position": "Agent开发工程师（2027届秋招）",
       "job_type": "软件开发",
@@ -6286,7 +6287,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463573",
       "collected_at": "2026-11-13T11:13:47+08:00",
-      "source_job_id": "463573",
+      "source_job_id": "nowcoder_463573",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "人工智能",
@@ -6418,7 +6419,7 @@
       ]
     },
     {
-      "id": "nowcoder_463568",
+      "id": "sh_nowcoder_463568",
       "company": "携程",
       "position": "算法工程师（NLP方向）（2027届秋招）",
       "job_type": "人工智能与算法",
@@ -6450,7 +6451,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463568",
       "collected_at": "2026-11-13T11:13:44+08:00",
-      "source_job_id": "463568",
+      "source_job_id": "nowcoder_463568",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "算法工程师",
@@ -6671,7 +6672,7 @@
       ]
     },
     {
-      "id": "nowcoder_463565",
+      "id": "sh_nowcoder_463565",
       "company": "携程",
       "position": "数据分析师（技术方向）（2027届秋招）",
       "job_type": "数据开发与分析",
@@ -6693,7 +6694,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463565",
       "collected_at": "2026-11-13T11:13:44+08:00",
-      "source_job_id": "463565",
+      "source_job_id": "nowcoder_463565",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "数据分析师",
@@ -6805,7 +6806,7 @@
       ]
     },
     {
-      "id": "nowcoder_474182",
+      "id": "sh_nowcoder_474182",
       "company": "上海华为技术有限公司",
       "position": "AI Infra工程师",
       "job_type": "AI基础设施与系统开发",
@@ -6826,7 +6827,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/474182",
       "collected_at": "2026-11-13T11:10:43+08:00",
-      "source_job_id": "474182",
+      "source_job_id": "nowcoder_474182",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "算法工程师",
@@ -6933,7 +6934,7 @@
       ]
     },
     {
-      "id": "nowcoder_471489",
+      "id": "sh_nowcoder_471489",
       "company": "华为云",
       "position": "AI算法工程师/推理工程师",
       "job_type": "人工智能与算法",
@@ -6960,7 +6961,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/471489",
       "collected_at": "2026-11-13T11:10:27+08:00",
-      "source_job_id": "471489",
+      "source_job_id": "nowcoder_471489",
       "company_legal_name": "华为云",
       "source_company_id": 27771,
       "source_job_category": "算法工程师",
@@ -7117,7 +7118,7 @@
       ]
     },
     {
-      "id": "nowcoder_471141",
+      "id": "sh_nowcoder_471141",
       "company": "商米集团",
       "position": "<27届校招>AI测试工程师",
       "job_type": "软件测试与测试开发",
@@ -7136,7 +7137,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/471141",
       "collected_at": "2026-11-13T11:10:20+08:00",
-      "source_job_id": "471141",
+      "source_job_id": "nowcoder_471141",
       "company_legal_name": "商米集团",
       "source_company_id": 1166,
       "source_job_category": "测试工程师",
@@ -7227,7 +7228,7 @@
       ]
     },
     {
-      "id": "nowcoder_470949",
+      "id": "sh_nowcoder_470949",
       "company": "商米集团",
       "position": "<27届校招>运维工程师",
       "job_type": "运维与基础设施",
@@ -7248,7 +7249,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/470949",
       "collected_at": "2026-11-13T11:10:07+08:00",
-      "source_job_id": "470949",
+      "source_job_id": "nowcoder_470949",
       "company_legal_name": "商米集团",
       "source_company_id": 1166,
       "source_job_category": "运维工程师",
@@ -7346,7 +7347,7 @@
       ]
     },
     {
-      "id": "nowcoder_470948",
+      "id": "sh_nowcoder_470948",
       "company": "商米集团",
       "position": "<27届校招>工具开发工程师",
       "job_type": "软件开发",
@@ -7363,7 +7364,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/470948",
       "collected_at": "2026-11-13T11:14:49+08:00",
-      "source_job_id": "470948",
+      "source_job_id": "nowcoder_470948",
       "company_legal_name": "商米集团",
       "source_company_id": 1166,
       "source_job_category": "Java",
@@ -7436,7 +7437,7 @@
       ]
     },
     {
-      "id": "nowcoder_470942",
+      "id": "sh_nowcoder_470942",
       "company": "商米集团",
       "position": "<27届校招>算法工程师（多模态）",
       "job_type": "人工智能与算法",
@@ -7464,7 +7465,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/470942",
       "collected_at": "2026-11-13T11:10:05+08:00",
-      "source_job_id": "470942",
+      "source_job_id": "nowcoder_470942",
       "company_legal_name": "商米集团",
       "source_company_id": 1166,
       "source_job_category": "算法工程师",
@@ -7644,7 +7645,7 @@
       ]
     },
     {
-      "id": "nowcoder_470927",
+      "id": "sh_nowcoder_470927",
       "company": "商米集团",
       "position": "<27届校招>算法工程师（大模型）",
       "job_type": "人工智能与算法",
@@ -7665,7 +7666,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/470927",
       "collected_at": "2026-11-13T11:10:02+08:00",
-      "source_job_id": "470927",
+      "source_job_id": "nowcoder_470927",
       "company_legal_name": "商米集团",
       "source_company_id": 1166,
       "source_job_category": "算法工程师",
@@ -7782,7 +7783,7 @@
       ]
     },
     {
-      "id": "nowcoder_469542",
+      "id": "sh_nowcoder_469542",
       "company": "上海华为技术有限公司",
       "position": "后端/数据库开发工程师",
       "job_type": "数据开发与分析",
@@ -7814,7 +7815,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469542",
       "collected_at": "2026-11-13T11:09:33+08:00",
-      "source_job_id": "469542",
+      "source_job_id": "nowcoder_469542",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "数据库工程师",
@@ -8024,7 +8025,7 @@
       ]
     },
     {
-      "id": "nowcoder_468459",
+      "id": "sh_nowcoder_468459",
       "company": "上海华为技术有限公司",
       "position": "人工智能",
       "job_type": "人工智能与算法",
@@ -8048,7 +8049,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/468459",
       "collected_at": "2026-11-13T11:09:00+08:00",
-      "source_job_id": "468459",
+      "source_job_id": "nowcoder_468459",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "人工智能",
@@ -8176,7 +8177,7 @@
       ]
     },
     {
-      "id": "nowcoder_469602",
+      "id": "sh_nowcoder_469602",
       "company": "上海方皋企业管理咨询有限公司",
       "position": "视觉推理优化工程师（应届生）",
       "job_type": "人工智能与算法",
@@ -8195,7 +8196,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469602",
       "collected_at": "2026-11-13T11:09:34+08:00",
-      "source_job_id": "469602",
+      "source_job_id": "nowcoder_469602",
       "company_legal_name": "上海方皋企业管理咨询有限公司",
       "source_company_id": 310336,
       "source_job_category": "研发工程师",
@@ -8286,7 +8287,7 @@
       "review_note": "标题明确写应届生，正文同时写3年左右模型推理等经验；按原文保留冲突，可作为经验门槛核查个案。"
     },
     {
-      "id": "nowcoder_470994",
+      "id": "sh_nowcoder_470994",
       "company": "惠州市德赛西威汽车电子股份有限公司",
       "position": "端到端轨迹预测算法工程师（2027届-上海）",
       "job_type": "人工智能与算法",
@@ -8309,7 +8310,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/470994",
       "collected_at": "2026-11-13T11:14:50+08:00",
-      "source_job_id": "470994",
+      "source_job_id": "nowcoder_470994",
       "company_legal_name": "惠州市德赛西威汽车电子股份有限公司",
       "source_company_id": 21670,
       "source_job_category": "算法工程师",
@@ -8431,7 +8432,7 @@
       ]
     },
     {
-      "id": "nowcoder_464487",
+      "id": "sh_nowcoder_464487",
       "company": "上海华为技术有限公司",
       "position": "研发工程师",
       "job_type": "人工智能与算法",
@@ -8460,7 +8461,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/464487",
       "collected_at": "2026-11-13T11:14:07+08:00",
-      "source_job_id": "464487",
+      "source_job_id": "nowcoder_464487",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "研发工程师",
@@ -8636,7 +8637,7 @@
       "review_note": "通用标题研发工程师，正文明确为自动驾驶算法研发。"
     },
     {
-      "id": "nowcoder_469852",
+      "id": "sh_nowcoder_469852",
       "company": "上海华为技术有限公司",
       "position": "JAVA后端开发工程师",
       "job_type": "软件开发",
@@ -8659,7 +8660,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469852",
       "collected_at": "2026-11-13T11:09:44+08:00",
-      "source_job_id": "469852",
+      "source_job_id": "nowcoder_469852",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "Java",
@@ -8783,7 +8784,7 @@
       ]
     },
     {
-      "id": "nowcoder_469851",
+      "id": "sh_nowcoder_469851",
       "company": "上海华为技术有限公司",
       "position": "算法工程师",
       "job_type": "人工智能与算法",
@@ -8808,7 +8809,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469851",
       "collected_at": "2026-11-13T11:09:43+08:00",
-      "source_job_id": "469851",
+      "source_job_id": "nowcoder_469851",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "算法工程师",
@@ -8940,7 +8941,7 @@
       ]
     },
     {
-      "id": "nowcoder_467145",
+      "id": "sh_nowcoder_467145",
       "company": "上海华为技术有限公司",
       "position": "通用软件开发工程师",
       "job_type": "软件开发",
@@ -8968,7 +8969,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467145",
       "collected_at": "2026-11-13T11:08:47+08:00",
-      "source_job_id": "467145",
+      "source_job_id": "nowcoder_467145",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "Java",
@@ -9127,7 +9128,7 @@
       ]
     },
     {
-      "id": "nowcoder_461879",
+      "id": "sh_nowcoder_461879",
       "company": "上海华为技术有限公司",
       "position": "AI Infra工程师",
       "job_type": "AI基础设施与系统开发",
@@ -9155,7 +9156,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/461879",
       "collected_at": "2026-11-13T11:08:23+08:00",
-      "source_job_id": "461879",
+      "source_job_id": "nowcoder_461879",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "算法工程师",
@@ -9336,7 +9337,7 @@
       ]
     },
     {
-      "id": "nowcoder_461701",
+      "id": "sh_nowcoder_461701",
       "company": "小米集团",
       "position": "车载Audio软件工程师-汽车",
       "job_type": "嵌入式与系统软件",
@@ -9357,7 +9358,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/461701",
       "collected_at": "2026-11-13T11:13:20+08:00",
-      "source_job_id": "461701",
+      "source_job_id": "nowcoder_461701",
       "company_legal_name": "小米集团",
       "source_company_id": 147,
       "source_job_category": "研发工程师",
@@ -9459,7 +9460,7 @@
       ]
     },
     {
-      "id": "nowcoder_461647",
+      "id": "sh_nowcoder_461647",
       "company": "小米集团",
       "position": "OTA测试工程师-汽车",
       "job_type": "软件测试与测试开发",
@@ -9478,7 +9479,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/461647",
       "collected_at": "2026-11-13T11:13:20+08:00",
-      "source_job_id": "461647",
+      "source_job_id": "nowcoder_461647",
       "company_legal_name": "小米集团",
       "source_company_id": 147,
       "source_job_category": "测试工程师",
@@ -9560,7 +9561,7 @@
       ]
     },
     {
-      "id": "nowcoder_461644",
+      "id": "sh_nowcoder_461644",
       "company": "小米集团",
       "position": "网络安全工程师-汽车",
       "job_type": "网络安全",
@@ -9575,7 +9576,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/461644",
       "collected_at": "2026-11-13T11:13:19+08:00",
-      "source_job_id": "461644",
+      "source_job_id": "nowcoder_461644",
       "company_legal_name": "小米集团",
       "source_company_id": 147,
       "source_job_category": "研发工程师",
@@ -9629,7 +9630,7 @@
       ]
     },
     {
-      "id": "nowcoder_460999",
+      "id": "sh_nowcoder_460999",
       "company": "小米集团",
       "position": "网联嵌入式软件开发工程师",
       "job_type": "嵌入式与系统软件",
@@ -9651,7 +9652,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460999",
       "collected_at": "2026-11-13T11:13:06+08:00",
-      "source_job_id": "460999",
+      "source_job_id": "nowcoder_460999",
       "company_legal_name": "小米集团",
       "source_company_id": 147,
       "source_job_category": "研发工程师",
@@ -9768,7 +9769,7 @@
       ]
     },
     {
-      "id": "nowcoder_460929",
+      "id": "sh_nowcoder_460929",
       "company": "小米集团",
       "position": "大数据开发工程师",
       "job_type": "数据开发与分析",
@@ -9794,7 +9795,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460929",
       "collected_at": "2026-11-13T11:13:06+08:00",
-      "source_job_id": "460929",
+      "source_job_id": "nowcoder_460929",
       "company_legal_name": "小米集团",
       "source_company_id": 147,
       "source_job_category": "研发工程师",
@@ -9947,7 +9948,7 @@
       ]
     },
     {
-      "id": "nowcoder_460925",
+      "id": "sh_nowcoder_460925",
       "company": "小米集团",
       "position": "短距通信自动化测试开发工程师",
       "job_type": "软件测试与测试开发",
@@ -9970,7 +9971,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460925",
       "collected_at": "2026-11-13T11:13:05+08:00",
-      "source_job_id": "460925",
+      "source_job_id": "nowcoder_460925",
       "company_legal_name": "小米",
       "source_company_id": 147,
       "source_job_category": "测试工程师",
@@ -10094,7 +10095,7 @@
       ]
     },
     {
-      "id": "nowcoder_460920",
+      "id": "sh_nowcoder_460920",
       "company": "小米集团",
       "position": "图形视效算法工程师",
       "job_type": "人工智能与算法",
@@ -10114,7 +10115,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460920",
       "collected_at": "2026-11-13T11:13:04+08:00",
-      "source_job_id": "460920",
+      "source_job_id": "nowcoder_460920",
       "company_legal_name": "小米集团",
       "source_company_id": 147,
       "source_job_category": "研发工程师",
@@ -10207,7 +10208,7 @@
       ]
     },
     {
-      "id": "nowcoder_460918",
+      "id": "sh_nowcoder_460918",
       "company": "小米集团",
       "position": "音频软件工程师",
       "job_type": "嵌入式与系统软件",
@@ -10228,7 +10229,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460918",
       "collected_at": "2026-11-13T11:13:04+08:00",
-      "source_job_id": "460918",
+      "source_job_id": "nowcoder_460918",
       "company_legal_name": "小米集团",
       "source_company_id": 147,
       "source_job_category": "研发工程师",
@@ -10340,7 +10341,7 @@
       ]
     },
     {
-      "id": "nowcoder_459622",
+      "id": "sh_nowcoder_459622",
       "company": "小米集团",
       "position": "图形AI渲染工程师",
       "job_type": "人工智能与算法",
@@ -10358,7 +10359,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459622",
       "collected_at": "2026-11-13T11:12:44+08:00",
-      "source_job_id": "459622",
+      "source_job_id": "nowcoder_459622",
       "company_legal_name": "小米集团",
       "source_company_id": 147,
       "source_job_category": "研发工程师",
@@ -10438,7 +10439,7 @@
       ]
     },
     {
-      "id": "nowcoder_459505",
+      "id": "sh_nowcoder_459505",
       "company": "小米集团",
       "position": "视频算法工程师",
       "job_type": "人工智能与算法",
@@ -10462,7 +10463,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459505",
       "collected_at": "2026-11-13T11:12:43+08:00",
-      "source_job_id": "459505",
+      "source_job_id": "nowcoder_459505",
       "company_legal_name": "小米",
       "source_company_id": 147,
       "source_job_category": "算法工程师",
@@ -10599,7 +10600,7 @@
       ]
     },
     {
-      "id": "nowcoder_459503",
+      "id": "sh_nowcoder_459503",
       "company": "小米集团",
       "position": "视觉算法工程师-人像",
       "job_type": "人工智能与算法",
@@ -10623,7 +10624,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459503",
       "collected_at": "2026-11-13T11:12:42+08:00",
-      "source_job_id": "459503",
+      "source_job_id": "nowcoder_459503",
       "company_legal_name": "小米",
       "source_company_id": 147,
       "source_job_category": "算法工程师",
@@ -10756,7 +10757,7 @@
       ]
     },
     {
-      "id": "nowcoder_459461",
+      "id": "sh_nowcoder_459461",
       "company": "小米集团",
       "position": "AI Agent多模态算法工程师",
       "job_type": "人工智能与算法",
@@ -10779,7 +10780,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459461",
       "collected_at": "2026-11-13T11:12:41+08:00",
-      "source_job_id": "459461",
+      "source_job_id": "nowcoder_459461",
       "company_legal_name": "小米集团",
       "source_company_id": 147,
       "source_job_category": "算法工程师",
@@ -10920,7 +10921,7 @@
       ]
     },
     {
-      "id": "nowcoder_457536",
+      "id": "sh_nowcoder_457536",
       "company": "Garena",
       "position": "【2027届校招】客户端开发工程师",
       "job_type": "软件开发",
@@ -10941,7 +10942,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/457536",
       "collected_at": "2026-11-13T11:12:27+08:00",
-      "source_job_id": "457536",
+      "source_job_id": "nowcoder_457536",
       "company_legal_name": "Garena",
       "source_company_id": 1870,
       "source_job_category": "客户端开发",
@@ -11046,7 +11047,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_457535",
+      "id": "sh_nowcoder_457535",
       "company": "Garena",
       "position": "【2027届校招】引擎开发工程师",
       "job_type": "软件开发",
@@ -11063,7 +11064,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/457535",
       "collected_at": "2026-11-13T11:12:26+08:00",
-      "source_job_id": "457535",
+      "source_job_id": "nowcoder_457535",
       "company_legal_name": "Garena",
       "source_company_id": 1870,
       "source_job_category": "引擎开发",
@@ -11126,7 +11127,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_457533",
+      "id": "sh_nowcoder_457533",
       "company": "Garena",
       "position": "【2027届校招】游戏服务器开发",
       "job_type": "软件开发",
@@ -11147,7 +11148,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/457533",
       "collected_at": "2026-11-13T11:12:25+08:00",
-      "source_job_id": "457533",
+      "source_job_id": "nowcoder_457533",
       "company_legal_name": "Garena",
       "source_company_id": 1870,
       "source_job_category": "游戏前端",
@@ -11252,7 +11253,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_457521",
+      "id": "sh_nowcoder_457521",
       "company": "Garena",
       "position": "【2027届校招】游戏测试工程师QA - AOV",
       "job_type": "软件测试与测试开发",
@@ -11267,7 +11268,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/457521",
       "collected_at": "2026-11-13T11:12:25+08:00",
-      "source_job_id": "457521",
+      "source_job_id": "nowcoder_457521",
       "company_legal_name": "Garena",
       "source_company_id": 1870,
       "source_job_category": "测试工程师",
@@ -11322,7 +11323,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_471499",
+      "id": "sh_nowcoder_471499",
       "company": "拼多多集团-PDD",
       "position": "算法工程师（上海）——27秋招正式批",
       "job_type": "人工智能与算法",
@@ -11347,7 +11348,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/471499",
       "collected_at": "2026-11-13T11:14:54+08:00",
-      "source_job_id": "471499",
+      "source_job_id": "nowcoder_471499",
       "company_legal_name": "拼多多集团-PDD",
       "source_company_id": 732,
       "source_job_category": "算法工程师",
@@ -11492,7 +11493,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_453299",
+      "id": "sh_nowcoder_453299",
       "company": "拼多多集团-PDD",
       "position": "数据分析师（上海）—27秋招正式批",
       "job_type": "数据开发与分析",
@@ -11512,7 +11513,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/453299",
       "collected_at": "2026-11-13T11:08:08+08:00",
-      "source_job_id": "453299",
+      "source_job_id": "nowcoder_453299",
       "company_legal_name": "拼多多集团-PDD",
       "source_company_id": 732,
       "source_job_category": "数据分析师",
@@ -11604,7 +11605,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_453296",
+      "id": "sh_nowcoder_453296",
       "company": "拼多多集团-PDD",
       "position": "服务端研发工程师（上海）—27秋招正式批",
       "job_type": "软件开发",
@@ -11623,7 +11624,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/453296",
       "collected_at": "2026-11-13T11:08:07+08:00",
-      "source_job_id": "453296",
+      "source_job_id": "nowcoder_453296",
       "company_legal_name": "拼多多集团-PDD",
       "source_company_id": 732,
       "source_job_category": "后端工程师",
@@ -11704,7 +11705,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_453087",
+      "id": "sh_nowcoder_453087",
       "company": "拼多多集团-PDD",
       "position": "数据分析师",
       "job_type": "数据开发与分析",
@@ -11724,7 +11725,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/453087",
       "collected_at": "2026-11-13T11:12:12+08:00",
-      "source_job_id": "453087",
+      "source_job_id": "nowcoder_453087",
       "company_legal_name": "拼多多集团-PDD",
       "source_company_id": 732,
       "source_job_category": "科研人员",
@@ -11843,7 +11844,7 @@
       ]
     },
     {
-      "id": "nowcoder_453084",
+      "id": "sh_nowcoder_453084",
       "company": "拼多多集团-PDD",
       "position": "服务端研发工程师",
       "job_type": "软件开发",
@@ -11862,7 +11863,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/453084",
       "collected_at": "2026-11-13T11:12:11+08:00",
-      "source_job_id": "453084",
+      "source_job_id": "nowcoder_453084",
       "company_legal_name": "拼多多集团-PDD",
       "source_company_id": 732,
       "source_job_category": "科研人员",
@@ -12037,7 +12038,7 @@
       ]
     },
     {
-      "id": "nowcoder_453081",
+      "id": "sh_nowcoder_453081",
       "company": "拼多多集团-PDD",
       "position": "算法工程师",
       "job_type": "人工智能与算法",
@@ -12062,7 +12063,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/453081",
       "collected_at": "2026-11-13T11:12:10+08:00",
-      "source_job_id": "453081",
+      "source_job_id": "nowcoder_453081",
       "company_legal_name": "拼多多集团-PDD",
       "source_company_id": 732,
       "source_job_category": "算法工程师",
@@ -12247,7 +12248,7 @@
       ]
     },
     {
-      "id": "nowcoder_453080",
+      "id": "sh_nowcoder_453080",
       "company": "拼多多集团-PDD",
       "position": "AI Infra研发工程师【2027届】",
       "job_type": "AI基础设施与系统开发",
@@ -12276,7 +12277,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/453080",
       "collected_at": "2026-11-13T11:12:10+08:00",
-      "source_job_id": "453080",
+      "source_job_id": "nowcoder_453080",
       "company_legal_name": "拼多多集团-PDD",
       "source_company_id": 732,
       "source_job_category": "人工智能",
@@ -12472,7 +12473,7 @@
       ]
     },
     {
-      "id": "nowcoder_453079",
+      "id": "sh_nowcoder_453079",
       "company": "拼多多集团-PDD",
       "position": "大模型算法工程师【2027届秋招】",
       "job_type": "人工智能与算法",
@@ -12492,7 +12493,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/453079",
       "collected_at": "2026-11-13T11:12:09+08:00",
-      "source_job_id": "453079",
+      "source_job_id": "nowcoder_453079",
       "company_legal_name": "拼多多集团-PDD",
       "source_company_id": 732,
       "source_job_category": "人工智能",
@@ -12622,7 +12623,7 @@
       ]
     },
     {
-      "id": "nowcoder_469432",
+      "id": "sh_nowcoder_469432",
       "company": "快手",
       "position": "ai agent开发",
       "job_type": "人工智能与算法",
@@ -12650,7 +12651,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469432",
       "collected_at": "2026-11-13T11:09:24+08:00",
-      "source_job_id": "469432",
+      "source_job_id": "nowcoder_469432",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "Python",
@@ -12862,7 +12863,7 @@
       ]
     },
     {
-      "id": "nowcoder_471682",
+      "id": "sh_nowcoder_471682",
       "company": "特斯拉汽车（北京）",
       "position": "0-2年毕业生-开发工程师(Java/ .NET) , 上海",
       "job_type": "软件开发",
@@ -12902,7 +12903,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/471682",
       "collected_at": "2026-11-13T11:14:55+08:00",
-      "source_job_id": "471682",
+      "source_job_id": "nowcoder_471682",
       "company_legal_name": "特斯拉汽车（北京）",
       "source_company_id": 243979,
       "source_job_category": ".NET",
@@ -13189,7 +13190,7 @@
       ]
     },
     {
-      "id": "nowcoder_468570",
+      "id": "sh_nowcoder_468570",
       "company": "科大讯飞",
       "position": "AI 应用开发",
       "job_type": "人工智能与算法",
@@ -13213,7 +13214,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/468570",
       "collected_at": "2026-11-13T11:14:38+08:00",
-      "source_job_id": "468570",
+      "source_job_id": "nowcoder_468570",
       "company_legal_name": "科大讯飞股份有限公司",
       "source_company_id": 735,
       "source_job_category": "Java",
@@ -13374,7 +13375,7 @@
       ]
     },
     {
-      "id": "nowcoder_460483",
+      "id": "sh_nowcoder_460483",
       "company": "华为HUAWEI",
       "position": "AI算法 空间智能 多模态大模型 Agent技术 语言大模型 AI算法后训练与强化学习 端侧大模型 ",
       "job_type": "人工智能与算法",
@@ -13407,7 +13408,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460483",
       "collected_at": "2026-11-13T11:08:22+08:00",
-      "source_job_id": "460483",
+      "source_job_id": "nowcoder_460483",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "推荐算法",
@@ -13629,7 +13630,7 @@
       ]
     },
     {
-      "id": "nowcoder_463038",
+      "id": "sh_nowcoder_463038",
       "company": "上海华为技术有限公司",
       "position": "通用软件开发工程师",
       "job_type": "软件开发",
@@ -13657,7 +13658,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463038",
       "collected_at": "2026-11-13T11:13:38+08:00",
-      "source_job_id": "463038",
+      "source_job_id": "nowcoder_463038",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "后端工程师",
@@ -13816,7 +13817,7 @@
       ]
     },
     {
-      "id": "nowcoder_463427",
+      "id": "sh_nowcoder_463427",
       "company": "途游游戏",
       "position": "游戏AI算法工程师（上海）-2027校招",
       "job_type": "人工智能与算法",
@@ -13839,7 +13840,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463427",
       "collected_at": "2026-11-13T11:13:41+08:00",
-      "source_job_id": "463427",
+      "source_job_id": "nowcoder_463427",
       "company_legal_name": "途游游戏",
       "source_company_id": 947,
       "source_job_category": "算法工程师",
@@ -13985,7 +13986,7 @@
       ]
     },
     {
-      "id": "nowcoder_459733",
+      "id": "sh_nowcoder_459733",
       "company": "华为软件技术有限公司",
       "position": "软件开发工程师",
       "job_type": "软件开发",
@@ -14014,7 +14015,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459733",
       "collected_at": "2026-11-13T11:08:21+08:00",
-      "source_job_id": "459733",
+      "source_job_id": "nowcoder_459733",
       "company_legal_name": null,
       "source_company_id": 21147,
       "source_job_category": "通信研发工程师",
@@ -14185,7 +14186,7 @@
       ]
     },
     {
-      "id": "nowcoder_459728",
+      "id": "sh_nowcoder_459728",
       "company": "华为软件技术有限公司",
       "position": "AI应用工程师",
       "job_type": "人工智能与算法",
@@ -14208,7 +14209,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459728",
       "collected_at": "2026-11-13T11:08:20+08:00",
-      "source_job_id": "459728",
+      "source_job_id": "nowcoder_459728",
       "company_legal_name": null,
       "source_company_id": 21147,
       "source_job_category": "通信研发工程师",
@@ -14328,7 +14329,7 @@
       ]
     },
     {
-      "id": "nowcoder_459724",
+      "id": "sh_nowcoder_459724",
       "company": "华为软件技术有限公司",
       "position": "AI模型工程师",
       "job_type": "人工智能与算法",
@@ -14347,7 +14348,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459724",
       "collected_at": "2026-11-13T11:08:19+08:00",
-      "source_job_id": "459724",
+      "source_job_id": "nowcoder_459724",
       "company_legal_name": null,
       "source_company_id": 21147,
       "source_job_category": "通信研发工程师",
@@ -14430,7 +14431,7 @@
       ]
     },
     {
-      "id": "nowcoder_459720",
+      "id": "sh_nowcoder_459720",
       "company": "华为软件技术有限公司",
       "position": "AI Infra工程师 ",
       "job_type": "AI基础设施与系统开发",
@@ -14450,7 +14451,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459720",
       "collected_at": "2026-11-13T11:12:48+08:00",
-      "source_job_id": "459720",
+      "source_job_id": "nowcoder_459720",
       "company_legal_name": null,
       "source_company_id": 21147,
       "source_job_category": "通信研发工程师",
@@ -14550,7 +14551,7 @@
       ]
     },
     {
-      "id": "nowcoder_469462",
+      "id": "sh_nowcoder_469462",
       "company": "UCloud",
       "position": "2027校招-主机后台开发",
       "job_type": "软件开发",
@@ -14576,7 +14577,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469462",
       "collected_at": "2026-11-13T11:14:43+08:00",
-      "source_job_id": "469462",
+      "source_job_id": "nowcoder_469462",
       "company_legal_name": "UCloud",
       "source_company_id": 743,
       "source_job_category": "golang",
@@ -14733,7 +14734,7 @@
       ]
     },
     {
-      "id": "nowcoder_469455",
+      "id": "sh_nowcoder_469455",
       "company": "UCloud",
       "position": "2027校招-Ai产品全栈研发工程师",
       "job_type": "人工智能与算法",
@@ -14754,7 +14755,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469455",
       "collected_at": "2026-11-13T11:14:42+08:00",
-      "source_job_id": "469455",
+      "source_job_id": "nowcoder_469455",
       "company_legal_name": "UCloud",
       "source_company_id": 743,
       "source_job_category": "后端工程师",
@@ -14857,7 +14858,7 @@
       ]
     },
     {
-      "id": "nowcoder_468651",
+      "id": "sh_nowcoder_468651",
       "company": "UCloud",
       "position": "2027校招-大模型推理优化工程师",
       "job_type": "人工智能与算法",
@@ -14883,7 +14884,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/468651",
       "collected_at": "2026-11-13T11:09:13+08:00",
-      "source_job_id": "468651",
+      "source_job_id": "nowcoder_468651",
       "company_legal_name": "UCloud",
       "source_company_id": 743,
       "source_job_category": "算法工程师",
@@ -15041,7 +15042,7 @@
       ]
     },
     {
-      "id": "nowcoder_468650",
+      "id": "sh_nowcoder_468650",
       "company": "UCloud",
       "position": "2027校招-Ai Infra工程师",
       "job_type": "AI基础设施与系统开发",
@@ -15065,7 +15066,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/468650",
       "collected_at": "2026-11-13T11:09:12+08:00",
-      "source_job_id": "468650",
+      "source_job_id": "nowcoder_468650",
       "company_legal_name": "UCloud",
       "source_company_id": 743,
       "source_job_category": "人工智能",
@@ -15203,7 +15204,7 @@
       ]
     },
     {
-      "id": "nowcoder_471077",
+      "id": "sh_nowcoder_471077",
       "company": "华为软件技术有限公司",
       "position": "测试工程师",
       "job_type": "软件测试与测试开发",
@@ -15223,7 +15224,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/471077",
       "collected_at": "2026-11-13T11:10:18+08:00",
-      "source_job_id": "471077",
+      "source_job_id": "nowcoder_471077",
       "company_legal_name": "华为软件技术有限公司",
       "source_company_id": 21147,
       "source_job_category": "测试工程师",
@@ -15321,7 +15322,7 @@
       ]
     },
     {
-      "id": "nowcoder_474142",
+      "id": "sh_nowcoder_474142",
       "company": "北京外企德科人力资源服务上海有限公司",
       "position": "Java开发工程师，26届无经验应届生可培养，全国可推",
       "job_type": "软件开发",
@@ -15348,7 +15349,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/474142",
       "collected_at": "2026-11-13T11:10:40+08:00",
-      "source_job_id": "474142",
+      "source_job_id": "nowcoder_474142",
       "company_legal_name": "北京外企德科人力资源服务上海有限公司",
       "source_company_id": 10727,
       "source_job_category": "Java",
@@ -15507,7 +15508,7 @@
       ]
     },
     {
-      "id": "nowcoder_424429",
+      "id": "sh_nowcoder_424429",
       "company": "虹科电子",
       "position": "智驾数据软件开发工程师(J10043)",
       "job_type": "数据开发与分析",
@@ -15529,7 +15530,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/424429",
       "collected_at": "2026-11-13T11:11:53+08:00",
-      "source_job_id": "424429",
+      "source_job_id": "nowcoder_424429",
       "company_legal_name": "广州虹科电子科技有限公司",
       "source_company_id": 3076,
       "source_job_category": "自动驾驶系统工程师",
@@ -15647,7 +15648,7 @@
       ]
     },
     {
-      "id": "nowcoder_463109",
+      "id": "sh_nowcoder_463109",
       "company": "思朗科技",
       "position": "2027校招-AI基础设施开发工程师-上海",
       "job_type": "人工智能与算法",
@@ -15669,7 +15670,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463109",
       "collected_at": "2026-11-13T11:13:39+08:00",
-      "source_job_id": "463109",
+      "source_job_id": "nowcoder_463109",
       "company_legal_name": "思朗科技",
       "source_company_id": 258966,
       "source_job_category": "测试开发",
@@ -15776,7 +15777,7 @@
       ]
     },
     {
-      "id": "nowcoder_463022",
+      "id": "sh_nowcoder_463022",
       "company": "思朗科技",
       "position": "2027校招-AI算法工程师-上海",
       "job_type": "人工智能与算法",
@@ -15800,7 +15801,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463022",
       "collected_at": "2026-11-13T11:13:37+08:00",
-      "source_job_id": "463022",
+      "source_job_id": "nowcoder_463022",
       "company_legal_name": "思朗科技",
       "source_company_id": 258966,
       "source_job_category": "人工智能",
@@ -15935,7 +15936,7 @@
       ]
     },
     {
-      "id": "nowcoder_463021",
+      "id": "sh_nowcoder_463021",
       "company": "思朗科技",
       "position": "2027校招-算子开发工程师（上海/北京/成都）",
       "job_type": "软件开发",
@@ -15960,7 +15961,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463021",
       "collected_at": "2026-11-13T11:13:37+08:00",
-      "source_job_id": "463021",
+      "source_job_id": "nowcoder_463021",
       "company_legal_name": "思朗科技",
       "source_company_id": 258966,
       "source_job_category": "人工智能",
@@ -16098,7 +16099,7 @@
       ]
     },
     {
-      "id": "nowcoder_463020",
+      "id": "sh_nowcoder_463020",
       "company": "思朗科技",
       "position": "2027校招-AI编译器工程师（上海/杭州/成都）",
       "job_type": "AI基础设施与系统开发",
@@ -16126,7 +16127,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463020",
       "collected_at": "2026-11-13T11:13:36+08:00",
-      "source_job_id": "463020",
+      "source_job_id": "nowcoder_463020",
       "company_legal_name": "思朗科技",
       "source_company_id": 258966,
       "source_job_category": "研发工程师",
@@ -16305,7 +16306,7 @@
       ]
     },
     {
-      "id": "nowcoder_462983",
+      "id": "sh_nowcoder_462983",
       "company": "思朗科技",
       "position": "2027校招-通信库开发工程师（西安/上海）",
       "job_type": "软件开发",
@@ -16324,7 +16325,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/462983",
       "collected_at": "2026-11-13T11:13:35+08:00",
-      "source_job_id": "462983",
+      "source_job_id": "nowcoder_462983",
       "company_legal_name": "思朗科技",
       "source_company_id": 258966,
       "source_job_category": "研发工程师",
@@ -16407,7 +16408,7 @@
       ]
     },
     {
-      "id": "nowcoder_462982",
+      "id": "sh_nowcoder_462982",
       "company": "思朗科技",
       "position": "2027校招-芯片加速库开发工程师（北京/上海）",
       "job_type": "软件开发",
@@ -16426,7 +16427,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/462982",
       "collected_at": "2026-11-13T11:13:35+08:00",
-      "source_job_id": "462982",
+      "source_job_id": "nowcoder_462982",
       "company_legal_name": "思朗科技",
       "source_company_id": 258966,
       "source_job_category": "研发工程师",
@@ -16517,7 +16518,7 @@
       ]
     },
     {
-      "id": "nowcoder_462894",
+      "id": "sh_nowcoder_462894",
       "company": "思朗科技",
       "position": "2027校招-AI4S研究员-上海",
       "job_type": "人工智能与算法",
@@ -16536,7 +16537,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/462894",
       "collected_at": "2026-11-13T11:13:32+08:00",
-      "source_job_id": "462894",
+      "source_job_id": "nowcoder_462894",
       "company_legal_name": "思朗科技",
       "source_company_id": 258966,
       "source_job_category": "人工智能",
@@ -16619,7 +16620,7 @@
       ]
     },
     {
-      "id": "nowcoder_466613",
+      "id": "sh_nowcoder_466613",
       "company": "亿通国际",
       "position": "软件开发运维开发工程师",
       "job_type": "运维与基础设施",
@@ -16654,7 +16655,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/466613",
       "collected_at": "2026-11-13T11:14:22+08:00",
-      "source_job_id": "466613",
+      "source_job_id": "nowcoder_466613",
       "company_legal_name": "亿通国际",
       "source_company_id": 293992,
       "source_job_category": "全栈开发",
@@ -16885,7 +16886,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_464884",
+      "id": "sh_nowcoder_464884",
       "company": "亿通国际",
       "position": "系统运维系统工程师",
       "job_type": "运维与基础设施",
@@ -16904,7 +16905,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/464884",
       "collected_at": "2026-11-13T11:14:11+08:00",
-      "source_job_id": "464884",
+      "source_job_id": "nowcoder_464884",
       "company_legal_name": "亿通国际",
       "source_company_id": 293992,
       "source_job_category": "系统工程师",
@@ -16984,7 +16985,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_464402",
+      "id": "sh_nowcoder_464402",
       "company": "亿通国际",
       "position": "JAVA开发工程师(J10917)",
       "job_type": "软件开发",
@@ -17011,7 +17012,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/464402",
       "collected_at": "2026-11-13T11:14:03+08:00",
-      "source_job_id": "464402",
+      "source_job_id": "nowcoder_464402",
       "company_legal_name": "亿通国际",
       "source_company_id": 293992,
       "source_job_category": "Java",
@@ -17174,7 +17175,7 @@
       ]
     },
     {
-      "id": "nowcoder_453192",
+      "id": "sh_nowcoder_453192",
       "company": "亿通国际",
       "position": "软件开发工程师(J10884)",
       "job_type": "软件开发",
@@ -17200,7 +17201,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/453192",
       "collected_at": "2026-11-13T11:12:13+08:00",
-      "source_job_id": "453192",
+      "source_job_id": "nowcoder_453192",
       "company_legal_name": "亿通国际",
       "source_company_id": 293992,
       "source_job_category": "Java",
@@ -17356,7 +17357,7 @@
       ]
     },
     {
-      "id": "nowcoder_469643",
+      "id": "sh_nowcoder_469643",
       "company": "上海银行",
       "position": "总行金融科技岗位（算法工程）",
       "job_type": "人工智能与算法",
@@ -17385,7 +17386,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469643",
       "collected_at": "2026-11-13T11:09:38+08:00",
-      "source_job_id": "469643",
+      "source_job_id": "nowcoder_469643",
       "company_legal_name": "上海银行",
       "source_company_id": 1151,
       "source_job_category": "研发工程师",
@@ -17572,7 +17573,7 @@
       ]
     },
     {
-      "id": "nowcoder_469641",
+      "id": "sh_nowcoder_469641",
       "company": "上海银行",
       "position": "总行金融科技岗位（数据开发）",
       "job_type": "数据开发与分析",
@@ -17594,7 +17595,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469641",
       "collected_at": "2026-11-13T11:09:37+08:00",
-      "source_job_id": "469641",
+      "source_job_id": "nowcoder_469641",
       "company_legal_name": "上海银行",
       "source_company_id": 1151,
       "source_job_category": "研发工程师",
@@ -17714,7 +17715,7 @@
       ]
     },
     {
-      "id": "nowcoder_469640",
+      "id": "sh_nowcoder_469640",
       "company": "上海银行",
       "position": "总行金融科技岗位（SRE运维）",
       "job_type": "运维与基础设施",
@@ -17740,7 +17741,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469640",
       "collected_at": "2026-11-13T11:09:36+08:00",
-      "source_job_id": "469640",
+      "source_job_id": "nowcoder_469640",
       "company_legal_name": "上海银行",
       "source_company_id": 1151,
       "source_job_category": "运维工程师",
@@ -17885,7 +17886,7 @@
       ]
     },
     {
-      "id": "nowcoder_469633",
+      "id": "sh_nowcoder_469633",
       "company": "上海银行",
       "position": "总行金融科技岗位（应用开发）",
       "job_type": "软件开发",
@@ -17913,7 +17914,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469633",
       "collected_at": "2026-11-13T11:09:35+08:00",
-      "source_job_id": "469633",
+      "source_job_id": "nowcoder_469633",
       "company_legal_name": "上海银行",
       "source_company_id": 1151,
       "source_job_category": "研发工程师",
@@ -18077,7 +18078,7 @@
       ]
     },
     {
-      "id": "nowcoder_461578",
+      "id": "sh_nowcoder_461578",
       "company": "点点互动",
       "position": "客户端开发工程师-上海(J13722)",
       "job_type": "软件开发",
@@ -18098,7 +18099,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/461578",
       "collected_at": "2026-11-13T11:13:17+08:00",
-      "source_job_id": "461578",
+      "source_job_id": "nowcoder_461578",
       "company_legal_name": "点点互动",
       "source_company_id": 9154,
       "source_job_category": "客户端开发",
@@ -18200,7 +18201,7 @@
       ]
     },
     {
-      "id": "nowcoder_461573",
+      "id": "sh_nowcoder_461573",
       "company": "点点互动",
       "position": "AI算法工程师-北京/上海(J13724)",
       "job_type": "人工智能与算法",
@@ -18223,7 +18224,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/461573",
       "collected_at": "2026-11-13T11:13:16+08:00",
-      "source_job_id": "461573",
+      "source_job_id": "nowcoder_461573",
       "company_legal_name": "点点互动",
       "source_company_id": 9154,
       "source_job_category": "算法工程师",
@@ -18360,7 +18361,7 @@
       "review_note": "正文明确2027届毕业生，同时提及AI相关工作经验；仅记录原文，不推定必须有全职经历。"
     },
     {
-      "id": "nowcoder_471242",
+      "id": "sh_nowcoder_471242",
       "company": "英特尔",
       "position": "JR0288426 编译器工程师",
       "job_type": "嵌入式与系统软件",
@@ -18379,7 +18380,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/471242",
       "collected_at": "2026-11-13T11:14:53+08:00",
-      "source_job_id": "471242",
+      "source_job_id": "nowcoder_471242",
       "company_legal_name": "英特尔",
       "source_company_id": 650,
       "source_job_category": "游戏后端",
@@ -18478,7 +18479,7 @@
       ]
     },
     {
-      "id": "nowcoder_467170",
+      "id": "sh_nowcoder_467170",
       "company": "华为软件技术有限公司",
       "position": "后端工程师",
       "job_type": "软件开发",
@@ -18498,7 +18499,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467170",
       "collected_at": "2026-11-13T11:14:27+08:00",
-      "source_job_id": "467170",
+      "source_job_id": "nowcoder_467170",
       "company_legal_name": "华为软件技术有限公司",
       "source_company_id": 21147,
       "source_job_category": "后端工程师",
@@ -18604,7 +18605,7 @@
       ]
     },
     {
-      "id": "nowcoder_464520",
+      "id": "sh_nowcoder_464520",
       "company": "网易",
       "position": "游戏后端",
       "job_type": "软件开发",
@@ -18622,7 +18623,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/464520",
       "collected_at": "2026-11-13T11:14:08+08:00",
-      "source_job_id": "464520",
+      "source_job_id": "nowcoder_464520",
       "company_legal_name": "网易",
       "source_company_id": 149,
       "source_job_category": "游戏后端",
@@ -18701,7 +18702,7 @@
       ]
     },
     {
-      "id": "nowcoder_459259",
+      "id": "sh_nowcoder_459259",
       "company": "姚记集团",
       "position": "游戏服务器开发工程师-27届秋招",
       "job_type": "软件开发",
@@ -18718,7 +18719,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459259",
       "collected_at": "2026-11-13T11:12:36+08:00",
-      "source_job_id": "459259",
+      "source_job_id": "nowcoder_459259",
       "company_legal_name": "姚记",
       "source_company_id": 269326,
       "source_job_category": "后端工程师",
@@ -18778,7 +18779,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_471179",
+      "id": "sh_nowcoder_471179",
       "company": "上证信息",
       "position": "A06.技术运维工程师（云平台方向）",
       "job_type": "运维与基础设施",
@@ -18799,7 +18800,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/471179",
       "collected_at": "2026-11-13T11:10:23+08:00",
-      "source_job_id": "471179",
+      "source_job_id": "nowcoder_471179",
       "company_legal_name": "上证所",
       "source_company_id": 22167,
       "source_job_category": "运维工程师",
@@ -18901,7 +18902,7 @@
       ]
     },
     {
-      "id": "nowcoder_471177",
+      "id": "sh_nowcoder_471177",
       "company": "上证信息",
       "position": "A01.技术开发工程师",
       "job_type": "软件开发",
@@ -18920,7 +18921,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/471177",
       "collected_at": "2026-11-13T11:10:22+08:00",
-      "source_job_id": "471177",
+      "source_job_id": "nowcoder_471177",
       "company_legal_name": "上证所",
       "source_company_id": 22167,
       "source_job_category": "后端工程师",
@@ -19002,7 +19003,7 @@
       ]
     },
     {
-      "id": "nowcoder_444855",
+      "id": "sh_nowcoder_444855",
       "company": "上证信息",
       "position": "A07.技术运维工程师（应用方向）",
       "job_type": "运维与基础设施",
@@ -19023,7 +19024,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/444855",
       "collected_at": "2026-11-13T11:07:58+08:00",
-      "source_job_id": "444855",
+      "source_job_id": "nowcoder_444855",
       "company_legal_name": "上证所",
       "source_company_id": 22167,
       "source_job_category": "运维工程师",
@@ -19123,7 +19124,7 @@
       ]
     },
     {
-      "id": "nowcoder_444853",
+      "id": "sh_nowcoder_444853",
       "company": "上证信息",
       "position": "A05.技术运维工程师（系统方向）",
       "job_type": "运维与基础设施",
@@ -19143,7 +19144,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/444853",
       "collected_at": "2026-11-13T11:12:06+08:00",
-      "source_job_id": "444853",
+      "source_job_id": "nowcoder_444853",
       "company_legal_name": "上证所",
       "source_company_id": 22167,
       "source_job_category": "运维工程师",
@@ -19238,7 +19239,7 @@
       ]
     },
     {
-      "id": "nowcoder_42347",
+      "id": "sh_nowcoder_42347",
       "company": "中科创达",
       "position": "测试工程师",
       "job_type": "软件测试与测试开发",
@@ -19253,7 +19254,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/42347",
       "collected_at": "2026-11-13T11:11:41+08:00",
-      "source_job_id": "42347",
+      "source_job_id": "nowcoder_42347",
       "company_legal_name": "中科创达",
       "source_company_id": 1156,
       "source_job_category": "测试工程师",
@@ -19321,7 +19322,7 @@
       ]
     },
     {
-      "id": "nowcoder_474952",
+      "id": "sh_nowcoder_474952",
       "company": "中金所技术公司",
       "position": "软件开发工程师-C++开发(J10465)",
       "job_type": "软件开发",
@@ -19344,7 +19345,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/474952",
       "collected_at": "2026-11-13T11:10:55+08:00",
-      "source_job_id": "474952",
+      "source_job_id": "nowcoder_474952",
       "company_legal_name": "中金所技术公司",
       "source_company_id": 2746,
       "source_job_category": "C++",
@@ -19472,7 +19473,7 @@
       ]
     },
     {
-      "id": "nowcoder_474947",
+      "id": "sh_nowcoder_474947",
       "company": "中金所技术公司",
       "position": "运维工程师-数据库管理（DBA）(J10466)",
       "job_type": "运维与基础设施",
@@ -19495,7 +19496,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/474947",
       "collected_at": "2026-11-13T11:10:53+08:00",
-      "source_job_id": "474947",
+      "source_job_id": "nowcoder_474947",
       "company_legal_name": "中金所技术公司",
       "source_company_id": 2746,
       "source_job_category": "DBA",
@@ -19617,7 +19618,7 @@
       ]
     },
     {
-      "id": "nowcoder_474943",
+      "id": "sh_nowcoder_474943",
       "company": "中金所技术公司",
       "position": "运维工程师-云计算建设(J10467)",
       "job_type": "运维与基础设施",
@@ -19637,7 +19638,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/474943",
       "collected_at": "2026-11-13T11:10:51+08:00",
-      "source_job_id": "474943",
+      "source_job_id": "nowcoder_474943",
       "company_legal_name": "中金所技术公司",
       "source_company_id": 2746,
       "source_job_category": "运维工程师",
@@ -19736,7 +19737,7 @@
       ]
     },
     {
-      "id": "nowcoder_465015",
+      "id": "sh_nowcoder_465015",
       "company": "兴证全球基金",
       "position": "系统运维开发工程师",
       "job_type": "运维与基础设施",
@@ -19756,7 +19757,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/465015",
       "collected_at": "2026-11-13T11:08:40+08:00",
-      "source_job_id": "465015",
+      "source_job_id": "nowcoder_465015",
       "company_legal_name": "兴证全球基金",
       "source_company_id": 12563,
       "source_job_category": "运维开发工程师",
@@ -19853,7 +19854,7 @@
       ]
     },
     {
-      "id": "nowcoder_468587",
+      "id": "sh_nowcoder_468587",
       "company": "智慧芽",
       "position": "AI研究员（大模型 / 强化学习 / 多模态方向）(J12742)",
       "job_type": "人工智能与算法",
@@ -19877,7 +19878,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/468587",
       "collected_at": "2026-11-13T11:09:07+08:00",
-      "source_job_id": "468587",
+      "source_job_id": "nowcoder_468587",
       "company_legal_name": "智慧芽",
       "source_company_id": 13404,
       "source_job_category": "算法工程师",
@@ -20031,7 +20032,7 @@
       ]
     },
     {
-      "id": "nowcoder_468798",
+      "id": "sh_nowcoder_468798",
       "company": "上海华为技术有限公司",
       "position": "数据库软件开发工程师",
       "job_type": "数据开发与分析",
@@ -20051,7 +20052,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/468798",
       "collected_at": "2026-11-13T11:14:41+08:00",
-      "source_job_id": "468798",
+      "source_job_id": "nowcoder_468798",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "数据库工程师",
@@ -20142,7 +20143,7 @@
       ]
     },
     {
-      "id": "nowcoder_459258",
+      "id": "sh_nowcoder_459258",
       "company": "姚记集团",
       "position": "数据分析师-27届秋招",
       "job_type": "数据开发与分析",
@@ -20160,7 +20161,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459258",
       "collected_at": "2026-11-13T11:12:35+08:00",
-      "source_job_id": "459258",
+      "source_job_id": "nowcoder_459258",
       "company_legal_name": "姚记",
       "source_company_id": 269326,
       "source_job_category": "数据分析师",
@@ -20237,7 +20238,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_469430",
+      "id": "sh_nowcoder_469430",
       "company": "字节跳动",
       "position": "AI agent开发工程师",
       "job_type": "人工智能与算法",
@@ -20254,7 +20255,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469430",
       "collected_at": "2026-11-13T11:09:23+08:00",
-      "source_job_id": "469430",
+      "source_job_id": "nowcoder_469430",
       "company_legal_name": "字节跳动",
       "source_company_id": 665,
       "source_job_category": "Python",
@@ -20315,7 +20316,7 @@
       ]
     },
     {
-      "id": "nowcoder_461899",
+      "id": "sh_nowcoder_461899",
       "company": "上海砺星工业",
       "position": "算法工程师(J10623)",
       "job_type": "人工智能与算法",
@@ -20341,7 +20342,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/461899",
       "collected_at": "2026-11-13T11:13:25+08:00",
-      "source_job_id": "461899",
+      "source_job_id": "nowcoder_461899",
       "company_legal_name": "上海砺星工业",
       "source_company_id": 160906,
       "source_job_category": "算法工程师",
@@ -20496,7 +20497,7 @@
       ]
     },
     {
-      "id": "nowcoder_457005",
+      "id": "sh_nowcoder_457005",
       "company": "上海砺星工业",
       "position": "上位机软件工程师",
       "job_type": "软件开发",
@@ -20516,7 +20517,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/457005",
       "collected_at": "2026-11-13T11:12:22+08:00",
-      "source_job_id": "457005",
+      "source_job_id": "nowcoder_457005",
       "company_legal_name": "上海砺星工业",
       "source_company_id": 160906,
       "source_job_category": "技术支持工程师",
@@ -20610,7 +20611,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_468666",
+      "id": "sh_nowcoder_468666",
       "company": "UCloud",
       "position": "2027校招-Golang开发工程师（云网络）",
       "job_type": "软件开发",
@@ -20634,7 +20635,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/468666",
       "collected_at": "2026-11-13T11:09:15+08:00",
-      "source_job_id": "468666",
+      "source_job_id": "nowcoder_468666",
       "company_legal_name": "Ucloud",
       "source_company_id": 743,
       "source_job_category": "golang",
@@ -20774,7 +20775,7 @@
       ]
     },
     {
-      "id": "nowcoder_468644",
+      "id": "sh_nowcoder_468644",
       "company": "UCloud",
       "position": "2027校招-应用开发（Golang）",
       "job_type": "软件开发",
@@ -20803,7 +20804,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/468644",
       "collected_at": "2026-11-13T11:09:11+08:00",
-      "source_job_id": "468644",
+      "source_job_id": "nowcoder_468644",
       "company_legal_name": "Ucloud",
       "source_company_id": 743,
       "source_job_category": "golang",
@@ -20981,7 +20982,7 @@
       ]
     },
     {
-      "id": "nowcoder_473869",
+      "id": "sh_nowcoder_473869",
       "company": "上海华为技术有限公司",
       "position": "AI应用开发工程师",
       "job_type": "人工智能与算法",
@@ -21014,7 +21015,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/473869",
       "collected_at": "2026-11-13T11:10:38+08:00",
-      "source_job_id": "473869",
+      "source_job_id": "nowcoder_473869",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "人工智能",
@@ -21232,7 +21233,7 @@
       ]
     },
     {
-      "id": "nowcoder_469556",
+      "id": "sh_nowcoder_469556",
       "company": "杭州华为企业通信技术有限公司",
       "position": "AI测试开发&软件测试工程师",
       "job_type": "软件测试与测试开发",
@@ -21247,7 +21248,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469556",
       "collected_at": "2026-11-13T11:14:43+08:00",
-      "source_job_id": "469556",
+      "source_job_id": "nowcoder_469556",
       "company_legal_name": "杭州华为企业通信技术有限公司",
       "source_company_id": 14417,
       "source_job_category": "测试工程师",
@@ -21297,7 +21298,7 @@
       ]
     },
     {
-      "id": "nowcoder_465020",
+      "id": "sh_nowcoder_465020",
       "company": "途虎",
       "position": "测试开发工程师（2027届校招）",
       "job_type": "软件测试与测试开发",
@@ -21318,7 +21319,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/465020",
       "collected_at": "2026-11-13T11:08:41+08:00",
-      "source_job_id": "465020",
+      "source_job_id": "nowcoder_465020",
       "company_legal_name": "途虎",
       "source_company_id": 1513,
       "source_job_category": "测试开发",
@@ -21435,7 +21436,7 @@
       ]
     },
     {
-      "id": "nowcoder_462964",
+      "id": "sh_nowcoder_462964",
       "company": "上海华为技术有限公司",
       "position": "后端工程师",
       "job_type": "软件开发",
@@ -21464,7 +21465,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/462964",
       "collected_at": "2026-11-13T11:13:34+08:00",
-      "source_job_id": "462964",
+      "source_job_id": "nowcoder_462964",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "后端工程师",
@@ -21636,7 +21637,7 @@
       ]
     },
     {
-      "id": "nowcoder_464405",
+      "id": "sh_nowcoder_464405",
       "company": "华为云计算",
       "position": "ai infra",
       "job_type": "AI基础设施与系统开发",
@@ -21656,7 +21657,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/464405",
       "collected_at": "2026-11-13T11:14:04+08:00",
-      "source_job_id": "464405",
+      "source_job_id": "nowcoder_464405",
       "company_legal_name": "华为云计算",
       "source_company_id": 25080,
       "source_job_category": "算法工程师",
@@ -21756,7 +21757,7 @@
       ]
     },
     {
-      "id": "nowcoder_462368",
+      "id": "sh_nowcoder_462368",
       "company": "北京发那科机电有限公司",
       "position": "软件研发工程师-上海",
       "job_type": "软件开发",
@@ -21777,7 +21778,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/462368",
       "collected_at": "2026-11-13T11:08:28+08:00",
-      "source_job_id": "462368",
+      "source_job_id": "nowcoder_462368",
       "company_legal_name": "北京发那科机电有限公司",
       "source_company_id": 247839,
       "source_job_category": "人工智能",
@@ -21881,7 +21882,7 @@
       ]
     },
     {
-      "id": "nowcoder_462343",
+      "id": "sh_nowcoder_462343",
       "company": "北京发那科机电有限公司",
       "position": "软件开发工程师（CAX算法/AI应用）-上海",
       "job_type": "人工智能与算法",
@@ -21908,7 +21909,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/462343",
       "collected_at": "2026-11-13T11:13:29+08:00",
-      "source_job_id": "462343",
+      "source_job_id": "nowcoder_462343",
       "company_legal_name": "北京发那科机电有限公司",
       "source_company_id": 247839,
       "source_job_category": "算法工程师",
@@ -22066,7 +22067,7 @@
       ]
     },
     {
-      "id": "nowcoder_470818",
+      "id": "sh_nowcoder_470818",
       "company": "蓝色光标",
       "position": "AI Builder - 研发-2027秋",
       "job_type": "人工智能与算法",
@@ -22084,7 +22085,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/470818",
       "collected_at": "2026-11-13T11:14:48+08:00",
-      "source_job_id": "470818",
+      "source_job_id": "nowcoder_470818",
       "company_legal_name": "蓝色光标",
       "source_company_id": 668,
       "source_job_category": "研发工程师",
@@ -22159,7 +22160,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_471169",
+      "id": "sh_nowcoder_471169",
       "company": "京东",
       "position": "后端工程师",
       "job_type": "软件开发",
@@ -22185,7 +22186,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/471169",
       "collected_at": "2026-11-13T11:10:21+08:00",
-      "source_job_id": "471169",
+      "source_job_id": "nowcoder_471169",
       "company_legal_name": "京东",
       "source_company_id": 151,
       "source_job_category": "后端工程师",
@@ -22340,7 +22341,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_465117",
+      "id": "sh_nowcoder_465117",
       "company": "上海宇量昇科技有限公司",
       "position": "软件开发工程师（2027届）",
       "job_type": "软件开发",
@@ -22365,7 +22366,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/465117",
       "collected_at": "2026-11-13T11:08:42+08:00",
-      "source_job_id": "465117",
+      "source_job_id": "nowcoder_465117",
       "company_legal_name": "上海宇量昇科技有限公司",
       "source_company_id": 259063,
       "source_job_category": "C++",
@@ -22501,7 +22502,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_465487",
+      "id": "sh_nowcoder_465487",
       "company": "九方云",
       "position": "AI全栈开发(A125219)",
       "job_type": "人工智能与算法",
@@ -22523,7 +22524,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/465487",
       "collected_at": "2026-11-13T11:14:17+08:00",
-      "source_job_id": "465487",
+      "source_job_id": "nowcoder_465487",
       "company_legal_name": "九方云",
       "source_company_id": 28758,
       "source_job_category": "金融分析师",
@@ -22631,7 +22632,7 @@
       ]
     },
     {
-      "id": "nowcoder_459253",
+      "id": "sh_nowcoder_459253",
       "company": "姚记集团",
       "position": "游戏测试工程师-27届秋招",
       "job_type": "软件测试与测试开发",
@@ -22649,7 +22650,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459253",
       "collected_at": "2026-11-13T11:12:34+08:00",
-      "source_job_id": "459253",
+      "source_job_id": "nowcoder_459253",
       "company_legal_name": "姚记",
       "source_company_id": 269326,
       "source_job_category": "测试工程师",
@@ -22720,7 +22721,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_468545",
+      "id": "sh_nowcoder_468545",
       "company": "太初（杭州）集成电路有限公司",
       "position": "AI芯片推理框架研究员（27届校招）",
       "job_type": "AI基础设施与系统开发",
@@ -22745,7 +22746,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/468545",
       "collected_at": "2026-11-13T11:14:36+08:00",
-      "source_job_id": "468545",
+      "source_job_id": "nowcoder_468545",
       "company_legal_name": "太初（杭州）集成电路有限公司",
       "source_company_id": 152965,
       "source_job_category": "芯片研发",
@@ -22888,7 +22889,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_466819",
+      "id": "sh_nowcoder_466819",
       "company": "众安保险",
       "position": "[2027届秋招-上海]AI算法工程师",
       "job_type": "人工智能与算法",
@@ -22918,7 +22919,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/466819",
       "collected_at": "2026-11-13T11:14:23+08:00",
-      "source_job_id": "466819",
+      "source_job_id": "nowcoder_466819",
       "company_legal_name": "众安保险",
       "source_company_id": 2101,
       "source_job_category": "算法工程师",
@@ -23120,7 +23121,7 @@
       ]
     },
     {
-      "id": "nowcoder_465360",
+      "id": "sh_nowcoder_465360",
       "company": "众安保险",
       "position": "[2027届秋招-上海]AI全栈工程师",
       "job_type": "人工智能与算法",
@@ -23138,7 +23139,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/465360",
       "collected_at": "2026-11-13T11:14:16+08:00",
-      "source_job_id": "465360",
+      "source_job_id": "nowcoder_465360",
       "company_legal_name": "众安保险",
       "source_company_id": 2101,
       "source_job_category": "全栈开发",
@@ -23223,7 +23224,7 @@
       ]
     },
     {
-      "id": "nowcoder_464768",
+      "id": "sh_nowcoder_464768",
       "company": "途虎",
       "position": "客户端开发",
       "job_type": "软件开发",
@@ -23248,7 +23249,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/464768",
       "collected_at": "2026-11-13T11:08:35+08:00",
-      "source_job_id": "464768",
+      "source_job_id": "nowcoder_464768",
       "company_legal_name": "途虎",
       "source_company_id": 1513,
       "source_job_category": "客户端开发",
@@ -23390,7 +23391,7 @@
       ]
     },
     {
-      "id": "nowcoder_475251",
+      "id": "sh_nowcoder_475251",
       "company": "长川科技",
       "position": "2027届-自动化软件工程师（上海）",
       "job_type": "软件开发",
@@ -23408,7 +23409,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/475251",
       "collected_at": "2026-11-13T11:11:07+08:00",
-      "source_job_id": "475251",
+      "source_job_id": "nowcoder_475251",
       "company_legal_name": "长川科技",
       "source_company_id": 9268,
       "source_job_category": "自动化",
@@ -23483,7 +23484,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_475075",
+      "id": "sh_nowcoder_475075",
       "company": "上海元思无界信息科技有限公司",
       "position": "SLAM算法工程师",
       "job_type": "人工智能与算法",
@@ -23502,7 +23503,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/475075",
       "collected_at": "2026-11-13T11:11:02+08:00",
-      "source_job_id": "475075",
+      "source_job_id": "nowcoder_475075",
       "company_legal_name": "上海元思无界信息科技有限公司",
       "source_company_id": 312425,
       "source_job_category": "算法工程师",
@@ -23583,7 +23584,7 @@
       ]
     },
     {
-      "id": "nowcoder_475074",
+      "id": "sh_nowcoder_475074",
       "company": "上海元思无界信息科技有限公司",
       "position": "运控算法工程师",
       "job_type": "人工智能与算法",
@@ -23602,7 +23603,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/475074",
       "collected_at": "2026-11-13T11:11:01+08:00",
-      "source_job_id": "475074",
+      "source_job_id": "nowcoder_475074",
       "company_legal_name": "上海元思无界信息科技有限公司",
       "source_company_id": 312425,
       "source_job_category": "算法工程师",
@@ -23692,7 +23693,7 @@
       ]
     },
     {
-      "id": "nowcoder_472667",
+      "id": "sh_nowcoder_472667",
       "company": "上海元思无界信息科技有限公司",
       "position": "仿真算法工程师",
       "job_type": "人工智能与算法",
@@ -23715,7 +23716,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/472667",
       "collected_at": "2026-11-13T11:10:33+08:00",
-      "source_job_id": "472667",
+      "source_job_id": "nowcoder_472667",
       "company_legal_name": "上海元思无界信息科技有限公司",
       "source_company_id": 312425,
       "source_job_category": "算法工程师",
@@ -23839,7 +23840,7 @@
       ]
     },
     {
-      "id": "nowcoder_472666",
+      "id": "sh_nowcoder_472666",
       "company": "上海元思无界信息科技有限公司",
       "position": "VLA算法工程师",
       "job_type": "人工智能与算法",
@@ -23865,7 +23866,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/472666",
       "collected_at": "2026-11-13T11:10:33+08:00",
-      "source_job_id": "472666",
+      "source_job_id": "nowcoder_472666",
       "company_legal_name": "上海元思无界信息科技有限公司",
       "source_company_id": 312425,
       "source_job_category": "算法工程师",
@@ -24024,7 +24025,7 @@
       ]
     },
     {
-      "id": "nowcoder_470729",
+      "id": "sh_nowcoder_470729",
       "company": "上海华为技术有限公司",
       "position": "AI算法研究员",
       "job_type": "人工智能与算法",
@@ -24044,7 +24045,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/470729",
       "collected_at": "2026-11-13T11:10:00+08:00",
-      "source_job_id": "470729",
+      "source_job_id": "nowcoder_470729",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "人工智能",
@@ -24134,7 +24135,7 @@
       "review_note": "正文为26届海外本硕博、26届国内博士；最低为有海外背景条件的本科。"
     },
     {
-      "id": "nowcoder_470952",
+      "id": "sh_nowcoder_470952",
       "company": "上海华为技术有限公司",
       "position": "语音算法工程师",
       "job_type": "人工智能与算法",
@@ -24161,7 +24162,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/470952",
       "collected_at": "2026-11-13T11:10:08+08:00",
-      "source_job_id": "470952",
+      "source_job_id": "nowcoder_470952",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "深度学习",
@@ -24333,7 +24334,7 @@
       ]
     },
     {
-      "id": "nowcoder_467718",
+      "id": "sh_nowcoder_467718",
       "company": "北京华为数字",
       "position": "算法工程师",
       "job_type": "人工智能与算法",
@@ -24355,7 +24356,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467718",
       "collected_at": "2026-11-13T11:08:54+08:00",
-      "source_job_id": "467718",
+      "source_job_id": "nowcoder_467718",
       "company_legal_name": "北京华为数字",
       "source_company_id": 23861,
       "source_job_category": "算法工程师",
@@ -24465,7 +24466,7 @@
       ]
     },
     {
-      "id": "nowcoder_460029",
+      "id": "sh_nowcoder_460029",
       "company": "华为HUAWEI",
       "position": "人工智能",
       "job_type": "人工智能与算法",
@@ -24483,7 +24484,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460029",
       "collected_at": "2026-11-13T11:12:50+08:00",
-      "source_job_id": "460029",
+      "source_job_id": "nowcoder_460029",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "人工智能",
@@ -24562,7 +24563,7 @@
       ]
     },
     {
-      "id": "nowcoder_460763",
+      "id": "sh_nowcoder_460763",
       "company": "快手",
       "position": "【快Star】多模态理解与生成算法研究员-【可灵AI】",
       "job_type": "人工智能与算法",
@@ -24580,7 +24581,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460763",
       "collected_at": "2026-11-13T11:13:03+08:00",
-      "source_job_id": "460763",
+      "source_job_id": "nowcoder_460763",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "图像识别",
@@ -24656,7 +24657,7 @@
       ]
     },
     {
-      "id": "nowcoder_460762",
+      "id": "sh_nowcoder_460762",
       "company": "快手",
       "position": "【快Star】强化学习算法研究员-【可灵AI】",
       "job_type": "人工智能与算法",
@@ -24675,7 +24676,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460762",
       "collected_at": "2026-11-13T11:13:02+08:00",
-      "source_job_id": "460762",
+      "source_job_id": "nowcoder_460762",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "机器学习",
@@ -24769,7 +24770,7 @@
       ]
     },
     {
-      "id": "nowcoder_460759",
+      "id": "sh_nowcoder_460759",
       "company": "快手",
       "position": "【快Star】生成式视频编码算法工程师",
       "job_type": "人工智能与算法",
@@ -24789,7 +24790,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460759",
       "collected_at": "2026-11-13T11:13:01+08:00",
-      "source_job_id": "460759",
+      "source_job_id": "nowcoder_460759",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "语音/视频/图形开发",
@@ -24891,7 +24892,7 @@
       ]
     },
     {
-      "id": "nowcoder_460758",
+      "id": "sh_nowcoder_460758",
       "company": "快手",
       "position": "【快Star】视频编码与生成交叉算法工程师",
       "job_type": "人工智能与算法",
@@ -24913,7 +24914,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460758",
       "collected_at": "2026-11-13T11:13:01+08:00",
-      "source_job_id": "460758",
+      "source_job_id": "nowcoder_460758",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "语音/视频/图形开发",
@@ -25030,7 +25031,7 @@
       ]
     },
     {
-      "id": "nowcoder_460757",
+      "id": "sh_nowcoder_460757",
       "company": "快手",
       "position": "【快Star】音视频多模态算法策略研究员",
       "job_type": "人工智能与算法",
@@ -25054,7 +25055,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460757",
       "collected_at": "2026-11-13T11:13:00+08:00",
-      "source_job_id": "460757",
+      "source_job_id": "nowcoder_460757",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "图像识别",
@@ -25189,7 +25190,7 @@
       ]
     },
     {
-      "id": "nowcoder_460756",
+      "id": "sh_nowcoder_460756",
       "company": "快手",
       "position": "【快Star】智能编码算法研究员",
       "job_type": "人工智能与算法",
@@ -25207,7 +25208,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460756",
       "collected_at": "2026-11-13T11:12:59+08:00",
-      "source_job_id": "460756",
+      "source_job_id": "nowcoder_460756",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "语音/视频/图形开发",
@@ -25286,7 +25287,7 @@
       ]
     },
     {
-      "id": "nowcoder_460755",
+      "id": "sh_nowcoder_460755",
       "company": "快手",
       "position": "【快Star】音视频大模型算法工程师",
       "job_type": "人工智能与算法",
@@ -25305,7 +25306,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460755",
       "collected_at": "2026-11-13T11:12:59+08:00",
-      "source_job_id": "460755",
+      "source_job_id": "nowcoder_460755",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "图像识别",
@@ -25399,7 +25400,7 @@
       ]
     },
     {
-      "id": "nowcoder_460754",
+      "id": "sh_nowcoder_460754",
       "company": "快手",
       "position": "【快Star】大模型高性能推理算子工程师-【可灵AI】",
       "job_type": "AI基础设施与系统开发",
@@ -25425,7 +25426,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460754",
       "collected_at": "2026-11-13T11:12:58+08:00",
-      "source_job_id": "460754",
+      "source_job_id": "nowcoder_460754",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "算法工程师",
@@ -25576,7 +25577,7 @@
       ]
     },
     {
-      "id": "nowcoder_460753",
+      "id": "sh_nowcoder_460753",
       "company": "快手",
       "position": "【快Star】大模型分布式推理框架工程师-【可灵AI】",
       "job_type": "AI基础设施与系统开发",
@@ -25596,7 +25597,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460753",
       "collected_at": "2026-11-13T11:12:57+08:00",
-      "source_job_id": "460753",
+      "source_job_id": "nowcoder_460753",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "算法工程师",
@@ -25700,7 +25701,7 @@
       ]
     },
     {
-      "id": "nowcoder_460694",
+      "id": "sh_nowcoder_460694",
       "company": "快手",
       "position": "游戏图形学算法工程师",
       "job_type": "人工智能与算法",
@@ -25723,7 +25724,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460694",
       "collected_at": "2026-11-13T11:12:57+08:00",
-      "source_job_id": "460694",
+      "source_job_id": "nowcoder_460694",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "图像识别",
@@ -25841,7 +25842,7 @@
       ]
     },
     {
-      "id": "nowcoder_460658",
+      "id": "sh_nowcoder_460658",
       "company": "快手",
       "position": "视频生成算法研究员",
       "job_type": "人工智能与算法",
@@ -25856,7 +25857,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460658",
       "collected_at": "2026-11-13T11:12:56+08:00",
-      "source_job_id": "460658",
+      "source_job_id": "nowcoder_460658",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "语音/视频/图形开发",
@@ -25915,7 +25916,7 @@
       ]
     },
     {
-      "id": "nowcoder_460587",
+      "id": "sh_nowcoder_460587",
       "company": "快手",
       "position": "大模型推理/训练优化工程师",
       "job_type": "人工智能与算法",
@@ -25944,7 +25945,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460587",
       "collected_at": "2026-11-13T11:12:55+08:00",
-      "source_job_id": "460587",
+      "source_job_id": "nowcoder_460587",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "算法工程师",
@@ -26133,7 +26134,7 @@
       ]
     },
     {
-      "id": "nowcoder_460565",
+      "id": "sh_nowcoder_460565",
       "company": "快手",
       "position": "【快Star】多模态生成模型生成效率优化工程师-【可灵AI】",
       "job_type": "人工智能与算法",
@@ -26151,7 +26152,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460565",
       "collected_at": "2026-11-13T11:12:55+08:00",
-      "source_job_id": "460565",
+      "source_job_id": "nowcoder_460565",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "算法工程师",
@@ -26227,7 +26228,7 @@
       ]
     },
     {
-      "id": "nowcoder_460564",
+      "id": "sh_nowcoder_460564",
       "company": "快手",
       "position": "【快Star】多模态生成模型计算效率优化工程师-【可灵AI】",
       "job_type": "人工智能与算法",
@@ -26245,7 +26246,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460564",
       "collected_at": "2026-11-13T11:12:54+08:00",
-      "source_job_id": "460564",
+      "source_job_id": "nowcoder_460564",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "算法工程师",
@@ -26320,7 +26321,7 @@
       ]
     },
     {
-      "id": "nowcoder_460563",
+      "id": "sh_nowcoder_460563",
       "company": "快手",
       "position": "【快Star】视频大模型高性能与低精度算子工程师-【可灵AI】",
       "job_type": "AI基础设施与系统开发",
@@ -26341,7 +26342,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460563",
       "collected_at": "2026-11-13T11:12:53+08:00",
-      "source_job_id": "460563",
+      "source_job_id": "nowcoder_460563",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "算法工程师",
@@ -26443,7 +26444,7 @@
       ]
     },
     {
-      "id": "nowcoder_460562",
+      "id": "sh_nowcoder_460562",
       "company": "快手",
       "position": "【快Star】视频大模型高性能与分布式计算工程师-【可灵AI】",
       "job_type": "AI基础设施与系统开发",
@@ -26467,7 +26468,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460562",
       "collected_at": "2026-11-13T11:12:52+08:00",
-      "source_job_id": "460562",
+      "source_job_id": "nowcoder_460562",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "算法工程师",
@@ -26608,7 +26609,7 @@
       ]
     },
     {
-      "id": "nowcoder_460557",
+      "id": "sh_nowcoder_460557",
       "company": "快手",
       "position": "【快Star】多模态生成算法研究员-【可灵AI】",
       "job_type": "人工智能与算法",
@@ -26626,7 +26627,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460557",
       "collected_at": "2026-11-13T11:12:52+08:00",
-      "source_job_id": "460557",
+      "source_job_id": "nowcoder_460557",
       "company_legal_name": "快手",
       "source_company_id": 898,
       "source_job_category": "图像识别",
@@ -26707,7 +26708,7 @@
       ]
     },
     {
-      "id": "nowcoder_454354",
+      "id": "sh_nowcoder_454354",
       "company": "拼多多集团-PDD",
       "position": "【offer来袭！】Web前端研发工程师-27提前批-福利待遇超好",
       "job_type": "软件开发",
@@ -26731,7 +26732,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/454354",
       "collected_at": "2026-11-13T11:12:18+08:00",
-      "source_job_id": "454354",
+      "source_job_id": "nowcoder_454354",
       "company_legal_name": "拼多多",
       "source_company_id": 732,
       "source_job_category": "技术支持工程师",
@@ -26886,7 +26887,7 @@
       ]
     },
     {
-      "id": "nowcoder_453304",
+      "id": "sh_nowcoder_453304",
       "company": "拼多多集团-PDD",
       "position": "【薪资待遇好】安全工程师-27提前批-超高留用率",
       "job_type": "网络安全",
@@ -26901,7 +26902,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/453304",
       "collected_at": "2026-11-13T11:08:10+08:00",
-      "source_job_id": "453304",
+      "source_job_id": "nowcoder_453304",
       "company_legal_name": "拼多多",
       "source_company_id": 732,
       "source_job_category": "技术支持工程师",
@@ -26955,7 +26956,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_453302",
+      "id": "sh_nowcoder_453302",
       "company": "拼多多集团-PDD",
       "position": "【27提前批】客户端研发工程师-超高留用率",
       "job_type": "软件开发",
@@ -26982,7 +26983,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/453302",
       "collected_at": "2026-11-13T11:08:08+08:00",
-      "source_job_id": "453302",
+      "source_job_id": "nowcoder_453302",
       "company_legal_name": "拼多多",
       "source_company_id": 732,
       "source_job_category": "技术支持工程师",
@@ -27151,7 +27152,7 @@
       ]
     },
     {
-      "id": "nowcoder_473774",
+      "id": "sh_nowcoder_473774",
       "company": "华为HUAWEI",
       "position": "AI应用开发工程师",
       "job_type": "人工智能与算法",
@@ -27184,7 +27185,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/473774",
       "collected_at": "2026-11-13T11:10:36+08:00",
-      "source_job_id": "473774",
+      "source_job_id": "nowcoder_473774",
       "company_legal_name": "华为",
       "source_company_id": 239,
       "source_job_category": "数据通信工程师",
@@ -27402,7 +27403,7 @@
       ]
     },
     {
-      "id": "nowcoder_466048",
+      "id": "sh_nowcoder_466048",
       "company": "华为HUAWEI",
       "position": "AI开发工程师",
       "job_type": "人工智能与算法",
@@ -27421,7 +27422,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/466048",
       "collected_at": "2026-11-13T11:14:20+08:00",
-      "source_job_id": "466048",
+      "source_job_id": "nowcoder_466048",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "Java",
@@ -27501,7 +27502,7 @@
       ]
     },
     {
-      "id": "nowcoder_395984",
+      "id": "sh_nowcoder_395984",
       "company": "华为HUAWEI",
       "position": "AI工程师",
       "job_type": "人工智能与算法",
@@ -27522,7 +27523,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/395984",
       "collected_at": "2026-11-13T11:11:51+08:00",
-      "source_job_id": "395984",
+      "source_job_id": "nowcoder_395984",
       "company_legal_name": "华为",
       "source_company_id": 239,
       "source_job_category": "技术支持工程师",
@@ -27631,7 +27632,7 @@
       ]
     },
     {
-      "id": "nowcoder_475232",
+      "id": "sh_nowcoder_475232",
       "company": "上海华为技术有限公司",
       "position": "算法工程师",
       "job_type": "人工智能与算法",
@@ -27659,7 +27660,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/475232",
       "collected_at": "2026-11-13T11:15:01+08:00",
-      "source_job_id": "475232",
+      "source_job_id": "nowcoder_475232",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "算法工程师",
@@ -27828,7 +27829,7 @@
       ]
     },
     {
-      "id": "nowcoder_471073",
+      "id": "sh_nowcoder_471073",
       "company": "上海华为技术有限公司",
       "position": "【华为】软件开发工程师",
       "job_type": "软件开发",
@@ -27853,7 +27854,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/471073",
       "collected_at": "2026-11-13T11:10:18+08:00",
-      "source_job_id": "471073",
+      "source_job_id": "nowcoder_471073",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "研发工程师",
@@ -27988,7 +27989,7 @@
       ]
     },
     {
-      "id": "nowcoder_463370",
+      "id": "sh_nowcoder_463370",
       "company": "字节跳动",
       "position": "AI全栈开发工程师（电商/前后端） - 中国交易与广告",
       "job_type": "人工智能与算法",
@@ -28016,7 +28017,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463370",
       "collected_at": "2026-11-13T11:08:32+08:00",
-      "source_job_id": "463370",
+      "source_job_id": "nowcoder_463370",
       "company_legal_name": "字节跳动",
       "source_company_id": 665,
       "source_job_category": "全栈开发",
@@ -28192,7 +28193,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_459261",
+      "id": "sh_nowcoder_459261",
       "company": "姚记集团",
       "position": "AIGC技术工程师（算法/工程）-27届秋招",
       "job_type": "人工智能与算法",
@@ -28214,7 +28215,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459261",
       "collected_at": "2026-11-13T11:12:38+08:00",
-      "source_job_id": "459261",
+      "source_job_id": "nowcoder_459261",
       "company_legal_name": "姚记",
       "source_company_id": 269326,
       "source_job_category": "算法工程师",
@@ -28323,7 +28324,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_459260",
+      "id": "sh_nowcoder_459260",
       "company": "姚记集团",
       "position": "游戏客户端开发工程师-27届秋招",
       "job_type": "软件开发",
@@ -28343,7 +28344,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459260",
       "collected_at": "2026-11-13T11:12:37+08:00",
-      "source_job_id": "459260",
+      "source_job_id": "nowcoder_459260",
       "company_legal_name": "姚记",
       "source_company_id": 269326,
       "source_job_category": "前端工程师",
@@ -28434,7 +28435,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_461847",
+      "id": "sh_nowcoder_461847",
       "company": "华为HUAWEI",
       "position": "大模型工程师、ai infra base多多！！！",
       "job_type": "AI基础设施与系统开发",
@@ -28465,7 +28466,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/461847",
       "collected_at": "2026-11-13T11:13:22+08:00",
-      "source_job_id": "461847",
+      "source_job_id": "nowcoder_461847",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "算法工程师",
@@ -28675,7 +28676,7 @@
       ]
     },
     {
-      "id": "nowcoder_434376",
+      "id": "sh_nowcoder_434376",
       "company": "北京微财科技有限公司",
       "position": "金融算法工程师（校招）",
       "job_type": "人工智能与算法",
@@ -28700,7 +28701,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/434376",
       "collected_at": "2026-11-13T11:11:55+08:00",
-      "source_job_id": "434376",
+      "source_job_id": "nowcoder_434376",
       "company_legal_name": "北京微财科技有限公司",
       "source_company_id": 7522,
       "source_job_category": "算法工程师",
@@ -28846,7 +28847,7 @@
       ]
     },
     {
-      "id": "nowcoder_464192",
+      "id": "sh_nowcoder_464192",
       "company": "华为HUAWEI",
       "position": "【华为校招-27届毕业生】AI应用工程师",
       "job_type": "人工智能与算法",
@@ -28869,7 +28870,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/464192",
       "collected_at": "2026-11-13T11:14:01+08:00",
-      "source_job_id": "464192",
+      "source_job_id": "nowcoder_464192",
       "company_legal_name": "华为",
       "source_company_id": 239,
       "source_job_category": "通信研发工程师",
@@ -29004,7 +29005,7 @@
       ]
     },
     {
-      "id": "nowcoder_464188",
+      "id": "sh_nowcoder_464188",
       "company": "华为HUAWEI",
       "position": "【华为校招-27届毕业生】数据科学工程师",
       "job_type": "数据开发与分析",
@@ -29022,7 +29023,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/464188",
       "collected_at": "2026-11-13T11:08:34+08:00",
-      "source_job_id": "464188",
+      "source_job_id": "nowcoder_464188",
       "company_legal_name": "华为",
       "source_company_id": 239,
       "source_job_category": "通信研发工程师",
@@ -29091,7 +29092,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_464185",
+      "id": "sh_nowcoder_464185",
       "company": "华为HUAWEI",
       "position": "【华为校招-27届毕业生】软件开发工程师",
       "job_type": "软件开发",
@@ -29116,7 +29117,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/464185",
       "collected_at": "2026-11-13T11:08:33+08:00",
-      "source_job_id": "464185",
+      "source_job_id": "nowcoder_464185",
       "company_legal_name": "华为",
       "source_company_id": 239,
       "source_job_category": "通信研发工程师",
@@ -29250,7 +29251,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_475056",
+      "id": "sh_nowcoder_475056",
       "company": "中国电科三十二所",
       "position": "【2027】渗透测试工程师",
       "job_type": "网络安全",
@@ -29270,7 +29271,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/475056",
       "collected_at": "2026-11-13T11:10:59+08:00",
-      "source_job_id": "475056",
+      "source_job_id": "nowcoder_475056",
       "company_legal_name": "中国电科三十二所",
       "source_company_id": 150865,
       "source_job_category": "科研人员",
@@ -29368,7 +29369,7 @@
       ]
     },
     {
-      "id": "nowcoder_470251",
+      "id": "sh_nowcoder_470251",
       "company": "携程",
       "position": "Eagle Program – Big Data Engineer (2027 Graduates)",
       "job_type": "数据开发与分析",
@@ -29397,7 +29398,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/470251",
       "collected_at": "2026-11-13T11:14:47+08:00",
-      "source_job_id": "470251",
+      "source_job_id": "nowcoder_470251",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "大数据开发工程师",
@@ -29578,7 +29579,7 @@
       ]
     },
     {
-      "id": "nowcoder_463600",
+      "id": "sh_nowcoder_463600",
       "company": "携程",
       "position": "IDC工程师（2027届秋招）",
       "job_type": "运维与基础设施",
@@ -29597,7 +29598,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463600",
       "collected_at": "2026-11-13T11:13:56+08:00",
-      "source_job_id": "463600",
+      "source_job_id": "nowcoder_463600",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "Java",
@@ -29682,7 +29683,7 @@
       ]
     },
     {
-      "id": "nowcoder_463584",
+      "id": "sh_nowcoder_463584",
       "company": "携程",
       "position": "算法工程师（搜索推荐方向）（2027届秋招）",
       "job_type": "人工智能与算法",
@@ -29710,7 +29711,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463584",
       "collected_at": "2026-11-13T11:13:52+08:00",
-      "source_job_id": "463584",
+      "source_job_id": "nowcoder_463584",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "算法工程师",
@@ -29877,7 +29878,7 @@
       ]
     },
     {
-      "id": "nowcoder_463583",
+      "id": "sh_nowcoder_463583",
       "company": "携程",
       "position": "移动端开发工程师（iOS/Android）（2027届秋招）",
       "job_type": "嵌入式与系统软件",
@@ -29905,7 +29906,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463583",
       "collected_at": "2026-11-13T11:13:51+08:00",
-      "source_job_id": "463583",
+      "source_job_id": "nowcoder_463583",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "安卓",
@@ -30084,7 +30085,7 @@
       ]
     },
     {
-      "id": "nowcoder_463580",
+      "id": "sh_nowcoder_463580",
       "company": "携程",
       "position": "大数据平台开发工程师（AI Agent方向）（2027届秋招）",
       "job_type": "人工智能与算法",
@@ -30106,7 +30107,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463580",
       "collected_at": "2026-11-13T11:13:50+08:00",
-      "source_job_id": "463580",
+      "source_job_id": "nowcoder_463580",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "大数据开发工程师",
@@ -30229,7 +30230,7 @@
       ]
     },
     {
-      "id": "nowcoder_463576",
+      "id": "sh_nowcoder_463576",
       "company": "携程",
       "position": "大数据开发工程师（2027届秋招）",
       "job_type": "数据开发与分析",
@@ -30262,7 +30263,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463576",
       "collected_at": "2026-11-13T11:13:48+08:00",
-      "source_job_id": "463576",
+      "source_job_id": "nowcoder_463576",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "大数据开发工程师",
@@ -30479,7 +30480,7 @@
       ]
     },
     {
-      "id": "nowcoder_463572",
+      "id": "sh_nowcoder_463572",
       "company": "携程",
       "position": "数据仓库工程师（2027届秋招）",
       "job_type": "数据开发与分析",
@@ -30498,7 +30499,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463572",
       "collected_at": "2026-11-13T11:13:46+08:00",
-      "source_job_id": "463572",
+      "source_job_id": "nowcoder_463572",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "数据分析师",
@@ -30585,7 +30586,7 @@
       ]
     },
     {
-      "id": "nowcoder_463571",
+      "id": "sh_nowcoder_463571",
       "company": "携程",
       "position": "算法工程师（时间序列方向）（2027届秋招）",
       "job_type": "人工智能与算法",
@@ -30610,7 +30611,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463571",
       "collected_at": "2026-11-13T11:13:45+08:00",
-      "source_job_id": "463571",
+      "source_job_id": "nowcoder_463571",
       "company_legal_name": "携程",
       "source_company_id": 153,
       "source_job_category": "算法工程师",
@@ -30758,7 +30759,7 @@
       ]
     },
     {
-      "id": "nowcoder_462034",
+      "id": "sh_nowcoder_462034",
       "company": "华为HUAWEI",
       "position": "自动驾驶算法工程师",
       "job_type": "人工智能与算法",
@@ -30780,7 +30781,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/462034",
       "collected_at": "2026-11-13T11:13:26+08:00",
-      "source_job_id": "462034",
+      "source_job_id": "nowcoder_462034",
       "company_legal_name": "华为",
       "source_company_id": 239,
       "source_job_category": "算法工程师",
@@ -30891,7 +30892,7 @@
       ]
     },
     {
-      "id": "nowcoder_467169",
+      "id": "sh_nowcoder_467169",
       "company": "上海华为技术有限公司",
       "position": "嵌入式软件开发",
       "job_type": "嵌入式与系统软件",
@@ -30915,7 +30916,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467169",
       "collected_at": "2026-11-13T11:14:27+08:00",
-      "source_job_id": "467169",
+      "source_job_id": "nowcoder_467169",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "嵌入式软件开发",
@@ -31044,7 +31045,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_470157",
+      "id": "sh_nowcoder_470157",
       "company": "华为HUAWEI",
       "position": "华为27年校园招聘-开发工程师-南京-上海-西安-深圳",
       "job_type": "软件开发",
@@ -31073,7 +31074,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/470157",
       "collected_at": "2026-11-13T11:09:49+08:00",
-      "source_job_id": "470157",
+      "source_job_id": "nowcoder_470157",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "全栈开发",
@@ -31244,7 +31245,7 @@
       ]
     },
     {
-      "id": "nowcoder_464969",
+      "id": "sh_nowcoder_464969",
       "company": "途虎",
       "position": "全栈开发工程师（2027届校招）-武汉/上海",
       "job_type": "软件开发",
@@ -31261,7 +31262,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/464969",
       "collected_at": "2026-11-13T11:08:39+08:00",
-      "source_job_id": "464969",
+      "source_job_id": "nowcoder_464969",
       "company_legal_name": "途虎",
       "source_company_id": 1513,
       "source_job_category": "全栈开发",
@@ -31328,7 +31329,7 @@
       ]
     },
     {
-      "id": "nowcoder_464964",
+      "id": "sh_nowcoder_464964",
       "company": "途虎",
       "position": "增长算法工程师-（2027届校招）",
       "job_type": "人工智能与算法",
@@ -31354,7 +31355,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/464964",
       "collected_at": "2026-11-13T11:08:38+08:00",
-      "source_job_id": "464964",
+      "source_job_id": "nowcoder_464964",
       "company_legal_name": "途虎",
       "source_company_id": 1513,
       "source_job_category": "算法工程师",
@@ -31499,7 +31500,7 @@
       ]
     },
     {
-      "id": "nowcoder_461364",
+      "id": "sh_nowcoder_461364",
       "company": "华为HUAWEI",
       "position": "智能驾驶算法工程师",
       "job_type": "人工智能与算法",
@@ -31519,7 +31520,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/461364",
       "collected_at": "2026-11-13T11:13:13+08:00",
-      "source_job_id": "461364",
+      "source_job_id": "nowcoder_461364",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "Python",
@@ -31609,7 +31610,7 @@
       ]
     },
     {
-      "id": "nowcoder_136886",
+      "id": "sh_nowcoder_136886",
       "company": "理想汽车",
       "position": "AI编译器开发工程师",
       "job_type": "AI基础设施与系统开发",
@@ -31627,7 +31628,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/136886",
       "collected_at": "2026-11-13T11:11:48+08:00",
-      "source_job_id": "136886",
+      "source_job_id": "nowcoder_136886",
       "company_legal_name": "理想汽车",
       "source_company_id": 12240,
       "source_job_category": "汽车设计",
@@ -31701,7 +31702,7 @@
       ]
     },
     {
-      "id": "nowcoder_136885",
+      "id": "sh_nowcoder_136885",
       "company": "理想汽车",
       "position": "前端开发工程师",
       "job_type": "软件开发",
@@ -31724,7 +31725,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/136885",
       "collected_at": "2026-11-13T11:11:48+08:00",
-      "source_job_id": "136885",
+      "source_job_id": "nowcoder_136885",
       "company_legal_name": "理想汽车",
       "source_company_id": 12240,
       "source_job_category": "汽车设计",
@@ -31847,7 +31848,7 @@
       ]
     },
     {
-      "id": "nowcoder_136884",
+      "id": "sh_nowcoder_136884",
       "company": "理想汽车",
       "position": "Android 开发工程师",
       "job_type": "嵌入式与系统软件",
@@ -31865,7 +31866,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/136884",
       "collected_at": "2026-11-13T11:11:47+08:00",
-      "source_job_id": "136884",
+      "source_job_id": "nowcoder_136884",
       "company_legal_name": "理想汽车",
       "source_company_id": 12240,
       "source_job_category": "汽车设计",
@@ -31947,7 +31948,7 @@
       ]
     },
     {
-      "id": "nowcoder_136883",
+      "id": "sh_nowcoder_136883",
       "company": "理想汽车",
       "position": "自然语言处理算法工程师",
       "job_type": "人工智能与算法",
@@ -31967,7 +31968,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/136883",
       "collected_at": "2026-11-13T11:11:46+08:00",
-      "source_job_id": "136883",
+      "source_job_id": "nowcoder_136883",
       "company_legal_name": "理想汽车",
       "source_company_id": 12240,
       "source_job_category": "汽车设计",
@@ -32069,7 +32070,7 @@
       ]
     },
     {
-      "id": "nowcoder_136880",
+      "id": "sh_nowcoder_136880",
       "company": "理想汽车",
       "position": "语音感知算法工程师",
       "job_type": "人工智能与算法",
@@ -32095,7 +32096,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/136880",
       "collected_at": "2026-11-13T11:11:46+08:00",
-      "source_job_id": "136880",
+      "source_job_id": "nowcoder_136880",
       "company_legal_name": "理想汽车",
       "source_company_id": 12240,
       "source_job_category": "汽车设计",
@@ -32244,7 +32245,7 @@
       ]
     },
     {
-      "id": "nowcoder_463609",
+      "id": "sh_nowcoder_463609",
       "company": "华为HUAWEI",
       "position": "后端工程师",
       "job_type": "软件开发",
@@ -32264,7 +32265,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463609",
       "collected_at": "2026-11-13T11:13:56+08:00",
-      "source_job_id": "463609",
+      "source_job_id": "nowcoder_463609",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "后端工程师",
@@ -32372,7 +32373,7 @@
       ]
     },
     {
-      "id": "nowcoder_467963",
+      "id": "sh_nowcoder_467963",
       "company": "太初（杭州）集成电路有限公司",
       "position": "推理性能优化研究员（27届校招）",
       "job_type": "人工智能与算法",
@@ -32396,7 +32397,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467963",
       "collected_at": "2026-11-13T11:08:57+08:00",
-      "source_job_id": "467963",
+      "source_job_id": "nowcoder_467963",
       "company_legal_name": "太初（杭州）集成电路有限公司",
       "source_company_id": 152965,
       "source_job_category": "深度学习",
@@ -32531,7 +32532,7 @@
       ]
     },
     {
-      "id": "nowcoder_465118",
+      "id": "sh_nowcoder_465118",
       "company": "华为软件技术有限公司",
       "position": "人工智能",
       "job_type": "人工智能与算法",
@@ -32551,7 +32552,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/465118",
       "collected_at": "2026-11-13T11:14:14+08:00",
-      "source_job_id": "465118",
+      "source_job_id": "nowcoder_465118",
       "company_legal_name": "华为软件技术有限公司",
       "source_company_id": 21147,
       "source_job_category": "人工智能",
@@ -32644,7 +32645,7 @@
       ]
     },
     {
-      "id": "nowcoder_460021",
+      "id": "sh_nowcoder_460021",
       "company": "华为HUAWEI",
       "position": "AI应用工程师",
       "job_type": "人工智能与算法",
@@ -32683,7 +32684,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460021",
       "collected_at": "2026-11-13T11:12:49+08:00",
-      "source_job_id": "460021",
+      "source_job_id": "nowcoder_460021",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "人工智能",
@@ -32955,7 +32956,7 @@
       ]
     },
     {
-      "id": "nowcoder_458337",
+      "id": "sh_nowcoder_458337",
       "company": "华为软件技术有限公司",
       "position": "C++",
       "job_type": "软件开发",
@@ -32975,7 +32976,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/458337",
       "collected_at": "2026-11-13T11:12:30+08:00",
-      "source_job_id": "458337",
+      "source_job_id": "nowcoder_458337",
       "company_legal_name": "华为软件技术有限公司",
       "source_company_id": 21147,
       "source_job_category": "C++",
@@ -33070,7 +33071,7 @@
       ]
     },
     {
-      "id": "nowcoder_467327",
+      "id": "sh_nowcoder_467327",
       "company": "上海华为技术有限公司",
       "position": "通用软件开发工程师",
       "job_type": "软件开发",
@@ -33094,7 +33095,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467327",
       "collected_at": "2026-11-13T11:08:51+08:00",
-      "source_job_id": "467327",
+      "source_job_id": "nowcoder_467327",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "Java",
@@ -33223,7 +33224,7 @@
       ]
     },
     {
-      "id": "nowcoder_463747",
+      "id": "sh_nowcoder_463747",
       "company": "中城交（上海）科技有限公司",
       "position": "Agent开发工程师",
       "job_type": "软件开发",
@@ -33242,7 +33243,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463747",
       "collected_at": "2026-11-13T11:13:58+08:00",
-      "source_job_id": "463747",
+      "source_job_id": "nowcoder_463747",
       "company_legal_name": "中城交（上海）科技有限公司",
       "source_company_id": 310184,
       "source_job_category": "人工智能",
@@ -33339,7 +33340,7 @@
       ]
     },
     {
-      "id": "nowcoder_460088",
+      "id": "sh_nowcoder_460088",
       "company": "上海华为技术有限公司",
       "position": "软件开发工程师",
       "job_type": "软件开发",
@@ -33361,7 +33362,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460088",
       "collected_at": "2026-11-13T11:08:21+08:00",
-      "source_job_id": "460088",
+      "source_job_id": "nowcoder_460088",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "Java",
@@ -33466,7 +33467,7 @@
       ]
     },
     {
-      "id": "nowcoder_464785",
+      "id": "sh_nowcoder_464785",
       "company": "天猫技术",
       "position": "AI Agent应用研发工程师-淘天27届校招-杭京沪深广",
       "job_type": "人工智能与算法",
@@ -33496,7 +33497,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/464785",
       "collected_at": "2026-11-13T11:14:10+08:00",
-      "source_job_id": "464785",
+      "source_job_id": "nowcoder_464785",
       "company_legal_name": "天猫技术",
       "source_company_id": 267403,
       "source_job_category": "算法工程师",
@@ -33694,7 +33695,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_459268",
+      "id": "sh_nowcoder_459268",
       "company": "砺算科技",
       "position": "C++",
       "job_type": "软件开发",
@@ -33714,7 +33715,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459268",
       "collected_at": "2026-11-13T11:12:41+08:00",
-      "source_job_id": "459268",
+      "source_job_id": "nowcoder_459268",
       "company_legal_name": "砺算科技",
       "source_company_id": 150893,
       "source_job_category": "C++",
@@ -33820,7 +33821,7 @@
       ]
     },
     {
-      "id": "nowcoder_469981",
+      "id": "sh_nowcoder_469981",
       "company": "上海华为技术有限公司",
       "position": "算法工程师",
       "job_type": "人工智能与算法",
@@ -33844,7 +33845,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469981",
       "collected_at": "2026-11-13T11:09:47+08:00",
-      "source_job_id": "469981",
+      "source_job_id": "nowcoder_469981",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "算法工程师",
@@ -33997,7 +33998,7 @@
       ]
     },
     {
-      "id": "nowcoder_42343",
+      "id": "sh_nowcoder_42343",
       "company": "中科创达",
       "position": "Java开发工程师",
       "job_type": "软件开发",
@@ -34018,7 +34019,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/42343",
       "collected_at": "2026-11-13T11:11:38+08:00",
-      "source_job_id": "42343",
+      "source_job_id": "nowcoder_42343",
       "company_legal_name": "中科创达",
       "source_company_id": 1156,
       "source_job_category": "Java",
@@ -34145,7 +34146,7 @@
       ]
     },
     {
-      "id": "nowcoder_464464",
+      "id": "sh_nowcoder_464464",
       "company": "华为HUAWEI",
       "position": "人工智能",
       "job_type": "人工智能与算法",
@@ -34170,7 +34171,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/464464",
       "collected_at": "2026-11-13T11:14:05+08:00",
-      "source_job_id": "464464",
+      "source_job_id": "nowcoder_464464",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "人工智能",
@@ -34312,7 +34313,7 @@
       ]
     },
     {
-      "id": "nowcoder_456087",
+      "id": "sh_nowcoder_456087",
       "company": "上海华为技术有限公司",
       "position": "驱动开发",
       "job_type": "嵌入式与系统软件",
@@ -34332,7 +34333,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/456087",
       "collected_at": "2026-11-13T11:12:19+08:00",
-      "source_job_id": "456087",
+      "source_job_id": "nowcoder_456087",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "驱动开发",
@@ -34420,7 +34421,7 @@
       ]
     },
     {
-      "id": "nowcoder_457046",
+      "id": "sh_nowcoder_457046",
       "company": "华为HUAWEI",
       "position": "【27届秋招】测试开发",
       "job_type": "软件测试与测试开发",
@@ -34435,7 +34436,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/457046",
       "collected_at": "2026-11-13T11:08:15+08:00",
-      "source_job_id": "457046",
+      "source_job_id": "nowcoder_457046",
       "company_legal_name": "华为",
       "source_company_id": 239,
       "source_job_category": "通信测试工程师",
@@ -34487,7 +34488,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_453103",
+      "id": "sh_nowcoder_453103",
       "company": "华为软件技术有限公司",
       "position": "嵌入式工程师",
       "job_type": "嵌入式与系统软件",
@@ -34510,7 +34511,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/453103",
       "collected_at": "2026-11-13T11:12:12+08:00",
-      "source_job_id": "453103",
+      "source_job_id": "nowcoder_453103",
       "company_legal_name": "华为软件技术有限公司",
       "source_company_id": 21147,
       "source_job_category": "嵌入式工程师",
@@ -34626,7 +34627,7 @@
       ]
     },
     {
-      "id": "nowcoder_469927",
+      "id": "sh_nowcoder_469927",
       "company": "华为HUAWEI",
       "position": "AI工程师",
       "job_type": "人工智能与算法",
@@ -34658,7 +34659,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469927",
       "collected_at": "2026-11-13T11:09:46+08:00",
-      "source_job_id": "469927",
+      "source_job_id": "nowcoder_469927",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "研发工程师",
@@ -34922,7 +34923,7 @@
       ]
     },
     {
-      "id": "nowcoder_467328",
+      "id": "sh_nowcoder_467328",
       "company": "上海华为技术有限公司",
       "position": "前端工程师",
       "job_type": "软件开发",
@@ -34951,7 +34952,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467328",
       "collected_at": "2026-11-13T11:14:33+08:00",
-      "source_job_id": "467328",
+      "source_job_id": "nowcoder_467328",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "前端工程师",
@@ -35182,7 +35183,7 @@
       ]
     },
     {
-      "id": "nowcoder_42348",
+      "id": "sh_nowcoder_42348",
       "company": "中科创达",
       "position": "Python开发工程师（系统开发）",
       "job_type": "软件开发",
@@ -35203,7 +35204,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/42348",
       "collected_at": "2026-11-13T11:11:41+08:00",
-      "source_job_id": "42348",
+      "source_job_id": "nowcoder_42348",
       "company_legal_name": "中科创达",
       "source_company_id": 1156,
       "source_job_category": "Python",
@@ -35309,7 +35310,7 @@
       ]
     },
     {
-      "id": "nowcoder_403465",
+      "id": "sh_nowcoder_403465",
       "company": "上海华为技术有限公司",
       "position": "AI大模型应用工程师（上海/武汉/西安）",
       "job_type": "人工智能与算法",
@@ -35332,7 +35333,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/403465",
       "collected_at": "2026-11-13T11:07:57+08:00",
-      "source_job_id": "403465",
+      "source_job_id": "nowcoder_403465",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "算法工程师",
@@ -35446,7 +35447,7 @@
       ]
     },
     {
-      "id": "nowcoder_401935",
+      "id": "sh_nowcoder_401935",
       "company": "上海华为技术有限公司",
       "position": "软件开发工程师（2027届 上海/西安/武汉）",
       "job_type": "软件开发",
@@ -35477,7 +35478,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/401935",
       "collected_at": "2026-11-13T11:11:53+08:00",
-      "source_job_id": "401935",
+      "source_job_id": "nowcoder_401935",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "Java",
@@ -35670,7 +35671,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_467938",
+      "id": "sh_nowcoder_467938",
       "company": "杭州华为企业通信技术有限公司",
       "position": "Python 云计算开发工程师",
       "job_type": "嵌入式与系统软件",
@@ -35692,7 +35693,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467938",
       "collected_at": "2026-11-13T11:14:35+08:00",
-      "source_job_id": "467938",
+      "source_job_id": "nowcoder_467938",
       "company_legal_name": "杭州华为企业通信技术有限公司",
       "source_company_id": 14417,
       "source_job_category": "Python",
@@ -35806,7 +35807,7 @@
       ]
     },
     {
-      "id": "nowcoder_456511",
+      "id": "sh_nowcoder_456511",
       "company": "华为HUAWEI",
       "position": "华为2027秋招-前端开发工程师",
       "job_type": "软件开发",
@@ -35837,7 +35838,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/456511",
       "collected_at": "2026-11-13T11:12:19+08:00",
-      "source_job_id": "456511",
+      "source_job_id": "nowcoder_456511",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "技术支持工程师",
@@ -36038,7 +36039,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_42344",
+      "id": "sh_nowcoder_42344",
       "company": "中科创达",
       "position": "C/C++开发工程师",
       "job_type": "软件开发",
@@ -36057,7 +36058,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/42344",
       "collected_at": "2026-11-13T11:11:39+08:00",
-      "source_job_id": "42344",
+      "source_job_id": "nowcoder_42344",
       "company_legal_name": "中科创达",
       "source_company_id": 1156,
       "source_job_category": "C++",
@@ -36166,7 +36167,7 @@
       ]
     },
     {
-      "id": "nowcoder_464462",
+      "id": "sh_nowcoder_464462",
       "company": "酷睿程上海分公司",
       "position": "人工智能",
       "job_type": "人工智能与算法",
@@ -36188,7 +36189,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/464462",
       "collected_at": "2026-11-13T11:14:05+08:00",
-      "source_job_id": "464462",
+      "source_job_id": "nowcoder_464462",
       "company_legal_name": "酷睿程上海分公司",
       "source_company_id": 272319,
       "source_job_category": "人工智能",
@@ -36305,7 +36306,7 @@
       ]
     },
     {
-      "id": "nowcoder_462481",
+      "id": "sh_nowcoder_462481",
       "company": "春秋航空股份有限公司",
       "position": "算法类IT专业培训生（2027届）",
       "job_type": "人工智能与算法",
@@ -36324,7 +36325,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/462481",
       "collected_at": "2026-11-13T11:13:31+08:00",
-      "source_job_id": "462481",
+      "source_job_id": "nowcoder_462481",
       "company_legal_name": "春秋航空股份有限公司",
       "source_company_id": 297911,
       "source_job_category": "IT管理培训生",
@@ -36406,7 +36407,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_459024",
+      "id": "sh_nowcoder_459024",
       "company": "华为HUAWEI",
       "position": "C工程师",
       "job_type": "软件开发",
@@ -36423,7 +36424,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459024",
       "collected_at": "2026-11-13T11:12:33+08:00",
-      "source_job_id": "459024",
+      "source_job_id": "nowcoder_459024",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "C工程师",
@@ -36485,7 +36486,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_452810",
+      "id": "sh_nowcoder_452810",
       "company": "华为HUAWEI",
       "position": "嵌入式工程师",
       "job_type": "嵌入式与系统软件",
@@ -36503,7 +36504,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/452810",
       "collected_at": "2026-11-13T11:12:07+08:00",
-      "source_job_id": "452810",
+      "source_job_id": "nowcoder_452810",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "嵌入式工程师",
@@ -36573,7 +36574,7 @@
       ]
     },
     {
-      "id": "nowcoder_466845",
+      "id": "sh_nowcoder_466845",
       "company": "华为HUAWEI",
       "position": "AI Infra 研发工程师",
       "job_type": "AI基础设施与系统开发",
@@ -36597,7 +36598,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/466845",
       "collected_at": "2026-11-13T11:14:25+08:00",
-      "source_job_id": "466845",
+      "source_job_id": "nowcoder_466845",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "研发工程师",
@@ -36720,7 +36721,7 @@
       ]
     },
     {
-      "id": "nowcoder_457049",
+      "id": "sh_nowcoder_457049",
       "company": "华为HUAWEI",
       "position": "【27届秋招】通软-AI应用与测试开发方向",
       "job_type": "软件测试与测试开发",
@@ -36735,7 +36736,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/457049",
       "collected_at": "2026-11-13T11:08:16+08:00",
-      "source_job_id": "457049",
+      "source_job_id": "nowcoder_457049",
       "company_legal_name": "华为",
       "source_company_id": 239,
       "source_job_category": "通信研发工程师",
@@ -36787,7 +36788,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_466838",
+      "id": "sh_nowcoder_466838",
       "company": "汇纳科技股份有限公司",
       "position": "AI开发工程师",
       "job_type": "人工智能与算法",
@@ -36809,7 +36810,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/466838",
       "collected_at": "2026-11-13T11:14:24+08:00",
-      "source_job_id": "466838",
+      "source_job_id": "nowcoder_466838",
       "company_legal_name": "汇纳科技股份有限公司",
       "source_company_id": 297101,
       "source_job_category": "全栈开发",
@@ -36922,7 +36923,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_461053",
+      "id": "sh_nowcoder_461053",
       "company": "上海华为技术有限公司",
       "position": "Java",
       "job_type": "软件开发",
@@ -36959,7 +36960,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/461053",
       "collected_at": "2026-11-13T11:13:08+08:00",
-      "source_job_id": "461053",
+      "source_job_id": "nowcoder_461053",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "Java",
@@ -37221,7 +37222,7 @@
       ]
     },
     {
-      "id": "nowcoder_463848",
+      "id": "sh_nowcoder_463848",
       "company": "上海华为技术有限公司",
       "position": "算法工程师",
       "job_type": "人工智能与算法",
@@ -37241,7 +37242,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/463848",
       "collected_at": "2026-11-13T11:13:59+08:00",
-      "source_job_id": "463848",
+      "source_job_id": "nowcoder_463848",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "算法工程师",
@@ -37334,7 +37335,7 @@
       ]
     },
     {
-      "id": "nowcoder_464242",
+      "id": "sh_nowcoder_464242",
       "company": "淘天集团",
       "position": "AI应用研发工程师",
       "job_type": "人工智能与算法",
@@ -37364,7 +37365,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/464242",
       "collected_at": "2026-11-13T11:14:02+08:00",
-      "source_job_id": "464242",
+      "source_job_id": "nowcoder_464242",
       "company_legal_name": "淘天集团",
       "source_company_id": 23798,
       "source_job_category": "研发工程师",
@@ -37558,7 +37559,7 @@
       ]
     },
     {
-      "id": "nowcoder_466705",
+      "id": "sh_nowcoder_466705",
       "company": "杭州华为企业通信技术有限公司",
       "position": "软件开发工程师",
       "job_type": "软件开发",
@@ -37577,7 +37578,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/466705",
       "collected_at": "2026-11-13T11:14:23+08:00",
-      "source_job_id": "466705",
+      "source_job_id": "nowcoder_466705",
       "company_legal_name": "杭州华为企业通信技术有限公司",
       "source_company_id": 14417,
       "source_job_category": "算法工程师",
@@ -37658,7 +37659,7 @@
       ]
     },
     {
-      "id": "nowcoder_460078",
+      "id": "sh_nowcoder_460078",
       "company": "华为南京研究所",
       "position": "鸿蒙生态AI应用工程师",
       "job_type": "人工智能与算法",
@@ -37677,7 +37678,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/460078",
       "collected_at": "2026-11-13T11:12:51+08:00",
-      "source_job_id": "460078",
+      "source_job_id": "nowcoder_460078",
       "company_legal_name": "华为技术有限公司南京研究所",
       "source_company_id": 290340,
       "source_job_category": "人工智能",
@@ -37763,7 +37764,7 @@
       ]
     },
     {
-      "id": "nowcoder_42346",
+      "id": "sh_nowcoder_42346",
       "company": "中科创达",
       "position": "Python开发工程师（自动化测试）",
       "job_type": "软件测试与测试开发",
@@ -37783,7 +37784,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/42346",
       "collected_at": "2026-11-13T11:11:40+08:00",
-      "source_job_id": "42346",
+      "source_job_id": "nowcoder_42346",
       "company_legal_name": "中科创达",
       "source_company_id": 1156,
       "source_job_category": "Python",
@@ -37880,7 +37881,7 @@
       ]
     },
     {
-      "id": "nowcoder_468903",
+      "id": "sh_nowcoder_468903",
       "company": "上海华为技术有限公司",
       "position": "AI数据科学工程师",
       "job_type": "人工智能与算法",
@@ -37895,7 +37896,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/468903",
       "collected_at": "2026-11-13T11:09:22+08:00",
-      "source_job_id": "468903",
+      "source_job_id": "nowcoder_468903",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "无线通信工程师",
@@ -37945,7 +37946,7 @@
       ]
     },
     {
-      "id": "nowcoder_468833",
+      "id": "sh_nowcoder_468833",
       "company": "华为HUAWEI",
       "position": "人工智能",
       "job_type": "人工智能与算法",
@@ -37968,7 +37969,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/468833",
       "collected_at": "2026-11-13T11:09:20+08:00",
-      "source_job_id": "468833",
+      "source_job_id": "nowcoder_468833",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "人工智能",
@@ -38086,7 +38087,7 @@
       ]
     },
     {
-      "id": "nowcoder_465070",
+      "id": "sh_nowcoder_465070",
       "company": "华为HUAWEI",
       "position": "通用软件工程师-27届校招岗位",
       "job_type": "软件开发",
@@ -38103,7 +38104,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/465070",
       "collected_at": "2026-11-13T11:14:14+08:00",
-      "source_job_id": "465070",
+      "source_job_id": "nowcoder_465070",
       "company_legal_name": "华为",
       "source_company_id": 239,
       "source_job_category": "通信研发工程师",
@@ -38167,7 +38168,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_467172",
+      "id": "sh_nowcoder_467172",
       "company": "华为软件技术有限公司",
       "position": "Java",
       "job_type": "软件开发",
@@ -38188,7 +38189,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467172",
       "collected_at": "2026-11-13T11:14:28+08:00",
-      "source_job_id": "467172",
+      "source_job_id": "nowcoder_467172",
       "company_legal_name": "华为软件技术有限公司",
       "source_company_id": 21147,
       "source_job_category": "Java",
@@ -38306,7 +38307,7 @@
       ]
     },
     {
-      "id": "nowcoder_462936",
+      "id": "sh_nowcoder_462936",
       "company": "西安华为技术有限公司",
       "position": "大数据开发工程师",
       "job_type": "数据开发与分析",
@@ -38336,7 +38337,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/462936",
       "collected_at": "2026-11-13T11:13:33+08:00",
-      "source_job_id": "462936",
+      "source_job_id": "nowcoder_462936",
       "company_legal_name": "西安华为技术有限公司",
       "source_company_id": 23890,
       "source_job_category": "大数据开发工程师",
@@ -38537,7 +38538,7 @@
       ]
     },
     {
-      "id": "nowcoder_465502",
+      "id": "sh_nowcoder_465502",
       "company": "上海华为技术有限公司",
       "position": "Java",
       "job_type": "软件开发",
@@ -38558,7 +38559,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/465502",
       "collected_at": "2026-11-13T11:08:44+08:00",
-      "source_job_id": "465502",
+      "source_job_id": "nowcoder_465502",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "Java",
@@ -38694,7 +38695,7 @@
       ]
     },
     {
-      "id": "nowcoder_467289",
+      "id": "sh_nowcoder_467289",
       "company": "华为HUAWEI",
       "position": "推理框架研发工程师",
       "job_type": "AI基础设施与系统开发",
@@ -38723,7 +38724,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467289",
       "collected_at": "2026-11-13T11:14:32+08:00",
-      "source_job_id": "467289",
+      "source_job_id": "nowcoder_467289",
       "company_legal_name": "华为",
       "source_company_id": 239,
       "source_job_category": "Python",
@@ -38906,7 +38907,7 @@
       ]
     },
     {
-      "id": "nowcoder_468657",
+      "id": "sh_nowcoder_468657",
       "company": "杭州华为企业通信技术有限公司",
       "position": "C工程师",
       "job_type": "软件开发",
@@ -38925,7 +38926,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/468657",
       "collected_at": "2026-11-13T11:09:14+08:00",
-      "source_job_id": "468657",
+      "source_job_id": "nowcoder_468657",
       "company_legal_name": "杭州华为企业通信技术有限公司",
       "source_company_id": 14417,
       "source_job_category": "C工程师",
@@ -39016,7 +39017,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_462850",
+      "id": "sh_nowcoder_462850",
       "company": "浙江华为通信技术有限公司",
       "position": "算法工程师",
       "job_type": "人工智能与算法",
@@ -39038,7 +39039,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/462850",
       "collected_at": "2026-11-13T11:08:31+08:00",
-      "source_job_id": "462850",
+      "source_job_id": "nowcoder_462850",
       "company_legal_name": "浙江华为通信技术有限公司",
       "source_company_id": 295911,
       "source_job_category": "算法工程师",
@@ -39148,7 +39149,7 @@
       ]
     },
     {
-      "id": "nowcoder_467468",
+      "id": "sh_nowcoder_467468",
       "company": "华为HUAWEI",
       "position": "后端工程师",
       "job_type": "软件开发",
@@ -39166,7 +39167,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467468",
       "collected_at": "2026-11-13T11:08:52+08:00",
-      "source_job_id": "467468",
+      "source_job_id": "nowcoder_467468",
       "company_legal_name": "华为",
       "source_company_id": 239,
       "source_job_category": "后端工程师",
@@ -39235,7 +39236,7 @@
       ]
     },
     {
-      "id": "nowcoder_461864",
+      "id": "sh_nowcoder_461864",
       "company": "上海华为技术有限公司",
       "position": "算法工程师",
       "job_type": "人工智能与算法",
@@ -39260,7 +39261,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/461864",
       "collected_at": "2026-11-13T11:13:23+08:00",
-      "source_job_id": "461864",
+      "source_job_id": "nowcoder_461864",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "算法工程师",
@@ -39394,7 +39395,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_458776",
+      "id": "sh_nowcoder_458776",
       "company": "上海华为技术有限公司",
       "position": "通用软件开发工程师",
       "job_type": "软件开发",
@@ -39421,7 +39422,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/458776",
       "collected_at": "2026-11-13T11:12:31+08:00",
-      "source_job_id": "458776",
+      "source_job_id": "nowcoder_458776",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "C++",
@@ -39615,7 +39616,7 @@
       ]
     },
     {
-      "id": "nowcoder_459711",
+      "id": "sh_nowcoder_459711",
       "company": "华为HUAWEI",
       "position": "AI软件开发工程师",
       "job_type": "人工智能与算法",
@@ -39640,7 +39641,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459711",
       "collected_at": "2026-11-13T11:12:46+08:00",
-      "source_job_id": "459711",
+      "source_job_id": "nowcoder_459711",
       "company_legal_name": "华为",
       "source_company_id": 239,
       "source_job_category": "通信研发工程师",
@@ -39777,7 +39778,7 @@
       ]
     },
     {
-      "id": "nowcoder_459707",
+      "id": "sh_nowcoder_459707",
       "company": "华为HUAWEI",
       "position": "软件开发工程师",
       "job_type": "软件开发",
@@ -39800,7 +39801,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459707",
       "collected_at": "2026-11-13T11:12:45+08:00",
-      "source_job_id": "459707",
+      "source_job_id": "nowcoder_459707",
       "company_legal_name": "华为",
       "source_company_id": 239,
       "source_job_category": "通信研发工程师",
@@ -39918,7 +39919,7 @@
       ]
     },
     {
-      "id": "nowcoder_459227",
+      "id": "sh_nowcoder_459227",
       "company": "上海华为技术有限公司",
       "position": "KVCache推理优化",
       "job_type": "人工智能与算法",
@@ -39939,7 +39940,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/459227",
       "collected_at": "2026-11-13T11:12:33+08:00",
-      "source_job_id": "459227",
+      "source_job_id": "nowcoder_459227",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "人工智能",
@@ -40042,7 +40043,7 @@
       ]
     },
     {
-      "id": "nowcoder_462772",
+      "id": "sh_nowcoder_462772",
       "company": "上海华为技术有限公司",
       "position": "算法工程师",
       "job_type": "人工智能与算法",
@@ -40067,7 +40068,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/462772",
       "collected_at": "2026-11-13T11:13:32+08:00",
-      "source_job_id": "462772",
+      "source_job_id": "nowcoder_462772",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "算法工程师",
@@ -40215,7 +40216,7 @@
       ]
     },
     {
-      "id": "nowcoder_466486",
+      "id": "sh_nowcoder_466486",
       "company": "杭州华为企业通信技术有限公司",
       "position": "研发工程师",
       "job_type": "AI基础设施与系统开发",
@@ -40245,7 +40246,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/466486",
       "collected_at": "2026-11-13T11:14:21+08:00",
-      "source_job_id": "466486",
+      "source_job_id": "nowcoder_466486",
       "company_legal_name": "杭州华为企业通信技术有限公司",
       "source_company_id": 14417,
       "source_job_category": "研发工程师",
@@ -40443,7 +40444,7 @@
       "review_note": "正文明确为大模型训推高性能网络研发。"
     },
     {
-      "id": "nowcoder_471061",
+      "id": "sh_nowcoder_471061",
       "company": "上海华为技术有限公司",
       "position": "AI Infra工程师",
       "job_type": "AI基础设施与系统开发",
@@ -40469,7 +40470,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/471061",
       "collected_at": "2026-11-13T11:10:17+08:00",
-      "source_job_id": "471061",
+      "source_job_id": "nowcoder_471061",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "算法工程师",
@@ -40612,7 +40613,7 @@
       ]
     },
     {
-      "id": "nowcoder_468770",
+      "id": "sh_nowcoder_468770",
       "company": "华为HUAWEI",
       "position": "ai训推框架工程师",
       "job_type": "AI基础设施与系统开发",
@@ -40632,7 +40633,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/468770",
       "collected_at": "2026-11-13T11:09:18+08:00",
-      "source_job_id": "468770",
+      "source_job_id": "nowcoder_468770",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "算法工程师",
@@ -40732,7 +40733,7 @@
       ]
     },
     {
-      "id": "nowcoder_467917",
+      "id": "sh_nowcoder_467917",
       "company": "上海华为技术有限公司",
       "position": "算法工程师",
       "job_type": "人工智能与算法",
@@ -40758,7 +40759,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/467917",
       "collected_at": "2026-11-13T11:08:55+08:00",
-      "source_job_id": "467917",
+      "source_job_id": "nowcoder_467917",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "算法工程师",
@@ -40910,7 +40911,7 @@
       ]
     },
     {
-      "id": "nowcoder_464471",
+      "id": "sh_nowcoder_464471",
       "company": "字节跳动",
       "position": "客户端开发工程师-飞书",
       "job_type": "软件开发",
@@ -40932,7 +40933,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/464471",
       "collected_at": "2026-11-13T11:14:06+08:00",
-      "source_job_id": "464471",
+      "source_job_id": "nowcoder_464471",
       "company_legal_name": "字节跳动",
       "source_company_id": 665,
       "source_job_category": "客户端开发",
@@ -41060,7 +41061,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_469788",
+      "id": "sh_nowcoder_469788",
       "company": "华为HUAWEI",
       "position": "大语言模型工程师（hc多多）",
       "job_type": "人工智能与算法",
@@ -41084,7 +41085,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/469788",
       "collected_at": "2026-11-13T11:09:40+08:00",
-      "source_job_id": "469788",
+      "source_job_id": "nowcoder_469788",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "科研人员",
@@ -41217,7 +41218,7 @@
       ]
     },
     {
-      "id": "nowcoder_462175",
+      "id": "sh_nowcoder_462175",
       "company": "上海华为技术有限公司",
       "position": "自动驾驶ai算法工程师",
       "job_type": "人工智能与算法",
@@ -41245,7 +41246,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/462175",
       "collected_at": "2026-11-13T11:13:27+08:00",
-      "source_job_id": "462175",
+      "source_job_id": "nowcoder_462175",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "算法工程师",
@@ -41414,7 +41415,7 @@
       "data_quality_flags": []
     },
     {
-      "id": "nowcoder_458061",
+      "id": "sh_nowcoder_458061",
       "company": "上海华为技术有限公司",
       "position": "C工程师",
       "job_type": "软件开发",
@@ -41436,7 +41437,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/458061",
       "collected_at": "2026-11-13T11:12:29+08:00",
-      "source_job_id": "458061",
+      "source_job_id": "nowcoder_458061",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "C工程师",
@@ -41548,7 +41549,7 @@
       ]
     },
     {
-      "id": "nowcoder_461064",
+      "id": "sh_nowcoder_461064",
       "company": "上海华为技术有限公司",
       "position": "算法工程师",
       "job_type": "人工智能与算法",
@@ -41573,7 +41574,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/461064",
       "collected_at": "2026-11-13T11:13:08+08:00",
-      "source_job_id": "461064",
+      "source_job_id": "nowcoder_461064",
       "company_legal_name": "上海华为技术有限公司",
       "source_company_id": 21422,
       "source_job_category": "算法工程师",
@@ -41707,7 +41708,7 @@
       ]
     },
     {
-      "id": "nowcoder_461084",
+      "id": "sh_nowcoder_461084",
       "company": "华为HUAWEI",
       "position": "人工智能",
       "job_type": "人工智能与算法",
@@ -41726,7 +41727,7 @@
       "source": "牛客网校园招聘",
       "source_url": "https://www.nowcoder.com/jobs/detail/461084",
       "collected_at": "2026-11-13T11:13:09+08:00",
-      "source_job_id": "461084",
+      "source_job_id": "nowcoder_461084",
       "company_legal_name": "华为HUAWEI",
       "source_company_id": 239,
       "source_job_category": "人工智能",

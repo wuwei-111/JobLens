@@ -307,7 +307,7 @@ const experienceStory = computed(() => {
     ? `经验标注分布为：${breakdownText}。其中 ${yearCount} 条明确写出工作年限要求（${yearItems.map((item) => `${item.name} ${item.count} 条`).join('、')}），其余岗位没有写明年限。`
     : `经验标注分布为：${breakdownText}。没有岗位明确写出 1 年以上的工作年限要求；其中 ${strictFresh} 条明确要求最高学历毕业后无全职工作经验，${undisclosed} 条未单独披露工作年限。`
   const insight =
-    '“未披露”不等于“不限”，它只说明招聘页没有单独写出工作年限。样本全部来自同一校招渠道，不能据此推断上海整体就业市场。'
+    `“未披露”不等于“不限”，它只说明招聘页没有单独写出工作年限。样本来自公开招聘页面，覆盖${cityDisplay.value}，不能据此推断全国整体就业市场。`
 
   return { lead, second, insight }
 })

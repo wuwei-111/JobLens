@@ -109,7 +109,13 @@ export function rankedBarOption(
       data: rows.map((row) => row.name),
       axisLine: { show: false },
       axisTick: { show: false },
-      axisLabel,
+      // Long free-text experience values are kept in the data; truncate the
+      // axis label and show the full text in the tooltip.
+      axisLabel: {
+        ...axisLabel,
+        width: options.labelWidth ?? 96,
+        overflow: 'truncate',
+      },
     },
     series: [
       {

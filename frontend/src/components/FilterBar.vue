@@ -64,6 +64,12 @@ const controls = computed<
   },
 ])
 
+// Some experience values are raw JD excerpts (up to 200 chars). Keep the
+// value intact for filtering but shorten the option label.
+function optionLabel(value: string): string {
+  return value.length > 28 ? `${value.slice(0, 28)}…` : value
+}
+
 function update(key: FilterKey, event: Event) {
   const value = (event.target as HTMLSelectElement).value
   const next = { ...draft.value } as StatsFilters
@@ -99,7 +105,7 @@ function clear() {
           :key="option"
           :value="option"
         >
-          {{ option }}
+          {{ optionLabel(option) }}
         </option>
       </select>
     </div>

@@ -1,10 +1,14 @@
-"""Rebuild the local SQLite database from a JSON dataset.
+"""Rebuild the local SQLite database from one or more JSON datasets.
 
 The course project intentionally does not use Alembic. When the schema changes
 (indexes, columns), stop the API, rebuild, and re-import:
 
     python -m scripts.reset_db --yes
-    python -m scripts.reset_db data/raw/jobs_hangzhou_2026-11.json --yes
+    python -m scripts.reset_db data/raw/beijing_graduate_jobs_2026-11-13.json --yes
+
+With no paths it imports every real dataset under ``data/raw/``
+(``*_graduate_jobs_*.json``) in filename order, falling back to the fictional
+sample only when no real dataset exists.
 
 Only file-backed SQLite URLs are supported. The script refuses to run without
 ``--yes`` and refuses to touch a non-SQLite database.
@@ -20,14 +24,20 @@ from sqlalchemy.engine import make_url
 
 from app.core import settings
 
+DATA_RAW = Path(__file__).resolve().parents[1] / "data" / "raw"
+REAL_GLOB = "*_graduate_jobs_*.json"
+SAMPLE_PATH = DATA_RAW / "sample_jobs.json"
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="重建 JobLens SQLite 数据库并导入数据集")
     parser.add_argument(
-        "path",
-        nargs="?",
-        default="data/raw/sample_jobs.json",
-        help="要导入的 JSON 文件（默认演示数据）",
+        "paths",
+        nargs="*",
+        help=(
+            "要导入的 JSON 文件；可传多个。默认导入 data/raw/ 下全部 "
+            "*_graduate_jobs_*.json，只有没有真实数据时才使用演示数据"
+        ),
     )
     parser.add_argument(
         "--yes",
@@ -42,9 +52,12 @@ def main() -> None:
             "建议先停止 API 服务，避免 Windows 文件占用。"
         )
 
-    file_path = Path(args.path)
-    if not file_path.is_file():
-        raise SystemExit(f"文件不存在：{file_path}")
+    dataset_paths = [Path(item) for item in args.paths]
+    if not dataset_paths:
+        dataset_paths = sorted(DATA_RAW.glob(REAL_GLOB)) or [SAMPLE_PATH]
+    for path in dataset_paths:
+        if not path.is_file():
+            raise SystemExit(f"文件不存在：{path}")
 
     url = make_url(settings.database_url)
     if (
@@ -70,11 +83,11 @@ def main() -> None:
     from app.services.importer import import_dataset
 
     init_db()
-    payload = json.loads(file_path.read_text(encoding="utf-8-sig"))
     with SessionLocal() as db:
-        result = import_dataset(db, payload, source_file=str(file_path))
-
-    print(result.model_dump_json(indent=2, ensure_ascii=False))
+        for file_path in dataset_paths:
+            payload = json.loads(file_path.read_text(encoding="utf-8-sig"))
+            result = import_dataset(db, payload, source_file=str(file_path))
+            print(result.model_dump_json(indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":

@@ -4,7 +4,7 @@
 
 一个以**数据分析和新闻叙事**为核心的交互式数据新闻作品。系统将招聘信息整理为结构化数据集，通过 FastAPI 提供查询与统计接口，并由 Vue 3 + ECharts 完成交互式展示。
 
-> 当前状态：**上海 280 条真实校招数据已导入，JSON → SQLite → FastAPI → Vue/ECharts 全链路已打通**。数据库、导入/预检/质量/交叉/导出接口可用；首页为单页长滚动专题，详情页支持四维筛选与 URL 状态、技能→岗位抽屉；数据说明页展示实时质量摘要、来源与导入批次。演示模式根据 `/stats/quality` 自动切换，当前已自动隐藏。该数据集是阶段性样本，后续还会合并其他数据，进度见 [docs/TODO.md](docs/TODO.md)。
+> 当前状态：**北京、上海、深圳、杭州、成都五城共 1021 条真实校招数据已合并入库，JSON → SQLite → FastAPI → Vue/ECharts 全链路已打通**。数据库、导入/预检/质量/交叉/导出接口可用；首页为单页长滚动专题，详情页支持四维筛选与 URL 状态、技能→岗位抽屉；数据说明页展示实时质量摘要、来源与导入批次。演示模式根据 `/stats/quality` 自动切换，当前已自动隐藏。该数据集是阶段性便利样本，进度见 [docs/TODO.md](docs/TODO.md)。
 
 ## 技术栈
 
@@ -32,7 +32,7 @@ JobLens/
 │   │   ├── api/v1/              # health / imports / jobs / stats / meta / exports
 │   │   ├── services/            # 导入、预检、规范化、统计、质量
 │   │   └── ...
-│   ├── data/raw/                # 原始 JSON（上海 280 条真实数据；sample_jobs.json 为 10 条虚构演示数据）
+│   ├── data/raw/                # 原始 JSON（五城 1021 条真实数据；sample_jobs.json 为 10 条虚构演示数据）
 │   ├── data/reports/            # 数据交付报告（真实数据 + 演示数据，质量/批次/核对/CSV）
 │   ├── scripts/                 # 导入、检查、核对、重建、性能基准
 │   ├── tests/
@@ -64,7 +64,7 @@ JobLens/
 npm run dev
 ```
 
-首次运行会自动完成：创建 `backend/.venv`、安装 Python 依赖、安装前端依赖。数据库为空时会优先导入上海真实数据；真实文件缺失时才回退到 10 条虚构演示数据。已有数据不会被覆盖。随后同时启动前后端。
+首次运行会自动完成：创建 `backend/.venv`、安装 Python 依赖、安装前端依赖。数据库为空时会按文件名顺序导入 `backend/data/raw/` 下全部真实数据集；真实文件缺失时才回退到 10 条虚构演示数据。已有数据不会被覆盖。随后同时启动前后端。
 
 - 前端页面：<http://localhost:5173>
 - 后端 API 文档：<http://127.0.0.1:8000/docs>
@@ -108,13 +108,29 @@ npm run dev
 
 ### 导入数据
 
-当前正式数据集：`backend/data/raw/shanghai_graduate_jobs_2026-11-13.json`（上海计算机类应届生公开校招岗位，280 条，牛客网校园招聘，采集于 2026-11-13）。
+当前正式数据集为 `backend/data/raw/` 下的五份城市 JSON，采集于 2026-11-13，合并共 **1021 条**：
 
-重建数据库并导入（会删除现有 SQLite 数据库，先停止 API）：
+| 文件 | 城市 | 条数 |
+| --- | --- | --- |
+| `shanghai_graduate_jobs_2026-11-13.json` | 上海 | 280 |
+| `hangzhou_graduate_jobs_2026-11-13_expanded.json` | 杭州 | 228 |
+| `beijing_graduate_jobs_2026-11-13.json` | 北京 | 224 |
+| `shenzhen_graduate_jobs_2026-11-13_expanded.json` | 深圳 | 157 |
+| `chengdu_graduate_jobs_2026-11-13_expanded.json` | 成都 | 132 |
+
+记录 id 带城市前缀（`sh_` / `bj_` / `sz_` / `hz_` / `cd_`），原始平台 id 保存在 `source_job_id`；同一岗位在多个城市发布时，每个城市各保留一条。
+
+重建数据库并导入全部五份数据（会删除现有 SQLite 数据库，先停止 API）：
 
 ```bash
 cd backend
-python -m scripts.reset_db data/raw/shanghai_graduate_jobs_2026-11-13.json --yes
+python -m scripts.reset_db --yes
+```
+
+也可以只导入指定文件：
+
+```bash
+python -m scripts.reset_db data/raw/beijing_graduate_jobs_2026-11-13.json --yes
 ```
 
 只追加/更新、不删库时，可以走接口：
@@ -141,14 +157,15 @@ python -m scripts.import_sample data/raw/shanghai_graduate_jobs_2026-11-13.json 
 
 ```bash
 cd backend
-python -m scripts.check_dataset data/raw/shanghai_graduate_jobs_2026-11-13.json --json > data/reports/shanghai-quality.json
+python -m scripts.check_dataset data/raw/beijing_graduate_jobs_2026-11-13.json --json > data/reports/beijing-quality.json
+# 每份城市数据各跑一次；`data/reports/*-quality.json` 已保存五城结果
 ```
 
 服务启动后也可以调用：
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/api/v1/imports/validate" \
-  -F "file=@data/raw/shanghai_graduate_jobs_2026-11-13.json"
+  -F "file=@data/raw/beijing_graduate_jobs_2026-11-13.json"
 ```
 
 预检只读、不写库，会报告缺失字段、未知学历/经验、薪资异常、空技能、重复链接、演示记录，以及数据库中已有的 id 数量。确认后按上面的导入方式入库，并用 `GET /api/v1/imports/batches` 与 `GET /api/v1/stats/quality` 查看批次和质量摘要。
@@ -159,13 +176,15 @@ curl -X POST "http://127.0.0.1:8000/api/v1/imports/validate" \
 
 ```bash
 cd backend
-# 演示数据（默认读取 sample_jobs.json）
-python -m scripts.verify_stats
-# 正式数据必须传入同一份 JSON 文件
-python -m scripts.verify_stats data/raw/shanghai_graduate_jobs_2026-11-13.json --json > data/reports/shanghai-verify.json
+# 默认合并 data/raw/ 下全部真实数据（与 reset_db / seed_if_empty 一致）
+python -m scripts.verify_stats --json > data/reports/all-cities-verify.json
+# 也可以只核对指定文件
+python -m scripts.verify_stats data/raw/shanghai_graduate_jobs_2026-11-13.json --json > shanghai-verify.json
+# 演示数据
+python -m scripts.verify_stats data/raw/sample_jobs.json --json > data/reports/demo-verify.json
 ```
 
-上海真实数据当前 **825/825** 项一致（`failed=0`）；演示数据为 359/359。交付时以 `data/reports/shanghai-verify.json` 为准。
+五城 1021 条当前 **1218/1218** 项一致（`failed=0`）；演示数据为 359/359。交付时以 `data/reports/all-cities-verify.json` 为准。
 
 ### 数据库重建与性能基准
 
@@ -173,10 +192,10 @@ python -m scripts.verify_stats data/raw/shanghai_graduate_jobs_2026-11-13.json -
 
 ```bash
 cd backend
-# 演示数据
+# 五城正式数据（默认导入 data/raw/ 下全部 *_graduate_jobs_*.json）
 python -m scripts.reset_db --yes
-# 正式数据
-python -m scripts.reset_db data/raw/shanghai_graduate_jobs_2026-11-13.json --yes
+# 只导入演示数据
+python -m scripts.reset_db data/raw/sample_jobs.json --yes
 ```
 
 500 条数据下的接口性能基准（使用临时数据库，不会改动现有数据）：
@@ -199,7 +218,7 @@ curl "http://127.0.0.1:8000/api/v1/exports/jobs.csv" -o jobs.csv
 
 ### 交付报告
 
-`backend/data/reports/` 已生成上海真实数据的质量检查、导入批次、总览、交叉统计、CSV 与统计核对报告（`shanghai-*.json/csv`）；10 条虚构演示数据的对应报告保留为 `demo-*`。生成方式与注意事项见 [backend/data/reports/README.md](backend/data/reports/README.md)。
+`backend/data/reports/` 已生成五城合并数据的导入批次、总览、城市 × 学历交叉、CSV 与统计核对报告（`all-cities-*`），以及每份城市数据的离线质量报告（`shanghai-` / `beijing-` / `shenzhen-` / `hangzhou-` / `chengdu-quality.json`）；10 条虚构演示数据的对应报告保留为 `demo-*`。生成方式与注意事项见 [backend/data/reports/README.md](backend/data/reports/README.md)。
 
 ### 测试
 
@@ -233,10 +252,10 @@ npm run test:unit
 - 交叉统计 `GET /stats/cross`、CSV 导出 `GET /exports/jobs.csv`、统一错误响应（`detail` + `code` + `errors`）
 - 数据库重建脚本 `scripts/reset_db.py`、500 条性能基准 `scripts/benchmark_api.py`、复合索引
 - ECharts 按需加载 + 路由懒加载：主包约 171KB，图表共享块约 493KB
-- 上海 280 条真实数据已全量导入；独立核对 825/825 项一致，`/stats/quality` 显示 `demo_records=0`
-- 51 个后端测试、11 个前端 Vitest 测试与 GitHub Actions CI
+- 五城 1021 条真实数据已合并导入；独立核对 1218/1218 项一致，`/stats/quality` 显示 `demo_records=0`
+- 53 个后端测试、11 个前端 Vitest 测试与 GitHub Actions CI
 
-待实现：合并后续批次数据、逐页最终人工复核、可选 Playwright 冒烟与 Firefox 复核、创作报告与部署。详见 [docs/TODO.md](docs/TODO.md)。
+待实现：逐页最终人工复核、可选 Playwright 冒烟与 Firefox 复核、创作报告与部署。详见 [docs/TODO.md](docs/TODO.md)。
 
 ## 文档
 
@@ -249,4 +268,4 @@ npm run test:unit
 
 本作品的数据仅来自特定城市、特定时间段、公开渠道的招聘样本，**不能代表全国就业市场**。所有新闻结论必须由实际数据计算得出，并标注样本量与统计口径。
 
-当前上海数据共 280 条，其中 146 条薪资为“面议”，薪资统计的有效样本只有 134 条（47.9%）。薪资结论只描述**披露了薪资的岗位**，不能外推到全部岗位；技能为空或超过 10 项的记录也保留原始信息，不强行补齐。
+当前五城数据共 1021 条，覆盖上海、杭州、北京、深圳、成都；其中 448 条薪资为“面议”，薪资统计的有效样本为 573 条（56.1%）。薪资结论只描述**披露了薪资的岗位**，不能外推到全部岗位；技能为空或超过 10 项的记录也保留原始信息，不强行补齐。同一岗位在多个城市发布时按城市各计一次，因此城市间比较应按城市分层阅读，不能把 1021 条当作 1021 个互不相同的岗位。

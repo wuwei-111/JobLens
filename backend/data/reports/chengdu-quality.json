@@ -1,0 +1,180 @@
+{
+  "dataset_name": "成都计算机类应届生招聘岗位数据（扩充版）",
+  "total_records": 132,
+  "valid_records": 132,
+  "invalid_records": 0,
+  "duplicate_ids": 0,
+  "existing_in_database": 0,
+  "missing_fields": {
+    "id": 0,
+    "company": 0,
+    "position": 0,
+    "job_type": 0,
+    "city": 0,
+    "education": 0,
+    "experience": 0,
+    "source": 0,
+    "source_url": 0,
+    "collected_at": 0
+  },
+  "salary_missing": 49,
+  "salary_single_bound": 0,
+  "salary_outliers": 0,
+  "unknown_education": [],
+  "unknown_experience": [
+    {
+      "value": "1、硕士及以上学历，通信/电子信息/软件工程/自动化等专业，嵌入式软件1年以上工作经验",
+      "count": 1
+    },
+    {
+      "value": "2. 不低于3年C/C++嵌入式开发经验，掌握MCU/MPU编程技能",
+      "count": 1
+    },
+    {
+      "value": "了解信号处理，拥有良好的数学基础，有过自动控制或音频算法处理、信号处理工作经验优先",
+      "count": 1
+    },
+    {
+      "value": "（应届毕业生不限工作年限和职称要求，需在校期间有相关项目研究经历）",
+      "count": 1
+    },
+    {
+      "value": "（应届毕业生不限工作年限，需在校期间有相关项目研究经历）",
+      "count": 1
+    }
+  ],
+  "empty_skills": 11,
+  "over_limit_skills": 8,
+  "duplicate_skill_entries": 0,
+  "duplicate_source_urls": [],
+  "demo_records": 0,
+  "errors": [],
+  "warnings": [
+    {
+      "row": 4,
+      "record_id": "cd_nowcoder_461871",
+      "message": "技能数 15 超过规范上限 10 项"
+    },
+    {
+      "row": 27,
+      "record_id": "cd_nowcoder_471169",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 31,
+      "record_id": "cd_nowcoder_433393",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 33,
+      "record_id": "cd_nowcoder_460470",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 35,
+      "record_id": "cd_nowcoder_462584",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 46,
+      "record_id": "cd_nowcoder_456515",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 47,
+      "record_id": "cd_nowcoder_457554",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 54,
+      "record_id": "cd_ncss_Hmk3Ji8LiFTVf9TxX4tLhG",
+      "message": "技能数 14 超过规范上限 10 项"
+    },
+    {
+      "row": 70,
+      "record_id": "cd_ncss_TnxjU7R2CLzktbkyG72cUK",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 71,
+      "record_id": "cd_ncss_CFYxXjeoBZHMrHCB8GG2bN",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 76,
+      "record_id": "cd_ncss_Y6KkGURL88hJhfNFEQ9U9R",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 78,
+      "record_id": "cd_ncss_RodmUDxZj7XdP3XxWga5nZ",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 81,
+      "record_id": "cd_ncss_EjJDq2maLQ31EWnGHsWK6W",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 83,
+      "record_id": "cd_ncss_TfWQgWV7AWbm5SEjP2RpgV",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 96,
+      "record_id": "cd_ncss_WLahXKPCLJi8jBe431tiZt",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 97,
+      "record_id": "cd_ncss_BqP2MzsyTF2qFiMGrtxyRJ",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 100,
+      "record_id": "cd_ncss_HCZ6i7vekkMMCePY1Sokgq",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 107,
+      "record_id": "cd_ncss_VBsLwAC2CLsXhRt1hfqZW3",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 116,
+      "record_id": "cd_ncss_146ZN31Td3zgpQiXNtPXFi",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "薪资面议（两端为空）：49 条"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "未知经验值「1、硕士及以上学历，通信/电子信息/软件工程/自动化等专业，嵌入式软件1年以上工作经验」：1 条，导入后原样保留"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "未知经验值「2. 不低于3年C/C++嵌入式开发经验，掌握MCU/MPU编程技能」：1 条，导入后原样保留"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "未知经验值「了解信号处理，拥有良好的数学基础，有过自动控制或音频算法处理、信号处理工作经验优先」：1 条，导入后原样保留"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "未知经验值「（应届毕业生不限工作年限和职称要求，需在校期间有相关项目研究经历）」：1 条，导入后原样保留"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "未知经验值「（应届毕业生不限工作年限，需在校期间有相关项目研究经历）」：1 条，导入后原样保留"
+    }
+  ],
+  "warning_count": 25
+}
