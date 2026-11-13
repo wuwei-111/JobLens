@@ -14,8 +14,8 @@
     "duplicate_ids": 0
   },
   "summary": {
-    "total": 1218,
-    "passed": 1218,
+    "total": 1141,
+    "passed": 1141,
     "failed": 0
   },
   "checks": [
@@ -7909,591 +7909,52 @@
       "passed": true
     },
     {
-      "section": "salary.by_experience.1、硕士及以上学历，通信/电子信息/软件工程/自动化等专业，嵌入式软件1年以上工作经验",
+      "section": "salary.by_experience.其他",
       "name": "count",
-      "expected": 1,
-      "actual": 1,
+      "expected": 13,
+      "actual": 13,
       "passed": true
     },
     {
-      "section": "salary.by_experience.1、硕士及以上学历，通信/电子信息/软件工程/自动化等专业，嵌入式软件1年以上工作经验",
+      "section": "salary.by_experience.其他",
       "name": "avg",
-      "expected": 15000.0,
-      "actual": 15000.0,
+      "expected": 20769.23,
+      "actual": 20769.23,
       "passed": true
     },
     {
-      "section": "salary.by_experience.1、硕士及以上学历，通信/电子信息/软件工程/自动化等专业，嵌入式软件1年以上工作经验",
-      "name": "median",
-      "expected": 15000.0,
-      "actual": 15000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.1、硕士及以上学历，通信/电子信息/软件工程/自动化等专业，嵌入式软件1年以上工作经验",
-      "name": "p25",
-      "expected": 15000.0,
-      "actual": 15000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.1、硕士及以上学历，通信/电子信息/软件工程/自动化等专业，嵌入式软件1年以上工作经验",
-      "name": "p75",
-      "expected": 15000.0,
-      "actual": 15000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.1、硕士及以上学历，通信/电子信息/软件工程/自动化等专业，嵌入式软件1年以上工作经验",
-      "name": "min",
-      "expected": 15000.0,
-      "actual": 15000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.1、硕士及以上学历，通信/电子信息/软件工程/自动化等专业，嵌入式软件1年以上工作经验",
-      "name": "max",
-      "expected": 15000.0,
-      "actual": 15000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 1年以上桌面运维或现场网管服务等工作经验，具备制造业企业经验优先",
-      "name": "count",
-      "expected": 1,
-      "actual": 1,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 1年以上桌面运维或现场网管服务等工作经验，具备制造业企业经验优先",
-      "name": "avg",
-      "expected": 11500.0,
-      "actual": 11500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 1年以上桌面运维或现场网管服务等工作经验，具备制造业企业经验优先",
-      "name": "median",
-      "expected": 11500.0,
-      "actual": 11500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 1年以上桌面运维或现场网管服务等工作经验，具备制造业企业经验优先",
-      "name": "p25",
-      "expected": 11500.0,
-      "actual": 11500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 1年以上桌面运维或现场网管服务等工作经验，具备制造业企业经验优先",
-      "name": "p75",
-      "expected": 11500.0,
-      "actual": 11500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 1年以上桌面运维或现场网管服务等工作经验，具备制造业企业经验优先",
-      "name": "min",
-      "expected": 11500.0,
-      "actual": 11500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 1年以上桌面运维或现场网管服务等工作经验，具备制造业企业经验优先",
-      "name": "max",
-      "expected": 11500.0,
-      "actual": 11500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 不低于3年C/C++嵌入式开发经验，掌握MCU/MPU编程技能",
-      "name": "count",
-      "expected": 1,
-      "actual": 1,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 不低于3年C/C++嵌入式开发经验，掌握MCU/MPU编程技能",
-      "name": "avg",
-      "expected": 25000.0,
-      "actual": 25000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 不低于3年C/C++嵌入式开发经验，掌握MCU/MPU编程技能",
-      "name": "median",
-      "expected": 25000.0,
-      "actual": 25000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 不低于3年C/C++嵌入式开发经验，掌握MCU/MPU编程技能",
-      "name": "p25",
-      "expected": 25000.0,
-      "actual": 25000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 不低于3年C/C++嵌入式开发经验，掌握MCU/MPU编程技能",
-      "name": "p75",
-      "expected": 25000.0,
-      "actual": 25000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 不低于3年C/C++嵌入式开发经验，掌握MCU/MPU编程技能",
-      "name": "min",
-      "expected": 25000.0,
-      "actual": 25000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 不低于3年C/C++嵌入式开发经验，掌握MCU/MPU编程技能",
-      "name": "max",
-      "expected": 25000.0,
-      "actual": 25000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 掌握软件测试流程，熟悉服务器硬件，如CPU、内存、硬盘、RAID卡、网卡、GPU等，以及BIOS和BMC固件，有服务器测试实习工作经验者优先",
-      "name": "count",
-      "expected": 1,
-      "actual": 1,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 掌握软件测试流程，熟悉服务器硬件，如CPU、内存、硬盘、RAID卡、网卡、GPU等，以及BIOS和BMC固件，有服务器测试实习工作经验者优先",
-      "name": "avg",
-      "expected": 13000.0,
-      "actual": 13000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 掌握软件测试流程，熟悉服务器硬件，如CPU、内存、硬盘、RAID卡、网卡、GPU等，以及BIOS和BMC固件，有服务器测试实习工作经验者优先",
-      "name": "median",
-      "expected": 13000.0,
-      "actual": 13000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 掌握软件测试流程，熟悉服务器硬件，如CPU、内存、硬盘、RAID卡、网卡、GPU等，以及BIOS和BMC固件，有服务器测试实习工作经验者优先",
-      "name": "p25",
-      "expected": 13000.0,
-      "actual": 13000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 掌握软件测试流程，熟悉服务器硬件，如CPU、内存、硬盘、RAID卡、网卡、GPU等，以及BIOS和BMC固件，有服务器测试实习工作经验者优先",
-      "name": "p75",
-      "expected": 13000.0,
-      "actual": 13000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 掌握软件测试流程，熟悉服务器硬件，如CPU、内存、硬盘、RAID卡、网卡、GPU等，以及BIOS和BMC固件，有服务器测试实习工作经验者优先",
-      "name": "min",
-      "expected": 13000.0,
-      "actual": 13000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2. 掌握软件测试流程，熟悉服务器硬件，如CPU、内存、硬盘、RAID卡、网卡、GPU等，以及BIOS和BMC固件，有服务器测试实习工作经验者优先",
-      "name": "max",
-      "expected": 13000.0,
-      "actual": 13000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2.工作经验***，优秀应届生可放宽条件",
-      "name": "count",
-      "expected": 1,
-      "actual": 1,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2.工作经验***，优秀应届生可放宽条件",
-      "name": "avg",
-      "expected": 18000.0,
-      "actual": 18000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2.工作经验***，优秀应届生可放宽条件",
-      "name": "median",
-      "expected": 18000.0,
-      "actual": 18000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2.工作经验***，优秀应届生可放宽条件",
-      "name": "p25",
-      "expected": 18000.0,
-      "actual": 18000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2.工作经验***，优秀应届生可放宽条件",
-      "name": "p75",
-      "expected": 18000.0,
-      "actual": 18000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2.工作经验***，优秀应届生可放宽条件",
-      "name": "min",
-      "expected": 18000.0,
-      "actual": 18000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2.工作经验***，优秀应届生可放宽条件",
-      "name": "max",
-      "expected": 18000.0,
-      "actual": 18000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2.工作经验：具备算法工程、大模型应用或相关研发经验，有真实业务项目的开发和落地经验，能够独立承担从方案设计、开发验证到上线迭代的工作。",
-      "name": "count",
-      "expected": 1,
-      "actual": 1,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2.工作经验：具备算法工程、大模型应用或相关研发经验，有真实业务项目的开发和落地经验，能够独立承担从方案设计、开发验证到上线迭代的工作。",
-      "name": "avg",
-      "expected": 45000.0,
-      "actual": 45000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2.工作经验：具备算法工程、大模型应用或相关研发经验，有真实业务项目的开发和落地经验，能够独立承担从方案设计、开发验证到上线迭代的工作。",
-      "name": "median",
-      "expected": 45000.0,
-      "actual": 45000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2.工作经验：具备算法工程、大模型应用或相关研发经验，有真实业务项目的开发和落地经验，能够独立承担从方案设计、开发验证到上线迭代的工作。",
-      "name": "p25",
-      "expected": 45000.0,
-      "actual": 45000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2.工作经验：具备算法工程、大模型应用或相关研发经验，有真实业务项目的开发和落地经验，能够独立承担从方案设计、开发验证到上线迭代的工作。",
-      "name": "p75",
-      "expected": 45000.0,
-      "actual": 45000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2.工作经验：具备算法工程、大模型应用或相关研发经验，有真实业务项目的开发和落地经验，能够独立承担从方案设计、开发验证到上线迭代的工作。",
-      "name": "min",
-      "expected": 45000.0,
-      "actual": 45000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.2.工作经验：具备算法工程、大模型应用或相关研发经验，有真实业务项目的开发和落地经验，能够独立承担从方案设计、开发验证到上线迭代的工作。",
-      "name": "max",
-      "expected": 45000.0,
-      "actual": 45000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.3、熟悉软件发布、版本管理以及编写测试报告4、服从公司安排各项工作 任职资格：1、计算机相关专业硕士学历，***测试工作经验2、熟练使用Linux操作系统、Oracle数据库3、了解性能测试工具LoadRound4、有开发或自动化测试经验者优先5、特别优秀应届毕业生可适当放宽工作经验",
-      "name": "count",
-      "expected": 1,
-      "actual": 1,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.3、熟悉软件发布、版本管理以及编写测试报告4、服从公司安排各项工作 任职资格：1、计算机相关专业硕士学历，***测试工作经验2、熟练使用Linux操作系统、Oracle数据库3、了解性能测试工具LoadRound4、有开发或自动化测试经验者优先5、特别优秀应届毕业生可适当放宽工作经验",
-      "name": "avg",
-      "expected": 11500.0,
-      "actual": 11500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.3、熟悉软件发布、版本管理以及编写测试报告4、服从公司安排各项工作 任职资格：1、计算机相关专业硕士学历，***测试工作经验2、熟练使用Linux操作系统、Oracle数据库3、了解性能测试工具LoadRound4、有开发或自动化测试经验者优先5、特别优秀应届毕业生可适当放宽工作经验",
-      "name": "median",
-      "expected": 11500.0,
-      "actual": 11500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.3、熟悉软件发布、版本管理以及编写测试报告4、服从公司安排各项工作 任职资格：1、计算机相关专业硕士学历，***测试工作经验2、熟练使用Linux操作系统、Oracle数据库3、了解性能测试工具LoadRound4、有开发或自动化测试经验者优先5、特别优秀应届毕业生可适当放宽工作经验",
-      "name": "p25",
-      "expected": 11500.0,
-      "actual": 11500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.3、熟悉软件发布、版本管理以及编写测试报告4、服从公司安排各项工作 任职资格：1、计算机相关专业硕士学历，***测试工作经验2、熟练使用Linux操作系统、Oracle数据库3、了解性能测试工具LoadRound4、有开发或自动化测试经验者优先5、特别优秀应届毕业生可适当放宽工作经验",
-      "name": "p75",
-      "expected": 11500.0,
-      "actual": 11500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.3、熟悉软件发布、版本管理以及编写测试报告4、服从公司安排各项工作 任职资格：1、计算机相关专业硕士学历，***测试工作经验2、熟练使用Linux操作系统、Oracle数据库3、了解性能测试工具LoadRound4、有开发或自动化测试经验者优先5、特别优秀应届毕业生可适当放宽工作经验",
-      "name": "min",
-      "expected": 11500.0,
-      "actual": 11500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.3、熟悉软件发布、版本管理以及编写测试报告4、服从公司安排各项工作 任职资格：1、计算机相关专业硕士学历，***测试工作经验2、熟练使用Linux操作系统、Oracle数据库3、了解性能测试工具LoadRound4、有开发或自动化测试经验者优先5、特别优秀应届毕业生可适当放宽工作经验",
-      "name": "max",
-      "expected": 11500.0,
-      "actual": 11500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.3．本科学历，有园林行业/电子行业测试工作经验，计算机/电子技术/机械自动化相关专业优先",
-      "name": "count",
-      "expected": 1,
-      "actual": 1,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.3．本科学历，有园林行业/电子行业测试工作经验，计算机/电子技术/机械自动化相关专业优先",
-      "name": "avg",
-      "expected": 17500.0,
-      "actual": 17500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.3．本科学历，有园林行业/电子行业测试工作经验，计算机/电子技术/机械自动化相关专业优先",
+      "section": "salary.by_experience.其他",
       "name": "median",
       "expected": 17500.0,
       "actual": 17500.0,
       "passed": true
     },
     {
-      "section": "salary.by_experience.3．本科学历，有园林行业/电子行业测试工作经验，计算机/电子技术/机械自动化相关专业优先",
+      "section": "salary.by_experience.其他",
       "name": "p25",
-      "expected": 17500.0,
-      "actual": 17500.0,
+      "expected": 12500.0,
+      "actual": 12500.0,
       "passed": true
     },
     {
-      "section": "salary.by_experience.3．本科学历，有园林行业/电子行业测试工作经验，计算机/电子技术/机械自动化相关专业优先",
-      "name": "p75",
-      "expected": 17500.0,
-      "actual": 17500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.3．本科学历，有园林行业/电子行业测试工作经验，计算机/电子技术/机械自动化相关专业优先",
-      "name": "min",
-      "expected": 17500.0,
-      "actual": 17500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.3．本科学历，有园林行业/电子行业测试工作经验，计算机/电子技术/机械自动化相关专业优先",
-      "name": "max",
-      "expected": 17500.0,
-      "actual": 17500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.4、积累：有个人作品，或有游戏公司工作经验",
-      "name": "count",
-      "expected": 1,
-      "actual": 1,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.4、积累：有个人作品，或有游戏公司工作经验",
-      "name": "avg",
-      "expected": 26000.0,
-      "actual": 26000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.4、积累：有个人作品，或有游戏公司工作经验",
-      "name": "median",
-      "expected": 26000.0,
-      "actual": 26000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.4、积累：有个人作品，或有游戏公司工作经验",
-      "name": "p25",
-      "expected": 26000.0,
-      "actual": 26000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.4、积累：有个人作品，或有游戏公司工作经验",
+      "section": "salary.by_experience.其他",
       "name": "p75",
       "expected": 26000.0,
       "actual": 26000.0,
       "passed": true
     },
     {
-      "section": "salary.by_experience.4、积累：有个人作品，或有游戏公司工作经验",
-      "name": "min",
-      "expected": 26000.0,
-      "actual": 26000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.4、积累：有个人作品，或有游戏公司工作经验",
-      "name": "max",
-      "expected": 26000.0,
-      "actual": 26000.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.三、工作经验1. 至少 ***的 Java 后端开发经验，有实际项目开发和维护经验",
-      "name": "count",
-      "expected": 1,
-      "actual": 1,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.三、工作经验1. 至少 ***的 Java 后端开发经验，有实际项目开发和维护经验",
-      "name": "avg",
-      "expected": 12500.0,
-      "actual": 12500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.三、工作经验1. 至少 ***的 Java 后端开发经验，有实际项目开发和维护经验",
-      "name": "median",
-      "expected": 12500.0,
-      "actual": 12500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.三、工作经验1. 至少 ***的 Java 后端开发经验，有实际项目开发和维护经验",
-      "name": "p25",
-      "expected": 12500.0,
-      "actual": 12500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.三、工作经验1. 至少 ***的 Java 后端开发经验，有实际项目开发和维护经验",
-      "name": "p75",
-      "expected": 12500.0,
-      "actual": 12500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.三、工作经验1. 至少 ***的 Java 后端开发经验，有实际项目开发和维护经验",
-      "name": "min",
-      "expected": 12500.0,
-      "actual": 12500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.三、工作经验1. 至少 ***的 Java 后端开发经验，有实际项目开发和维护经验",
-      "name": "max",
-      "expected": 12500.0,
-      "actual": 12500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.三、工作经验1. 至少 1-2 年的前端开发经验，有实际项目开发和维护经验",
-      "name": "count",
-      "expected": 1,
-      "actual": 1,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.三、工作经验1. 至少 1-2 年的前端开发经验，有实际项目开发和维护经验",
-      "name": "avg",
-      "expected": 12500.0,
-      "actual": 12500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.三、工作经验1. 至少 1-2 年的前端开发经验，有实际项目开发和维护经验",
-      "name": "median",
-      "expected": 12500.0,
-      "actual": 12500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.三、工作经验1. 至少 1-2 年的前端开发经验，有实际项目开发和维护经验",
-      "name": "p25",
-      "expected": 12500.0,
-      "actual": 12500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.三、工作经验1. 至少 1-2 年的前端开发经验，有实际项目开发和维护经验",
-      "name": "p75",
-      "expected": 12500.0,
-      "actual": 12500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.三、工作经验1. 至少 1-2 年的前端开发经验，有实际项目开发和维护经验",
-      "name": "min",
-      "expected": 12500.0,
-      "actual": 12500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.三、工作经验1. 至少 1-2 年的前端开发经验，有实际项目开发和维护经验",
-      "name": "max",
-      "expected": 12500.0,
-      "actual": 12500.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.其他",
-      "name": "count",
-      "expected": 2,
-      "actual": 2,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.其他",
-      "name": "avg",
-      "expected": 31250.0,
-      "actual": 31250.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.其他",
-      "name": "median",
-      "expected": 31250.0,
-      "actual": 31250.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.其他",
-      "name": "p25",
-      "expected": 30625.0,
-      "actual": 30625.0,
-      "passed": true
-    },
-    {
-      "section": "salary.by_experience.其他",
-      "name": "p75",
-      "expected": 31875.0,
-      "actual": 31875.0,
-      "passed": true
-    },
-    {
       "section": "salary.by_experience.其他",
       "name": "min",
-      "expected": 30000.0,
-      "actual": 30000.0,
+      "expected": 11500.0,
+      "actual": 11500.0,
       "passed": true
     },
     {
       "section": "salary.by_experience.其他",
       "name": "max",
-      "expected": 32500.0,
-      "actual": 32500.0,
+      "expected": 45000.0,
+      "actual": 45000.0,
       "passed": true
     },
     {

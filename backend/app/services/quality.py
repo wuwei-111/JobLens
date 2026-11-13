@@ -147,10 +147,17 @@ def get_quality_stats(db: Session) -> QualityStatsOut:
         warnings.append(
             f"薪资疑似异常（<{SALARY_LOW} 或 >{SALARY_HIGH}）：{salary_outliers} 条"
         )
-    for item in unknown_education:
-        warnings.append(f"未知学历值「{item.value}」：{item.count} 条")
-    for item in unknown_experience:
-        warnings.append(f"未知经验值「{item.value}」：{item.count} 条")
+    if unknown_education:
+        warnings.append(
+            f"未知学历值：{len(unknown_education)} 个取值 / "
+            f"{sum(item.count for item in unknown_education)} 条，需人工复核"
+        )
+    if unknown_experience:
+        warnings.append(
+            f"未知经验值：{len(unknown_experience)} 个取值 / "
+            f"{sum(item.count for item in unknown_experience)} 条，"
+            "多为未归一的 JD 原文摘句，需人工复核"
+        )
     if jobs_without_skills:
         warnings.append(f"没有任何技能标签的岗位：{jobs_without_skills} 条")
     if duplicate_source_urls:

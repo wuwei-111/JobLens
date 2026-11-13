@@ -63,6 +63,29 @@ JOB_TYPE_ALIASES: dict[str, str] = {
 
 FRESH_GRADUATE_EXPERIENCE = "应届生"
 
+CANONICAL_EXPERIENCE_VALUES = frozenset(
+    {
+        "不限",
+        "应届生",
+        "1年以内",
+        "1-3年",
+        "3-5年",
+        "5年以上",
+        "未披露",
+        "其他",
+    }
+)
+
+
+def group_experience(value: str) -> str:
+    """Collapse raw JD excerpts into "其他" for aggregate views.
+
+    The stored record keeps the original text; this helper is only for
+    statistics that would otherwise produce one group per long sentence.
+    """
+    value = value.strip()
+    return value if value in CANONICAL_EXPERIENCE_VALUES else "其他"
+
 
 def normalize_job_type(value: str) -> str:
     value = value.strip()
@@ -96,10 +119,12 @@ def normalize_skills(skills: Iterable[str]) -> list[str]:
 
 
 __all__ = [
+    "CANONICAL_EXPERIENCE_VALUES",
     "EDUCATION_ALIASES",
     "EXPERIENCE_ALIASES",
     "FRESH_GRADUATE_EXPERIENCE",
     "JOB_TYPE_ALIASES",
+    "group_experience",
     "normalize_education",
     "normalize_experience",
     "normalize_job_type",

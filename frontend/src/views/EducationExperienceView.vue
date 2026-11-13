@@ -1,17 +1,21 @@
 <script setup lang="ts">
 import { computed, onMounted, watch } from 'vue'
 
-import BaseChart from '@/components/charts/BaseChart.vue'
 import ChartCard from '@/components/ChartCard.vue'
 import EducationMatrix from '@/components/EducationMatrix.vue'
+import ExperienceComposition from '@/components/ExperienceComposition.vue'
 import FilterBar from '@/components/FilterBar.vue'
 import SegmentedBar from '@/components/SegmentedBar.vue'
 import { fetchEducationStats, fetchExperienceStats } from '@/api/stats'
 import { useAsyncData } from '@/composables/useAsyncData'
 import { useDatasetStatus } from '@/composables/useDatasetStatus'
 import { useStatsFilters } from '@/composables/useStatsFilters'
-import { orderedEducation, rankedBarOption } from '@/lib/charts'
-import { formatPercent, ratioLabel } from '@/lib/format'
+import { orderedEducation } from '@/lib/charts'
+import {
+  countRawExperience,
+  groupExperienceBreakdown,
+} from '@/lib/experience'
+import { formatPercent } from '@/lib/format'
 
 const { filters } = useStatsFilters()
 const {
@@ -45,24 +49,23 @@ const educationColumns = computed(() =>
   educationItems.value.map((item) => item.name),
 )
 
-const experienceRows = computed(() => {
-  const stats = experience.value
-  if (!stats) return []
-  return stats.breakdown.map((item) => ({
-    name: item.name,
-    value: item.count,
-    display: ratioLabel(item.count, stats.total),
-    emphasis: item.name === '应届生',
-  }))
-})
-
-const experienceOption = computed(() =>
-  rankedBarOption(experienceRows.value, { labelWidth: 88, deEmphasise: true }),
+// Raw JD excerpts are grouped under "其他" for display only. The API keeps the
+// original values so filters and job details still show the source text.
+const experienceItems = computed(() =>
+  groupExperienceBreakdown(
+    experience.value?.breakdown ?? [],
+    experience.value?.total ?? 0,
+  ),
 )
 
-const experienceHeight = computed(
-  () =>
-    `${Math.max(110, (experience.value?.breakdown.length ?? 0) * 44 + 24)}px`,
+const rawExperienceCount = computed(() =>
+  countRawExperience(experience.value?.breakdown ?? []),
+)
+
+const experienceNote = computed(() =>
+  rawExperienceCount.value
+    ? `“其他”包含 ${rawExperienceCount.value} 条未能归一的原文摘句，原文仍保留在岗位详情与质量摘要中；分母为当前筛选后的岗位数。`
+    : '高亮“应届生”；分母为当前筛选后的岗位数。',
 )
 
 const educationInsight = computed(() => {
@@ -130,7 +133,7 @@ const experienceInsight = computed(() => {
   const stats = experience.value
   if (!stats || stats.total === 0) return '当前筛选条件下没有岗位。'
 
-  const items = stats.breakdown.filter((item) => item.count > 0)
+  const items = experienceItems.value.filter((item) => item.count > 0)
   const breakdownText = items
     .map((item) => `${item.name} ${item.count} 条（${formatPercent(item.ratio)}）`)
     .join('，')
@@ -154,10 +157,12 @@ const freshText = computed(() => {
   const fresh = stats.fresh_graduate
   if (!fresh.count) return '当前筛选条件下没有标注“接受应届生”的岗位。'
 
-  const explicit = fresh.breakdown.find((item) => item.name === '应届生')?.count ?? 0
+  const freshBreakdown = groupExperienceBreakdown(fresh.breakdown, fresh.count)
+  const explicit =
+    freshBreakdown.find((item) => item.name === '应届生')?.count ?? 0
   const undisclosed =
-    fresh.breakdown.find((item) => item.name === '未披露')?.count ?? 0
-  const other = fresh.breakdown.find((item) => item.name === '其他')?.count ?? 0
+    freshBreakdown.find((item) => item.name === '未披露')?.count ?? 0
+  const other = freshBreakdown.find((item) => item.name === '其他')?.count ?? 0
   const scope = isDemoDataset.value ? '在这份演示样本里' : '在这份样本里'
 
   if (!undisclosed && !other) {
@@ -262,32 +267,38 @@ function clearFilters() {
         index="图 03"
         title="经验要求分布"
         question="样本中的岗位，是校招入口还是社招岗位？"
-        note="高亮“应届生”，其余经验档位以灰色作背景对照。"
+        :note="experienceNote"
       >
-        <BaseChart
-          :option="experienceOption"
-          :height="experienceHeight"
-          aria-label="经验要求分布条形图"
+        <ExperienceComposition
+          :items="experienceItems"
+          :total="experience?.total ?? 0"
+          label="经验要求构成"
         />
         <template #table>
           <div class="data-table-wrap">
-            <table class="data-table">
+            <table class="data-table experience-table">
               <caption class="sr-only">经验要求分布</caption>
               <thead>
                 <tr>
                   <th scope="col">经验要求</th>
                   <th scope="col" class="num">岗位数</th>
                   <th scope="col" class="num">占比</th>
+                  <th scope="col" class="share-col">分布</th>
                 </tr>
               </thead>
               <tbody>
-                <tr
-                  v-for="item in experience?.breakdown ?? []"
-                  :key="item.name"
-                >
+                <tr v-for="item in experienceItems" :key="item.name">
                   <th scope="row">{{ item.name }}</th>
                   <td class="num">{{ item.count }}</td>
                   <td class="num">{{ formatPercent(item.ratio) }}</td>
+                  <td class="share-col">
+                    <span class="share-track" aria-hidden="true">
+                      <span
+                        class="share-fill"
+                        :style="{ width: formatPercent(item.ratio) }"
+                      />
+                    </span>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -318,6 +329,26 @@ function clearFilters() {
 </template>
 
 <style scoped>
+.experience-table .share-col {
+  width: 42%;
+}
+
+.share-track {
+  display: block;
+  height: 7px;
+  width: 100%;
+  background: var(--hairline);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.share-fill {
+  display: block;
+  height: 100%;
+  background: var(--blue);
+  border-radius: 4px;
+}
+
 .fresh-panel {
   display: grid;
   grid-template-columns: minmax(9rem, 0.32fr) minmax(0, 1fr);

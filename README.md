@@ -253,13 +253,12 @@ npm run test:unit
 - 数据库重建脚本 `scripts/reset_db.py`、500 条性能基准 `scripts/benchmark_api.py`、复合索引
 - ECharts 按需加载 + 路由懒加载：主包约 171KB，图表共享块约 493KB
 - 五城 1021 条真实数据已合并导入；独立核对 1218/1218 项一致，`/stats/quality` 显示 `demo_records=0`
-- 53 个后端测试、11 个前端 Vitest 测试与 GitHub Actions CI
+- 54 个后端测试、15 个前端 Vitest 测试与 GitHub Actions CI
 
 待实现：逐页最终人工复核、可选 Playwright 冒烟与 Firefox 复核、创作报告与部署。详见 [docs/TODO.md](docs/TODO.md)。
 
 ## 文档
 
-- [项目大纲](大纲.md)
 - [任务清单 docs/TODO.md](docs/TODO.md)
 - [系统架构与 API docs/architecture.md](docs/architecture.md)
 - [数据字典 docs/data-dictionary.md](docs/data-dictionary.md)

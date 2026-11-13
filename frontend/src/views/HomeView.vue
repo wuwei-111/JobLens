@@ -3,6 +3,7 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { RouterLink } from 'vue-router'
 
 import BaseChart from '@/components/charts/BaseChart.vue'
+import ExperienceComposition from '@/components/ExperienceComposition.vue'
 import JobDrawer from '@/components/JobDrawer.vue'
 import KpiRow from '@/components/KpiRow.vue'
 import SegmentedBar from '@/components/SegmentedBar.vue'
@@ -14,13 +15,12 @@ import {
   fetchSkillsStats,
 } from '@/api/stats'
 import { useDatasetStatus } from '@/composables/useDatasetStatus'
+import { orderedEducation, salaryHistogramOption } from '@/lib/charts'
 import {
-  chart,
-  orderedEducation,
-  rankedBarOption,
-  salaryHistogramOption,
-} from '@/lib/charts'
-import { formatMoney, formatPercent, ratioLabel } from '@/lib/format'
+  countRawExperience,
+  groupExperienceBreakdown,
+} from '@/lib/experience'
+import { formatMoney, formatPercent } from '@/lib/format'
 import type {
   EducationStats,
   ExperienceStats,
@@ -293,7 +293,7 @@ const experienceStory = computed(() => {
   const exp = experience.value
   if (!exp) return { lead: '', second: '', insight: '' }
 
-  const items = exp.breakdown.filter((item) => item.count > 0)
+  const items = experienceItems.value.filter((item) => item.count > 0)
   const breakdownText = items
     .map((item) => `${item.name}（${item.count} 条）`)
     .join('、')
@@ -301,11 +301,14 @@ const experienceStory = computed(() => {
   const yearCount = yearItems.reduce((sum, item) => sum + item.count, 0)
   const undisclosed = items.find((item) => item.name === '未披露')?.count ?? 0
   const strictFresh = items.find((item) => item.name === '应届生')?.count ?? 0
+  const rawText = rawExperienceCount.value
+    ? `另有 ${rawExperienceCount.value} 条原文摘句统一计入“其他”。`
+    : ''
 
   const lead = `在 ${exp.total} 条岗位中，${exp.fresh_graduate.count} 条标注“接受应届生”，占 ${formatPercent(exp.fresh_graduate.ratio)}。`
   const second = yearCount
-    ? `经验标注分布为：${breakdownText}。其中 ${yearCount} 条明确写出工作年限要求（${yearItems.map((item) => `${item.name} ${item.count} 条`).join('、')}），其余岗位没有写明年限。`
-    : `经验标注分布为：${breakdownText}。没有岗位明确写出 1 年以上的工作年限要求；其中 ${strictFresh} 条明确要求最高学历毕业后无全职工作经验，${undisclosed} 条未单独披露工作年限。`
+    ? `经验标注分布为：${breakdownText}。其中 ${yearCount} 条明确写出工作年限要求（${yearItems.map((item) => `${item.name} ${item.count} 条`).join('、')}），其余岗位没有写明年限。${rawText}`
+    : `经验标注分布为：${breakdownText}。没有岗位明确写出 1 年以上的工作年限要求；其中 ${strictFresh} 条明确要求最高学历毕业后无全职工作经验，${undisclosed} 条未单独披露工作年限。${rawText}`
   const insight =
     `“未披露”不等于“不限”，它只说明招聘页没有单独写出工作年限。样本来自公开招聘页面，覆盖${cityDisplay.value}，不能据此推断全国整体就业市场。`
 
@@ -348,24 +351,15 @@ const skillStory = computed(() => {
   }
 })
 
-const experienceRows = computed(() => {
-  const stats = experience.value
-  if (!stats) return []
-  return stats.breakdown.map((item) => ({
-    name: item.name,
-    value: item.count,
-    display: ratioLabel(item.count, stats.total),
-    emphasis: item.name === '应届生',
-  }))
-})
+const experienceItems = computed(() =>
+  groupExperienceBreakdown(
+    experience.value?.breakdown ?? [],
+    experience.value?.total ?? 0,
+  ),
+)
 
-const experienceOption = computed(() =>
-  rankedBarOption(experienceRows.value, {
-    labelWidth: 78,
-    deEmphasise: true,
-    color: chart.blue,
-    emphasisColor: chart.blueDeep,
-  }),
+const rawExperienceCount = computed(() =>
+  countRawExperience(experience.value?.breakdown ?? []),
 )
 
 const salaryStat = computed(() => ({
@@ -594,14 +588,15 @@ const conclusionFindings = computed(() => {
         <div class="chapter-body">
           <figure class="chapter-figure">
             <div class="figure-plate">
-              <BaseChart
-                :option="experienceOption"
-                height="200px"
-                aria-label="经验要求分布条形图"
+              <ExperienceComposition
+                :items="experienceItems"
+                :total="experience?.total ?? 0"
+                label="经验要求分布"
               />
             </div>
             <figcaption>
-              图 02 · 经验要求分布。高亮“应届生”，其余档位以灰色作背景对照。
+              图 02 · 经验要求分布。未能归一的原文摘句计入“其他”；分母为
+              {{ experience?.total ?? 0 }} 条岗位。
             </figcaption>
           </figure>
 
@@ -1168,6 +1163,23 @@ const conclusionFindings = computed(() => {
 
 .reverse .chapter-body {
   grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+}
+
+/* The experience figure is a short composition strip; stretch its plate to the
+   copy height so the chapter does not leave a large blank column. */
+.experience .chapter-body {
+  align-items: stretch;
+}
+
+.experience .chapter-figure {
+  align-content: start;
+}
+
+.experience .chapter-figure .figure-plate {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .chapter-copy {

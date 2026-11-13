@@ -36,6 +36,7 @@ from app.schemas.stats import (
     SkillsStatsOut,
 )
 from app.services.filters import build_job_conditions
+from app.services.normalization import group_experience
 from app.services.skills import categorize_skill
 
 EDUCATION_ORDER = [
@@ -437,6 +438,14 @@ def get_cross_stats(
 def get_salary_stats(db: Session, **filters: Any) -> SalaryStatsOut:
     frame = _load_jobs_frame(db, **filters)
     overall = _salary_summary(frame["salary_mid"])
+    # Raw JD excerpts would each become their own salary group (and one long
+    # table row per sentence). Collapse them into "其他" for this aggregate;
+    # the original value remains on the job record.
+    if not frame.empty:
+        frame = frame.copy()
+        frame["experience_group"] = frame["experience"].map(group_experience)
+    else:
+        frame["experience_group"] = frame["experience"]
     return SalaryStatsOut(
         total_jobs=len(frame),
         salary_available=overall.count,
@@ -444,7 +453,7 @@ def get_salary_stats(db: Session, **filters: Any) -> SalaryStatsOut:
         distribution=_salary_distribution(frame),
         by_job_type=_salary_groups(frame, "job_type"),
         by_education=_salary_groups(frame, "education"),
-        by_experience=_salary_groups(frame, "experience"),
+        by_experience=_salary_groups(frame, "experience_group"),
     )
 
 

@@ -90,6 +90,18 @@ def test_salary_stats(seeded_client: TestClient) -> None:
     assert body["by_job_type"][0]["group"] == "后端开发"
 
 
+def test_salary_groups_raw_experience_under_other(client: TestClient) -> None:
+    payload = sample_payload()
+    long_text = "3年以上后端开发经验，具备大规模系统设计能力"
+    payload["records"][0]["experience"] = long_text
+    import_payload(client, payload)
+
+    body = client.get("/api/v1/stats/salary").json()
+    groups = {item["group"]: item for item in body["by_experience"]}
+    assert long_text not in groups
+    assert groups["其他"]["count"] == 1
+
+
 def test_cross_stats(seeded_client: TestClient) -> None:
     body = seeded_client.get(
         "/api/v1/stats/cross",

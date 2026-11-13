@@ -37,6 +37,7 @@ from pydantic import ValidationError
 from app.schemas.job import JobRecordIn
 from app.services.importer import parse_dataset
 from app.services.normalization import (
+    group_experience,
     normalize_education,
     normalize_experience,
     normalize_job_type,
@@ -258,6 +259,8 @@ def compute_expected(records: list[dict[str, Any]]) -> dict[str, Any]:
         df["salary_mid"] = pd.Series(dtype="float64")
 
     salary = _salary_summary(df["salary_mid"])
+    # Mirrors get_salary_stats: raw experience excerpts are one "其他" group.
+    df["experience_group"] = df["experience"].map(group_experience)
     fresh_count = int(df["is_fresh_graduate"].sum()) if total else 0
     collected = [
         value for value in df["collected_at"].tolist() if value is not None
@@ -374,7 +377,7 @@ def compute_expected(records: list[dict[str, Any]]) -> dict[str, Any]:
             "distribution": _salary_distribution(df["salary_mid"]),
             "by_job_type": _salary_groups(df, "job_type"),
             "by_education": _salary_groups(df, "education"),
-            "by_experience": _salary_groups(df, "experience"),
+            "by_experience": _salary_groups(df, "experience_group"),
         },
     }
 

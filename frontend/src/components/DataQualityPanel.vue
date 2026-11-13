@@ -74,7 +74,7 @@ const checks = computed(() => {
       key: 'duplicate_source_urls',
       label: '重复来源链接',
       value: duplicateLinks.value,
-      note: '同一链接出现在多条岗位中',
+      note: '同一城市内同一链接出现在多条岗位中',
     },
     {
       key: 'demo_records',

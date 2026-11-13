@@ -42,7 +42,7 @@ function clearFilters() {
 }
 
 const educationOrder = ['不限', '大专', '本科', '本科及以上', '硕士', '硕士及以上', '博士', '其他', '未知']
-const experienceOrder = ['不限', '应届生', '1年以内', '1-3年', '3-5年', '5年以上', '其他', '未知']
+const experienceOrder = ['不限', '应届生', '1年以内', '1-3年', '3-5年', '5年以上', '未披露', '其他', '未知']
 
 function sortedGroups(groups: SalaryGroup[], order: string[]): SalaryGroup[] {
   const position = new Map(order.map((name, index) => [name, index]))
@@ -299,7 +299,7 @@ const experienceInsight = computed(() => {
           question="学历与工作年限，分别对应怎样的价格？"
           note="表中为月薪中点的中位数与四分位区间。样本量写在“样本”列；样本很小时，分位数不稳定，应谨慎解读。"
         >
-          <div class="two-col salary-panels">
+          <div class="salary-panels">
             <section>
               <h4 class="panel-label">按学历要求</h4>
               <SalaryTable
@@ -343,7 +343,20 @@ const experienceInsight = computed(() => {
 
 <style scoped>
 .salary-panels {
-  gap: 3rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.25rem;
+}
+
+/* Stack the education and experience tables vertically so the six-column
+   salary table keeps a readable width instead of being squeezed into half. */
+.salary-panels > section {
+  min-width: 0;
+}
+
+.salary-panels > section + section {
+  border-top: 1px solid var(--hairline);
+  padding-top: 1.75rem;
 }
 
 .panel-label {

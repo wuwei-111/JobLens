@@ -217,12 +217,12 @@ export function salaryRangeOption(groups: SalaryGroup[]): EChartsOption {
 
   return {
     animationDuration: 480,
-    grid: { left: 96, right: 96, top: 42, bottom: 22 },
+    grid: { left: 138, right: 96, top: 42, bottom: 22 },
     media: [
       {
         query: { maxWidth: 520 },
         option: {
-          grid: { left: 84, right: 74, top: 38, bottom: 20 },
+          grid: { left: 112, right: 74, top: 38, bottom: 20 },
           legend: {
             itemGap: 10,
             textStyle: { fontSize: 10 },
@@ -289,9 +289,12 @@ export function salaryRangeOption(groups: SalaryGroup[]): EChartsOption {
       axisTick: { show: false },
       axisLabel: {
         ...axisLabel,
+        lineHeight: 14,
         formatter: (value: string, index: number) => {
           const group = sorted[index]
-          return `${value}  n=${group?.count ?? 0}`
+          // Two lines keep long job-type names readable without widening the
+          // axis label gutter further.
+          return `${value}\n{n=${group?.count ?? 0}}`
         },
       },
     },
