@@ -1,0 +1,12 @@
+{
+  "name": "joblens",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "JobLens 交互式数据新闻项目的一键开发启动器",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:backend": "node scripts/dev.mjs --only=backend",
+    "dev:frontend": "node scripts/dev.mjs --only=frontend"
+  }
+}

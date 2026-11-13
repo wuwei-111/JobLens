@@ -26,6 +26,7 @@
 - [x] 添加 `.gitignore`、`.editorconfig`、README 快速开始。
 - [x] 添加 GitHub Actions CI：后端测试 + 前端类型检查与构建。
 - [x] 添加后端 `.env.example` 与前端 `.env.example`。
+- [x] 根目录一键启动：`npm run dev` 自动准备 venv/依赖并同时启动前后端，`Ctrl+C` 一并停止。
 
 ### 0.2 数据库
 

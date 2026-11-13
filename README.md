@@ -53,7 +53,32 @@ JobLens/
 
 ## 快速开始
 
-### 1. 后端
+### 一键启动（推荐）
+
+前置要求：Node.js ≥ 20、Python ≥ 3.12（`python` 命令需在 PATH 中）。在项目根目录执行：
+
+```bash
+npm run dev
+```
+
+首次运行会自动完成：创建 `backend/.venv`、安装 Python 依赖、安装前端依赖；随后同时启动前后端。
+
+- 前端页面：<http://localhost:5173>
+- 后端 API 文档：<http://127.0.0.1:8000/docs>
+- 健康检查：<http://127.0.0.1:8000/api/v1/health>
+
+按 `Ctrl+C` 会同时停止两个服务。Windows 也可以双击根目录的 `dev.bat`。
+
+只启动单个服务：
+
+```bash
+npm run dev:backend
+npm run dev:frontend
+```
+
+### 手动启动（调试用）
+
+#### 后端
 
 ```bash
 cd backend
@@ -68,12 +93,17 @@ cp .env.example .env          # Windows 可用 copy .env.example .env
 uvicorn app.main:app --reload
 ```
 
-启动后：
+#### 前端
 
-- API 文档（Swagger）：<http://127.0.0.1:8000/docs>
-- 健康检查：<http://127.0.0.1:8000/api/v1/health>
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-### 2. 导入演示数据
+前端默认运行在 <http://localhost:5173>，通过 Vite 代理访问 `/api` → `http://127.0.0.1:8000`。
+
+### 导入演示数据
 
 方式一：在 Swagger 页面调用 `POST /api/v1/imports/json`，上传 `backend/data/raw/sample_jobs.json`。
 
@@ -84,19 +114,16 @@ curl -X POST "http://127.0.0.1:8000/api/v1/imports/json?on_conflict=skip" \
   -F "file=@backend/data/raw/sample_jobs.json"
 ```
 
-> `sample_jobs.json` 是**虚构的演示数据**，仅用于开发调试，不能用于新闻结论。
-
-### 3. 前端
+也可以使用命令行脚本（自动建表）：
 
 ```bash
-cd frontend
-npm install
-npm run dev
+cd backend
+python -m scripts.import_sample
 ```
 
-前端默认运行在 <http://localhost:5173>，通过 Vite 代理访问 `/api` → `http://127.0.0.1:8000`。
+> `sample_jobs.json` 是**虚构的演示数据**，仅用于开发调试，不能用于新闻结论。
 
-### 4. 测试
+### 测试
 
 ```bash
 cd backend
@@ -112,6 +139,7 @@ pytest
 - 招聘数据分页查询与筛选（岗位类型、学历、经验、城市、薪资、关键词）
 - 统计接口：总览、学历、经验、技能、薪资
 - 筛选元数据接口（岗位类型 / 学历 / 经验 / 城市 / 技能）
+- 一键启动脚本 `npm run dev`（自动准备环境、同时启动前后端）
 - 22 个后端测试与 GitHub Actions CI，前端路由与 API 客户端骨架
 
 待实现：真实数据采集、完整前端页面与图表、数据说明页内容、报告与部署。详见 [docs/TODO.md](docs/TODO.md)。

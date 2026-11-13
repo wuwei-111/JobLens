@@ -200,18 +200,28 @@ FastAPI 标准格式：
 
 ## 8. 本地开发
 
+一条命令启动前后端（首次运行自动创建虚拟环境并安装依赖）：
+
+```bash
+# 在项目根目录
+npm run dev
+```
+
+等价于同时运行：
+
 ```bash
 # 后端
 cd backend
 .venv/Scripts/activate      # Windows
-python -m uvicorn app.main:app --reload
+python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 
 # 前端
 cd frontend
 npm run dev
 ```
 
-联调路径：前端 → Vite `/api` 代理 → FastAPI → SQLite。
+联调路径：前端 → Vite `/api` 代理 → FastAPI → SQLite。启动器实现见
+`scripts/dev.mjs`，支持 `npm run dev:backend` / `npm run dev:frontend` 单独启动。
 
 ## 9. 已知取舍
 
