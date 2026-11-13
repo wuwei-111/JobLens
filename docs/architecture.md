@@ -72,6 +72,12 @@ backend/app/
 | collected_at | DATE | NULL, INDEX | 采集日期 |
 | created_at | DATETIME | NOT NULL | 入库时间（UTC） |
 
+复合索引（高频筛选组合）：
+
+- `ix_job_postings_job_type_education (job_type, education)`
+- `ix_job_postings_city_job_type (city, job_type)`
+- `ix_job_postings_experience_education (experience, education)`
+
 ### 4.2 `job_skills`
 
 | 字段 | 类型 | 约束 | 说明 |
@@ -85,6 +91,20 @@ backend/app/
 不采用“技能存 JSON 数组”的原因：SQLite 对 JSON 聚合与分组统计不友好，关联表可直接
 `GROUP BY skill_name` 得到岗位覆盖数。
 
+### 4.3 `import_batches`
+
+每次 `import_dataset` 写入一条批次摘要，用于复现和交付说明。
+
+| 字段 | 类型 | 约束 | 说明 |
+| --- | --- | --- | --- |
+| id | INTEGER | PK AUTOINCREMENT | — |
+| dataset_name | VARCHAR(200) | NOT NULL | JSON 中的 dataset_name |
+| source_file | VARCHAR(255) | NULL | 上传文件名 |
+| on_conflict | VARCHAR(10) | NOT NULL | skip / update / fail |
+| total_records | INTEGER | NOT NULL | JSON 记录数 |
+| imported / updated / skipped / failed | INTEGER | NOT NULL | 各类处理结果计数 |
+| created_at | DATETIME | NOT NULL | 导入时间（UTC） |
+
 ## 5. API 约定
 
 Base URL：`http://127.0.0.1:8000/api/v1`；交互式文档：`/docs`。
@@ -95,6 +115,8 @@ Base URL：`http://127.0.0.1:8000/api/v1`；交互式文档：`/docs`。
 | --- | --- | --- |
 | GET | `/health` | 健康检查，含数据库连通性 |
 | POST | `/imports/json` | 上传 JSON 数据集，参数 `on_conflict=skip\|update\|fail` |
+| POST | `/imports/validate` | 只校验不入库的数据集预检；返回错误、警告与已有 id 计数 |
+| GET | `/imports/batches` | 最近导入批次摘要，参数 `limit` |
 | GET | `/jobs` | 分页查询岗位，支持多条件筛选 |
 | GET | `/jobs/{job_id}` | 岗位详情 |
 | GET | `/stats/overview` | 总量、企业数、平均/中位薪资、应届生占比 |
@@ -102,7 +124,10 @@ Base URL：`http://127.0.0.1:8000/api/v1`；交互式文档：`/docs`。
 | GET | `/stats/experience` | 经验分布、分岗位类别分布、应届生专项 |
 | GET | `/stats/skills` | 技能排行、技能类别覆盖、分岗位类别 Top 技能 |
 | GET | `/stats/salary` | 薪资分布、分岗位/学历/经验汇总 |
+| GET | `/stats/quality` | 数据集质量摘要：薪资缺失/单边/异常、未知学历/经验、空技能、重复来源链接、演示记录 |
+| GET | `/stats/cross` | 交叉计数：`row` 与 `column` 取 job_type / education / experience / city |
 | GET | `/meta/filters` | 筛选下拉选项（岗位类别、学历、经验、城市、技能） |
+| GET | `/exports/jobs.csv` | 按 `/jobs` 筛选导出 CSV（UTF-8 BOM，技能用分号分隔） |
 
 ### 5.2 查询参数
 
@@ -137,16 +162,28 @@ Base URL：`http://127.0.0.1:8000/api/v1`；交互式文档：`/docs`。
 
 ### 5.4 错误格式
 
-FastAPI 标准格式：
+统一保留 FastAPI 的 `detail` 字段（前端已依赖），并增加机器可读的 `code`；
+422 额外返回字段级 `errors`：
 
 ```json
-{ "detail": "错误说明" }
+{ "detail": "招聘记录不存在", "code": "not_found" }
 ```
+
+```json
+{
+  "detail": "请求参数校验失败",
+  "code": "validation_error",
+  "errors": [{ "loc": ["query", "page"], "msg": "Input should be greater than or equal to 1" }]
+}
+```
+
+错误码：`bad_request` / `not_found` / `payload_too_large` / `validation_error` /
+`service_unavailable` / `http_error`。OpenAPI 中通过 `ErrorResponse` 模型展示示例。
 
 - 400：JSON 格式错误、字段校验失败、重复 id（`on_conflict=fail`）、文件为空/非 JSON/非 UTF-8。
 - 404：岗位不存在。
 - 413：文件超过 `JOBLENS_MAX_UPLOAD_BYTES`。
-- 422：查询参数类型错误（FastAPI 自动生成）。
+- 422：查询参数类型错误。
 - 503：数据库不可用（健康检查）。
 
 ### 5.5 导入语义
@@ -190,6 +227,28 @@ FastAPI 标准格式：
 - `fresh_graduate_ratio = fresh_graduate_count / total_jobs`。
 - “经验不限”不等同于“接受应届生”，除非原始数据明确标注。
 
+### 6.5 数据质量
+
+`POST /imports/validate` 与 `scripts/check_dataset.py` 共用同一套只读检查：
+
+- 必填字段：id / company / position / job_type / city / education / experience /
+  source / source_url / collected_at；缺失只计入质量报告，不改变已有记录的入库规则。
+- 未知学历/经验：先按别名归一，再与规范词表比较；未知值保留原文并列入报告。
+- 薪资异常：已知边界 < 2000 或 > 100000 元/月；面议与单边薪资分别计数。
+- 技能：为空、超过 10 项、重复技能条目分别计数；重复项导入时去重。
+- 重复 id：同一文件内重复会阻止该行导入；已存在于数据库的 id 单独计数，按
+  `on_conflict` 处理。
+- 演示记录：source 含“演示/虚构”或 source_url 含 `example.com` 的岗位单独计数，
+  用于防止演示数据混入正式结论。
+
+`GET /stats/quality` 对已入库数据做同类检查；它不替代人工抽样核验。
+
+### 6.6 交叉统计
+
+`GET /stats/cross?row=job_type&column=education` 返回按 `row` 分组的 `column`
+分布，复用 `/stats/*` 的筛选参数。`row == column` 时返回对角线；前端目前未消费该接口，
+保留给报告与后续交互使用。`groups[].distribution[].ratio` 的分母是该行的岗位数。
+
 ## 7. 配置项
 
 | 环境变量 | 默认值 | 说明 |
@@ -225,9 +284,51 @@ npm run dev
 联调路径：前端 → Vite `/api` 代理 → FastAPI → SQLite。启动器实现见
 `scripts/dev.mjs`，支持 `npm run dev:backend` / `npm run dev:frontend` 单独启动。
 
+### 8.1 正式数据的检查与导入
+
+```bash
+cd backend
+
+# 1. 离线检查（不启动服务、不写库）
+python -m scripts.check_dataset data/raw/jobs_hangzhou_2026-11.json
+python -m scripts.check_dataset data/raw/jobs_hangzhou_2026-11.json --json > quality.json
+
+# 2. 服务启动后预检（不写库，额外报告数据库中已有 id）
+curl -X POST "http://127.0.0.1:8000/api/v1/imports/validate" \
+  -F "file=@data/raw/jobs_hangzhou_2026-11.json"
+
+# 3. 确认后正式导入
+curl -X POST "http://127.0.0.1:8000/api/v1/imports/json?on_conflict=skip" \
+  -F "file=@data/raw/jobs_hangzhou_2026-11.json"
+
+# 4. 查看批次与质量摘要
+curl "http://127.0.0.1:8000/api/v1/imports/batches"
+curl "http://127.0.0.1:8000/api/v1/stats/quality"
+
+# 5. 独立重算统计并与 API 逐项核对（需服务已启动且已导入同一数据集）
+python -m scripts.verify_stats --json > verify.json
+```
+
+`verify_stats.py` 用 Pandas 从原始 JSON 重算学历、经验、技能、薪资（含分岗位类别、
+学历、经验的分组），逐项对比 API；演示数据当前 359/359 项一致。
+
+### 8.2 重建与性能基准
+
+```bash
+# 字段/索引变化后：先停止 API，再重建并重新导入
+python -m scripts.reset_db --yes
+
+# 500 条临时数据下的接口延迟（临时 DB，不影响现有数据）
+python -m scripts.benchmark_api
+```
+
+演示数据下所有接口 median 与 p95 均低于 300ms。交付报告生成在
+`backend/data/reports/`，说明见该目录的 README。
+
 ## 9. 已知取舍
 
-- 不使用 Alembic：字段变化时删除数据库并重新导入（数据文件是事实来源）。
+- 不使用 Alembic：字段/索引变化时停止服务，运行 `scripts/reset_db.py --yes`
+  删除数据库并重新导入（数据文件是事实来源）。
 - 不引入用户体系与写接口权限：课程作品只读展示。
 - 技能分类是人工词表，不做 NLP 自动抽取；词表质量直接决定“其他”占比。
 - 统计在 Pandas 中完成，适用于数百条数据；数据量显著增长时应下推到 SQL。

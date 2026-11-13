@@ -1,0 +1,44 @@
+{
+  "dataset_name": "计算机类应届生招聘数据（10 条演示样本）",
+  "total_records": 10,
+  "valid_records": 10,
+  "invalid_records": 0,
+  "duplicate_ids": 0,
+  "existing_in_database": 0,
+  "missing_fields": {
+    "id": 0,
+    "company": 0,
+    "position": 0,
+    "job_type": 0,
+    "city": 0,
+    "education": 0,
+    "experience": 0,
+    "source": 0,
+    "source_url": 0,
+    "collected_at": 0
+  },
+  "salary_missing": 1,
+  "salary_single_bound": 0,
+  "salary_outliers": 0,
+  "unknown_education": [],
+  "unknown_experience": [],
+  "empty_skills": 0,
+  "over_limit_skills": 0,
+  "duplicate_skill_entries": 0,
+  "duplicate_source_urls": [],
+  "demo_records": 10,
+  "errors": [],
+  "warnings": [
+    {
+      "row": null,
+      "record_id": null,
+      "message": "薪资面议（两端为空）：1 条"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "演示/虚构记录 10 条；这些数据不能用于新闻结论"
+    }
+  ],
+  "warning_count": 2
+}

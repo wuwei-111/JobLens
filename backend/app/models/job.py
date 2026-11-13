@@ -5,7 +5,7 @@ from __future__ import annotations
 from datetime import date, datetime, timezone
 from typing import TYPE_CHECKING
 
-from sqlalchemy import Boolean, Date, DateTime, Integer, String, Text
+from sqlalchemy import Boolean, Date, DateTime, Index, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
@@ -23,6 +23,11 @@ class JobPosting(Base):
     """
 
     __tablename__ = "job_postings"
+    __table_args__ = (
+        Index("ix_job_postings_job_type_education", "job_type", "education"),
+        Index("ix_job_postings_city_job_type", "city", "job_type"),
+        Index("ix_job_postings_experience_education", "experience", "education"),
+    )
 
     id: Mapped[str] = mapped_column(String(64), primary_key=True)
     company: Mapped[str] = mapped_column(String(200), nullable=False, index=True)

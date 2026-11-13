@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session, selectinload
 
 from app.db.session import get_db
 from app.models import JobPosting
+from app.schemas.error import ErrorResponse
 from app.schemas.job import JobListResponse, JobOut
 from app.services.filters import build_job_conditions
 
@@ -79,7 +80,12 @@ def list_jobs(
     )
 
 
-@router.get("/{job_id}", response_model=JobOut, summary="查询单个招聘岗位")
+@router.get(
+    "/{job_id}",
+    response_model=JobOut,
+    summary="查询单个招聘岗位",
+    responses={404: {"model": ErrorResponse, "description": "岗位不存在"}},
+)
 def get_job(job_id: str, db: Session = Depends(get_db)) -> JobOut:
     job = db.get(JobPosting, job_id)
     if job is None:

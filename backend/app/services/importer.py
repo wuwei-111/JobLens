@@ -12,7 +12,7 @@ from typing import Any
 from pydantic import ValidationError
 from sqlalchemy.orm import Session
 
-from app.models import JobPosting, JobSkill
+from app.models import ImportBatch, JobPosting, JobSkill
 from app.schemas.import_ import ImportErrorItem, ImportResult, OnConflict
 from app.schemas.job import JobRecordIn
 from app.services.normalization import (
@@ -41,7 +41,7 @@ _IMPORTABLE_FIELDS = (
 )
 
 
-def _parse_dataset(raw: Any) -> tuple[str, date | None, list[Any]]:
+def parse_dataset(raw: Any) -> tuple[str, date | None, list[Any]]:
     if not isinstance(raw, dict):
         raise ValueError("JSON 根节点必须是对象")
     records = raw.get("records")
@@ -61,7 +61,7 @@ def _parse_dataset(raw: Any) -> tuple[str, date | None, list[Any]]:
     return dataset_name, collected_at, records
 
 
-def _format_validation_error(exc: ValidationError) -> str:
+def format_validation_error(exc: ValidationError) -> str:
     parts: list[str] = []
     for error in exc.errors():
         location = ".".join(str(item) for item in error["loc"]) or "record"
@@ -95,7 +95,7 @@ def import_dataset(
     ``skip`` ignores them, ``update`` replaces them, ``fail`` reports them as
     errors. Duplicate ids *inside the same file* are always reported as errors.
     """
-    dataset_name, dataset_collected_at, records = _parse_dataset(raw_dataset)
+    dataset_name, dataset_collected_at, records = parse_dataset(raw_dataset)
 
     imported = updated = skipped = failed = 0
     errors: list[ImportErrorItem] = []
@@ -123,7 +123,7 @@ def import_dataset(
                 ImportErrorItem(
                     row=row_number,
                     record_id=str(raw_id) if raw_id is not None else None,
-                    message=_format_validation_error(exc),
+                    message=format_validation_error(exc),
                 )
             )
             continue
@@ -179,6 +179,19 @@ def import_dataset(
         )
         imported += 1
 
+    batch = ImportBatch(
+        dataset_name=dataset_name,
+        source_file=source_file,
+        on_conflict=on_conflict,
+        total_records=len(records),
+        imported=imported,
+        updated=updated,
+        skipped=skipped,
+        failed=failed,
+    )
+    db.add(batch)
+    db.flush()
+    batch_id = batch.id
     db.commit()
 
     return ImportResult(
@@ -190,7 +203,8 @@ def import_dataset(
         skipped=skipped,
         failed=failed,
         errors=errors,
+        batch_id=batch_id,
     )
 
 
-__all__ = ["import_dataset"]
+__all__ = ["format_validation_error", "import_dataset", "parse_dataset"]

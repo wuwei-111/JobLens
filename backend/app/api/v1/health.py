@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session
 
 from app.core import settings
 from app.db.session import get_db
+from app.schemas.error import ErrorResponse
 
 router = APIRouter()
 
@@ -18,7 +19,12 @@ class HealthOut(BaseModel):
     version: str
 
 
-@router.get("/health", response_model=HealthOut, summary="健康检查")
+@router.get(
+    "/health",
+    response_model=HealthOut,
+    summary="健康检查",
+    responses={503: {"model": ErrorResponse, "description": "数据库不可用"}},
+)
 def health(db: Session = Depends(get_db)) -> HealthOut:
     try:
         db.execute(text("SELECT 1"))

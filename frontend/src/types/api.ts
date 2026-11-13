@@ -155,3 +155,84 @@ export interface StatsFilters {
   experience?: string
   city?: string
 }
+
+/** Backend additions that are documented now and may be surfaced later. */
+
+export interface ValueCount {
+  value: string
+  count: number
+}
+
+export interface QualityStats {
+  total_jobs: number
+  salary_available: number
+  salary_missing: number
+  salary_single_bound: number
+  salary_invalid_range: number
+  salary_outliers: number
+  unknown_education: ValueCount[]
+  unknown_experience: ValueCount[]
+  jobs_without_skills: number
+  duplicate_source_urls: ValueCount[]
+  demo_records: number
+  total_companies: number
+  total_cities: number
+  collected_from: string | null
+  collected_to: string | null
+  warnings: string[]
+}
+
+export interface CrossStats {
+  row_dimension: string
+  column_dimension: string
+  total: number
+  groups: GroupedCounts[]
+}
+
+export interface ImportBatch {
+  id: number
+  dataset_name: string
+  source_file: string | null
+  on_conflict: string
+  total_records: number
+  imported: number
+  updated: number
+  skipped: number
+  failed: number
+  created_at: string
+}
+
+export interface ValidationIssue {
+  row: number | null
+  record_id: string | null
+  message: string
+}
+
+export interface ValidationReport {
+  dataset_name: string
+  total_records: number
+  valid_records: number
+  invalid_records: number
+  duplicate_ids: number
+  existing_in_database: number
+  missing_fields: Record<string, number>
+  salary_missing: number
+  salary_single_bound: number
+  salary_outliers: number
+  unknown_education: ValueCount[]
+  unknown_experience: ValueCount[]
+  empty_skills: number
+  over_limit_skills: number
+  duplicate_skill_entries: number
+  duplicate_source_urls: ValueCount[]
+  demo_records: number
+  errors: ValidationIssue[]
+  warnings: ValidationIssue[]
+  warning_count: number
+}
+
+export interface ApiError {
+  detail: string | unknown[] | Record<string, unknown>
+  code: string
+  errors?: unknown[]
+}

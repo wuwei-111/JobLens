@@ -1,0 +1,2530 @@
+{
+  "dataset_name": "计算机类应届生招聘数据（10 条演示样本）",
+  "source_file": "data\\raw\\sample_jobs.json",
+  "api": "http://127.0.0.1:8000/api/v1",
+  "dataset": {
+    "valid_records": 10,
+    "invalid_records": 0,
+    "duplicate_ids": 0
+  },
+  "summary": {
+    "total": 359,
+    "passed": 359,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "section": "overview",
+      "name": "total_jobs",
+      "expected": 10,
+      "actual": 10,
+      "passed": true
+    },
+    {
+      "section": "overview",
+      "name": "total_companies",
+      "expected": 10,
+      "actual": 10,
+      "passed": true
+    },
+    {
+      "section": "overview",
+      "name": "total_cities",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "overview",
+      "name": "total_job_types",
+      "expected": 8,
+      "actual": 8,
+      "passed": true
+    },
+    {
+      "section": "overview",
+      "name": "total_skills",
+      "expected": 34,
+      "actual": 34,
+      "passed": true
+    },
+    {
+      "section": "overview",
+      "name": "salary_available",
+      "expected": 9,
+      "actual": 9,
+      "passed": true
+    },
+    {
+      "section": "overview",
+      "name": "salary_avg",
+      "expected": 15166.67,
+      "actual": 15166.67,
+      "passed": true
+    },
+    {
+      "section": "overview",
+      "name": "salary_median",
+      "expected": 12500.0,
+      "actual": 12500.0,
+      "passed": true
+    },
+    {
+      "section": "overview",
+      "name": "fresh_graduate_count",
+      "expected": 8,
+      "actual": 8,
+      "passed": true
+    },
+    {
+      "section": "overview",
+      "name": "fresh_graduate_ratio",
+      "expected": 0.8,
+      "actual": 0.8,
+      "passed": true
+    },
+    {
+      "section": "overview",
+      "name": "last_collected_at",
+      "expected": "2026-11-13",
+      "actual": "2026-11-13",
+      "passed": true
+    },
+    {
+      "section": "education",
+      "name": "total",
+      "expected": 10,
+      "actual": 10,
+      "passed": true
+    },
+    {
+      "section": "education.breakdown.不限",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "education.breakdown.不限",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "education.breakdown.大专",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "education.breakdown.大专",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "education.breakdown.本科",
+      "name": "count",
+      "expected": 6,
+      "actual": 6,
+      "passed": true
+    },
+    {
+      "section": "education.breakdown.本科",
+      "name": "ratio",
+      "expected": 0.6,
+      "actual": 0.6,
+      "passed": true
+    },
+    {
+      "section": "education.breakdown.硕士",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "education.breakdown.硕士",
+      "name": "ratio",
+      "expected": 0.2,
+      "actual": 0.2,
+      "passed": true
+    },
+    {
+      "section": "education.by_job_type.前端开发",
+      "name": "total",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "education.by_job_type.前端开发.本科",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "education.by_job_type.后端开发",
+      "name": "total",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "education.by_job_type.后端开发.不限",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "education.by_job_type.后端开发.本科",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "education.by_job_type.大数据开发",
+      "name": "total",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "education.by_job_type.大数据开发.本科",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "education.by_job_type.嵌入式开发",
+      "name": "total",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "education.by_job_type.嵌入式开发.本科",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "education.by_job_type.数据分析",
+      "name": "total",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "education.by_job_type.数据分析.本科",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "education.by_job_type.测试开发",
+      "name": "total",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "education.by_job_type.测试开发.大专",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "education.by_job_type.算法工程",
+      "name": "total",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "education.by_job_type.算法工程.硕士",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "education.by_job_type.运维开发",
+      "name": "total",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "education.by_job_type.运维开发.本科",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "experience",
+      "name": "total",
+      "expected": 10,
+      "actual": 10,
+      "passed": true
+    },
+    {
+      "section": "experience.breakdown.1-3年",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "experience.breakdown.1-3年",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "experience.breakdown.3-5年",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "experience.breakdown.3-5年",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "experience.breakdown.应届生",
+      "name": "count",
+      "expected": 8,
+      "actual": 8,
+      "passed": true
+    },
+    {
+      "section": "experience.breakdown.应届生",
+      "name": "ratio",
+      "expected": 0.8,
+      "actual": 0.8,
+      "passed": true
+    },
+    {
+      "section": "experience.by_job_type.前端开发",
+      "name": "total",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "experience.by_job_type.前端开发.应届生",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "experience.by_job_type.后端开发",
+      "name": "total",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "experience.by_job_type.后端开发.应届生",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "experience.by_job_type.大数据开发",
+      "name": "total",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "experience.by_job_type.大数据开发.1-3年",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "experience.by_job_type.嵌入式开发",
+      "name": "total",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "experience.by_job_type.嵌入式开发.应届生",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "experience.by_job_type.数据分析",
+      "name": "total",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "experience.by_job_type.数据分析.应届生",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "experience.by_job_type.测试开发",
+      "name": "total",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "experience.by_job_type.测试开发.应届生",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "experience.by_job_type.算法工程",
+      "name": "total",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "experience.by_job_type.算法工程.应届生",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "experience.by_job_type.运维开发",
+      "name": "total",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "experience.by_job_type.运维开发.3-5年",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "experience.fresh_graduate",
+      "name": "count",
+      "expected": 8,
+      "actual": 8,
+      "passed": true
+    },
+    {
+      "section": "experience.fresh_graduate",
+      "name": "ratio",
+      "expected": 0.8,
+      "actual": 0.8,
+      "passed": true
+    },
+    {
+      "section": "experience.fresh_graduate.breakdown.应届生",
+      "name": "count",
+      "expected": 8,
+      "actual": 8,
+      "passed": true
+    },
+    {
+      "section": "experience.fresh_graduate.breakdown.应届生",
+      "name": "ratio",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "section": "skills",
+      "name": "total_jobs",
+      "expected": 10,
+      "actual": 10,
+      "passed": true
+    },
+    {
+      "section": "skills",
+      "name": "total_skills",
+      "expected": 34,
+      "actual": 34,
+      "passed": true
+    },
+    {
+      "section": "skills.items.C",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.C",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.C",
+      "name": "category",
+      "expected": "编程语言",
+      "actual": "编程语言",
+      "passed": true
+    },
+    {
+      "section": "skills.items.C++",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.C++",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.C++",
+      "name": "category",
+      "expected": "编程语言",
+      "actual": "编程语言",
+      "passed": true
+    },
+    {
+      "section": "skills.items.Docker",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Docker",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Docker",
+      "name": "category",
+      "expected": "工具与平台",
+      "actual": "工具与平台",
+      "passed": true
+    },
+    {
+      "section": "skills.items.Git",
+      "name": "count",
+      "expected": 8,
+      "actual": 8,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Git",
+      "name": "ratio",
+      "expected": 0.8,
+      "actual": 0.8,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Git",
+      "name": "category",
+      "expected": "工具与平台",
+      "actual": "工具与平台",
+      "passed": true
+    },
+    {
+      "section": "skills.items.Go",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Go",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Go",
+      "name": "category",
+      "expected": "编程语言",
+      "actual": "编程语言",
+      "passed": true
+    },
+    {
+      "section": "skills.items.HTML/CSS",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.HTML/CSS",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.HTML/CSS",
+      "name": "category",
+      "expected": "前端技术",
+      "actual": "前端技术",
+      "passed": true
+    },
+    {
+      "section": "skills.items.Hive",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Hive",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Hive",
+      "name": "category",
+      "expected": "数据库",
+      "actual": "数据库",
+      "passed": true
+    },
+    {
+      "section": "skills.items.Java",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Java",
+      "name": "ratio",
+      "expected": 0.2,
+      "actual": 0.2,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Java",
+      "name": "category",
+      "expected": "编程语言",
+      "actual": "编程语言",
+      "passed": true
+    },
+    {
+      "section": "skills.items.JavaScript",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.JavaScript",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.JavaScript",
+      "name": "category",
+      "expected": "编程语言",
+      "actual": "编程语言",
+      "passed": true
+    },
+    {
+      "section": "skills.items.Kafka",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Kafka",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Kafka",
+      "name": "category",
+      "expected": "工具与平台",
+      "actual": "工具与平台",
+      "passed": true
+    },
+    {
+      "section": "skills.items.Kubernetes",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Kubernetes",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Kubernetes",
+      "name": "category",
+      "expected": "工具与平台",
+      "actual": "工具与平台",
+      "passed": true
+    },
+    {
+      "section": "skills.items.Linux",
+      "name": "count",
+      "expected": 5,
+      "actual": 5,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Linux",
+      "name": "ratio",
+      "expected": 0.5,
+      "actual": 0.5,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Linux",
+      "name": "category",
+      "expected": "工具与平台",
+      "actual": "工具与平台",
+      "passed": true
+    },
+    {
+      "section": "skills.items.MySQL",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "skills.items.MySQL",
+      "name": "ratio",
+      "expected": 0.2,
+      "actual": 0.2,
+      "passed": true
+    },
+    {
+      "section": "skills.items.MySQL",
+      "name": "category",
+      "expected": "数据库",
+      "actual": "数据库",
+      "passed": true
+    },
+    {
+      "section": "skills.items.NLP",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.NLP",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.NLP",
+      "name": "category",
+      "expected": "人工智能",
+      "actual": "人工智能",
+      "passed": true
+    },
+    {
+      "section": "skills.items.Nginx",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Nginx",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Nginx",
+      "name": "category",
+      "expected": "工具与平台",
+      "actual": "工具与平台",
+      "passed": true
+    },
+    {
+      "section": "skills.items.Pandas",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Pandas",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Pandas",
+      "name": "category",
+      "expected": "工具与平台",
+      "actual": "工具与平台",
+      "passed": true
+    },
+    {
+      "section": "skills.items.PyTorch",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "skills.items.PyTorch",
+      "name": "ratio",
+      "expected": 0.2,
+      "actual": 0.2,
+      "passed": true
+    },
+    {
+      "section": "skills.items.PyTorch",
+      "name": "category",
+      "expected": "人工智能",
+      "actual": "人工智能",
+      "passed": true
+    },
+    {
+      "section": "skills.items.Pytest",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Pytest",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Pytest",
+      "name": "category",
+      "expected": "测试",
+      "actual": "测试",
+      "passed": true
+    },
+    {
+      "section": "skills.items.Python",
+      "name": "count",
+      "expected": 5,
+      "actual": 5,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Python",
+      "name": "ratio",
+      "expected": 0.5,
+      "actual": 0.5,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Python",
+      "name": "category",
+      "expected": "编程语言",
+      "actual": "编程语言",
+      "passed": true
+    },
+    {
+      "section": "skills.items.Redis",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Redis",
+      "name": "ratio",
+      "expected": 0.2,
+      "actual": 0.2,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Redis",
+      "name": "category",
+      "expected": "数据库",
+      "actual": "数据库",
+      "passed": true
+    },
+    {
+      "section": "skills.items.SQL",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.SQL",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.SQL",
+      "name": "category",
+      "expected": "编程语言",
+      "actual": "编程语言",
+      "passed": true
+    },
+    {
+      "section": "skills.items.Scala",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Scala",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Scala",
+      "name": "category",
+      "expected": "编程语言",
+      "actual": "编程语言",
+      "passed": true
+    },
+    {
+      "section": "skills.items.Spark",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Spark",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Spark",
+      "name": "category",
+      "expected": "工具与平台",
+      "actual": "工具与平台",
+      "passed": true
+    },
+    {
+      "section": "skills.items.Spring Boot",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Spring Boot",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Spring Boot",
+      "name": "category",
+      "expected": "开发框架",
+      "actual": "开发框架",
+      "passed": true
+    },
+    {
+      "section": "skills.items.TypeScript",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.TypeScript",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.TypeScript",
+      "name": "category",
+      "expected": "编程语言",
+      "actual": "编程语言",
+      "passed": true
+    },
+    {
+      "section": "skills.items.Vue",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Vue",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.Vue",
+      "name": "category",
+      "expected": "开发框架",
+      "actual": "开发框架",
+      "passed": true
+    },
+    {
+      "section": "skills.items.单片机",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.单片机",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.单片机",
+      "name": "category",
+      "expected": "计算机基础",
+      "actual": "计算机基础",
+      "passed": true
+    },
+    {
+      "section": "skills.items.接口测试",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.接口测试",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.接口测试",
+      "name": "category",
+      "expected": "测试",
+      "actual": "测试",
+      "passed": true
+    },
+    {
+      "section": "skills.items.操作系统",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.操作系统",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.操作系统",
+      "name": "category",
+      "expected": "计算机基础",
+      "actual": "计算机基础",
+      "passed": true
+    },
+    {
+      "section": "skills.items.数据可视化",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.数据可视化",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.数据可视化",
+      "name": "category",
+      "expected": "工具与平台",
+      "actual": "工具与平台",
+      "passed": true
+    },
+    {
+      "section": "skills.items.机器学习",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "skills.items.机器学习",
+      "name": "ratio",
+      "expected": 0.2,
+      "actual": 0.2,
+      "passed": true
+    },
+    {
+      "section": "skills.items.机器学习",
+      "name": "category",
+      "expected": "人工智能",
+      "actual": "人工智能",
+      "passed": true
+    },
+    {
+      "section": "skills.items.深度学习",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "skills.items.深度学习",
+      "name": "ratio",
+      "expected": 0.2,
+      "actual": 0.2,
+      "passed": true
+    },
+    {
+      "section": "skills.items.深度学习",
+      "name": "category",
+      "expected": "人工智能",
+      "actual": "人工智能",
+      "passed": true
+    },
+    {
+      "section": "skills.items.算法",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.算法",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.算法",
+      "name": "category",
+      "expected": "计算机基础",
+      "actual": "计算机基础",
+      "passed": true
+    },
+    {
+      "section": "skills.items.计算机视觉",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.计算机视觉",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.items.计算机视觉",
+      "name": "category",
+      "expected": "人工智能",
+      "actual": "人工智能",
+      "passed": true
+    },
+    {
+      "section": "skills.categories.人工智能",
+      "name": "count",
+      "expected": 3,
+      "actual": 3,
+      "passed": true
+    },
+    {
+      "section": "skills.categories.人工智能",
+      "name": "ratio",
+      "expected": 0.3,
+      "actual": 0.3,
+      "passed": true
+    },
+    {
+      "section": "skills.categories.前端技术",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.categories.前端技术",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.categories.工具与平台",
+      "name": "count",
+      "expected": 10,
+      "actual": 10,
+      "passed": true
+    },
+    {
+      "section": "skills.categories.工具与平台",
+      "name": "ratio",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "section": "skills.categories.开发框架",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "skills.categories.开发框架",
+      "name": "ratio",
+      "expected": 0.2,
+      "actual": 0.2,
+      "passed": true
+    },
+    {
+      "section": "skills.categories.数据库",
+      "name": "count",
+      "expected": 3,
+      "actual": 3,
+      "passed": true
+    },
+    {
+      "section": "skills.categories.数据库",
+      "name": "ratio",
+      "expected": 0.3,
+      "actual": 0.3,
+      "passed": true
+    },
+    {
+      "section": "skills.categories.测试",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.categories.测试",
+      "name": "ratio",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "section": "skills.categories.编程语言",
+      "name": "count",
+      "expected": 10,
+      "actual": 10,
+      "passed": true
+    },
+    {
+      "section": "skills.categories.编程语言",
+      "name": "ratio",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "section": "skills.categories.计算机基础",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "skills.categories.计算机基础",
+      "name": "ratio",
+      "expected": 0.2,
+      "actual": 0.2,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.前端开发",
+      "name": "total_jobs",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.前端开发.Git",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.前端开发.HTML/CSS",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.前端开发.JavaScript",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.前端开发.TypeScript",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.前端开发.Vue",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.后端开发",
+      "name": "total_jobs",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.后端开发.Git",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.后端开发.Go",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.后端开发.Java",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.后端开发.Linux",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.后端开发.MySQL",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.后端开发.Redis",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.后端开发.Spring Boot",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.大数据开发",
+      "name": "total_jobs",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.大数据开发.Hive",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.大数据开发.Java",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.大数据开发.Kafka",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.大数据开发.Linux",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.大数据开发.Scala",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.大数据开发.Spark",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.嵌入式开发",
+      "name": "total_jobs",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.嵌入式开发.C",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.嵌入式开发.C++",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.嵌入式开发.Git",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.嵌入式开发.Linux",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.嵌入式开发.单片机",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.嵌入式开发.操作系统",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.数据分析",
+      "name": "total_jobs",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.数据分析.Pandas",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.数据分析.Python",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.数据分析.SQL",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.数据分析.数据可视化",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.数据分析.机器学习",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.测试开发",
+      "name": "total_jobs",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.测试开发.Git",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.测试开发.Linux",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.测试开发.Pytest",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.测试开发.Python",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.测试开发.接口测试",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.算法工程",
+      "name": "total_jobs",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.算法工程.Git",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.算法工程.NLP",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.算法工程.PyTorch",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.算法工程.Python",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.算法工程.机器学习",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.算法工程.深度学习",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.算法工程.算法",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.算法工程.计算机视觉",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.运维开发",
+      "name": "total_jobs",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.运维开发.Docker",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.运维开发.Git",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.运维开发.Kubernetes",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.运维开发.Linux",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.运维开发.Nginx",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "skills.by_job_type.运维开发.Python",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "salary",
+      "name": "total_jobs",
+      "expected": 10,
+      "actual": 10,
+      "passed": true
+    },
+    {
+      "section": "salary",
+      "name": "salary_available",
+      "expected": 9,
+      "actual": 9,
+      "passed": true
+    },
+    {
+      "section": "salary.overall",
+      "name": "count",
+      "expected": 9,
+      "actual": 9,
+      "passed": true
+    },
+    {
+      "section": "salary.overall",
+      "name": "avg",
+      "expected": 15166.67,
+      "actual": 15166.67,
+      "passed": true
+    },
+    {
+      "section": "salary.overall",
+      "name": "median",
+      "expected": 12500.0,
+      "actual": 12500.0,
+      "passed": true
+    },
+    {
+      "section": "salary.overall",
+      "name": "p25",
+      "expected": 10500.0,
+      "actual": 10500.0,
+      "passed": true
+    },
+    {
+      "section": "salary.overall",
+      "name": "p75",
+      "expected": 18000.0,
+      "actual": 18000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.overall",
+      "name": "min",
+      "expected": 9000.0,
+      "actual": 9000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.overall",
+      "name": "max",
+      "expected": 28500.0,
+      "actual": 28500.0,
+      "passed": true
+    },
+    {
+      "section": "salary.distribution.12-16K",
+      "name": "count",
+      "expected": 3,
+      "actual": 3,
+      "passed": true
+    },
+    {
+      "section": "salary.distribution.12-16K",
+      "name": "ratio",
+      "expected": 0.3333,
+      "actual": 0.3333,
+      "passed": true
+    },
+    {
+      "section": "salary.distribution.16-20K",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "salary.distribution.16-20K",
+      "name": "ratio",
+      "expected": 0.1111,
+      "actual": 0.1111,
+      "passed": true
+    },
+    {
+      "section": "salary.distribution.20-30K",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "salary.distribution.20-30K",
+      "name": "ratio",
+      "expected": 0.2222,
+      "actual": 0.2222,
+      "passed": true
+    },
+    {
+      "section": "salary.distribution.30K以上",
+      "name": "count",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "section": "salary.distribution.30K以上",
+      "name": "ratio",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "section": "salary.distribution.8-12K",
+      "name": "count",
+      "expected": 3,
+      "actual": 3,
+      "passed": true
+    },
+    {
+      "section": "salary.distribution.8-12K",
+      "name": "ratio",
+      "expected": 0.3333,
+      "actual": 0.3333,
+      "passed": true
+    },
+    {
+      "section": "salary.distribution.8K以下",
+      "name": "count",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "section": "salary.distribution.8K以下",
+      "name": "ratio",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.前端开发",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.前端开发",
+      "name": "avg",
+      "expected": 10500.0,
+      "actual": 10500.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.前端开发",
+      "name": "median",
+      "expected": 10500.0,
+      "actual": 10500.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.前端开发",
+      "name": "p25",
+      "expected": 10500.0,
+      "actual": 10500.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.前端开发",
+      "name": "p75",
+      "expected": 10500.0,
+      "actual": 10500.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.前端开发",
+      "name": "min",
+      "expected": 10500.0,
+      "actual": 10500.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.前端开发",
+      "name": "max",
+      "expected": 10500.0,
+      "actual": 10500.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.后端开发",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.后端开发",
+      "name": "avg",
+      "expected": 12500.0,
+      "actual": 12500.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.后端开发",
+      "name": "median",
+      "expected": 12500.0,
+      "actual": 12500.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.后端开发",
+      "name": "p25",
+      "expected": 12500.0,
+      "actual": 12500.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.后端开发",
+      "name": "p75",
+      "expected": 12500.0,
+      "actual": 12500.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.后端开发",
+      "name": "min",
+      "expected": 12500.0,
+      "actual": 12500.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.后端开发",
+      "name": "max",
+      "expected": 12500.0,
+      "actual": 12500.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.大数据开发",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.大数据开发",
+      "name": "avg",
+      "expected": 18000.0,
+      "actual": 18000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.大数据开发",
+      "name": "median",
+      "expected": 18000.0,
+      "actual": 18000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.大数据开发",
+      "name": "p25",
+      "expected": 18000.0,
+      "actual": 18000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.大数据开发",
+      "name": "p75",
+      "expected": 18000.0,
+      "actual": 18000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.大数据开发",
+      "name": "min",
+      "expected": 18000.0,
+      "actual": 18000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.大数据开发",
+      "name": "max",
+      "expected": 18000.0,
+      "actual": 18000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.嵌入式开发",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.嵌入式开发",
+      "name": "avg",
+      "expected": 12000.0,
+      "actual": 12000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.嵌入式开发",
+      "name": "median",
+      "expected": 12000.0,
+      "actual": 12000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.嵌入式开发",
+      "name": "p25",
+      "expected": 12000.0,
+      "actual": 12000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.嵌入式开发",
+      "name": "p75",
+      "expected": 12000.0,
+      "actual": 12000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.嵌入式开发",
+      "name": "min",
+      "expected": 12000.0,
+      "actual": 12000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.嵌入式开发",
+      "name": "max",
+      "expected": 12000.0,
+      "actual": 12000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.数据分析",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.数据分析",
+      "name": "avg",
+      "expected": 10000.0,
+      "actual": 10000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.数据分析",
+      "name": "median",
+      "expected": 10000.0,
+      "actual": 10000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.数据分析",
+      "name": "p25",
+      "expected": 10000.0,
+      "actual": 10000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.数据分析",
+      "name": "p75",
+      "expected": 10000.0,
+      "actual": 10000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.数据分析",
+      "name": "min",
+      "expected": 10000.0,
+      "actual": 10000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.数据分析",
+      "name": "max",
+      "expected": 10000.0,
+      "actual": 10000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.测试开发",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.测试开发",
+      "name": "avg",
+      "expected": 9000.0,
+      "actual": 9000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.测试开发",
+      "name": "median",
+      "expected": 9000.0,
+      "actual": 9000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.测试开发",
+      "name": "p25",
+      "expected": 9000.0,
+      "actual": 9000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.测试开发",
+      "name": "p75",
+      "expected": 9000.0,
+      "actual": 9000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.测试开发",
+      "name": "min",
+      "expected": 9000.0,
+      "actual": 9000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.测试开发",
+      "name": "max",
+      "expected": 9000.0,
+      "actual": 9000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.算法工程",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.算法工程",
+      "name": "avg",
+      "expected": 25750.0,
+      "actual": 25750.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.算法工程",
+      "name": "median",
+      "expected": 25750.0,
+      "actual": 25750.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.算法工程",
+      "name": "p25",
+      "expected": 24375.0,
+      "actual": 24375.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.算法工程",
+      "name": "p75",
+      "expected": 27125.0,
+      "actual": 27125.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.算法工程",
+      "name": "min",
+      "expected": 23000.0,
+      "actual": 23000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.算法工程",
+      "name": "max",
+      "expected": 28500.0,
+      "actual": 28500.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.运维开发",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.运维开发",
+      "name": "avg",
+      "expected": 13000.0,
+      "actual": 13000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.运维开发",
+      "name": "median",
+      "expected": 13000.0,
+      "actual": 13000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.运维开发",
+      "name": "p25",
+      "expected": 13000.0,
+      "actual": 13000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.运维开发",
+      "name": "p75",
+      "expected": 13000.0,
+      "actual": 13000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.运维开发",
+      "name": "min",
+      "expected": 13000.0,
+      "actual": 13000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_job_type.运维开发",
+      "name": "max",
+      "expected": 13000.0,
+      "actual": 13000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.大专",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.大专",
+      "name": "avg",
+      "expected": 9000.0,
+      "actual": 9000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.大专",
+      "name": "median",
+      "expected": 9000.0,
+      "actual": 9000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.大专",
+      "name": "p25",
+      "expected": 9000.0,
+      "actual": 9000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.大专",
+      "name": "p75",
+      "expected": 9000.0,
+      "actual": 9000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.大专",
+      "name": "min",
+      "expected": 9000.0,
+      "actual": 9000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.大专",
+      "name": "max",
+      "expected": 9000.0,
+      "actual": 9000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.本科",
+      "name": "count",
+      "expected": 6,
+      "actual": 6,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.本科",
+      "name": "avg",
+      "expected": 12666.67,
+      "actual": 12666.67,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.本科",
+      "name": "median",
+      "expected": 12250.0,
+      "actual": 12250.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.本科",
+      "name": "p25",
+      "expected": 10875.0,
+      "actual": 10875.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.本科",
+      "name": "p75",
+      "expected": 12875.0,
+      "actual": 12875.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.本科",
+      "name": "min",
+      "expected": 10000.0,
+      "actual": 10000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.本科",
+      "name": "max",
+      "expected": 18000.0,
+      "actual": 18000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.硕士",
+      "name": "count",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.硕士",
+      "name": "avg",
+      "expected": 25750.0,
+      "actual": 25750.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.硕士",
+      "name": "median",
+      "expected": 25750.0,
+      "actual": 25750.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.硕士",
+      "name": "p25",
+      "expected": 24375.0,
+      "actual": 24375.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.硕士",
+      "name": "p75",
+      "expected": 27125.0,
+      "actual": 27125.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.硕士",
+      "name": "min",
+      "expected": 23000.0,
+      "actual": 23000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_education.硕士",
+      "name": "max",
+      "expected": 28500.0,
+      "actual": 28500.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.1-3年",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.1-3年",
+      "name": "avg",
+      "expected": 18000.0,
+      "actual": 18000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.1-3年",
+      "name": "median",
+      "expected": 18000.0,
+      "actual": 18000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.1-3年",
+      "name": "p25",
+      "expected": 18000.0,
+      "actual": 18000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.1-3年",
+      "name": "p75",
+      "expected": 18000.0,
+      "actual": 18000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.1-3年",
+      "name": "min",
+      "expected": 18000.0,
+      "actual": 18000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.1-3年",
+      "name": "max",
+      "expected": 18000.0,
+      "actual": 18000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.3-5年",
+      "name": "count",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.3-5年",
+      "name": "avg",
+      "expected": 13000.0,
+      "actual": 13000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.3-5年",
+      "name": "median",
+      "expected": 13000.0,
+      "actual": 13000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.3-5年",
+      "name": "p25",
+      "expected": 13000.0,
+      "actual": 13000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.3-5年",
+      "name": "p75",
+      "expected": 13000.0,
+      "actual": 13000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.3-5年",
+      "name": "min",
+      "expected": 13000.0,
+      "actual": 13000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.3-5年",
+      "name": "max",
+      "expected": 13000.0,
+      "actual": 13000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.应届生",
+      "name": "count",
+      "expected": 7,
+      "actual": 7,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.应届生",
+      "name": "avg",
+      "expected": 15071.43,
+      "actual": 15071.43,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.应届生",
+      "name": "median",
+      "expected": 12000.0,
+      "actual": 12000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.应届生",
+      "name": "p25",
+      "expected": 10250.0,
+      "actual": 10250.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.应届生",
+      "name": "p75",
+      "expected": 17750.0,
+      "actual": 17750.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.应届生",
+      "name": "min",
+      "expected": 9000.0,
+      "actual": 9000.0,
+      "passed": true
+    },
+    {
+      "section": "salary.by_experience.应届生",
+      "name": "max",
+      "expected": 28500.0,
+      "actual": 28500.0,
+      "passed": true
+    }
+  ]
+}

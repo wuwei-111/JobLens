@@ -5,7 +5,10 @@ from sqlalchemy.orm import Session
 
 from app.api.deps import StatsFilters, get_stats_filters
 from app.db.session import get_db
+from app.schemas.quality import QualityStatsOut
 from app.schemas.stats import (
+    CrossDimension,
+    CrossStatsOut,
     EducationStatsOut,
     ExperienceStatsOut,
     OverviewOut,
@@ -13,6 +16,7 @@ from app.schemas.stats import (
     SkillsStatsOut,
 )
 from app.services import stats as stats_service
+from app.services.quality import get_quality_stats
 
 router = APIRouter()
 
@@ -20,6 +24,31 @@ router = APIRouter()
 @router.get("/overview", response_model=OverviewOut, summary="数据总览")
 def overview(db: Session = Depends(get_db)) -> OverviewOut:
     return stats_service.get_overview(db)
+
+
+@router.get("/quality", response_model=QualityStatsOut, summary="数据质量摘要")
+def quality_stats(db: Session = Depends(get_db)) -> QualityStatsOut:
+    return get_quality_stats(db)
+
+
+@router.get(
+    "/cross",
+    response_model=CrossStatsOut,
+    summary="交叉统计",
+    description=(
+        "按一个维度分组，统计另一个维度的分布。可用维度："
+        "job_type / education / experience / city；共用学历、经验、岗位类别、城市筛选。"
+    ),
+)
+def cross_stats(
+    row: CrossDimension = Query(..., description="行维度"),
+    column: CrossDimension = Query(..., description="列维度"),
+    filters: StatsFilters = Depends(get_stats_filters),
+    db: Session = Depends(get_db),
+) -> CrossStatsOut:
+    return stats_service.get_cross_stats(
+        db, row=row, column=column, **filters.model_dump()
+    )
 
 
 @router.get("/education", response_model=EducationStatsOut, summary="学历要求统计")

@@ -1,0 +1,11 @@
+﻿id,company,position,job_type,city,salary_min,salary_max,education,experience,is_fresh_graduate,skills,source,source_url,collected_at
+job_001,星澜科技（虚构）,Java开发工程师,后端开发,杭州,10000,15000,本科,应届生,是,Git; Java; MySQL; Redis; Spring Boot,演示数据（虚构）,https://example.com/jobs/job_001,2026-11-13
+job_002,微光网络（虚构）,前端开发工程师,前端开发,杭州,8000,13000,本科,应届生,是,Git; HTML/CSS; JavaScript; TypeScript; Vue,演示数据（虚构）,https://example.com/jobs/job_002,2026-11-13
+job_003,智语科技（虚构）,NLP算法工程师,算法工程,杭州,18000,28000,硕士,应届生,是,Git; NLP; PyTorch; Python; 机器学习; 深度学习,演示数据（虚构）,https://example.com/jobs/job_003,2026-11-13
+job_004,格致数据（虚构）,数据分析师,数据分析,杭州,8000,12000,本科,应届生,是,Pandas; Python; SQL; 数据可视化; 机器学习,演示数据（虚构）,https://example.com/jobs/job_004,2026-11-13
+job_005,蓝鲸软件（虚构）,测试开发工程师,测试开发,杭州,7000,11000,大专,应届生,是,Git; Linux; Pytest; Python; 接口测试,演示数据（虚构）,https://example.com/jobs/job_005,2026-11-13
+job_006,星河数科（虚构）,大数据开发工程师,大数据开发,杭州,14000,22000,本科,1-3年,否,Hive; Java; Kafka; Linux; Scala; Spark,演示数据（虚构）,https://example.com/jobs/job_006,2026-11-13
+job_007,云帆科技（虚构）,运维开发工程师,运维开发,杭州,10000,16000,本科,3-5年,否,Docker; Git; Kubernetes; Linux; Nginx; Python,演示数据（虚构）,https://example.com/jobs/job_007,2026-11-13
+job_008,芯途电子（虚构）,嵌入式软件工程师,嵌入式开发,杭州,9000,15000,本科,应届生,是,C; C++; Git; Linux; 单片机; 操作系统,演示数据（虚构）,https://example.com/jobs/job_008,2026-11-13
+job_009,启明智能（虚构）,计算机视觉算法工程师,算法工程,杭州,22000,35000,硕士,应届生,是,Git; PyTorch; Python; 深度学习; 算法; 计算机视觉,演示数据（虚构）,https://example.com/jobs/job_009,2026-11-13
+job_010,小满科技（虚构）,Go后端开发工程师,后端开发,杭州,,,不限,应届生,是,Git; Go; Linux; MySQL; Redis,演示数据（虚构）,https://example.com/jobs/job_010,2026-11-13

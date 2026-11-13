@@ -7,8 +7,11 @@ denominator. See ``docs/architecture.md`` for the statistical definitions.
 from __future__ import annotations
 
 from datetime import date
+from typing import Literal
 
 from pydantic import BaseModel, Field
+
+CrossDimension = Literal["job_type", "education", "experience", "city"]
 
 
 class CountItem(BaseModel):
@@ -113,3 +116,10 @@ class SalaryStatsOut(BaseModel):
     by_job_type: list[SalaryGroup]
     by_education: list[SalaryGroup]
     by_experience: list[SalaryGroup]
+
+
+class CrossStatsOut(BaseModel):
+    row_dimension: str
+    column_dimension: str
+    total: int
+    groups: list[GroupedCounts]

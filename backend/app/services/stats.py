@@ -20,6 +20,7 @@ from sqlalchemy.orm import Session
 from app.models import JobPosting, JobSkill
 from app.schemas.stats import (
     CountItem,
+    CrossStatsOut,
     EducationStatsOut,
     ExperienceStatsOut,
     FreshGraduateStats,
@@ -387,6 +388,42 @@ def get_skills_stats(
     )
 
 
+CROSS_DIMENSIONS = {
+    "job_type": "job_type",
+    "education": "education",
+    "experience": "experience",
+    "city": "city",
+}
+
+
+def get_cross_stats(
+    db: Session, *, row: str, column: str, **filters: Any
+) -> CrossStatsOut:
+    """Count one dimension split by another, using the shared filters.
+
+    ``row == column`` is allowed and returns the diagonal; the caller can reject
+    it if a self-cross is not meaningful.
+    """
+    frame = _load_jobs_frame(db, **filters)
+    total = len(frame)
+    if total == 0:
+        return CrossStatsOut(
+            row_dimension=row,
+            column_dimension=column,
+            total=0,
+            groups=[],
+        )
+
+    return CrossStatsOut(
+        row_dimension=row,
+        column_dimension=column,
+        total=total,
+        groups=_group_distribution(
+            frame, CROSS_DIMENSIONS[row], CROSS_DIMENSIONS[column]
+        ),
+    )
+
+
 def get_salary_stats(db: Session, **filters: Any) -> SalaryStatsOut:
     frame = _load_jobs_frame(db, **filters)
     overall = _salary_summary(frame["salary_mid"])
@@ -402,9 +439,11 @@ def get_salary_stats(db: Session, **filters: Any) -> SalaryStatsOut:
 
 
 __all__ = [
+    "CROSS_DIMENSIONS",
     "EDUCATION_ORDER",
     "EXPERIENCE_ORDER",
     "SALARY_BINS",
+    "get_cross_stats",
     "get_education_stats",
     "get_experience_stats",
     "get_overview",
