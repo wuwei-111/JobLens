@@ -203,4 +203,6 @@ def test_import_normalizes_education_and_experience(client: TestClient) -> None:
     assert job["education"] == "本科"
     assert job["experience"] == "应届生"
     assert job["is_fresh_graduate"] is True
-    assert job["skills"] == ["java", "MySQL"]
+    # Skill order is not part of the contract: the ORM relationship may reload
+    # them in any stable order. Assert the set after trim/case-insensitive dedupe.
+    assert set(job["skills"]) == {"java", "MySQL"}
