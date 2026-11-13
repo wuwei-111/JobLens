@@ -6,7 +6,7 @@ validated individually so one bad row does not reject the whole dataset.
 
 from __future__ import annotations
 
-from datetime import date
+from datetime import date, datetime
 from typing import Any
 
 from pydantic import ValidationError
@@ -54,10 +54,15 @@ def parse_dataset(raw: Any) -> tuple[str, date | None, list[Any]]:
     collected_at: date | None = None
     raw_collected_at = raw.get("collected_at")
     if isinstance(raw_collected_at, str):
+        text = raw_collected_at.strip()
         try:
-            collected_at = date.fromisoformat(raw_collected_at.strip())
+            collected_at = date.fromisoformat(text)
         except ValueError:
-            collected_at = None
+            # Dataset-level metadata may also carry a timestamp.
+            try:
+                collected_at = datetime.fromisoformat(text).date()
+            except ValueError:
+                collected_at = None
     return dataset_name, collected_at, records
 
 

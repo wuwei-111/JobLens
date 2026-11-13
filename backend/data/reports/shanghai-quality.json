@@ -1,0 +1,359 @@
+{
+  "dataset_name": "上海计算机类应届生公开校招岗位数据",
+  "total_records": 280,
+  "valid_records": 280,
+  "invalid_records": 0,
+  "duplicate_ids": 0,
+  "existing_in_database": 0,
+  "missing_fields": {
+    "id": 0,
+    "company": 0,
+    "position": 0,
+    "job_type": 0,
+    "city": 0,
+    "education": 0,
+    "experience": 0,
+    "source": 0,
+    "source_url": 0,
+    "collected_at": 0
+  },
+  "salary_missing": 146,
+  "salary_single_bound": 0,
+  "salary_outliers": 0,
+  "unknown_education": [],
+  "unknown_experience": [],
+  "empty_skills": 10,
+  "over_limit_skills": 54,
+  "duplicate_skill_entries": 0,
+  "duplicate_source_urls": [],
+  "demo_records": 0,
+  "errors": [],
+  "warnings": [
+    {
+      "row": 4,
+      "record_id": "nowcoder_474951",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 12,
+      "record_id": "nowcoder_470939",
+      "message": "技能数 15 超过规范上限 10 项"
+    },
+    {
+      "row": 14,
+      "record_id": "nowcoder_474941",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 19,
+      "record_id": "nowcoder_448773",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 34,
+      "record_id": "nowcoder_474719",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 37,
+      "record_id": "nowcoder_463589",
+      "message": "技能数 17 超过规范上限 10 项"
+    },
+    {
+      "row": 43,
+      "record_id": "nowcoder_463568",
+      "message": "技能数 16 超过规范上限 10 项"
+    },
+    {
+      "row": 46,
+      "record_id": "nowcoder_471489",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 50,
+      "record_id": "nowcoder_470942",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 52,
+      "record_id": "nowcoder_469542",
+      "message": "技能数 16 超过规范上限 10 项"
+    },
+    {
+      "row": 56,
+      "record_id": "nowcoder_464487",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 59,
+      "record_id": "nowcoder_467145",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 60,
+      "record_id": "nowcoder_461879",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 63,
+      "record_id": "nowcoder_461644",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 76,
+      "record_id": "nowcoder_457521",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 83,
+      "record_id": "nowcoder_453080",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 85,
+      "record_id": "nowcoder_469432",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 86,
+      "record_id": "nowcoder_471682",
+      "message": "技能数 24 超过规范上限 10 项"
+    },
+    {
+      "row": 88,
+      "record_id": "nowcoder_460483",
+      "message": "技能数 17 超过规范上限 10 项"
+    },
+    {
+      "row": 89,
+      "record_id": "nowcoder_463038",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 91,
+      "record_id": "nowcoder_459733",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 100,
+      "record_id": "nowcoder_474142",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 105,
+      "record_id": "nowcoder_463020",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 109,
+      "record_id": "nowcoder_466613",
+      "message": "技能数 19 超过规范上限 10 项"
+    },
+    {
+      "row": 111,
+      "record_id": "nowcoder_464402",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 113,
+      "record_id": "nowcoder_469643",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 116,
+      "record_id": "nowcoder_469633",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 127,
+      "record_id": "nowcoder_42347",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 139,
+      "record_id": "nowcoder_468644",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 140,
+      "record_id": "nowcoder_473869",
+      "message": "技能数 17 超过规范上限 10 项"
+    },
+    {
+      "row": 141,
+      "record_id": "nowcoder_469556",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 143,
+      "record_id": "nowcoder_462964",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 146,
+      "record_id": "nowcoder_462343",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 153,
+      "record_id": "nowcoder_466819",
+      "message": "技能数 14 超过规范上限 10 项"
+    },
+    {
+      "row": 162,
+      "record_id": "nowcoder_470952",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 175,
+      "record_id": "nowcoder_460658",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 176,
+      "record_id": "nowcoder_460587",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 183,
+      "record_id": "nowcoder_453304",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 184,
+      "record_id": "nowcoder_453302",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 185,
+      "record_id": "nowcoder_473774",
+      "message": "技能数 17 超过规范上限 10 项"
+    },
+    {
+      "row": 188,
+      "record_id": "nowcoder_475232",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 190,
+      "record_id": "nowcoder_463370",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 193,
+      "record_id": "nowcoder_461847",
+      "message": "技能数 15 超过规范上限 10 项"
+    },
+    {
+      "row": 199,
+      "record_id": "nowcoder_470251",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 201,
+      "record_id": "nowcoder_463584",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 202,
+      "record_id": "nowcoder_463583",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": 204,
+      "record_id": "nowcoder_463576",
+      "message": "技能数 17 超过规范上限 10 项"
+    },
+    {
+      "row": 209,
+      "record_id": "nowcoder_470157",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 221,
+      "record_id": "nowcoder_460021",
+      "message": "技能数 23 超过规范上限 10 项"
+    },
+    {
+      "row": 226,
+      "record_id": "nowcoder_464785",
+      "message": "技能数 14 超过规范上限 10 项"
+    },
+    {
+      "row": 232,
+      "record_id": "nowcoder_457046",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 234,
+      "record_id": "nowcoder_469927",
+      "message": "技能数 16 超过规范上限 10 项"
+    },
+    {
+      "row": 235,
+      "record_id": "nowcoder_467328",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 238,
+      "record_id": "nowcoder_401935",
+      "message": "技能数 15 超过规范上限 10 项"
+    },
+    {
+      "row": 240,
+      "record_id": "nowcoder_456511",
+      "message": "技能数 15 超过规范上限 10 项"
+    },
+    {
+      "row": 247,
+      "record_id": "nowcoder_457049",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 249,
+      "record_id": "nowcoder_461053",
+      "message": "技能数 21 超过规范上限 10 项"
+    },
+    {
+      "row": 251,
+      "record_id": "nowcoder_464242",
+      "message": "技能数 14 超过规范上限 10 项"
+    },
+    {
+      "row": 255,
+      "record_id": "nowcoder_468903",
+      "message": "技能为空，建议补充 1–10 个标准技能词"
+    },
+    {
+      "row": 259,
+      "record_id": "nowcoder_462936",
+      "message": "技能数 14 超过规范上限 10 项"
+    },
+    {
+      "row": 261,
+      "record_id": "nowcoder_467289",
+      "message": "技能数 13 超过规范上限 10 项"
+    },
+    {
+      "row": 266,
+      "record_id": "nowcoder_458776",
+      "message": "技能数 11 超过规范上限 10 项"
+    },
+    {
+      "row": 271,
+      "record_id": "nowcoder_466486",
+      "message": "技能数 14 超过规范上限 10 项"
+    },
+    {
+      "row": 277,
+      "record_id": "nowcoder_462175",
+      "message": "技能数 12 超过规范上限 10 项"
+    },
+    {
+      "row": null,
+      "record_id": null,
+      "message": "薪资面议（两端为空）：146 条"
+    }
+  ],
+  "warning_count": 65
+}

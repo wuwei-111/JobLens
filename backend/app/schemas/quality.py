@@ -28,6 +28,7 @@ class QualityStatsOut(BaseModel):
     demo_records: int = Field(description="来源或链接显示为演示/虚构数据的岗位数")
     total_companies: int
     total_cities: int
+    sources: list[str] = Field(default_factory=list)
     collected_from: date | None = None
     collected_to: date | None = None
     warnings: list[str] = Field(default_factory=list)

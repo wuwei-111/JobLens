@@ -45,7 +45,7 @@ backend/app/
 ├── schemas/          API 请求/响应与校验
 ├── api/v1/           路由层：只做参数绑定、调用 service
 ├── services/         业务：导入、规范化、筛选条件、统计
-└── data/raw/         原始 JSON（仅演示数据当前入库）
+└── data/raw/         原始 JSON（上海真实数据已入库；演示数据仅用于开发）
 ```
 
 路由层不写统计逻辑；统计逻辑不直接依赖 HTTP。这样便于测试与后续加入 CLI 脚本。
@@ -319,23 +319,23 @@ curl "http://127.0.0.1:8000/api/v1/imports/batches"
 curl "http://127.0.0.1:8000/api/v1/stats/quality"
 
 # 5. 独立重算统计并与 API 逐项核对（必须传入已导入的同一份 JSON）
-python -m scripts.verify_stats data/raw/jobs_hangzhou_2026-11.json --json > verify.json
+python -m scripts.verify_stats data/raw/shanghai_graduate_jobs_2026-11-13.json --json > data/reports/shanghai-verify.json
 ```
 
 `verify_stats.py` 用 Pandas 从原始 JSON 重算学历、经验、技能、薪资（含分岗位类别、
-学历、经验的分组），逐项对比 API；演示数据当前 359/359 项一致。
+学历、经验的分组），逐项对比 API；上海真实数据当前 825/825 项一致，演示数据 359/359 项一致。
 
 ### 8.2 重建与性能基准
 
 ```bash
 # 字段/索引变化后：先停止 API，再重建并重新导入
-python -m scripts.reset_db --yes
+python -m scripts.reset_db data/raw/shanghai_graduate_jobs_2026-11-13.json --yes
 
 # 500 条临时数据下的接口延迟（临时 DB，不影响现有数据）
 python -m scripts.benchmark_api
 ```
 
-演示数据下所有接口 median 与 p95 均低于 300ms。交付报告生成在
+500 条临时数据下所有接口 median 与 p95 均低于 300ms。交付报告生成在
 `backend/data/reports/`，说明见该目录的 README。
 
 ## 9. 已知取舍
@@ -345,4 +345,5 @@ python -m scripts.benchmark_api
 - 不引入用户体系与写接口权限：课程作品只读展示。
 - 技能分类是人工词表，不做 NLP 自动抽取；词表质量直接决定“其他”占比。
 - 统计在 Pandas 中完成，适用于数百条数据；数据量显著增长时应下推到 SQL。
-- 演示数据为虚构，正式结论必须使用真实采集数据。
+- 演示数据为虚构，正式结论必须使用真实采集数据；当前 `/stats/quality` 的 `demo_records` 为 0。
+- 上海数据 146/280 条薪资为“面议”，薪资统计的分母是 134 条有效薪资，不把面议算作 0 或估算值。

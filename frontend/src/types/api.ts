@@ -178,6 +178,7 @@ export interface QualityStats {
   demo_records: number
   total_companies: number
   total_cities: number
+  sources: string[]
   collected_from: string | null
   collected_to: string | null
   warnings: string[]

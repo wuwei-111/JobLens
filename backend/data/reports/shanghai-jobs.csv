@@ -1,0 +1,281 @@
+﻿id,company,position,job_type,city,salary_min,salary_max,education,experience,is_fresh_graduate,skills,source,source_url,collected_at
+nowcoder_136880,理想汽车,语音感知算法工程师,人工智能与算法,上海,,,硕士,未披露,是,C; C++; NLP; PyTorch; Python; Shell; TensorFlow; 数据结构; 机器学习; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/136880,2026-11-13
+nowcoder_136883,理想汽车,自然语言处理算法工程师,人工智能与算法,上海,,,硕士,未披露,是,C++; Java; NLP; Shell,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/136883,2026-11-13
+nowcoder_136884,理想汽车,Android 开发工程师,嵌入式与系统软件,上海,,,本科,未披露,是,Android; Java,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/136884,2026-11-13
+nowcoder_136885,理想汽车,前端开发工程师,软件开发,上海,,,本科,未披露,是,CSS; HTML; JavaScript; React; TypeScript; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/136885,2026-11-13
+nowcoder_136886,理想汽车,AI编译器开发工程师,AI基础设施与系统开发,上海,,,本科,未披露,是,Linux; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/136886,2026-11-13
+nowcoder_395984,华为HUAWEI,AI工程师,人工智能与算法,上海,15000,25000,本科,未披露,是,Agent; Triton; 分布式系统; 大模型; 机器学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/395984,2026-11-13
+nowcoder_396494,声网,校招-云平台开发工程师,嵌入式与系统软件,上海,20000,40000,本科,未披露,是,C++; Linux; Python; Shell; Unix; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/396494,2026-11-13
+nowcoder_399711,声网,校招-C++开发工程师,软件开发,上海,20000,40000,本科,未披露,是,C++; Linux; Python; Shell; Unix; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/399711,2026-11-13
+nowcoder_401290,拼多多集团-PDD,2027届-服务端研发工程师,软件开发,上海,26000,40000,本科,未披露,是,分布式系统; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/401290,2026-11-13
+nowcoder_401935,上海华为技术有限公司,软件开发工程师（2027届 上海/西安/武汉）,软件开发,上海,,,本科,未披露,是,Android; C; C++; DevOps; Go; HTML; HarmonyOS; Java; JavaScript; Linux; Python; 分布式系统; 操作系统; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/401935,2026-11-13
+nowcoder_403465,上海华为技术有限公司,AI大模型应用工程师（上海/武汉/西安）,人工智能与算法,上海,,,本科,未披露,是,C; C++; Java; Python; 大模型; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/403465,2026-11-13
+nowcoder_42343,中科创达,Java开发工程师,软件开发,上海,,,本科,未披露,是,Android; Java; JavaScript; 操作系统; 汇编,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/42343,2026-11-13
+nowcoder_42344,中科创达,C/C++开发工程师,软件开发,上海,,,本科,未披露,是,C; C++; 操作系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/42344,2026-11-13
+nowcoder_42346,中科创达,Python开发工程师（自动化测试）,软件测试与测试开发,上海,,,本科,未披露,是,Android; Linux; Python; 操作系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/42346,2026-11-13
+nowcoder_42347,中科创达,测试工程师,软件测试与测试开发,上海,,,本科,未披露,是,,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/42347,2026-11-13
+nowcoder_42348,中科创达,Python开发工程师（系统开发）,软件开发,上海,,,本科,未披露,是,C; C++; Linux; Python; Qt,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/42348,2026-11-13
+nowcoder_424429,虹科电子,智驾数据软件开发工程师(J10043),数据开发与分析,上海,,,硕士,未披露,是,C++; Git; Linux; Python; ROS; Shell,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/424429,2026-11-13
+nowcoder_431205,中欧基金,27届校招-量化风控（AI应用方向）,人工智能与算法,上海,,,硕士,未披露,是,ClickHouse; Git; Linux; NumPy; Pandas; PyTorch; Python; SQL; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/431205,2026-11-13
+nowcoder_434376,北京微财科技有限公司,金融算法工程师（校招）,人工智能与算法,上海,25000,42000,硕士,未披露,是,Hive; Pandas; PyTorch; Python; SQL; Scikit-learn; Spark; TensorFlow; 机器学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/434376,2026-11-13
+nowcoder_434500,北京微财科技有限公司,风险数据分析师（国际化业务校招）,数据开发与分析,上海,22000,32000,硕士,未披露,是,Python; SQL,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/434500,2026-11-13
+nowcoder_444853,上证信息,A05.技术运维工程师（系统方向）,运维与基础设施,上海,,,本科,未披露,是,Ansible; Linux; Python; 操作系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/444853,2026-11-13
+nowcoder_444855,上证信息,A07.技术运维工程师（应用方向）,运维与基础设施,上海,,,本科,未披露,是,Java; Linux; Python; Shell; Windows,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/444855,2026-11-13
+nowcoder_448771,声网,校招-技术支持工程师(对话式AI方向),软件技术支持,上海,15000,25000,本科,未披露,是,Agent; Android; Python; TypeScript; iOS,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/448771,2026-11-13
+nowcoder_448773,声网,校招-自动化测试工程师,软件测试与测试开发,上海,12000,20000,本科,未披露,是,Agent; Go; HTTP; Java; LLM; Pytest; Python; RAG; 大模型; 操作系统; 数据结构,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/448773,2026-11-13
+nowcoder_452810,华为HUAWEI,嵌入式工程师,嵌入式与系统软件,上海,,,硕士,未披露,是,C; C++,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/452810,2026-11-13
+nowcoder_453079,拼多多集团-PDD,大模型算法工程师【2027届秋招】,人工智能与算法,上海,,,硕士,未披露,是,Agent; 大模型; 强化学习; 机器学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/453079,2026-11-13
+nowcoder_453080,拼多多集团-PDD,AI Infra研发工程师【2027届】,AI基础设施与系统开发,上海,,,硕士,未披露,是,C; C++; DeepSpeed; Go; Megatron; PyTorch; Python; Rust; vLLM; 分布式系统; 大模型; 操作系统; 计算机网络,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/453080,2026-11-13
+nowcoder_453081,拼多多集团-PDD,算法工程师,人工智能与算法,上海,,,硕士,未披露,是,Hive; LLM; Linux; NLP; PyTorch; TensorFlow; 数据结构; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/453081,2026-11-13
+nowcoder_453084,拼多多集团-PDD,服务端研发工程师,软件开发,上海,,,本科,未披露,是,分布式系统; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/453084,2026-11-13
+nowcoder_453087,拼多多集团-PDD,数据分析师,数据开发与分析,上海,,,本科,未披露,是,Hadoop; Python; SQL; Spark,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/453087,2026-11-13
+nowcoder_453103,华为软件技术有限公司,嵌入式工程师,嵌入式与系统软件,上海,18000,26000,本科,未披露,是,C; C++; Linux; RTOS; 操作系统; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/453103,2026-11-13
+nowcoder_453192,亿通国际,软件开发工程师(J10884),软件开发,上海,15000,25000,本科,未披露,是,CSS; HTML; Java; JavaScript; Spring; Spring Boot; 操作系统; 数据结构; 算法基础; 计算机网络,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/453192,2026-11-13
+nowcoder_453296,拼多多集团-PDD,服务端研发工程师（上海）—27秋招正式批,软件开发,上海,25000,45000,本科,未披露,是,分布式系统; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/453296,2026-11-13
+nowcoder_453299,拼多多集团-PDD,数据分析师（上海）—27秋招正式批,数据开发与分析,上海,20000,40000,本科,未披露,是,Hadoop; Python; SQL; Spark,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/453299,2026-11-13
+nowcoder_453302,拼多多集团-PDD,【27提前批】客户端研发工程师-超高留用率,软件开发,上海,25000,45000,本科,未披露,是,Android; C; C++; Java; Kotlin; React; Swift; iOS; 操作系统; 数据结构; 计算机网络,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/453302,2026-11-13
+nowcoder_453304,拼多多集团-PDD,【薪资待遇好】安全工程师-27提前批-超高留用率,网络安全,上海,25000,45000,本科,未披露,是,,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/453304,2026-11-13
+nowcoder_454354,拼多多集团-PDD,【offer来袭！】Web前端研发工程师-27提前批-福利待遇超好,软件开发,上海,20000,40000,本科,未披露,是,CSS; HTML; JavaScript; Node.js; React; Vue; 操作系统; 数据结构,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/454354,2026-11-13
+nowcoder_456087,上海华为技术有限公司,驱动开发,嵌入式与系统软件,上海,20000,35000,本科,未披露,是,C; C++; Linux; 操作系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/456087,2026-11-13
+nowcoder_456511,华为HUAWEI,华为2027秋招-前端开发工程师,软件开发,上海,20000,30000,本科,未披露,是,Angular; C; C++; DevOps; HTML; HarmonyOS; Java; JavaScript; Python; React; Rust; TCP/IP; Vue; 分布式系统; 微服务,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/456511,2026-11-13
+nowcoder_457005,上海砺星工业,上位机软件工程师,软件开发,上海,10000,15000,本科,未披露,是,C++; MySQL; PostgreSQL; SQL Server,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/457005,2026-11-13
+nowcoder_457011,上海砺星工业,嵌入式软件工程师,嵌入式与系统软件,上海,10000,15000,本科,未披露,是,C; C++; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/457011,2026-11-13
+nowcoder_457046,华为HUAWEI,【27届秋招】测试开发,软件测试与测试开发,上海,20000,30000,本科,未披露,是,,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/457046,2026-11-13
+nowcoder_457049,华为HUAWEI,【27届秋招】通软-AI应用与测试开发方向,软件测试与测试开发,上海,20000,30000,本科,未披露,是,,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/457049,2026-11-13
+nowcoder_457521,Garena,【2027届校招】游戏测试工程师QA - AOV,软件测试与测试开发,上海,,,本科,未披露,是,,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/457521,2026-11-13
+nowcoder_457533,Garena,【2027届校招】游戏服务器开发,软件开发,上海,,,本科,未披露,是,C; C++; Go; MySQL; Redis,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/457533,2026-11-13
+nowcoder_457535,Garena,【2027届校招】引擎开发工程师,软件开发,上海,,,本科,未披露,是,C++,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/457535,2026-11-13
+nowcoder_457536,Garena,【2027届校招】客户端开发工程师,软件开发,上海,,,本科,未披露,是,C; C#; C++; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/457536,2026-11-13
+nowcoder_458061,上海华为技术有限公司,C工程师,软件开发,上海,15000,30000,本科,未披露,是,Agent; C; C++; Linux; Windows; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/458061,2026-11-13
+nowcoder_458248,华芯程（杭州）科技,EDA软件研发工程师,软件开发,上海,15000,25000,硕士,未披露,是,C; C++; 数据结构,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/458248,2026-11-13
+nowcoder_458337,华为软件技术有限公司,C++,软件开发,上海,,,本科,未披露,是,C++; TCP/IP; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/458337,2026-11-13
+nowcoder_458776,上海华为技术有限公司,通用软件开发工程师,软件开发,上海,18000,30000,本科,未披露,是,C; C++; Go; HTML; Java; JavaScript; Python; Rust; 分布式系统; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/458776,2026-11-13
+nowcoder_459024,华为HUAWEI,C工程师,软件开发,上海,20000,40000,本科,未披露,是,C,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459024,2026-11-13
+nowcoder_459227,上海华为技术有限公司,KVCache推理优化,人工智能与算法,上海,20000,30000,本科,未披露,是,C; C++; Linux; Python; vLLM,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459227,2026-11-13
+nowcoder_459253,姚记集团,游戏测试工程师-27届秋招,软件测试与测试开发,上海,,,本科,未披露,是,Android; iOS,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459253,2026-11-13
+nowcoder_459258,姚记集团,数据分析师-27届秋招,数据开发与分析,上海,,,本科,未披露,是,Hive; SQL,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459258,2026-11-13
+nowcoder_459259,姚记集团,游戏服务器开发工程师-27届秋招,软件开发,上海,,,本科,未披露,是,Java,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459259,2026-11-13
+nowcoder_459260,姚记集团,游戏客户端开发工程师-27届秋招,软件开发,上海,,,本科,未披露,是,C#; 操作系统; 数据结构; 计算机网络,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459260,2026-11-13
+nowcoder_459261,姚记集团,AIGC技术工程师（算法/工程）-27届秋招,人工智能与算法,上海,,,本科,未披露,是,Agent; Java; LangChain; Python; Spring Boot; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459261,2026-11-13
+nowcoder_459268,砺算科技,C++,软件开发,上海,16000,25000,硕士,未披露,是,C; C++; Linux; Windows,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459268,2026-11-13
+nowcoder_459461,小米集团,AI Agent多模态算法工程师,人工智能与算法,上海,,,硕士,未披露,是,Agent; PyTorch; RAG; React; Transformers; vLLM; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459461,2026-11-13
+nowcoder_459503,小米集团,视觉算法工程师-人像,人工智能与算法,上海,,,硕士,未披露,是,C; C++; PyTorch; Python; TensorFlow; 大模型; 深度学习; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459503,2026-11-13
+nowcoder_459505,小米集团,视频算法工程师,人工智能与算法,上海,,,硕士,未披露,是,C; C++; PyTorch; TensorFlow; 数据结构; 深度学习; 算法基础; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459505,2026-11-13
+nowcoder_459622,小米集团,图形AI渲染工程师,人工智能与算法,上海,,,本科,未披露,是,CUDA; LLM,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459622,2026-11-13
+nowcoder_459707,华为HUAWEI,软件开发工程师,软件开发,上海,,,本科,未披露,是,C; C++; Linux; 分布式系统; 操作系统; 机器学习; 汇编,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459707,2026-11-13
+nowcoder_459711,华为HUAWEI,AI软件开发工程师,人工智能与算法,上海,,,本科,未披露,是,C; C++; Java; Linux; Python; ROS; Rust; 操作系统; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459711,2026-11-13
+nowcoder_459720,华为软件技术有限公司,AI Infra工程师,AI基础设施与系统开发,上海,20000,40000,不限,未披露,是,Agent; 分布式系统; 大模型; 机器学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459720,2026-11-13
+nowcoder_459724,华为软件技术有限公司,AI模型工程师,人工智能与算法,上海,20000,40000,不限,未披露,是,分布式系统; 大模型; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459724,2026-11-13
+nowcoder_459728,华为软件技术有限公司,AI应用工程师,人工智能与算法,上海,20000,40000,不限,未披露,是,C++; Java; NLP; Python; RAG; 大模型; 强化学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459728,2026-11-13
+nowcoder_459733,华为软件技术有限公司,软件开发工程师,软件开发,上海,20000,40000,不限,未披露,是,Agent; C; C++; HTML; HarmonyOS; Java; JavaScript; Python; Rust; TCP/IP; 分布式系统; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/459733,2026-11-13
+nowcoder_460021,华为HUAWEI,AI应用工程师,人工智能与算法,上海,20000,30000,不限,未披露,是,Agent; C++; CUDA; DeepSpeed; Go; Java; LLM; LangChain; LlamaIndex; Megatron; NLP; PyTorch; Python; RAG; React; Spark; TensorRT; Triton; vLLM; 分布式系统; 大模型; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460021,2026-11-13
+nowcoder_460029,华为HUAWEI,人工智能,人工智能与算法,上海,,,本科,未披露,是,Agent; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460029,2026-11-13
+nowcoder_460078,华为南京研究所,鸿蒙生态AI应用工程师,人工智能与算法,上海,15000,22000,本科,未披露,是,HarmonyOS; 大模型; 强化学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460078,2026-11-13
+nowcoder_460088,上海华为技术有限公司,软件开发工程师,软件开发,上海,,,不限,未披露,是,C++; Go; Java; Python; Redis; SQL,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460088,2026-11-13
+nowcoder_460483,华为HUAWEI,AI算法 空间智能 多模态大模型 Agent技术 语言大模型 AI算法后训练与强化学习 端侧大模型,人工智能与算法,上海,25000,45000,本科,未披露,是,Agent; C++; Java; LLM; Linux; PyTorch; Python; ROS; Rust; Scikit-learn; TensorFlow; 大模型; 强化学习; 操作系统; 机器学习; 深度学习; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460483,2026-11-13
+nowcoder_460557,快手,【快Star】多模态生成算法研究员-【可灵AI】,人工智能与算法,上海,,,不限,未披露,是,Agent; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460557,2026-11-13
+nowcoder_460562,快手,【快Star】视频大模型高性能与分布式计算工程师-【可灵AI】,AI基础设施与系统开发,上海,,,硕士,未披露,是,C; C++; DeepSpeed; Megatron; NCCL; Python; 分布式系统; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460562,2026-11-13
+nowcoder_460563,快手,【快Star】视频大模型高性能与低精度算子工程师-【可灵AI】,AI基础设施与系统开发,上海,,,硕士,未披露,是,分布式系统; 大模型; 强化学习; 机器学习; 汇编,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460563,2026-11-13
+nowcoder_460564,快手,【快Star】多模态生成模型计算效率优化工程师-【可灵AI】,人工智能与算法,上海,,,硕士,未披露,是,Triton; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460564,2026-11-13
+nowcoder_460565,快手,【快Star】多模态生成模型生成效率优化工程师-【可灵AI】,人工智能与算法,上海,,,硕士,未披露,是,大模型; 强化学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460565,2026-11-13
+nowcoder_460587,快手,大模型推理/训练优化工程师,人工智能与算法,上海,,,硕士,未披露,是,C++; CUDA; LLM; Linux; PyTorch; Python; TensorFlow; TensorRT; vLLM; 大模型; 数据结构; 深度学习; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460587,2026-11-13
+nowcoder_460658,快手,视频生成算法研究员,人工智能与算法,上海,,,硕士,未披露,是,,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460658,2026-11-13
+nowcoder_460694,快手,游戏图形学算法工程师,人工智能与算法,上海,,,本科,未披露,是,C; C++; Python; 数据结构; 深度学习; 算法基础; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460694,2026-11-13
+nowcoder_460753,快手,【快Star】大模型分布式推理框架工程师-【可灵AI】,AI基础设施与系统开发,上海,,,不限,未披露,是,Kubernetes; vLLM; 分布式系统; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460753,2026-11-13
+nowcoder_460754,快手,【快Star】大模型高性能推理算子工程师-【可灵AI】,AI基础设施与系统开发,上海,,,不限,未披露,是,LLM; Linux; Python; TensorRT; Triton; vLLM; 分布式系统; 大模型; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460754,2026-11-13
+nowcoder_460755,快手,【快Star】音视频大模型算法工程师,人工智能与算法,上海,,,硕士,未披露,是,大模型; 深度学习; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460755,2026-11-13
+nowcoder_460756,快手,【快Star】智能编码算法研究员,人工智能与算法,上海,,,硕士,未披露,是,汇编; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460756,2026-11-13
+nowcoder_460757,快手,【快Star】音视频多模态算法策略研究员,人工智能与算法,上海,,,硕士,未披露,是,C; C++; Java; LLM; Python; 大模型; 机器学习; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460757,2026-11-13
+nowcoder_460758,快手,【快Star】视频编码与生成交叉算法工程师,人工智能与算法,上海,,,硕士,未披露,是,CUDA; LLM; PyTorch; Python; 大模型; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460758,2026-11-13
+nowcoder_460759,快手,【快Star】生成式视频编码算法工程师,人工智能与算法,上海,,,硕士,未披露,是,C++; Python; 深度学习; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460759,2026-11-13
+nowcoder_460762,快手,【快Star】强化学习算法研究员-【可灵AI】,人工智能与算法,上海,,,不限,未披露,是,Agent; 大模型; 强化学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460762,2026-11-13
+nowcoder_460763,快手,【快Star】多模态理解与生成算法研究员-【可灵AI】,人工智能与算法,上海,,,不限,未披露,是,Agent; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460763,2026-11-13
+nowcoder_460918,小米集团,音频软件工程师,嵌入式与系统软件,上海,,,硕士,未披露,是,C; C++; Linux; RTOS; 操作系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460918,2026-11-13
+nowcoder_460920,小米集团,图形视效算法工程师,人工智能与算法,上海,,,本科,未披露,是,C; C++; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460920,2026-11-13
+nowcoder_460925,小米集团,短距通信自动化测试开发工程师,软件测试与测试开发,上海,,,本科,未披露,是,C++; Java; Linux; Python; Shell; 大模型; 操作系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460925,2026-11-13
+nowcoder_460929,小米集团,大数据开发工程师,数据开发与分析,上海,,,本科,未披露,是,HBase; Hadoop; Hive; Java; Kafka; MySQL; Python; Spark; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460929,2026-11-13
+nowcoder_460999,小米集团,网联嵌入式软件开发工程师,嵌入式与系统软件,上海,,,本科,未披露,是,Android; C; C++; Java; Linux; 操作系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/460999,2026-11-13
+nowcoder_461053,上海华为技术有限公司,Java,软件开发,上海,20000,25000,本科,未披露,是,Agent; C; C++; DeepSpeed; Docker; Java; Kubernetes; LLM; MATLAB; Megatron; PyTorch; Python; 分布式系统; 大模型; 微服务; 操作系统; 数据结构; 机器学习; 深度学习; 算法基础; 计算机网络,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/461053,2026-11-13
+nowcoder_461064,上海华为技术有限公司,算法工程师,人工智能与算法,上海,,,本科,未披露,是,C; C++; Go; Java; Kubernetes; Python; 大模型; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/461064,2026-11-13
+nowcoder_461084,华为HUAWEI,人工智能,人工智能与算法,上海,25000,50000,本科,未披露,是,Agent; 大模型; 强化学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/461084,2026-11-13
+nowcoder_461364,华为HUAWEI,智能驾驶算法工程师,人工智能与算法,上海,21000,35000,本科,未披露,是,C++; Python; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/461364,2026-11-13
+nowcoder_461573,点点互动,AI算法工程师-北京/上海(J13724),人工智能与算法,上海,,,本科,其他,是,C++; LLM; NLP; Python; 强化学习; 机器学习; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/461573,2026-11-13
+nowcoder_461578,点点互动,客户端开发工程师-上海(J13722),软件开发,上海,,,本科,未披露,是,C#; Go; Java; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/461578,2026-11-13
+nowcoder_461644,小米集团,网络安全工程师-汽车,网络安全,上海,,,本科,未披露,是,,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/461644,2026-11-13
+nowcoder_461647,小米集团,OTA测试工程师-汽车,软件测试与测试开发,上海,,,本科,未披露,是,C; C++; Python,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/461647,2026-11-13
+nowcoder_461701,小米集团,车载Audio软件工程师-汽车,嵌入式与系统软件,上海,,,本科,未披露,是,Android; C; C++; Linux; RTOS,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/461701,2026-11-13
+nowcoder_461847,华为HUAWEI,大模型工程师、ai infra base多多！！！,AI基础设施与系统开发,上海,20000,40000,硕士,未披露,是,Agent; CI/CD; CUDA; DeepSpeed; LLM; Megatron; NLP; PyTorch; TensorRT; Triton; vLLM; 分布式系统; 大模型; 强化学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/461847,2026-11-13
+nowcoder_461864,上海华为技术有限公司,算法工程师,人工智能与算法,上海,21000,31000,本科,未披露,是,C; C++; Go; Java; Kubernetes; Python; 大模型; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/461864,2026-11-13
+nowcoder_461879,上海华为技术有限公司,AI Infra工程师,AI基础设施与系统开发,上海,20000,40000,本科,未披露,是,C; C++; CUDA; DeepSpeed; Megatron; PyTorch; Python; vLLM; 分布式系统; 大模型; 强化学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/461879,2026-11-13
+nowcoder_461899,上海砺星工业,算法工程师(J10623),人工智能与算法,上海,,,本科,未披露,是,C++; Linux; OpenCV; PyTorch; Python; ROS; RTOS; TensorFlow; 深度学习; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/461899,2026-11-13
+nowcoder_462034,华为HUAWEI,自动驾驶算法工程师,人工智能与算法,上海,25000,40000,本科,未披露,是,C++; PyTorch; Python; 大模型; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/462034,2026-11-13
+nowcoder_462175,上海华为技术有限公司,自动驾驶ai算法工程师,人工智能与算法,上海,20000,60000,本科,未披露,是,C++; CUDA; PyTorch; Python; TensorFlow; 分布式系统; 大模型; 强化学习; 数据结构; 深度学习; 算法基础; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/462175,2026-11-13
+nowcoder_462343,北京发那科机电有限公司,软件开发工程师（CAX算法/AI应用）-上海,人工智能与算法,上海,,,本科,未披露,是,C#; C++; Git; Java; Linux; MySQL; PostgreSQL; SQL; Windows; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/462343,2026-11-13
+nowcoder_462368,北京发那科机电有限公司,软件研发工程师-上海,软件开发,上海,12000,20000,硕士,未披露,是,C; C#; C++; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/462368,2026-11-13
+nowcoder_462481,春秋航空股份有限公司,算法类IT专业培训生（2027届）,人工智能与算法,上海,20000,30000,硕士,未披露,是,Python; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/462481,2026-11-13
+nowcoder_462772,上海华为技术有限公司,算法工程师,人工智能与算法,上海,20000,35000,本科,未披露,是,LLM; NLP; PyTorch; Python; RAG; 大模型; 强化学习; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/462772,2026-11-13
+nowcoder_462850,浙江华为通信技术有限公司,算法工程师,人工智能与算法,上海,20000,30000,本科,未披露,是,C; C++; HarmonyOS; Python; 大模型; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/462850,2026-11-13
+nowcoder_462894,思朗科技,2027校招-AI4S研究员-上海,人工智能与算法,上海,,,博士,未披露,是,LLM; 强化学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/462894,2026-11-13
+nowcoder_462936,西安华为技术有限公司,大数据开发工程师,数据开发与分析,上海,20000,35000,本科,未披露,是,ClickHouse; Flink; Go; HBase; Hadoop; Hive; Java; Kafka; Pandas; Python; Redis; SQL; Spark; 机器学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/462936,2026-11-13
+nowcoder_462964,上海华为技术有限公司,后端工程师,软件开发,上海,,,本科,未披露,是,Agent; C; C++; HTML; HarmonyOS; Java; JavaScript; Python; Rust; TCP/IP; 分布式系统; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/462964,2026-11-13
+nowcoder_462982,思朗科技,2027校招-芯片加速库开发工程师（北京/上海）,软件开发,上海,,,本科,未披露,是,C; C++; 汇编,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/462982,2026-11-13
+nowcoder_462983,思朗科技,2027校招-通信库开发工程师（西安/上海）,软件开发,上海,,,本科,未披露,是,C; C++; 汇编,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/462983,2026-11-13
+nowcoder_463020,思朗科技,2027校招-AI编译器工程师（上海/杭州/成都）,AI基础设施与系统开发,上海,,,本科,未披露,是,C++; CUDA; PyTorch; Python; TensorRT; Triton; vLLM; 大模型; 操作系统; 数据结构; 深度学习; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463020,2026-11-13
+nowcoder_463021,思朗科技,2027校招-算子开发工程师（上海/北京/成都）,软件开发,上海,,,不限,未披露,是,C; C++; CUDA; ONNX; PyTorch; TensorFlow; Triton; 大模型; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463021,2026-11-13
+nowcoder_463022,思朗科技,2027校招-AI算法工程师-上海,人工智能与算法,上海,,,硕士,未披露,是,C++; DeepSpeed; Megatron; PyTorch; Python; 分布式系统; 大模型; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463022,2026-11-13
+nowcoder_463038,上海华为技术有限公司,通用软件开发工程师,软件开发,上海,20000,40000,本科,未披露,是,C; C++; DevOps; Go; HTML; Java; JavaScript; Python; Rust; 分布式系统; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463038,2026-11-13
+nowcoder_463109,思朗科技,2027校招-AI基础设施开发工程师-上海,人工智能与算法,上海,,,不限,未披露,是,C; C++; Java; Linux; Python; Shell,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463109,2026-11-13
+nowcoder_463370,字节跳动,AI全栈开发工程师（电商/前后端） - 中国交易与广告,人工智能与算法,上海,,,本科,未披露,是,Agent; CI/CD; Git; Go; Java; JavaScript; LLM; Node.js; Python; RAG; React; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463370,2026-11-13
+nowcoder_463427,途游游戏,游戏AI算法工程师（上海）-2027校招,人工智能与算法,上海,30000,50000,本科,未披露,是,Hadoop; PyTorch; Python; Spark; TensorFlow; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463427,2026-11-13
+nowcoder_463557,碧桂园生活服务集团股份有限公司,数据开发岗,数据开发与分析,上海,8000,17000,本科,未披露,是,Elasticsearch; Flink; Hive; Java; Kafka; Python; Spark; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463557,2026-11-13
+nowcoder_463565,携程,数据分析师（技术方向）（2027届秋招）,数据开发与分析,上海,,,不限,应届生,是,Hadoop; Python; SQL; Spark; 分布式系统; 机器学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463565,2026-11-13
+nowcoder_463568,携程,算法工程师（NLP方向）（2027届秋招）,人工智能与算法,上海,,,不限,应届生,是,Agent; C++; DeepSpeed; Java; Linux; NLP; ONNX; PyTorch; Python; Swift; TensorFlow; TensorRT; 分布式系统; 大模型; 强化学习; 机器学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463568,2026-11-13
+nowcoder_463571,携程,算法工程师（时间序列方向）（2027届秋招）,人工智能与算法,上海,,,不限,应届生,是,Java; PyTorch; Python; TensorFlow; 分布式系统; 强化学习; 数据结构; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463571,2026-11-13
+nowcoder_463572,携程,数据仓库工程师（2027届秋招）,数据开发与分析,上海,,,不限,应届生,是,Flink; Java; SQL,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463572,2026-11-13
+nowcoder_463573,携程,Agent开发工程师（2027届秋招）,软件开发,上海,,,本科,应届生,是,Agent; Java; LangChain; LlamaIndex; Python,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463573,2026-11-13
+nowcoder_463574,携程,SRE工程师（2027届秋招）,运维与基础设施,上海,,,本科,应届生,是,Docker; Go; HTTP; Java; Kubernetes; Linux; Python; TCP/IP; 微服务; 操作系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463574,2026-11-13
+nowcoder_463576,携程,大数据开发工程师（2027届秋招）,数据开发与分析,上海,,,不限,应届生,是,Flink; HBase; Hadoop; Hibernate; Hive; Java; JavaScript; Linux; MyBatis; MySQL; PostgreSQL; React; SQL; Spark; Spring; Vue; 分布式系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463576,2026-11-13
+nowcoder_463578,携程,测试开发工程师（2027届秋招）,软件测试与测试开发,上海,,,不限,应届生,是,Docker; Go; Java; Kubernetes; Linux; MySQL; Python; Shell; Spring,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463578,2026-11-13
+nowcoder_463580,携程,大数据平台开发工程师（AI Agent方向）（2027届秋招）,人工智能与算法,上海,,,不限,应届生,是,Agent; LLM; Pandas; Python; SQL; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463580,2026-11-13
+nowcoder_463581,携程,LLM算法工程师（2027届秋招）,人工智能与算法,上海,,,不限,应届生,是,Agent; C++; LLM; NLP; PyTorch; Python; Swift; Transformers; 深度学习; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463581,2026-11-13
+nowcoder_463583,携程,移动端开发工程师（iOS/Android）（2027届秋招）,嵌入式与系统软件,上海,,,不限,应届生,是,Android; C; C++; CI/CD; HTTP; Java; Kotlin; React; Swift; iOS; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463583,2026-11-13
+nowcoder_463584,携程,算法工程师（搜索推荐方向）（2027届秋招）,人工智能与算法,上海,,,不限,应届生,是,C++; Java; Kubernetes; LLM; Linux; Python; Shell; 强化学习; 数据结构; 机器学习; 深度学习; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463584,2026-11-13
+nowcoder_463586,携程,前端开发工程师（2027届秋招）,软件开发,上海,,,不限,应届生,是,CSS; HTML; JavaScript; Node.js; React; TypeScript; Vue; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463586,2026-11-13
+nowcoder_463589,携程,全栈开发工程师（2027届秋招）,软件开发,上海,,,不限,应届生,是,C; C++; CSS; Go; HTML; Java; JavaScript; MySQL; Python; React; SQL; TypeScript; Vue; 操作系统; 数据结构; 算法基础; 计算机网络,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463589,2026-11-13
+nowcoder_463591,携程,Java开发工程师（2027届秋招）,软件开发,上海,,,不限,应届生,是,Go; Java; MySQL; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463591,2026-11-13
+nowcoder_463597,携程,云原生研发工程师（AI Agent方向）（2027届秋招）,人工智能与算法,上海,,,不限,应届生,是,Agent; CI/CD; Git; Go; LangChain; Python; RAG; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463597,2026-11-13
+nowcoder_463600,携程,IDC工程师（2027届秋招）,运维与基础设施,上海,,,不限,应届生,是,Go; Java; Python,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463600,2026-11-13
+nowcoder_463609,华为HUAWEI,后端工程师,软件开发,上海,,,本科,未披露,是,LLM; 大模型; 强化学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463609,2026-11-13
+nowcoder_463747,中城交（上海）科技有限公司,Agent开发工程师,软件开发,上海,20000,50000,本科,未披露,是,Agent; Python; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463747,2026-11-13
+nowcoder_463848,上海华为技术有限公司,算法工程师,人工智能与算法,上海,,,本科,未披露,是,C++; Java; Python; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/463848,2026-11-13
+nowcoder_464185,华为HUAWEI,【华为校招-27届毕业生】软件开发工程师,软件开发,上海,25000,45000,本科,未披露,是,Agent; C; C++; HTML; Java; JavaScript; Python; Rust; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/464185,2026-11-13
+nowcoder_464188,华为HUAWEI,【华为校招-27届毕业生】数据科学工程师,数据开发与分析,上海,15000,45000,本科,未披露,是,Python; SQL,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/464188,2026-11-13
+nowcoder_464192,华为HUAWEI,【华为校招-27届毕业生】AI应用工程师,人工智能与算法,上海,25000,60000,本科,未披露,是,C++; Java; NLP; Python; RAG; 大模型; 强化学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/464192,2026-11-13
+nowcoder_464242,淘天集团,AI应用研发工程师,人工智能与算法,上海,25000,60000,本科,未披露,是,Agent; Java; JavaScript; LLM; LangChain; NLP; Python; RAG; vLLM; 大模型; 操作系统; 数据结构; 算法基础; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/464242,2026-11-13
+nowcoder_464402,亿通国际,JAVA开发工程师(J10917),软件开发,上海,9000,14000,本科,未披露,是,Git; Java; JavaScript; Linux; Redis; SQL; Vue; 大模型; 操作系统; 数据结构; 计算机网络,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/464402,2026-11-13
+nowcoder_464405,华为云计算,ai infra,AI基础设施与系统开发,上海,20000,30000,本科,未披露,是,Agent; 分布式系统; 大模型; 机器学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/464405,2026-11-13
+nowcoder_464462,酷睿程上海分公司,人工智能,人工智能与算法,上海,,,本科,未披露,是,C++; PyTorch; Python; TensorFlow; 大模型; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/464462,2026-11-13
+nowcoder_464464,华为HUAWEI,人工智能,人工智能与算法,上海,20000,40000,本科,未披露,是,Agent; C; C++; Java; Kubernetes; Linux; Python; 分布式系统; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/464464,2026-11-13
+nowcoder_464471,字节跳动,客户端开发工程师-飞书,软件开发,上海,15000,20000,本科,未披露,是,Agent; C; C++; Java; Kotlin; Swift,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/464471,2026-11-13
+nowcoder_464487,上海华为技术有限公司,研发工程师,人工智能与算法,上海,25000,60000,本科,未披露,是,C; C++; HTML; HarmonyOS; Java; JavaScript; Python; Rust; TCP/IP; 分布式系统; 大模型; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/464487,2026-11-13
+nowcoder_464520,网易,游戏后端,软件开发,上海,20000,35000,本科,未披露,是,Android; iOS,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/464520,2026-11-13
+nowcoder_464768,途虎,客户端开发,软件开发,上海,26000,40000,本科,未披露,是,Android; C; Git; HarmonyOS; Java; JavaScript; Kotlin; Swift; iOS,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/464768,2026-11-13
+nowcoder_464785,天猫技术,AI Agent应用研发工程师-淘天27届校招-杭京沪深广,人工智能与算法,上海,30000,50000,本科,未披露,是,Agent; Java; JavaScript; LLM; LangChain; NLP; Python; RAG; vLLM; 大模型; 操作系统; 数据结构; 算法基础; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/464785,2026-11-13
+nowcoder_464884,亿通国际,系统运维系统工程师,运维与基础设施,上海,9000,14000,本科,未披露,是,Linux; TCP/IP; 计算机网络,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/464884,2026-11-13
+nowcoder_464964,途虎,增长算法工程师-（2027届校招）,人工智能与算法,上海,30000,48000,本科,未披露,是,Flink; Hive; Java; NLP; PyTorch; Python; Spark; TensorFlow; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/464964,2026-11-13
+nowcoder_464969,途虎,全栈开发工程师（2027届校招）-武汉/上海,软件开发,上海,28000,38000,本科,未披露,是,Agent,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/464969,2026-11-13
+nowcoder_465013,兴证全球基金,Java 后端,软件开发,上海,16000,22000,硕士,未披露,是,Agent; Java; Linux; SQL; Spring Boot; Windows; 大模型; 操作系统; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/465013,2026-11-13
+nowcoder_465015,兴证全球基金,系统运维开发工程师,运维与基础设施,上海,17000,22000,硕士,未披露,是,Linux; MySQL; Oracle; 操作系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/465015,2026-11-13
+nowcoder_465017,途虎,数据开发工程师（2027届校招）-上海,数据开发与分析,上海,25000,35000,本科,未披露,是,Agent; Flink; Hive; Java; Python; RAG; SQL; Spark; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/465017,2026-11-13
+nowcoder_465020,途虎,测试开发工程师（2027届校招）,软件测试与测试开发,上海,16000,25000,本科,未披露,是,C; C++; Java; LLM; Python,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/465020,2026-11-13
+nowcoder_465070,华为HUAWEI,通用软件工程师-27届校招岗位,软件开发,上海,15000,25000,本科,未披露,是,Agent,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/465070,2026-11-13
+nowcoder_465117,上海宇量昇科技有限公司,软件开发工程师（2027届）,软件开发,上海,15000,30000,本科,未披露,是,C; C++; Java; MongoDB; MySQL; Oracle; Python; Qt; 分布式系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/465117,2026-11-13
+nowcoder_465118,华为软件技术有限公司,人工智能,人工智能与算法,上海,16000,25000,本科,未披露,是,Agent; Go; Java; Python,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/465118,2026-11-13
+nowcoder_465360,众安保险,[2027届秋招-上海]AI全栈工程师,人工智能与算法,上海,18000,26000,本科,未披露,是,Agent; RAG,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/465360,2026-11-13
+nowcoder_465487,九方云,AI全栈开发(A125219),人工智能与算法,上海,20000,30000,本科,未披露,是,Git; Linux; RAG; 大模型; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/465487,2026-11-13
+nowcoder_465502,上海华为技术有限公司,Java,软件开发,上海,26000,40000,本科,未披露,是,C++; HarmonyOS; Java; Python; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/465502,2026-11-13
+nowcoder_466048,华为HUAWEI,AI开发工程师,人工智能与算法,上海,,,本科,未披露,是,LLM; 分布式系统; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/466048,2026-11-13
+nowcoder_466486,杭州华为企业通信技术有限公司,研发工程师,AI基础设施与系统开发,上海,20000,40000,本科,未披露,是,C; C++; Go; Java; LLM; Linux; NCCL; PyTorch; Python; Rust; TCP/IP; TensorFlow; 分布式系统; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/466486,2026-11-13
+nowcoder_466613,亿通国际,软件开发运维开发工程师,运维与基础设施,上海,9000,14000,本科,未披露,是,CSS; Elasticsearch; Git; Java; JavaScript; Kafka; Linux; MongoDB; Redis; SQL; Spring Boot; TypeScript; Vue; 大模型; 微服务; 操作系统; 数据结构; 算法基础; 计算机网络,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/466613,2026-11-13
+nowcoder_466705,杭州华为企业通信技术有限公司,软件开发工程师,软件开发,上海,20000,40000,不限,未披露,是,Agent; LLM; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/466705,2026-11-13
+nowcoder_466819,众安保险,[2027届秋招-上海]AI算法工程师,人工智能与算法,上海,20000,28000,硕士,未披露,是,Agent; Docker; Git; Kubernetes; LLM; Linux; PyTorch; Python; RAG; vLLM; 分布式系统; 大模型; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/466819,2026-11-13
+nowcoder_466838,汇纳科技股份有限公司,AI开发工程师,人工智能与算法,上海,,,本科,未披露,是,C#; Java; Node.js; Python; React; Vue,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/466838,2026-11-13
+nowcoder_466845,华为HUAWEI,AI Infra 研发工程师,AI基础设施与系统开发,上海,25000,50000,硕士,未披露,是,Agent; CUDA; LLM; NCCL; RAG; TensorRT; Triton; vLLM,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/466845,2026-11-13
+nowcoder_467145,上海华为技术有限公司,通用软件开发工程师,软件开发,上海,,,不限,未披露,是,Android; C; C++; HarmonyOS; Java; JavaScript; Linux; Python; Windows; iOS; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467145,2026-11-13
+nowcoder_467165,众安保险,[2027届秋招-上海]数据开发工程师,数据开发与分析,上海,18000,26000,本科,未披露,是,HBase; Hadoop; Hive; Linux; Python; SQL; Shell; Spark,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467165,2026-11-13
+nowcoder_467169,上海华为技术有限公司,嵌入式软件开发,嵌入式与系统软件,上海,20000,40000,本科,未披露,是,Agent; C; C++; Java; Python; Rust; 大模型; 机器学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467169,2026-11-13
+nowcoder_467170,华为软件技术有限公司,后端工程师,软件开发,上海,,,本科,未披露,是,LLM; 大模型; 强化学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467170,2026-11-13
+nowcoder_467172,华为软件技术有限公司,Java,软件开发,上海,,,本科,未披露,是,Java; LLM; 大模型; 强化学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467172,2026-11-13
+nowcoder_467251,上海华为技术有限公司,AI模型工程师-Agent技术,人工智能与算法,上海,20000,50000,本科,未披露,是,Agent; LLM; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467251,2026-11-13
+nowcoder_467270,FUNPLUS,27校招-AI Agent 工程师-发行,人工智能与算法,上海,20000,40000,本科,未披露,是,Agent; Go; Java; Python; RAG; TypeScript; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467270,2026-11-13
+nowcoder_467271,FUNPLUS,27校招-AI Agent 工程师-多模态,人工智能与算法,上海,20000,40000,本科,未披露,是,Agent; Git; Python; RAG; TypeScript; 大模型; 数据结构,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467271,2026-11-13
+nowcoder_467284,FUNPLUS,27校招-AI Agent 工程师-数据,人工智能与算法,上海,20000,40000,本科,未披露,是,Agent; LangChain; Python; RAG; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467284,2026-11-13
+nowcoder_467289,华为HUAWEI,推理框架研发工程师,AI基础设施与系统开发,上海,18000,30000,本科,未披露,是,Agent; C; C++; Go; Java; Kubernetes; Megatron; MySQL; Python; vLLM; 分布式系统; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467289,2026-11-13
+nowcoder_467327,上海华为技术有限公司,通用软件开发工程师,软件开发,上海,20000,40000,本科,未披露,是,C; C++; Java; JavaScript; Python; 分布式系统; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467327,2026-11-13
+nowcoder_467328,上海华为技术有限公司,前端工程师,软件开发,上海,,,本科,未披露,是,Angular; CSS; DevOps; Go; HTML; Java; JavaScript; Node.js; Python; React; TypeScript; Vue; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467328,2026-11-13
+nowcoder_467468,华为HUAWEI,后端工程师,软件开发,上海,15000,30000,硕士,未披露,是,数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467468,2026-11-13
+nowcoder_467510,智慧芽,AI 应用开发工程师（Agent方向）(J12741),人工智能与算法,上海,25000,35000,硕士,未披露,是,Agent; Git; LLM; Linux; Python; RAG; SQL; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467510,2026-11-13
+nowcoder_467718,北京华为数字,算法工程师,人工智能与算法,上海,21000,22000,硕士,未披露,是,LLM; 分布式系统; 大模型; 强化学习; 机器学习; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467718,2026-11-13
+nowcoder_467917,上海华为技术有限公司,算法工程师,人工智能与算法,上海,,,本科,未披露,是,LLM; Linux; NLP; NumPy; Pandas; Python; Shell; 大模型; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467917,2026-11-13
+nowcoder_467938,杭州华为企业通信技术有限公司,Python 云计算开发工程师,嵌入式与系统软件,上海,19000,29000,本科,未披露,是,Agent; Java; Python; 大模型; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467938,2026-11-13
+nowcoder_467963,太初（杭州）集成电路有限公司,推理性能优化研究员（27届校招）,人工智能与算法,上海,25000,40000,硕士,其他,是,C++; CUDA; Megatron; PyTorch; Python; TensorFlow; vLLM; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/467963,2026-11-13
+nowcoder_468459,上海华为技术有限公司,人工智能,人工智能与算法,上海,14000,18000,本科,未披露,是,Agent; LLM; Linux; RAG; 大模型; 操作系统; 机器学习; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/468459,2026-11-13
+nowcoder_468465,途虎,飞控算法工程师（2027届校招）,人工智能与算法,上海,30000,40000,本科,未披露,是,C; C++; Git; Linux; MATLAB; Python; ROS; Simulink,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/468465,2026-11-13
+nowcoder_468545,太初（杭州）集成电路有限公司,AI芯片推理框架研究员（27届校招）,AI基础设施与系统开发,上海,20000,40000,硕士,未披露,是,C++; CUDA; LLM; ONNX; PyTorch; Python; TensorFlow; 汇编; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/468545,2026-11-13
+nowcoder_468570,科大讯飞,AI 应用开发,人工智能与算法,上海,20000,40000,本科,未披露,是,Agent; Go; Java; LLM; LangChain; Python; RAG; 分布式系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/468570,2026-11-13
+nowcoder_468587,智慧芽,AI研究员（大模型 / 强化学习 / 多模态方向）(J12742),人工智能与算法,上海,30000,50000,博士,未披露,是,Agent; PyTorch; Python; 分布式系统; 大模型; 强化学习; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/468587,2026-11-13
+nowcoder_468644,UCloud,2027校招-应用开发（Golang）,软件开发,上海,,,本科,未披露,是,CSS; DevOps; Docker; Go; HTML; HTTP; Java; JavaScript; Kafka; Kubernetes; Python; React; Vue,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/468644,2026-11-13
+nowcoder_468650,UCloud,2027校招-Ai Infra工程师,AI基础设施与系统开发,上海,,,本科,未披露,是,C; C++; CUDA; NCCL; PyTorch; Python; TensorFlow; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/468650,2026-11-13
+nowcoder_468651,UCloud,2027校招-大模型推理优化工程师,人工智能与算法,上海,,,本科,未披露,是,CUDA; LLM; NCCL; PyTorch; TensorRT; Transformers; Triton; vLLM; 分布式系统; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/468651,2026-11-13
+nowcoder_468657,杭州华为企业通信技术有限公司,C工程师,软件开发,上海,19000,30000,本科,未披露,是,C; C++; Python,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/468657,2026-11-13
+nowcoder_468665,UCloud,2027校招-SRE,运维与基础设施,上海,,,本科,未披露,是,Ansible; Docker; Kubernetes; Linux; 分布式系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/468665,2026-11-13
+nowcoder_468666,UCloud,2027校招-Golang开发工程师（云网络）,软件开发,上海,,,本科,未披露,是,C; C++; Go; Java; Kubernetes; Linux; 分布式系统; 微服务,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/468666,2026-11-13
+nowcoder_468770,华为HUAWEI,ai训推框架工程师,AI基础设施与系统开发,上海,15000,30000,本科,未披露,是,Agent; 分布式系统; 大模型; 机器学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/468770,2026-11-13
+nowcoder_468798,上海华为技术有限公司,数据库软件开发工程师,数据开发与分析,上海,20000,40000,本科,未披露,是,LLM; SQL; 分布式系统; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/468798,2026-11-13
+nowcoder_468833,华为HUAWEI,人工智能,人工智能与算法,上海,,,本科,未披露,是,Agent; C++; Java; JavaScript; Python; 大模型; 数据结构,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/468833,2026-11-13
+nowcoder_468903,上海华为技术有限公司,AI数据科学工程师,人工智能与算法,上海,20000,30000,本科,未披露,是,,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/468903,2026-11-13
+nowcoder_469430,字节跳动,AI agent开发工程师,人工智能与算法,上海,20000,30000,本科,未披露,是,Agent,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469430,2026-11-13
+nowcoder_469432,快手,ai agent开发,人工智能与算法,上海,20000,35000,本科,未披露,是,Agent; Elasticsearch; FastAPI; Go; Java; MongoDB; MySQL; Python; RAG; Redis; Spring Boot; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469432,2026-11-13
+nowcoder_469455,UCloud,2027校招-Ai产品全栈研发工程师,人工智能与算法,上海,,,本科,未披露,是,Agent; Android; Kotlin; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469455,2026-11-13
+nowcoder_469462,UCloud,2027校招-主机后台开发,软件开发,上海,,,本科,未披露,是,Agent; C; C++; Go; Java; Linux; 分布式系统; 操作系统; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469462,2026-11-13
+nowcoder_469542,上海华为技术有限公司,后端/数据库开发工程师,数据开发与分析,上海,,,本科,未披露,是,Azure; C; C++; Hadoop; Java; MongoDB; MySQL; Oracle; PostgreSQL; Python; Redis; Rust; SQL; SQL Server; Shell; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469542,2026-11-13
+nowcoder_469556,杭州华为企业通信技术有限公司,AI测试开发&软件测试工程师,软件测试与测试开发,上海,20000,45000,本科,未披露,是,,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469556,2026-11-13
+nowcoder_469602,上海方皋企业管理咨询有限公司,视觉推理优化工程师（应届生）,人工智能与算法,上海,20000,40000,本科,其他,是,CUDA; PyTorch; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469602,2026-11-13
+nowcoder_469633,上海银行,总行金融科技岗位（应用开发）,软件开发,上海,,,本科,未披露,是,Android; C; C++; HTML; Java; Linux; React; Unix; Windows; iOS; 操作系统; 机器学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469633,2026-11-13
+nowcoder_469634,上海银行,总行金融科技岗位（软件测试）,软件测试与测试开发,上海,,,本科,未披露,是,Agent,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469634,2026-11-13
+nowcoder_469640,上海银行,总行金融科技岗位（SRE运维）,运维与基础设施,上海,,,本科,未披露,是,C; C++; Java; Linux; Python; Shell; Unix; Windows; 分布式系统; 操作系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469640,2026-11-13
+nowcoder_469641,上海银行,总行金融科技岗位（数据开发）,数据开发与分析,上海,,,本科,未披露,是,Flink; Hadoop; Hive; SQL; Spark; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469641,2026-11-13
+nowcoder_469642,上海银行,总行金融科技岗位（数据分析）,数据开发与分析,上海,,,本科,未披露,是,Java; Python; SQL; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469642,2026-11-13
+nowcoder_469643,上海银行,总行金融科技岗位（算法工程）,人工智能与算法,上海,,,本科,未披露,是,Agent; Docker; FastAPI; Linux; PyTorch; Python; RAG; TensorFlow; 大模型; 数据结构; 机器学习; 深度学习; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469643,2026-11-13
+nowcoder_469788,华为HUAWEI,大语言模型工程师（hc多多）,人工智能与算法,上海,15000,30000,本科,未披露,是,C++; LLM; Linux; PyTorch; Python; 大模型; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469788,2026-11-13
+nowcoder_469851,上海华为技术有限公司,算法工程师,人工智能与算法,上海,,,不限,未披露,是,C; C++; Go; Java; PyTorch; TensorFlow; 数据结构; 深度学习; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469851,2026-11-13
+nowcoder_469852,上海华为技术有限公司,JAVA后端开发工程师,软件开发,上海,,,本科,未披露,是,Agent; Java; JavaScript; Python; 分布式系统; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469852,2026-11-13
+nowcoder_469927,华为HUAWEI,AI工程师,人工智能与算法,上海,25000,50000,本科,未披露,是,Docker; Go; Hadoop; Java; Kubernetes; Linux; PyTorch; Python; Shell; Spark; TCP/IP; TensorFlow; 微服务; 操作系统; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469927,2026-11-13
+nowcoder_469981,上海华为技术有限公司,算法工程师,人工智能与算法,上海,25000,50000,本科,未披露,是,Agent; LLM; PyTorch; Python; TensorFlow; 大模型; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/469981,2026-11-13
+nowcoder_470157,华为HUAWEI,华为27年校园招聘-开发工程师-南京-上海-西安-深圳,软件开发,上海,20000,30000,本科,未披露,是,Agent; C; C++; HTML; HarmonyOS; Java; JavaScript; Python; Rust; TCP/IP; 分布式系统; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/470157,2026-11-13
+nowcoder_470251,携程,Eagle Program – Big Data Engineer (2027 Graduates),数据开发与分析,上海,,,本科,应届生,是,AWS; C++; Flink; Git; Go; Hadoop; Java; LLM; RAG; SQL; Spark; TCP/IP; 分布式系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/470251,2026-11-13
+nowcoder_470729,上海华为技术有限公司,AI算法研究员,人工智能与算法,上海,,,本科,未披露,是,Agent; NLP; 强化学习; 机器学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/470729,2026-11-13
+nowcoder_470818,蓝色光标,AI Builder - 研发-2027秋,人工智能与算法,上海,15000,35000,本科,未披露,是,Agent; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/470818,2026-11-13
+nowcoder_470927,商米集团,<27届校招>算法工程师（大模型）,人工智能与算法,上海,26000,42000,硕士,未披露,是,Agent; LLM; PyTorch; Python; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/470927,2026-11-13
+nowcoder_470939,商米集团,<27届校招>软件开发工程师,软件开发,上海,15000,21000,本科,未披露,是,Agent; FastAPI; Git; Go; Java; LLM; Linux; MySQL; PostgreSQL; Python; REST API; SQL; Spring Boot; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/470939,2026-11-13
+nowcoder_470942,商米集团,<27届校招>算法工程师（多模态）,人工智能与算法,上海,22000,42000,硕士,未披露,是,Agent; Android; C++; LLM; LangChain; Linux; ONNX; PyTorch; Python; TensorFlow; 大模型; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/470942,2026-11-13
+nowcoder_470948,商米集团,<27届校招>工具开发工程师,软件开发,上海,15000,21000,本科,未披露,是,Java,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/470948,2026-11-13
+nowcoder_470949,商米集团,<27届校招>运维工程师,运维与基础设施,上海,11000,15000,本科,未披露,是,Agent; Go; Linux; Python; Shell,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/470949,2026-11-13
+nowcoder_470952,上海华为技术有限公司,语音算法工程师,人工智能与算法,上海,20000,30000,硕士,未披露,是,C++; Java; LLM; Megatron; Python; Rust; vLLM; 分布式系统; 大模型; 强化学习; 机器学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/470952,2026-11-13
+nowcoder_470994,惠州市德赛西威汽车电子股份有限公司,端到端轨迹预测算法工程师（2027届-上海）,人工智能与算法,上海,,,硕士,未披露,是,Git; Linux; PyTorch; Python; TensorFlow; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/470994,2026-11-13
+nowcoder_471061,上海华为技术有限公司,AI Infra工程师,AI基础设施与系统开发,上海,25000,35000,本科,未披露,是,Agent; C; C++; Go; Python; Triton; 分布式系统; 大模型; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/471061,2026-11-13
+nowcoder_471073,上海华为技术有限公司,【华为】软件开发工程师,软件开发,上海,24000,30000,不限,未披露,是,C; C++; HTML; Java; JavaScript; Linux; Python; Rust; 操作系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/471073,2026-11-13
+nowcoder_471077,华为软件技术有限公司,测试工程师,软件测试与测试开发,上海,,,本科,未披露,是,Agent; Python; 大模型; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/471077,2026-11-13
+nowcoder_471141,商米集团,<27届校招>AI测试工程师,软件测试与测试开发,上海,16000,23000,硕士,未披露,是,Java; Python; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/471141,2026-11-13
+nowcoder_471169,京东,后端工程师,软件开发,上海,,,本科,未披露,是,C; C++; Go; HTTP; Java; TCP/IP; 分布式系统; 操作系统; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/471169,2026-11-13
+nowcoder_471177,上证信息,A01.技术开发工程师,软件开发,上海,,,硕士,未披露,是,C++; Java; Python,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/471177,2026-11-13
+nowcoder_471179,上证信息,A06.技术运维工程师（云平台方向）,运维与基础设施,上海,,,本科,未披露,是,Ansible; Linux; Python; Shell; 操作系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/471179,2026-11-13
+nowcoder_471224,新毅东,嵌入式研发应用工程师（上海 校招）(J10536),嵌入式与系统软件,上海,15000,25000,本科,未披露,是,C; 操作系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/471224,2026-11-13
+nowcoder_471242,英特尔,JR0288426 编译器工程师,嵌入式与系统软件,上海,27000,35000,本科,未披露,是,C; C++; 数据结构,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/471242,2026-11-13
+nowcoder_471489,华为云,AI算法工程师/推理工程师,人工智能与算法,上海,20000,30000,本科,未披露,是,C++; Java; LLM; Megatron; Python; Rust; vLLM; 分布式系统; 大模型; 强化学习; 机器学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/471489,2026-11-13
+nowcoder_471499,拼多多集团-PDD,算法工程师（上海）——27秋招正式批,人工智能与算法,上海,25000,45000,硕士,未披露,是,Hive; LLM; Linux; NLP; PyTorch; TensorFlow; 数据结构; 机器学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/471499,2026-11-13
+nowcoder_471682,特斯拉汽车（北京）,"0-2年毕业生-开发工程师(Java/ .NET) , 上海",软件开发,上海,28000,30000,本科,未披露,是,.NET; AWS; Agent; Angular; Azure; C#; CI/CD; DevOps; Docker; Git; HTTP; Java; Kafka; LLM; MySQL; RAG; REST API; RabbitMQ; React; SQL; SQL Server; Vue; 数据结构; 机器学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/471682,2026-11-13
+nowcoder_472666,上海元思无界信息科技有限公司,VLA算法工程师,人工智能与算法,上海,18000,30000,硕士,未披露,是,Agent; C++; PyTorch; Python; 分布式系统; 大模型; 强化学习; 机器学习; 深度学习; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/472666,2026-11-13
+nowcoder_472667,上海元思无界信息科技有限公司,仿真算法工程师,人工智能与算法,上海,18000,30000,本科,未披露,是,Agent; C++; Git; Linux; Python; ROS; 强化学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/472667,2026-11-13
+nowcoder_473774,华为HUAWEI,AI应用开发工程师,人工智能与算法,上海,,,本科,未披露,是,Agent; C++; Java; LLM; Linux; PyTorch; Python; RAG; ROS; Rust; Scikit-learn; TensorFlow; 大模型; 操作系统; 机器学习; 深度学习; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/473774,2026-11-13
+nowcoder_473869,上海华为技术有限公司,AI应用开发工程师,人工智能与算法,上海,,,本科,未披露,是,Agent; C++; Java; LLM; Linux; PyTorch; Python; RAG; ROS; Rust; Scikit-learn; TensorFlow; 大模型; 操作系统; 机器学习; 深度学习; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/473869,2026-11-13
+nowcoder_474142,北京外企德科人力资源服务上海有限公司,Java开发工程师，26届无经验应届生可培养，全国可推,软件开发,上海,15000,30000,本科,未披露,是,C; C++; Hibernate; Java; JavaScript; MyBatis; MySQL; Oracle; Python; Spring; Struts,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/474142,2026-11-13
+nowcoder_474182,上海华为技术有限公司,AI Infra工程师,AI基础设施与系统开发,上海,15000,30000,本科,未披露,是,Agent; Triton; 分布式系统; 大模型; 机器学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/474182,2026-11-13
+nowcoder_474366,哈啰,【量天尺计划】智驾Efficient AI 前沿预研-造父Robotaxi(J21702),人工智能与算法,上海,,,硕士,未披露,是,C++; CUDA; PyTorch; TensorFlow; TensorRT; Triton; vLLM; 大模型; 强化学习; 深度学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/474366,2026-11-13
+nowcoder_474369,哈啰,【量天尺计划】智驾仿真算法-造父Robotaxi(J21699),人工智能与算法,上海,,,硕士,未披露,是,Agent; LLM; Linux; Python; RAG; Shell; 大模型; 强化学习; 深度学习; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/474369,2026-11-13
+nowcoder_474372,哈啰,【量天尺计划】智驾模型开发-造父Robotaxi(J21698),人工智能与算法,上海,,,硕士,未披露,是,Agent; C++; Linux; 大模型; 操作系统; 数据结构,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/474372,2026-11-13
+nowcoder_474719,携程,安全攻防工程师（AI 蓝军方向 ）（2027届秋招）,网络安全,上海,,,不限,应届生,是,Agent; C; C++; Go; Java; LLM; Python; RAG; 大模型; 操作系统; 计算机网络,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/474719,2026-11-13
+nowcoder_474772,携程,LLM 应用工程师（信息安全方向）（2027届秋招）,网络安全,上海,,,不限,应届生,是,Agent; LLM; Python; React; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/474772,2026-11-13
+nowcoder_474941,中金所技术公司,运维工程师-一线运维(J10469),运维与基础设施,上海,,,本科,未披露,是,,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/474941,2026-11-13
+nowcoder_474942,中金所技术公司,运维工程师-网络建设(J10468),运维与基础设施,上海,,,硕士,未披露,是,Agent; TCP/IP,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/474942,2026-11-13
+nowcoder_474943,中金所技术公司,运维工程师-云计算建设(J10467),运维与基础设施,上海,,,硕士,未披露,是,Agent; Linux; Python; 操作系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/474943,2026-11-13
+nowcoder_474947,中金所技术公司,运维工程师-数据库管理（DBA）(J10466),运维与基础设施,上海,,,硕士,未披露,是,Linux; MySQL; Oracle; PostgreSQL; Python; Shell; 操作系统,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/474947,2026-11-13
+nowcoder_474948,中金所技术公司,软件开发工程师-Agent研发(J10464),软件开发,上海,,,硕士,未披露,是,Agent; C++; Go; Java; JavaScript; Linux; Python; RAG; 大模型; 机器学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/474948,2026-11-13
+nowcoder_474951,中金所技术公司,软件开发工程师-Java开发(J10463),软件开发,上海,,,硕士,未披露,是,Agent; Java; JavaScript; MyBatis; MySQL; Oracle; SQL; Spring; Spring Boot; 分布式系统; 大模型; 微服务,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/474951,2026-11-13
+nowcoder_474952,中金所技术公司,软件开发工程师-C++开发(J10465),软件开发,上海,,,硕士,未披露,是,Agent; C; C++; Linux; Unix; 分布式系统; 大模型,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/474952,2026-11-13
+nowcoder_475056,中国电科三十二所,【2027】渗透测试工程师,网络安全,上海,,,硕士,其他,是,C++; JMeter; Java; SQL,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/475056,2026-11-13
+nowcoder_475074,上海元思无界信息科技有限公司,运控算法工程师,人工智能与算法,上海,18000,30000,硕士,未披露,是,PyTorch; TensorFlow; 强化学习,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/475074,2026-11-13
+nowcoder_475075,上海元思无界信息科技有限公司,SLAM算法工程师,人工智能与算法,上海,18000,30000,硕士,未披露,是,C++; Python; ROS,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/475075,2026-11-13
+nowcoder_475232,上海华为技术有限公司,算法工程师,人工智能与算法,上海,25000,40000,硕士,未披露,是,Agent; C++; Java; Megatron; NLP; Python; Rust; vLLM; 分布式系统; 大模型; 机器学习; 计算机视觉,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/475232,2026-11-13
+nowcoder_475251,长川科技,2027届-自动化软件工程师（上海）,软件开发,上海,,,本科,未披露,是,C#; C++,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/475251,2026-11-13
+nowcoder_475273,上海砺星工业,嵌入式软件工程师(J10619),嵌入式与系统软件,上海,13000,20000,本科,未披露,是,C; C++; 操作系统; 数据结构; 算法基础,牛客网校园招聘,https://www.nowcoder.com/jobs/detail/475273,2026-11-13

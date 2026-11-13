@@ -73,6 +73,7 @@ def test_quality_stats(seeded_client: TestClient) -> None:
     assert body["demo_records"] == 3  # test URLs point at example.com
     assert body["total_companies"] == 3
     assert body["total_cities"] == 1
+    assert body["sources"] == ["test"]
     assert body["collected_from"] == "2026-11-01"
     assert body["collected_to"] == "2026-11-01"
 

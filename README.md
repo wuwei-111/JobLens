@@ -4,7 +4,7 @@
 
 一个以**数据分析和新闻叙事**为核心的交互式数据新闻作品。系统将招聘信息整理为结构化数据集，通过 FastAPI 提供查询与统计接口，并由 Vue 3 + ECharts 完成交互式展示。
 
-> 当前状态：**前端已做到“只差真实数据”**。数据库、导入/预检/质量/交叉/导出接口可用；首页为单页长滚动专题，详情页支持四维筛选与 URL 状态、技能→岗位抽屉；数据说明页展示实时质量摘要与导入批次。演示模式会根据 `/stats/quality` 自动切换。真实招聘数据仍在采集中，进度见 [docs/TODO.md](docs/TODO.md)。
+> 当前状态：**上海 280 条真实校招数据已导入，JSON → SQLite → FastAPI → Vue/ECharts 全链路已打通**。数据库、导入/预检/质量/交叉/导出接口可用；首页为单页长滚动专题，详情页支持四维筛选与 URL 状态、技能→岗位抽屉；数据说明页展示实时质量摘要、来源与导入批次。演示模式根据 `/stats/quality` 自动切换，当前已自动隐藏。该数据集是阶段性样本，后续还会合并其他数据，进度见 [docs/TODO.md](docs/TODO.md)。
 
 ## 技术栈
 
@@ -32,8 +32,8 @@ JobLens/
 │   │   ├── api/v1/              # health / imports / jobs / stats / meta / exports
 │   │   ├── services/            # 导入、预检、规范化、统计、质量
 │   │   └── ...
-│   ├── data/raw/                # 原始 JSON（sample_jobs.json 为 10 条虚构演示数据）
-│   ├── data/reports/            # 演示数据交付报告（质量/批次/核对/CSV）
+│   ├── data/raw/                # 原始 JSON（上海 280 条真实数据；sample_jobs.json 为 10 条虚构演示数据）
+│   ├── data/reports/            # 数据交付报告（真实数据 + 演示数据，质量/批次/核对/CSV）
 │   ├── scripts/                 # 导入、检查、核对、重建、性能基准
 │   ├── tests/
 │   └── requirements.txt
@@ -64,7 +64,7 @@ JobLens/
 npm run dev
 ```
 
-首次运行会自动完成：创建 `backend/.venv`、安装 Python 依赖、安装前端依赖；若数据库为空，还会自动导入 10 条虚构演示数据。随后同时启动前后端。
+首次运行会自动完成：创建 `backend/.venv`、安装 Python 依赖、安装前端依赖。数据库为空时会优先导入上海真实数据；真实文件缺失时才回退到 10 条虚构演示数据。已有数据不会被覆盖。随后同时启动前后端。
 
 - 前端页面：<http://localhost:5173>
 - 后端 API 文档：<http://127.0.0.1:8000/docs>
@@ -106,27 +106,34 @@ npm run dev
 
 前端默认运行在 <http://localhost:5173>，通过 Vite 代理访问 `/api` → `http://127.0.0.1:8000`。
 
-### 导入演示数据
+### 导入数据
 
-方式一：在 Swagger 页面调用 `POST /api/v1/imports/json`，上传 `backend/data/raw/sample_jobs.json`。
+当前正式数据集：`backend/data/raw/shanghai_graduate_jobs_2026-11-13.json`（上海计算机类应届生公开校招岗位，280 条，牛客网校园招聘，采集于 2026-11-13）。
 
-方式二（Windows 请使用 `curl.exe`）：
-
-```bash
-curl -X POST "http://127.0.0.1:8000/api/v1/imports/json?on_conflict=skip" \
-  -F "file=@backend/data/raw/sample_jobs.json"
-```
-
-也可以使用命令行脚本（自动建表）：
+重建数据库并导入（会删除现有 SQLite 数据库，先停止 API）：
 
 ```bash
 cd backend
-python -m scripts.import_sample
+python -m scripts.reset_db data/raw/shanghai_graduate_jobs_2026-11-13.json --yes
 ```
 
-> `sample_jobs.json` 是**10 条虚构的演示数据**，仅用于开发调试与页面展示，不能用于新闻结论。页面顶部和“数据说明”页会持续显示演示状态提示。
+只追加/更新、不删库时，可以走接口：
 
-> **Git 数据边界**：SQLite 数据库 `backend/data/joblens.db` 不进入 Git（`.gitignore` 已忽略 `*.db`）。仓库只跟踪原始 JSON 与演示报告；数据库由 `scripts/reset_db.py` 或导入接口重建，避免把运行期数据库和真实采集数据混进版本库。
+```bash
+curl -X POST "http://127.0.0.1:8000/api/v1/imports/json?on_conflict=update" \
+  -F "file=@backend/data/raw/shanghai_graduate_jobs_2026-11-13.json"
+```
+
+也可以使用命令行脚本（自动建表，默认读取演示数据；正式数据请传路径）：
+
+```bash
+cd backend
+python -m scripts.import_sample data/raw/shanghai_graduate_jobs_2026-11-13.json --on-conflict update
+```
+
+> `sample_jobs.json` 仍是 **10 条虚构演示数据**，只用于开发调试与页面展示，不能用于新闻结论。真实数据导入后，`/stats/quality` 的 `demo_records` 为 0，前端演示提示会自动消失。
+
+> **Git 数据边界**：SQLite 数据库 `backend/data/joblens.db` 不进入 Git（`.gitignore` 已忽略 `*.db`）。仓库只跟踪原始 JSON 与生成报告；数据库由 `scripts/reset_db.py` 或导入接口重建，避免把运行期数据库混进版本库。
 
 ### 正式数据检查
 
@@ -134,14 +141,14 @@ python -m scripts.import_sample
 
 ```bash
 cd backend
-python -m scripts.check_dataset data/raw/jobs_hangzhou_2026-11.json --json > quality.json
+python -m scripts.check_dataset data/raw/shanghai_graduate_jobs_2026-11-13.json --json > data/reports/shanghai-quality.json
 ```
 
 服务启动后也可以调用：
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/api/v1/imports/validate" \
-  -F "file=@data/raw/jobs_hangzhou_2026-11.json"
+  -F "file=@data/raw/shanghai_graduate_jobs_2026-11-13.json"
 ```
 
 预检只读、不写库，会报告缺失字段、未知学历/经验、薪资异常、空技能、重复链接、演示记录，以及数据库中已有的 id 数量。确认后按上面的导入方式入库，并用 `GET /api/v1/imports/batches` 与 `GET /api/v1/stats/quality` 查看批次和质量摘要。
@@ -155,10 +162,10 @@ cd backend
 # 演示数据（默认读取 sample_jobs.json）
 python -m scripts.verify_stats
 # 正式数据必须传入同一份 JSON 文件
-python -m scripts.verify_stats data/raw/jobs_hangzhou_2026-11.json --json > verify.json
+python -m scripts.verify_stats data/raw/shanghai_graduate_jobs_2026-11-13.json --json > data/reports/shanghai-verify.json
 ```
 
-演示数据当前 **359/359** 项一致；正式数据导入后应重跑并以 `verify.json` 作为交付材料。
+上海真实数据当前 **825/825** 项一致（`failed=0`）；演示数据为 359/359。交付时以 `data/reports/shanghai-verify.json` 为准。
 
 ### 数据库重建与性能基准
 
@@ -169,7 +176,7 @@ cd backend
 # 演示数据
 python -m scripts.reset_db --yes
 # 正式数据
-python -m scripts.reset_db data/raw/jobs_hangzhou_2026-11.json --yes
+python -m scripts.reset_db data/raw/shanghai_graduate_jobs_2026-11-13.json --yes
 ```
 
 500 条数据下的接口性能基准（使用临时数据库，不会改动现有数据）：
@@ -178,7 +185,7 @@ python -m scripts.reset_db data/raw/jobs_hangzhou_2026-11.json --yes
 python -m scripts.benchmark_api
 ```
 
-演示数据当前所有接口 median 与 p95 均低于 300ms（最慢的 CSV 导出 p95 约 58ms）。
+500 条临时数据下所有接口 median 与 p95 均低于 300ms（最慢的 CSV 导出 p95 约 58ms）。
 
 ### 交叉统计与 CSV 导出
 
@@ -190,9 +197,9 @@ curl "http://127.0.0.1:8000/api/v1/stats/cross?row=job_type&column=education"
 curl "http://127.0.0.1:8000/api/v1/exports/jobs.csv" -o jobs.csv
 ```
 
-### 演示交付报告
+### 交付报告
 
-`backend/data/reports/` 已生成基于 10 条虚构数据的质量检查、导入批次、总览、交叉统计、CSV 与统计核对报告；生成方式与注意事项见 [backend/data/reports/README.md](backend/data/reports/README.md)。
+`backend/data/reports/` 已生成上海真实数据的质量检查、导入批次、总览、交叉统计、CSV 与统计核对报告（`shanghai-*.json/csv`）；10 条虚构演示数据的对应报告保留为 `demo-*`。生成方式与注意事项见 [backend/data/reports/README.md](backend/data/reports/README.md)。
 
 ### 测试
 
@@ -215,7 +222,7 @@ npm run test:unit
 - 招聘数据分页查询与筛选（岗位类型、学历、经验、城市、薪资、关键词）
 - 统计接口：总览、学历、经验、技能、薪资
 - 筛选元数据接口（岗位类型 / 学历 / 经验 / 城市 / 技能）
-- 一键启动脚本 `npm run dev`（自动准备环境、数据库为空时导入演示数据、同时启动前后端）
+- 一键启动脚本 `npm run dev`（自动准备环境、数据库为空时优先导入真实数据、同时启动前后端）
 - 首页单页长滚动专题：Hero、样本档案、数据概览、章节索引、学历 / 经验 / 技能 / 薪资四章叙事、结论与边界、阅读进度条
 - 四个详情页与 ECharts 图表：学历构成、学历 × 岗位类别矩阵、经验分布、技能排行、技能类别、技能矩阵、薪资直方图、岗位薪资区间、学历/经验薪资对照
 - 四维筛选（岗位类别 / 学历 / 经验 / 城市）与 URL query 同步；无结果时提供清除入口；图表 / 数据表切换
@@ -226,9 +233,10 @@ npm run test:unit
 - 交叉统计 `GET /stats/cross`、CSV 导出 `GET /exports/jobs.csv`、统一错误响应（`detail` + `code` + `errors`）
 - 数据库重建脚本 `scripts/reset_db.py`、500 条性能基准 `scripts/benchmark_api.py`、复合索引
 - ECharts 按需加载 + 路由懒加载：主包约 171KB，图表共享块约 493KB
-- 48 个后端测试、11 个前端 Vitest 测试与 GitHub Actions CI
+- 上海 280 条真实数据已全量导入；独立核对 825/825 项一致，`/stats/quality` 显示 `demo_records=0`
+- 51 个后端测试、11 个前端 Vitest 测试与 GitHub Actions CI
 
-待实现：真实数据采集与全量导入、真实数据文案最终复核、可选 Playwright 冒烟与 Firefox 复核、创作报告与部署。详见 [docs/TODO.md](docs/TODO.md)。
+待实现：合并后续批次数据、逐页最终人工复核、可选 Playwright 冒烟与 Firefox 复核、创作报告与部署。详见 [docs/TODO.md](docs/TODO.md)。
 
 ## 文档
 
@@ -240,3 +248,5 @@ npm run test:unit
 ## 数据与结论边界
 
 本作品的数据仅来自特定城市、特定时间段、公开渠道的招聘样本，**不能代表全国就业市场**。所有新闻结论必须由实际数据计算得出，并标注样本量与统计口径。
+
+当前上海数据共 280 条，其中 146 条薪资为“面议”，薪资统计的有效样本只有 134 条（47.9%）。薪资结论只描述**披露了薪资的岗位**，不能外推到全部岗位；技能为空或超过 10 项的记录也保留原始信息，不强行补齐。

@@ -117,6 +117,15 @@ def get_quality_stats(db: Session) -> QualityStatsOut:
     total_cities = int(
         db.scalar(select(func.count(func.distinct(JobPosting.city)))) or 0
     )
+    sources = [
+        str(value)
+        for value in db.scalars(
+            select(JobPosting.source)
+            .where(JobPosting.source != "")
+            .distinct()
+            .order_by(JobPosting.source)
+        ).all()
+    ]
     collected_from = db.scalar(select(func.min(JobPosting.collected_at)))
     collected_to = db.scalar(select(func.max(JobPosting.collected_at)))
 
@@ -159,6 +168,7 @@ def get_quality_stats(db: Session) -> QualityStatsOut:
         demo_records=demo_records,
         total_companies=total_companies,
         total_cities=total_cities,
+        sources=sources,
         collected_from=collected_from,
         collected_to=collected_to,
         warnings=warnings,

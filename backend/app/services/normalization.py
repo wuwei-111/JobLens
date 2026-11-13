@@ -41,6 +41,11 @@ EXPERIENCE_ALIASES: dict[str, str] = {
     "3~5年": "3-5年",
     "5年以上": "5年以上",
     "五年以上": "5年以上",
+    # Campus-recruiting snapshots describe disclosure status rather than years.
+    # Keep the distinction instead of pretending "not disclosed" means "不限".
+    "校招；未单独披露工作年限": "未披露",
+    "校招；明确要求最高学历毕业后无全职工作经验": "应届生",
+    "校招；原文提及工作年限或工作经历，见经验原文": "其他",
 }
 
 FRESH_GRADUATE_EXPERIENCE = "应届生"

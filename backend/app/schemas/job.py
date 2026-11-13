@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import date
+from datetime import date, datetime
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
@@ -31,6 +31,28 @@ class JobBase(BaseModel):
         value = value.strip()
         if not value:
             raise ValueError("字段不能为空")
+        return value
+
+    @field_validator("collected_at", mode="before")
+    @classmethod
+    def _coerce_collected_at(cls, value: object) -> object:
+        """Accept an ISO timestamp as well as a plain ISO date.
+
+        Collected datasets often carry a full timestamp with an offset, e.g.
+        ``2026-11-13T11:14:45+08:00``. Statistics only need the day, so keep the
+        date as written in the record's own timezone instead of rejecting it.
+        """
+        if isinstance(value, datetime):
+            return value.date()
+        if isinstance(value, str):
+            text = value.strip()
+            try:
+                return date.fromisoformat(text)
+            except ValueError:
+                try:
+                    return datetime.fromisoformat(text).date()
+                except ValueError:
+                    return value  # let Pydantic report the invalid date
         return value
 
     @field_validator("skills")

@@ -49,7 +49,17 @@ EDUCATION_ORDER = [
     "其他",
     "未知",
 ]
-EXPERIENCE_ORDER = ["不限", "应届生", "1年以内", "1-3年", "3-5年", "5年以上", "其他", "未知"]
+EXPERIENCE_ORDER = [
+    "不限",
+    "应届生",
+    "1年以内",
+    "1-3年",
+    "3-5年",
+    "5年以上",
+    "未披露",
+    "其他",
+    "未知",
+]
 
 # Fixed histogram bins make salary distributions comparable across pages.
 SALARY_BINS: list[tuple[int | None, int | None, str]] = [

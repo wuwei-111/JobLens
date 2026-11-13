@@ -55,9 +55,11 @@ const dateRange = computed(() => {
   const end = to ? formatDate(to) : ''
   return end && end !== start ? `${start} – ${end}` : start
 })
-const sourceText = computed(() =>
-  isDemoDataset.value ? '演示数据（虚构）' : '公开招聘信息',
-)
+const sourceText = computed(() => {
+  if (isDemoDataset.value) return '演示数据（虚构）'
+  const sources = quality.value?.sources ?? []
+  return sources.length ? sources.join('、') : '公开招聘信息'
+})
 const sampleText = computed(() =>
   isDemoDataset.value
     ? `${totalJobs.value} 条演示记录；正式目标为 200～500 条可核验岗位`
@@ -186,7 +188,7 @@ const fields = [
         <dt>样本规模</dt>
         <dd>{{ sampleText }}</dd>
         <dt>来源</dt>
-        <dd>{{ sourceText }}；正式采集优先使用公开招聘信息，逐条保留来源链接与采集时间</dd>
+        <dd>{{ sourceText }}；逐条保留来源链接与采集时间</dd>
         <dt>岗位类别</dt>
         <dd>{{ jobTypesText }}</dd>
       </dl>

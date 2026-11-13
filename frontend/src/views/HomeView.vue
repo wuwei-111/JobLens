@@ -62,6 +62,10 @@ const loading = ref(true)
 const error = ref('')
 const progress = ref(0)
 
+// Only these labels state an actual number of years; "未披露" must not be
+// read as "要求工作年限".
+const EXPLICIT_EXPERIENCE_YEARS = new Set(['1年以内', '1-3年', '3-5年', '5年以上'])
+
 const chapterIndex = [
   {
     no: '01',
@@ -289,44 +293,23 @@ const experienceStory = computed(() => {
   const exp = experience.value
   if (!exp) return { lead: '', second: '', insight: '' }
 
-  const nonFreshGroups = exp.by_job_type
-    .filter((group) =>
-      group.distribution.some(
-        (item) =>
-          item.name !== '应届生' && item.name !== '不限' && item.count > 0,
-      ),
-    )
-    .map((group) => group.group)
+  const items = exp.breakdown.filter((item) => item.count > 0)
+  const breakdownText = items
+    .map((item) => `${item.name}（${item.count} 条）`)
+    .join('、')
+  const yearItems = items.filter((item) => EXPLICIT_EXPERIENCE_YEARS.has(item.name))
+  const yearCount = yearItems.reduce((sum, item) => sum + item.count, 0)
+  const undisclosed = items.find((item) => item.name === '未披露')?.count ?? 0
+  const strictFresh = items.find((item) => item.name === '应届生')?.count ?? 0
 
-  const nonFreshExperience = new Set<string>()
-  exp.by_job_type.forEach((group) => {
-    group.distribution.forEach((item) => {
-      if (item.name !== '应届生' && item.name !== '不限' && item.count > 0) {
-        nonFreshExperience.add(item.name)
-      }
-    })
-  })
+  const lead = `在 ${exp.total} 条岗位中，${exp.fresh_graduate.count} 条标注“接受应届生”，占 ${formatPercent(exp.fresh_graduate.ratio)}。`
+  const second = yearCount
+    ? `经验标注分布为：${breakdownText}。其中 ${yearCount} 条明确写出工作年限要求（${yearItems.map((item) => `${item.name} ${item.count} 条`).join('、')}），其余岗位没有写明年限。`
+    : `经验标注分布为：${breakdownText}。没有岗位明确写出 1 年以上的工作年限要求；其中 ${strictFresh} 条明确要求最高学历毕业后无全职工作经验，${undisclosed} 条未单独披露工作年限。`
+  const insight =
+    '“未披露”不等于“不限”，它只说明招聘页没有单独写出工作年限。样本全部来自同一校招渠道，不能据此推断上海整体就业市场。'
 
-  const freshBreakdown = exp.fresh_graduate.breakdown.filter(
-    (item) => item.count > 0,
-  )
-  const allFresh =
-    freshBreakdown.length === 1 && freshBreakdown[0].name === '应届生'
-
-  const freshText = allFresh
-    ? `再看标注“接受应届生”的 ${exp.fresh_graduate.count} 条岗位：经验要求全部写为“应届生”。这份样本里，没有出现“应届生岗位仍附加 1 年以上经验”的情况。`
-    : `标注“接受应届生”的 ${exp.fresh_graduate.count} 条岗位，经验要求分布为：${freshBreakdown.map((item) => `${item.name}（${item.count} 条）`).join('、')}。`
-
-  return {
-    lead: `在 ${exp.total} 条岗位中，${exp.fresh_graduate.count} 条标注“接受应届生”，占 ${formatPercent(exp.fresh_graduate.ratio)}。${
-      nonFreshGroups.length
-        ? `其余岗位来自${nonFreshGroups.join('、')}，经验要求为${[...nonFreshExperience].join('、')}。`
-        : '当前样本中没有要求工作年限的岗位。'
-    }`,
-    second: freshText,
-    insight:
-      '经验分布把样本分成两类：面向校招的入口岗，以及少量要求工作年限的社招岗。样本量有限，不能据此推断“市场上所有应届生岗位都不要求经验”。',
-  }
+  return { lead, second, insight }
 })
 
 const topSkills = computed(() => skills.value?.items.slice(0, 8) ?? [])
@@ -440,13 +423,11 @@ const conclusionFindings = computed(() => {
     (a, b) => (b.median ?? 0) - (a.median ?? 0),
   )[0]
 
-  const nonFreshGroups = exp.by_job_type
-    .filter((group) =>
-      group.distribution.some(
-        (item) => item.name !== '应届生' && item.name !== '不限' && item.count > 0,
-      ),
-    )
-    .map((group) => group.group)
+  const yearCount = exp.breakdown
+    .filter((item) => EXPLICIT_EXPERIENCE_YEARS.has(item.name))
+    .reduce((sum, item) => sum + item.count, 0)
+  const undisclosed =
+    exp.breakdown.find((item) => item.name === '未披露')?.count ?? 0
 
   return [
     {
@@ -457,7 +438,7 @@ const conclusionFindings = computed(() => {
     {
       figure: formatPercent(exp.fresh_graduate.ratio),
       title: '岗位接受应届生',
-      text: `${exp.fresh_graduate.count} / ${exp.total} 条${nonFreshGroups.length ? `；非应届岗位来自${nonFreshGroups.join('、')}` : ''}。`,
+      text: `${exp.fresh_graduate.count} / ${exp.total} 条；${yearCount ? `明确写出工作年限要求的 ${yearCount} 条` : '没有岗位明确写出工作年限要求'}${undisclosed ? `，${undisclosed} 条未披露` : ''}。`,
     },
     {
       figure: top ? formatPercent(top.ratio) : '—',
@@ -1710,7 +1691,7 @@ const conclusionFindings = computed(() => {
 
 @media (max-width: 640px) {
   .hero-title {
-    font-size: clamp(2.45rem, 11vw, 3.5rem);
+    font-size: clamp(2.1rem, 10vw, 3.5rem);
   }
 
   .hero-dek {

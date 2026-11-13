@@ -122,29 +122,30 @@ const matchInsight = computed(() => {
   return `${masterText}${diversityText}。${caveat}`
 })
 
+// Only these labels state an actual number of years. "未披露" and "其他" must
+// not be read as "要求工作年限", otherwise the narrative would overclaim.
+const EXPLICIT_EXPERIENCE_YEARS = new Set(['1年以内', '1-3年', '3-5年', '5年以上'])
+
 const experienceInsight = computed(() => {
   const stats = experience.value
   if (!stats || stats.total === 0) return '当前筛选条件下没有岗位。'
-  const fresh = stats.breakdown.find((item) => item.name === '应届生')
-  const nonFresh = stats.by_job_type
-    .filter((group) =>
-      group.distribution.some(
-        (item) => item.name !== '应届生' && item.name !== '不限' && item.count > 0,
-      ),
-    )
-    .map((group) => group.group)
 
-  if (!fresh) {
-    return nonFresh.length
-      ? `当前筛选下没有标注“应届生”的岗位；现有岗位来自${nonFresh.join('、')}，均要求一定工作年限。`
-      : '当前筛选下没有可判断的经验要求。'
+  const items = stats.breakdown.filter((item) => item.count > 0)
+  const breakdownText = items
+    .map((item) => `${item.name} ${item.count} 条（${formatPercent(item.ratio)}）`)
+    .join('，')
+  const yearItems = items.filter((item) => EXPLICIT_EXPERIENCE_YEARS.has(item.name))
+  const yearCount = yearItems.reduce((sum, item) => sum + item.count, 0)
+  const undisclosed = items.find((item) => item.name === '未披露')?.count ?? 0
+
+  if (!yearCount) {
+    return `在 ${stats.total} 条岗位中，经验标注为：${breakdownText}。没有岗位明确写出 1 年以上的工作年限要求；其中 ${undisclosed} 条标注“未披露”，只说明招聘页没有单独写出年限，不等于“经验不限”。`
   }
 
-  const freshText = `“应届生”要求 ${fresh.count} 条，占 ${formatPercent(fresh.ratio)}`
-  if (nonFresh.length === 0) {
-    return `${freshText}。当前筛选下所有岗位都面向应届生，没有出现要求工作年限的社招岗。`
-  }
-  return `${freshText}；未向应届生开放的岗位来自${nonFresh.join('、')}。经验分布把样本分成两类：面向校招的入口岗，以及少量要求工作年限的社招岗。`
+  const yearsText = yearItems
+    .map((item) => `${item.name} ${item.count} 条`)
+    .join('、')
+  return `在 ${stats.total} 条岗位中，经验标注为：${breakdownText}。其中明确写出工作年限要求的有 ${yearCount} 条（${yearsText}）；其余岗位未写明年限。`
 })
 
 const freshText = computed(() => {
@@ -152,15 +153,18 @@ const freshText = computed(() => {
   if (!stats) return ''
   const fresh = stats.fresh_graduate
   if (!fresh.count) return '当前筛选条件下没有标注“接受应届生”的岗位。'
-  const names = fresh.breakdown
-    .filter((item) => item.count > 0)
-    .map((item) => `${item.name}（${item.count} 条）`)
-    .join('、')
-  if (fresh.breakdown.length === 1 && fresh.breakdown[0].name === '应届生') {
-    const scope = isDemoDataset.value ? '在这份演示样本里' : '在这份样本里'
+
+  const explicit = fresh.breakdown.find((item) => item.name === '应届生')?.count ?? 0
+  const undisclosed =
+    fresh.breakdown.find((item) => item.name === '未披露')?.count ?? 0
+  const other = fresh.breakdown.find((item) => item.name === '其他')?.count ?? 0
+  const scope = isDemoDataset.value ? '在这份演示样本里' : '在这份样本里'
+
+  if (!undisclosed && !other) {
     return `${fresh.count} 条标注“接受应届生”的岗位，经验要求全部写为“应届生”。${scope}，没有出现“应届生岗位仍附加 1 年以上经验”的情况。`
   }
-  return `${fresh.count} 条标注“接受应届生”的岗位，其经验要求分布为：${names}。`
+
+  return `${fresh.count} 条标注“接受应届生”的岗位中，${explicit} 条明确要求最高学历毕业后无全职工作经验，${undisclosed} 条未单独披露工作年限${other ? `，${other} 条原文提及工作经历或年限` : ''}。${scope}，“未披露”不等于“经验不限”。`
 })
 
 function clearFilters() {

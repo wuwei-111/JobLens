@@ -102,14 +102,14 @@ function ensureFrontend() {
   }
 }
 
-function ensureDemoData(python) {
+function ensureSeedData(python) {
   // Only seeds when job_postings is empty; never overwrites imported data.
-  const result = spawnSync(python, ['-m', 'scripts.seed_demo_if_empty'], {
+  const result = spawnSync(python, ['-m', 'scripts.seed_if_empty'], {
     cwd: backendDir,
     stdio: 'inherit',
   })
   if (result.status !== 0) {
-    console.warn('[setup] 演示数据检查失败，可稍后手动导入。')
+    console.warn('[setup] 初始数据检查失败，可稍后手动导入。')
   }
 }
 
@@ -185,7 +185,7 @@ process.on('SIGTERM', () => shutdown(0))
 async function main() {
   const python = startBackend ? ensureBackend() : null
   if (startFrontend) ensureFrontend()
-  if (python) ensureDemoData(python)
+  if (python) ensureSeedData(python)
 
   console.log('\nJobLens 开发环境')
   if (startBackend) {

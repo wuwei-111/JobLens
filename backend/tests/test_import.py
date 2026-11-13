@@ -15,6 +15,47 @@ def test_import_valid_dataset(client: TestClient) -> None:
     assert body["failed"] == 0
 
 
+def test_import_normalizes_campus_experience_labels(client: TestClient) -> None:
+    payload = sample_payload()
+    labels = {
+        "job_t1": ("校招；明确要求最高学历毕业后无全职工作经验", "应届生"),
+        "job_t2": ("校招；未单独披露工作年限", "未披露"),
+        "job_t3": ("校招；原文提及工作年限或工作经历，见经验原文", "其他"),
+    }
+    for record in payload["records"]:
+        record["experience"] = labels[record["id"]][0]
+
+    response = import_payload(client, payload)
+    assert response.status_code == 200, response.text
+
+    for job_id, (_, expected) in labels.items():
+        assert client.get(f"/api/v1/jobs/{job_id}").json()["experience"] == expected
+
+
+def test_import_accepts_timestamp_collected_at(client: TestClient) -> None:
+    payload = sample_payload()
+    payload["collected_at"] = "2026-11-13T09:30:00+08:00"
+    for record in payload["records"]:
+        record["collected_at"] = "2026-11-13T11:14:45+08:00"
+
+    response = import_payload(client, payload)
+    assert response.status_code == 200, response.text
+    assert response.json()["imported"] == 3
+
+    job = client.get("/api/v1/jobs/job_t1").json()
+    assert job["collected_at"] == "2026-11-13"
+
+
+def test_import_rejects_invalid_collected_at(client: TestClient) -> None:
+    payload = sample_payload()
+    payload["records"][0]["collected_at"] = "not-a-date"
+
+    body = import_payload(client, payload).json()
+    assert body["imported"] == 2
+    assert body["failed"] == 1
+    assert "collected_at" in body["errors"][0]["message"]
+
+
 def test_import_creates_batch_record(client: TestClient) -> None:
     response = import_payload(client, sample_payload())
     assert response.status_code == 200
